@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "name": "Diccionario de la lengua",
+    "category": "Tipos de diccionarios",
+    "teoria": "Obra lexicográfica que recoge el léxico general de una lengua con definiciones, ejemplos e información gramatical.",
+    "ejemplo": "DLE (Diccionario de la Lengua Española) de la RAE.",
+    "ejercicio": "Menciona dos diccionarios generales del español.",
+    "suggestedAnswer": "Diccionario de la RAE, Diccionario de Americanismos, Clave."
+  },
+  {
+    "id": 2,
+    "name": "Diccionario enciclopédico",
+    "category": "Tipos de diccionarios",
+    "teoria": "Combina información lingüística con datos enciclopédicos (personajes, lugares, historia, ciencia).",
+    "ejemplo": "Diccionario Enciclopédico Espasa.",
+    "ejercicio": "¿Qué diferencia hay entre un diccionario de lengua y uno enciclopédico?",
+    "suggestedAnswer": "El enciclopédico incluye nombres propios y datos de cultura general."
+  },
+  {
+    "id": 3,
+    "name": "Diccionario de sinónimos y antónimos",
+    "category": "Tipos de diccionarios",
+    "teoria": "Reúne palabras de significado similar (sinónimos) o contrario (antónimos). Útil para enriquecer vocabulario.",
+    "ejemplo": "Diccionario de Sinónimos de María Moliner.",
+    "ejercicio": "Busca un sinónimo de 'rápido'.",
+    "suggestedAnswer": "Veloz, ligero, presto."
+  },
+  {
+    "id": 4,
+    "name": "Diccionario de ideas afines",
+    "category": "Tipos de diccionarios",
+    "teoria": "Organiza el léxico por conceptos o campos semánticos, no por orden alfabético. Permite encontrar palabras relacionadas con una idea.",
+    "ejemplo": "Diccionario de Ideas Afines de Fernando Corripio.",
+    "ejercicio": "¿Para qué sirve un diccionario de ideas afines?",
+    "suggestedAnswer": "Para encontrar palabras relacionadas por significado (tesauro)."
+  },
+  {
+    "id": 5,
+    "name": "Diccionario de americanismos",
+    "category": "Tipos de diccionarios",
+    "teoria": "Recoge voces propias del español de América, con indicación de países y zonas.",
+    "ejemplo": "Diccionario de Americanismos (ASALE).",
+    "ejercicio": "¿Qué palabra mexicana aparece en el Diccionario de Americanismos?",
+    "suggestedAnswer": "Aguacate, papalote, chido."
+  },
+  {
+    "id": 6,
+    "name": "Diccionario de argentinismos",
+    "category": "Diccionarios dialectales",
+    "teoria": "Variante nacional o regional: recopila vocablos propios de Argentina (o cualquier otro país).",
+    "ejemplo": "Diccionario de Argentinismos.",
+    "ejercicio": "Define 'che' como argentinismo.",
+    "suggestedAnswer": "Interjección para llamar la atención o vocativo coloquial."
+  },
+  {
+    "id": 7,
+    "name": "Diccionario de mexicanismos",
+    "category": "Diccionarios dialectales",
+    "teoria": "Recoge léxico característico de México.",
+    "ejemplo": "Diccionario de Mexicanismos de la Academia Mexicana de la Lengua.",
+    "ejercicio": "Significado de 'chilango'.",
+    "suggestedAnswer": "Natural de la Ciudad de México."
+  },
+  {
+    "id": 8,
+    "name": "Diccionario de colombianismos",
+    "category": "Diccionarios dialectales",
+    "teoria": "Voces propias de Colombia.",
+    "ejemplo": "Diccionario de Colombianismos del Instituto Caro y Cuervo.",
+    "ejercicio": "Define 'rumbear' en Colombia.",
+    "suggestedAnswer": "Salir de fiesta, ir de rumba."
+  },
+  {
+    "id": 9,
+    "name": "Diccionario etimológico",
+    "category": "Tipos de diccionarios",
+    "teoria": "Explica el origen de las palabras, su evolución y sus raíces (griegas, latinas, árabes, etc.).",
+    "ejemplo": "Diccionario Etimológico de Joan Corominas.",
+    "ejercicio": "¿Cuál es el origen de 'izquierda'?",
+    "suggestedAnswer": "Del vasco 'ezkerra'."
+  },
+  {
+    "id": 10,
+    "name": "Diccionario histórico",
+    "category": "Tipos de diccionarios",
+    "teoria": "Recoge la evolución de las palabras a lo largo del tiempo, con citas de textos de distintas épocas.",
+    "ejemplo": "Nuevo Diccionario Histórico del Español (RAE).",
+    "ejercicio": "¿Para qué sirve un diccionario histórico?",
+    "suggestedAnswer": "Para conocer usos antiguos y cambios semánticos."
+  },
+  {
+    "id": 11,
+    "name": "Diccionario de uso",
+    "category": "Tipos de diccionarios",
+    "teoria": "Diccionario basado en corpus reales, con ejemplos de uso y frecuencia, como el de María Moliner.",
+    "ejemplo": "Diccionario de Uso del Español de María Moliner.",
+    "ejercicio": "¿Qué lo diferencia del DLE?",
+    "suggestedAnswer": "Incluye más ejemplos y ordenación semántica."
+  },
+  {
+    "id": 12,
+    "name": "Diccionario de autoridades (RAE)",
+    "category": "Historia de la lexicografía",
+    "teoria": "Primer diccionario académico (1726-1739) que incluía citas de autores para autorizar el uso.",
+    "ejemplo": "Diccionario de Autoridades.",
+    "ejercicio": "¿Por qué se llamó 'de autoridades'?",
+    "suggestedAnswer": "Porque respaldaba las definiciones con citas de escritores clásicos."
+  },
+  {
+    "id": 13,
+    "name": "Glosario",
+    "category": "Tipos de diccionarios",
+    "teoria": "Lista de términos con sus definiciones, limitada a una obra o campo específico.",
+    "ejemplo": "Glosario de términos médicos.",
+    "ejercicio": "¿Dónde se encuentra un glosario típicamente?",
+    "suggestedAnswer": "Al final de libros técnicos o académicos."
+  },
+  {
+    "id": 14,
+    "name": "Tesauro",
+    "category": "Tipos de diccionarios",
+    "teoria": "Diccionario de sinónimos y palabras relacionadas organizado conceptualmente, no alfabéticamente.",
+    "ejemplo": "Tesauro de la UNESCO.",
+    "ejercicio": "¿En qué se diferencia de un diccionario de sinónimos común?",
+    "suggestedAnswer": "Organización por conceptos y jerarquías."
+  },
+  {
+    "id": 15,
+    "name": "Vocabulario",
+    "category": "Tipos de diccionarios",
+    "teoria": "Lista de palabras de un autor, obra o región, con definiciones breves.",
+    "ejemplo": "Vocabulario de la obra de Cervantes.",
+    "ejercicio": "Menciona un vocabulario famoso.",
+    "suggestedAnswer": "Vocabulario de Don Quijote."
+  },
+  {
+    "id": 16,
+    "name": "Diccionario de construcción y régimen",
+    "category": "Tipos de diccionarios",
+    "teoria": "Explica cómo se construyen las palabras (qué preposiciones requieren, qué complementos).",
+    "ejemplo": "Diccionario de Construcción y Régimen de la Lengua Castellana de Rufino José Cuervo.",
+    "ejercicio": "Consulta qué preposición rige 'confiar'.",
+    "suggestedAnswer": "Confiar en alguien, confiar algo a alguien."
+  },
+  {
+    "id": 17,
+    "name": "Diccionario de dudas",
+    "category": "Tipos de diccionarios",
+    "teoria": "Resuelve problemas de uso, ortografía, gramática y pronunciación.",
+    "ejemplo": "Diccionario Panhispánico de Dudas (RAE).",
+    "ejercicio": "¿Qué entrada buscarías para saber si 'solo' lleva tilde?",
+    "suggestedAnswer": "solo (adverbio)."
+  },
+  {
+    "id": 18,
+    "name": "Diccionario de neologismos",
+    "category": "Tipos de diccionarios",
+    "teoria": "Recoge palabras nuevas o acepciones recientes, no siempre incluidas en diccionarios generales.",
+    "ejemplo": "Diccionario de Neologismos del Español Actual (RAE).",
+    "ejercicio": "Ejemplo de neologismo reciente.",
+    "suggestedAnswer": "Selfi, tuit, ciberacoso."
+  },
+  {
+    "id": 19,
+    "name": "Diccionario de extranjerismos",
+    "category": "Tipos de diccionarios",
+    "teoria": "Recopila palabras tomadas de otras lenguas, con indicación de adaptación o no.",
+    "ejemplo": "Diccionario de Extranjerismos de la RAE.",
+    "ejercicio": "¿Qué extranjerismo está adaptado como 'fútbol'?",
+    "suggestedAnswer": "Inglés 'football'."
+  },
+  {
+    "id": 20,
+    "name": "Diccionario de sinónimos contextuales",
+    "category": "Tipos de diccionarios",
+    "teoria": "Ofrece sinónimos según el contexto, no solo equivalentes generales.",
+    "ejemplo": "Diccionario Clave de Sinónimos.",
+    "ejercicio": "Sinónimo de 'cara' (parte del cuerpo vs 'precio alto').",
+    "suggestedAnswer": "Rostro / costoso."
+  },
+  {
+    "id": 21,
+    "name": "Diccionario inverso",
+    "category": "Tipos de diccionarios",
+    "teoria": "Ordena las palabras por sus letras finales (útil para rimas o búsquedas morfológicas).",
+    "ejemplo": "Diccionario inverso de la RAE.",
+    "ejercicio": "¿Para qué sirve un diccionario inverso?",
+    "suggestedAnswer": "Para buscar palabras que terminan igual (rimas, sufijos)."
+  },
+  {
+    "id": 22,
+    "name": "Diccionario onomasiológico",
+    "category": "Tipos de diccionarios",
+    "teoria": "Va del concepto a la palabra (contrario al semasiológico que va de la palabra al significado).",
+    "ejemplo": "Diccionario de Ideas Afines (es onomasiológico).",
+    "ejercicio": "¿Qué diferencia hay entre onomasiología y semasiología?",
+    "suggestedAnswer": "Onomasiología: idea → palabra; semasiología: palabra → significado."
+  },
+  {
+    "id": 23,
+    "name": "Entrada lexicográfica",
+    "category": "Estructura de un diccionario",
+    "teoria": "Cada artículo que contiene una palabra y su información: lema, categoría gramatical, definición, ejemplos, marcas.",
+    "ejemplo": "Lema 'casa': sustantivo, 'edificio para habitar', 'casa familiar'.",
+    "ejercicio": "¿Qué elementos incluye una entrada?",
+    "suggestedAnswer": "Lema, pronunciación, etimología, categoría gramatical, definición, ejemplos, marcas."
+  },
+  {
+    "id": 24,
+    "name": "Lema (o entrada)",
+    "category": "Estructura de un diccionario",
+    "teoria": "Palabra principal que se define en el diccionario, generalmente en negrita.",
+    "ejemplo": "En un diccionario, 'perro' es un lema.",
+    "ejercicio": "¿Qué diferencia hay entre lema y sublema?",
+    "suggestedAnswer": "El lema es la palabra principal; sublema son derivados o locuciones."
+  },
+  {
+    "id": 25,
+    "name": "Sublema",
+    "category": "Estructura de un diccionario",
+    "teoria": "Derivado, compuesto o locución que aparece dentro de la misma entrada del lema principal, con menor nivel.",
+    "ejemplo": "Dentro de 'casa': 'casa de campo' como sublema.",
+    "ejercicio": "Busca en un diccionario un sublema de 'agua'.",
+    "suggestedAnswer": "Agua mineral, agua potable."
+  },
+  {
+    "id": 26,
+    "name": "Definición lexicográfica",
+    "category": "Estructura de un diccionario",
+    "teoria": "Explicación del significado de una palabra, debe ser clara, concisa y no circular.",
+    "ejemplo": "Mesa: 'mueble con una tabla horizontal sostenida por patas'.",
+    "ejercicio": "Define 'silla' con una definición lexicográfica.",
+    "suggestedAnswer": "Asiento con respaldo, generalmente para una persona."
+  },
+  {
+    "id": 27,
+    "name": "Definición circular (vicio)",
+    "category": "Estructura de un diccionario",
+    "teoria": "Cuando se define una palabra usando la misma palabra o un sinónimo inmediato que no aclara.",
+    "ejemplo": "Amar: 'sentir amor' (circular).",
+    "ejercicio": "Detecta la circularidad: 'Cómodo: que tiene comodidad'.",
+    "suggestedAnswer": "Es circular porque 'comodidad' deriva de 'cómodo'."
+  },
+  {
+    "id": 28,
+    "name": "Abreviaturas lexicográficas",
+    "category": "Estructura de un diccionario",
+    "teoria": "Códigos abreviados que ahorran espacio: s. (sustantivo), adj. (adjetivo), etc.",
+    "ejemplo": "m. (masculino), f. (femenino), pl. (plural).",
+    "ejercicio": "¿Qué significa 'v. tr.' en un diccionario?",
+    "suggestedAnswer": "Verbo transitivo."
+  },
+  {
+    "id": 29,
+    "name": "Marcas diatópicas (dialectales)",
+    "category": "Marcas lexicográficas",
+    "teoria": "Indican que una palabra es propia de una zona geográfica. Ej: Col., Méx., Arg., Esp.",
+    "ejemplo": "La marca 'Méx.' junto a 'chido'.",
+    "ejercicio": "¿Qué significa 'And.' como marca?",
+    "suggestedAnswer": "Andalucía (o Andes según contexto)."
+  },
+  {
+    "id": 30,
+    "name": "Marcas diastráticas (nivel social)",
+    "category": "Marcas lexicográficas",
+    "teoria": "Indican registro o nivel: vulg. (vulgar), cult. (culto), coloq. (coloquial).",
+    "ejemplo": "La palabra 'pibe' puede tener marca 'coloq.' en Argentina.",
+    "ejercicio": "¿Qué significa la marca 'vulg.'?",
+    "suggestedAnswer": "Vulgar, propio de habla popular o malsonante."
+  },
+  {
+    "id": 31,
+    "name": "Marcas diafásicas (registro de uso)",
+    "category": "Marcas lexicográficas",
+    "teoria": "Indican situación comunicativa: formal, informal, jergal, literario.",
+    "ejemplo": "La palabra 'laburo' (Arg.) puede llevar 'coloq.'",
+    "ejercicio": "¿Qué marca llevaría 'cantar' en sentido figurado 'confesar'?",
+    "suggestedAnswer": "Coloquial o figurado."
+  },
+  {
+    "id": 32,
+    "name": "Marcas diacrónicas (evolución histórica)",
+    "category": "Marcas lexicográficas",
+    "teoria": "Indican arcaísmos, palabras en desuso o anticuadas. Ej: desus., ant.",
+    "ejemplo": "La palabra 'facer' tiene marca 'desus.' (en desuso).",
+    "ejercicio": "Define 'arcaísmo'.",
+    "suggestedAnswer": "Palabra o expresión que ha caído en desuso."
+  },
+  {
+    "id": 33,
+    "name": "Marcas de frecuencia",
+    "category": "Marcas lexicográficas",
+    "teoria": "Indican si una palabra es poco común (p. us.) o muy frecuente.",
+    "ejemplo": "P. us. = poco usado.",
+    "ejercicio": "¿Qué significa 'rur.' como marca?",
+    "suggestedAnswer": "Rural, propio del campo."
+  },
+  {
+    "id": 34,
+    "name": "Etimología en el diccionario",
+    "category": "Estructura de un diccionario",
+    "teoria": "Indicación del origen de la palabra, entre corchetes o paréntesis. Abreviaturas: del lat. (latín), del gr. (griego), del ár. (árabe).",
+    "ejemplo": "Guitarra: del ár. hisp. qīṯāra.",
+    "ejercicio": "¿Cuál es la etimología de 'azúcar'?",
+    "suggestedAnswer": "Del árabe hispánico 'assúkkar'."
+  },
+  {
+    "id": 35,
+    "name": "Ejemplos de uso",
+    "category": "Estructura de un diccionario",
+    "teoria": "Frases que ilustran el significado y uso real de la palabra, a menudo extraídas de corpus.",
+    "ejemplo": "Casa: 'Vive en una casa grande'.",
+    "ejercicio": "¿Por qué son importantes los ejemplos?",
+    "suggestedAnswer": "Muestran el contexto y ayudan a comprender el uso."
+  },
+  {
+    "id": 36,
+    "name": "Acepciones",
+    "category": "Estructura de un diccionario",
+    "teoria": "Cada uno de los diferentes significados de una palabra polisémica, numerados.",
+    "ejemplo": "Planta: 1. vegetal, 2. fábrica, 3. piso de un edificio.",
+    "ejercicio": "¿Cuántas acepciones tiene 'banco'?",
+    "suggestedAnswer": "Múltiples: entidad financiera, asiento, pez, etc."
+  },
+  {
+    "id": 37,
+    "name": "Locuciones y frases hechas",
+    "category": "Estructura de un diccionario",
+    "teoria": "Combinaciones fijas de palabras que se incluyen dentro de la entrada o como sublemas.",
+    "ejemplo": "En 'dar': 'dar la lata' (molestar).",
+    "ejercicio": "Ejemplo de locución incluida en 'hacer'.",
+    "suggestedAnswer": "Hacer caso, hacer el favor."
+  },
+  {
+    "id": 38,
+    "name": "Neologismo",
+    "category": "Formación de palabras",
+    "teoria": "Palabra nueva creada para designar realidades novedosas, puede ser por derivación, composición, préstamo.",
+    "ejemplo": "Ciberacoso, tuitear.",
+    "ejercicio": "¿Qué es un neologismo semántico?",
+    "suggestedAnswer": "Palabra existente que adquiere un nuevo significado (ej. 'ratón' para mouse)."
+  },
+  {
+    "id": 39,
+    "name": "Préstamo léxico",
+    "category": "Formación de palabras",
+    "teoria": "Palabra incorporada de otra lengua, puede adaptarse o conservarse extranjera.",
+    "ejemplo": "Fútbol (inglés football), pizza (italiano).",
+    "ejercicio": "Diferencia entre extranjerismo y préstamo adaptado.",
+    "suggestedAnswer": "Extranjerismo: se escribe y pronuncia como original (software); préstamo adaptado: se hispaniza (champú)."
+  },
+  {
+    "id": 40,
+    "name": "Indigenismo",
+    "category": "Formación de palabras",
+    "teoria": "Voz de origen amerindio incorporada al español. Muchas pasaron al español general.",
+    "ejemplo": "Tomate, chocolate, papa, cóndor.",
+    "ejercicio": "Menciona un indigenismo del náhuatl.",
+    "suggestedAnswer": "Aguacate, chile, elote."
+  },
+  {
+    "id": 41,
+    "name": "Arcaísmo",
+    "category": "Tipos de palabras",
+    "teoria": "Palabra o acepción que ha caído en desuso, pero que a veces se conserva en textos antiguos o regiones.",
+    "ejemplo": "Hogaño (este año), agora (ahora).",
+    "ejercicio": "¿Qué significa 'asaz'?",
+    "suggestedAnswer": "Antiguamente 'bastante' o 'muy'."
+  },
+  {
+    "id": 42,
+    "name": "Vulgarismo",
+    "category": "Tipos de palabras",
+    "teoria": "Palabra o forma no estándar, propia del habla popular, considerada incorrecta en la norma culta.",
+    "ejemplo": "Haiga (por 'haya'), mesmo (por 'mismo').",
+    "ejercicio": "Corrige el vulgarismo 'naide'.",
+    "suggestedAnswer": "Nadie."
+  },
+  {
+    "id": 43,
+    "name": "Cultismo",
+    "category": "Tipos de palabras",
+    "teoria": "Palabra de origen latino o griego que ha entrado en el español sin grandes cambios fonéticos, propia de registros formales.",
+    "ejemplo": "Aura, flora, fauna, urbano.",
+    "ejercicio": "¿Qué diferencia hay entre cultismo y palabra patrimonial?",
+    "suggestedAnswer": "El cultismo no sufrió evoluciones fonéticas populares; la patrimonial sí (ej. 'fuego' del latín 'focus' vs cultismo 'foco')."
+  },
+  {
+    "id": 44,
+    "name": "Derivación lexicográfica",
+    "category": "Procedimientos de formación",
+    "teoria": "Creación de nuevas palabras añadiendo afijos a una raíz.",
+    "ejemplo": "Flor → floral, florista, florecer.",
+    "ejercicio": "Forma un derivado de 'pan'.",
+    "suggestedAnswer": "Panadería, panadero."
+  },
+  {
+    "id": 45,
+    "name": "Composición",
+    "category": "Procedimientos de formación",
+    "teoria": "Unión de dos o más raíces para crear una nueva palabra.",
+    "ejemplo": "Abrelatas, sacacorchos, paraguas.",
+    "ejercicio": "Crea una palabra compuesta con 'saca' y 'lágrimas'.",
+    "suggestedAnswer": "Sacalágrimas."
+  },
+  {
+    "id": 46,
+    "name": "Parasíntesis",
+    "category": "Procedimientos de formación",
+    "teoria": "Procedimiento que combina prefijo y sufijo simultáneamente (no existe palabra base intermedia).",
+    "ejemplo": "Aterrizar (de 'tierra', no existe 'terrizar').",
+    "ejercicio": "Ejemplo de parasíntesis con 'en' y 'ar'.",
+    "suggestedAnswer": "Enloquecer (de 'loco' → en-loc-ecer)."
+  },
+  {
+    "id": 47,
+    "name": "Lexicalización",
+    "category": "Procesos lexicográficos",
+    "teoria": "Proceso por el cual una expresión libre se convierte en una unidad léxica fija.",
+    "ejemplo": "Sin embargo, por supuesto.",
+    "ejercicio": "Ejemplo de locución lexicalizada.",
+    "suggestedAnswer": "De repente, en medio de."
+  },
+  {
+    "id": 48,
+    "name": "Lexicografía computacional",
+    "category": "Técnicas modernas",
+    "teoria": "Uso de corpus electrónicos, minería de textos y herramientas informáticas para elaborar diccionarios.",
+    "ejemplo": "Corpus del Español, CREA, CORPES.",
+    "ejercicio": "¿Qué es un corpus lingüístico?",
+    "suggestedAnswer": "Conjunto de textos reales usado para estudiar el léxico."
+  },
+  {
+    "id": 49,
+    "name": "Corpus lingüístico",
+    "category": "Lexicografía computacional",
+    "teoria": "Colección de textos orales o escritos, representativa de una lengua, para extraer frecuencias y ejemplos.",
+    "ejemplo": "CORPES XXI (RAE).",
+    "ejercicio": "¿Para qué sirve el corpus en lexicografía?",
+    "suggestedAnswer": "Para obtener frecuencias de uso, ejemplos reales y registrar neologismos."
+  },
+  {
+    "id": 50,
+    "name": "Lematización",
+    "category": "Procesos lexicográficos",
+    "teoria": "Procedimiento de agrupar las formas flexivas de una palabra bajo un lema (infinitivo para verbos, masculino singular para adjetivos).",
+    "ejemplo": "Saltar incluye 'salto', 'salté', 'saltando'.",
+    "ejercicio": "¿Cuál es el lema de 'corría'?",
+    "suggestedAnswer": "Correr."
+  },
+  {
+    "id": 51,
+    "name": "Microestructura del diccionario",
+    "category": "Estructura de un diccionario",
+    "teoria": "Información contenida dentro de cada entrada (definición, ejemplos, marcas, etc.).",
+    "ejemplo": "La microestructura varía según el diccionario.",
+    "ejercicio": "¿Qué elementos componen la microestructura?",
+    "suggestedAnswer": "Lema, categoría gramatical, definición, ejemplos, marcas, etimología, etc."
+  },
+  {
+    "id": 52,
+    "name": "Macroestructura del diccionario",
+    "category": "Estructura de un diccionario",
+    "teoria": "Organización general de los lemas en un diccionario (por orden alfabético, temático, inverso, etc.).",
+    "ejemplo": "La mayoría de diccionarios tienen macroestructura alfabética.",
+    "ejercicio": "¿Qué otros tipos de macroestructura existen?",
+    "suggestedAnswer": "Temática (diccionarios ideológicos), cronológica (históricos)."
+  },
+  {
+    "id": 53,
+    "name": "Diccionario en línea",
+    "category": "Tipos de diccionarios",
+    "teoria": "Versión digital accesible por internet, con actualizaciones periódicas y búsqueda rápida.",
+    "ejemplo": "DLE en línea (rae.es), WordReference.",
+    "ejercicio": "Ventaja del diccionario en línea sobre el impreso.",
+    "suggestedAnswer": "Actualización constante, hipervínculos, búsqueda por voz."
+  },
+  {
+    "id": 54,
+    "name": "Lexicografía pedagógica",
+    "category": "Tipos de diccionarios",
+    "teoria": "Diccionarios diseñados para estudiantes de lengua, con definiciones sencillas y ejemplos adaptados.",
+    "ejemplo": "Diccionario para estudiantes de español (SM, Oxford).",
+    "ejercicio": "¿Qué características tiene un diccionario pedagógico?",
+    "suggestedAnswer": "Lenguaje simple, ejemplos frecuentes, marcas claras."
+  },
+  {
+    "id": 55,
+    "name": "Diccionario bilingüe",
+    "category": "Tipos de diccionarios",
+    "teoria": "Traduce palabras de una lengua a otra, con equivalencias y ejemplos.",
+    "ejemplo": "Diccionario inglés-español de Collins.",
+    "ejercicio": "¿Problema común en diccionarios bilingües?",
+    "suggestedAnswer": "Falsos amigos (embarazada vs embarrassed)."
+  },
+  {
+    "id": 56,
+    "name": "Falsos amigos",
+    "category": "Lexicografía bilingüe",
+    "teoria": "Palabras que se parecen en dos idiomas pero tienen diferente significado.",
+    "ejemplo": "Actually (en inglés significa 'en realidad', no 'actualmente').",
+    "ejercicio": "Ejemplo de falso amigo entre español e inglés.",
+    "suggestedAnswer": "Constipated (estreñido) vs constipado (resfriado)."
+  },
+  {
+    "id": 57,
+    "name": "Diccionario de colocaciones",
+    "category": "Tipos de diccionarios",
+    "teoria": "Recopila combinaciones de palabras que suelen aparecer juntas (colocaciones).",
+    "ejemplo": "Lluvia torrencial, causa efecto.",
+    "ejercicio": "Colocación de 'estrecha' con 'amistad'.",
+    "suggestedAnswer": "Amistad estrecha."
+  },
+  {
+    "id": 58,
+    "name": "Lexicografía de variantes",
+    "category": "Tipos de diccionarios",
+    "teoria": "Atiende a las diferencias léxicas entre distintas variedades del español.",
+    "ejemplo": "Diccionario de americanismos, Diccionario de colombianismos.",
+    "ejercicio": "¿Qué palabra mexicana para 'caña de maíz'?",
+    "suggestedAnswer": "Elote (en México), choclo (en Argentina, Perú)."
+  },
+  {
+    "id": 59,
+    "name": "Diccionario de argot",
+    "category": "Tipos de diccionarios",
+    "teoria": "Recoge jergas de grupos específicos (estudiantil, carcelario, juvenil, profesional).",
+    "ejemplo": "Diccionario del argot juvenil español.",
+    "ejercicio": "Significado de 'pasta' en argot español (España).",
+    "suggestedAnswer": "Dinero."
+  },
+  {
+    "id": 60,
+    "name": "Diccionario de modismos",
+    "category": "Tipos de diccionarios",
+    "teoria": "Registra frases hechas o expresiones idiomáticas que no son literales.",
+    "ejemplo": "Modismo 'tomar el pelo' (burlarse).",
+    "ejercicio": "¿Qué significa 'meterse en camisa de once varas'?",
+    "suggestedAnswer": "Meterse en un problema innecesario."
+  },
+  {
+    "id": 61,
+    "name": "Lexicografía histórica: fuentes de autoridades",
+    "category": "Historia de la lexicografía",
+    "teoria": "Uso de citas de escritores clásicos para justificar el uso de palabras.",
+    "ejemplo": "El primer Diccionario de la RAE (1726-1739) utilizó autoridades.",
+    "ejercicio": "¿Quién fue el primer lexicógrafo importante del español?",
+    "suggestedAnswer": "Sebastián de Covarrubias (Tesoro de la lengua castellana o española, 1611)."
+  },
+  {
+    "id": 62,
+    "name": "Tesoro de la lengua castellana de Covarrubias",
+    "category": "Historia de la lexicografía",
+    "teoria": "Primer diccionario monolingüe del español (1611), con etimologías, definiciones y enciclopedismo.",
+    "ejemplo": "Incluía orígenes y curiosidades etimológicas.",
+    "ejercicio": "¿En qué año se publicó?",
+    "suggestedAnswer": "1611."
+  },
+  {
+    "id": 63,
+    "name": "Diccionario de la lengua castellana (RAE)",
+    "category": "Historia de la lexicografía",
+    "teoria": "Ediciones sucesivas del diccionario académico desde 1780 (12ª edición). La primera edición del 'Diccionario de Autoridades' fue 1726-1739.",
+    "ejemplo": "La 23ª edición (2014) incluye americanismos.",
+    "ejercicio": "¿Qué significan las siglas DLE?",
+    "suggestedAnswer": "Diccionario de la Lengua Española."
+  },
+  {
+    "id": 64,
+    "name": "Diccionario de la Academia Chilena",
+    "category": "Historia de la lexicografía",
+    "teoria": "Variantes nacionales de los diccionarios académicos.",
+    "ejemplo": "Hay diccionarios de las academias de Colombia, México, Argentina.",
+    "ejercicio": "¿Qué academia publicó el 'Diccionario de Mexicanismos'?",
+    "suggestedAnswer": "Academia Mexicana de la Lengua."
+  },
+  {
+    "id": 65,
+    "name": "Lexicografía diferencial",
+    "category": "Tipos de diccionarios",
+    "teoria": "Registra palabras no compartidas por todas las variedades del español. Muy útil para el español de América.",
+    "ejemplo": "Diccionario de Americanismos (ASALE).",
+    "ejercicio": "¿Qué palabra es diferencial para 'autobús' en México?",
+    "suggestedAnswer": "Camión (en México), colectivo (Argentina), guagua (Canarias, Caribe)."
+  },
+  {
+    "id": 66,
+    "name": "Unidades fraseológicas",
+    "category": "Lexicografía",
+    "teoria": "Combinaciones fijas de palabras (refranes, locuciones, frases proverbiales) incluidas en diccionarios.",
+    "ejemplo": "A caballo regalado no le mires el diente.",
+    "ejercicio": "¿Qué es un refrán?",
+    "suggestedAnswer": "Enunciado popular de carácter sentencioso."
+  },
+  {
+    "id": 67,
+    "name": "Acotación de uso en diccionarios",
+    "category": "Marcas lexicográficas",
+    "teoria": "Indicaciones sobre el ámbito de uso: 'Quím.', 'Med.', 'Inform.', 'Mús.'.",
+    "ejemplo": "Algoritmo (Inform.), catálisis (Quím.).",
+    "ejercicio": "¿Qué significa la abreviatura 'Der.'?",
+    "suggestedAnswer": "Derecho."
+  },
+  {
+    "id": 68,
+    "name": "Lexicografía de corpus vs lexicografía tradicional",
+    "category": "Lexicografía computacional",
+    "teoria": "La lexicografía moderna se basa en corpus, no solo en la intuición del lexicógrafo.",
+    "ejemplo": "El Diccionario Clave utilizó corpus.",
+    "ejercicio": "Ventaja del corpus sobre la intuición.",
+    "suggestedAnswer": "Mayor objetividad y registro de usos reales."
+  },
+  {
+    "id": 69,
+    "name": "Diccionario de colores del español",
+    "category": "Tipos de diccionarios",
+    "teoria": "Atlas léxico que muestra variación geográfica de las palabras con mapas.",
+    "ejemplo": "Proyecto 'Variación léxica del español'.",
+    "ejercicio": "¿Cómo se dice 'palomitas de maíz' en Argentina?",
+    "suggestedAnswer": "Pochoclo."
+  },
+  {
+    "id": 70,
+    "name": "Neología y bancos de neologismos",
+    "category": "Lexicografía contemporánea",
+    "teoria": "Observatorios de palabras nuevas que pueden incorporarse a diccionarios.",
+    "ejemplo": "Observatorio de Neologismos de la RAE.",
+    "ejercicio": "Ejemplo de neologismo de 2023.",
+    "suggestedAnswer": "ChatGPT, metaverso."
+  },
+  {
+    "id": 71,
+    "name": "Préstamos del inglés en el español actual",
+    "category": "Lexicografía contemporánea",
+    "teoria": "Impacto del inglés en el léxico español, especialmente en tecnología, negocios y cultura pop.",
+    "ejemplo": "Marketing, web, email.",
+    "ejercicio": "Reemplaza 'feedback' por una palabra española.",
+    "suggestedAnswer": "Retroalimentación."
+  },
+  {
+    "id": 72,
+    "name": "Anglicismo crudo vs adaptado",
+    "category": "Formación de palabras",
+    "teoria": "Anglicismo crudo: se mantiene la forma original (software). Adaptado: se hispaniza (chatear, champú).",
+    "ejemplo": "Chatear (adaptado), cool (crudo).",
+    "ejercicio": "¿Es anglicismo crudo 'blockbuster'?",
+    "suggestedAnswer": "Sí, se usa sin adaptación."
+  },
+  {
+    "id": 73,
+    "name": "Diccionario de dudas panhispánico",
+    "category": "Tipos de diccionarios",
+    "teoria": "Resuelve cuestiones de uso, ortografía y gramática desde la perspectiva panhispánica, considerando variantes.",
+    "ejemplo": "Diccionario Panhispánico de Dudas (2005).",
+    "ejercicio": "¿Qué entrada buscarías para 'solo' sin tilde?",
+    "suggestedAnswer": "solo (adverbio)."
+  },
+  {
+    "id": 74,
+    "name": "Diccionario ortográfico",
+    "category": "Tipos de diccionarios",
+    "teoria": "Recoge normas de escritura, acentuación y puntuación.",
+    "ejemplo": "Ortografía de la lengua española (RAE).",
+    "ejercicio": "¿Cuándo se tilda 'guion'?",
+    "suggestedAnswer": "Actualmente no lleva tilde por ser monosílaba a efectos ortográficos."
+  },
+  {
+    "id": 75,
+    "name": "Valor de los ejemplos de autoridad en lexicografía",
+    "category": "Historia de la lexicografía",
+    "teoria": "Uso de citas de escritores reconocidos para avalar definiciones.",
+    "ejemplo": "En el Diccionario de Autoridades se usaban citas de Cervantes, Quevedo.",
+    "ejercicio": "¿Qué escritor es el más citado en ese diccionario?",
+    "suggestedAnswer": "Cervantes."
+  },
+  {
+    "id": 76,
+    "name": "Lexicografía y feminismo: lenguaje inclusivo",
+    "category": "Lexicografía contemporánea",
+    "teoria": "Debate sobre la inclusión de formas femeninas de profesiones (médica, jueza) y uso de desdoblamientos (los y las).",
+    "ejemplo": "La RAE ya incluye 'médica', 'jueza'.",
+    "ejercicio": "¿Qué término incluyó la RAE para 'presidenta'?",
+    "suggestedAnswer": "Ya existía, pero se popularizó."
+  },
+  {
+    "id": 77,
+    "name": "Lexicografía y tecnología: APIs",
+    "category": "Lexicografía computacional",
+    "teoria": "API de diccionarios permite consultas automáticas desde aplicaciones y asistentes de voz.",
+    "ejemplo": "API de la RAE (dlere-api).",
+    "ejercicio": "Ventaja de una API para desarrolladores.",
+    "suggestedAnswer": "Integración en apps educativas o correctores ortográficos."
+  },
+  {
+    "id": 78,
+    "name": "Diccionario de pronunciación",
+    "category": "Tipos de diccionarios",
+    "teoria": "Indica la pronunciación correcta de las palabras, usando AFI o transcripción fonética simplificada.",
+    "ejemplo": "Diccionario de pronunciación del español.",
+    "ejercicio": "¿Cómo se representa la 'ñ' en AFI?",
+    "suggestedAnswer": "[ɲ]."
+  },
+  {
+    "id": 79,
+    "name": "Diccionario de siglas y abreviaturas",
+    "category": "Tipos de diccionarios",
+    "teoria": "Repertorio de siglas (ONU, RAE) y abreviaturas (etc., pág.) con su significado.",
+    "ejemplo": "Diccionario de siglas de la RAE.",
+    "ejercicio": "¿Qué significa 'ONU'?",
+    "suggestedAnswer": "Organización de las Naciones Unidas."
+  },
+  {
+    "id": 80,
+    "name": "Diccionario de gentilicios",
+    "category": "Tipos de diccionarios",
+    "teoria": "Lista de nombres de habitantes por lugar geográfico.",
+    "ejemplo": "Gentilicio de Madrid: madrileño.",
+    "ejercicio": "Gentilicio de Buenos Aires.",
+    "suggestedAnswer": "Porteño."
+  },
+  {
+    "id": 81,
+    "name": "Diccionario de topónimos",
+    "category": "Tipos de diccionarios",
+    "teoria": "Nombres de lugares con su pronunciación y origen.",
+    "ejemplo": "Diccionario de topónimos españoles.",
+    "ejercicio": "Origen del nombre 'México'.",
+    "suggestedAnswer": "Náhuatl 'Mexihco'."
+  },
+  {
+    "id": 82,
+    "name": "Diccionario de personajes célebres",
+    "category": "Tipos de diccionarios",
+    "teoria": "Compendio biográfico de personajes históricos y contemporáneos.",
+    "ejemplo": "Diccionario biográfico español.",
+    "ejercicio": "¿Qué personaje incluiría un diccionario de escritores hispanoamericanos?",
+    "suggestedAnswer": "Gabriel García Márquez, Jorge Luis Borges."
+  },
+  {
+    "id": 83,
+    "name": "Diccionario de refranes",
+    "category": "Tipos de diccionarios",
+    "teoria": "Recopilación de dichos populares con explicación de su significado.",
+    "ejemplo": "Diccionario de refranes de la RAE.",
+    "ejercicio": "Significado de 'El que mucho abarca, poco aprieta'.",
+    "suggestedAnswer": "Quien intenta hacer demasiado, no logra nada bien."
+  },
+  {
+    "id": 84,
+    "name": "Lexicografía y redes sociales",
+    "category": "Lexicografía contemporánea",
+    "teoria": "Impacto del lenguaje de internet (memes, hashtags) en el léxico.",
+    "ejemplo": "Palabras como 'selfi', 'tuit', 'influencer'.",
+    "ejercicio": "¿Qué es un 'emoji' en lexicografía?",
+    "suggestedAnswer": "Pictograma usado en mensajes digitales, no palabra, pero algunos diccionarios los incluyen."
+  },
+  {
+    "id": 85,
+    "name": "Diccionario de sinónimos justos",
+    "category": "Tipos de diccionarios",
+    "teoria": "Sinónimos contextuales que marcan diferencias de matiz.",
+    "ejemplo": "El Diccionario de sinónimos de VOX.",
+    "ejercicio": "Diferencia entre 'rápido' y 'veloz'.",
+    "suggestedAnswer": "Veloz sugiere más agilidad."
+  },
+  {
+    "id": 86,
+    "name": "Diccionario de colocaciones combinatorias",
+    "category": "Tipos de diccionarios",
+    "teoria": "Muestra combinaciones probables de palabras (colocaciones).",
+    "ejemplo": "Diccionario de colocaciones de Bosque.",
+    "ejercicio": "Colocación de 'estrella' con 'brillante'.",
+    "suggestedAnswer": "Estrella brillante, estrella fugaz."
+  },
+  {
+    "id": 87,
+    "name": "Lexicografía de la lengua de signos",
+    "category": "Tipos de diccionarios",
+    "teoria": "Diccionarios visuales de lenguas de señas usadas por comunidades sordas.",
+    "ejemplo": "Diccionario de Lengua de Señas Mexicana.",
+    "ejercicio": "¿Qué tipo de representación usan?",
+    "suggestedAnswer": "Vídeos o dibujos de señas."
+  },
+  {
+    "id": 88,
+    "name": "Diccionario de dificultades",
+    "category": "Tipos de diccionarios",
+    "teoria": "Atiende a palabras problemáticas: homófonas, parónimas, etc.",
+    "ejemplo": "Diccionario de dificultades de Manuel Seco.",
+    "ejercicio": "Diferencia entre 'absorber' y 'absorver'.",
+    "suggestedAnswer": "La forma correcta es 'absorber'."
+  },
+  {
+    "id": 89,
+    "name": "Diccionario de uso de María Moliner",
+    "category": "Historia de la lexicografía",
+    "teoria": "Obra maestra de lexicografía del español realizada por una sola persona, con ordenación por familias léxicas.",
+    "ejemplo": "Incluye sinónimos, ejemplos de uso y gran riqueza.",
+    "ejercicio": "¿Cuándo se publicó el Diccionario de Uso?",
+    "suggestedAnswer": "Primera edición 1966-1967."
+  },
+  {
+    "id": 90,
+    "name": "Corpus de referencia del español actual (CREA)",
+    "category": "Lexicografía computacional",
+    "teoria": "Corpus de la RAE con 100 millones de formas, para estudios lingüísticos.",
+    "ejemplo": "Se usa para extraer frecuencias y ejemplos.",
+    "ejercicio": "¿Qué ventajas ofrece?",
+    "suggestedAnswer": "Muestra el uso real del español de los últimos 25 años."
+  },
+  {
+    "id": 91,
+    "name": "Diccionario de nuevas formas de cortesía",
+    "category": "Lexicografía contemporánea",
+    "teoria": "Adaptación de los diccionarios a cambios sociales (ej. lenguaje no sexista).",
+    "ejemplo": "Inclusión de 'compañere' no ha sido aceptada.",
+    "ejercicio": "¿Se incluyen formas con 'e' en la RAE?",
+    "suggestedAnswer": "No, todavía no están aceptadas como normativas."
+  },
+  {
+    "id": 92,
+    "name": "Lexicografía especializada: diccionarios técnicos",
+    "category": "Tipos de diccionarios",
+    "teoria": "Vocabulario de campos específicos (medicina, derecho, informática).",
+    "ejemplo": "Diccionario de términos médicos de la OMS.",
+    "ejercicio": "¿Dónde se definen conceptos como 'bit'?",
+    "suggestedAnswer": "Diccionario de informática."
+  },
+  {
+    "id": 93,
+    "name": "Marcas de desaprobación o despectivo",
+    "category": "Marcas lexicográficas",
+    "teoria": "Indican carga negativa (despect., peyor.).",
+    "ejemplo": "Bocachancla (despect.)",
+    "ejercicio": "Define 'chupacirios' (marca).",
+    "suggestedAnswer": "Despectivo para referirse a persona muy devota."
+  },
+  {
+    "id": 94,
+    "name": "Diccionario de eufemismos",
+    "category": "Tipos de diccionarios",
+    "teoria": "Recopila expresiones sustitutivas de términos tabú (muerte, sexo, discapacidad).",
+    "ejemplo": "Pasar a mejor vida (morir).",
+    "ejercicio": "Eufemismo para 'despido'.",
+    "suggestedAnswer": "Reestructuración de personal."
+  },
+  {
+    "id": 95,
+    "name": "Lexicografía diacrónica: el Nuevo Diccionario Histórico del Español",
+    "category": "Historia de la lexicografía",
+    "teoria": "Proyecto de la RAE que documenta la evolución del léxico desde los orígenes hasta hoy.",
+    "ejemplo": "Incorporará citas digitalizadas.",
+    "ejercicio": "¿Qué ventaja tiene sobre el Diccionario de Autoridades?",
+    "suggestedAnswer": "Mayor cobertura temporal y tecnología."
+  },
+  {
+    "id": 96,
+    "name": "Diccionario de la RAE en su versión 23 (2014)",
+    "category": "Historia de la lexicografía",
+    "teoria": "Incluye americanismos y panhispanismo, además de novedades léxicas.",
+    "ejemplo": "Aceptó 'amazonense', 'chile', 'tuit'.",
+    "ejercicio": "¿Qué palabra se añadió en 2014?",
+    "suggestedAnswer": "Cacharrear, chatbot (más reciente)."
+  },
+  {
+    "id": 97,
+    "name": "Diccionario de unidades fraseológicas del español",
+    "category": "Tipos de diccionarios",
+    "teoria": "Catálogo de locuciones, modismos, refranes y coloquialismos.",
+    "ejemplo": "Diccionario fraseológico del español.",
+    "ejercicio": "Ejemplo de frase hecha con 'gato'.",
+    "suggestedAnswer": "Hay gato encerrado."
+  },
+  {
+    "id": 98,
+    "name": "Lexicografía y análisis de sentimiento",
+    "category": "Lexicografía computacional",
+    "teoria": "Uso de diccionarios para determinar polaridad de palabras (positiva, negativa).",
+    "ejemplo": "Diccionario de sentimientos para análisis de opiniones.",
+    "ejercicio": "¿Qué polaridad tiene 'excelente'?",
+    "suggestedAnswer": "Positiva."
+  },
+  {
+    "id": 99,
+    "name": "Diccionario de coloquialismos hispanoamericanos",
+    "category": "Tipos de diccionarios",
+    "teoria": "Registro de expresiones populares no formales, por países.",
+    "ejemplo": "'Chévere' (Colombia, Venezuela), 'bacán' (Perú, Chile).",
+    "ejercicio": "Significado de 'pana' en Venezuela.",
+    "suggestedAnswer": "Amigo, colega."
+  },
+  {
+    "id": 100,
+    "name": "Futuro de la lexicografía",
+    "category": "Lexicografía contemporánea",
+    "teoria": "Diccionarios inteligentes, integración con IA, realidad aumentada, y personalización de contenidos.",
+    "ejemplo": "Asistentes de voz que consultan diccionarios dinámicamente.",
+    "ejercicio": "¿Qué novedades se esperan?",
+    "suggestedAnswer": "Integración con traductores, aprendizaje automático para detectar neologismos."
+  }
+]

@@ -1,0 +1,899 @@
+[
+  {
+    "id": 1,
+    "name": "Constituyente sintáctico",
+    "category": "Conceptos básicos",
+    "teoria": "Unidad que forma un grupo dentro de una oración (sintagma). Se puede desplazar o sustituir como un bloque.",
+    "ejemplo": "En 'El niño come manzanas', 'El niño' es un constituyente (sintagma nominal).",
+    "ejercicio": "¿Cuál es el constituyente verbal en 'María estudia todos los días'?",
+    "suggestedAnswer": "estudia todos los días (sintagma verbal)."
+  },
+  {
+    "id": 2,
+    "name": "Sintagma nominal (SN)",
+    "category": "Sintagmas",
+    "teoria": "Estructura cuyo núcleo es un sustantivo o pronombre. Puede incluir determinantes, adjetivos y complementos.",
+    "ejemplo": "El perro grande de mi vecino.",
+    "ejercicio": "Identifica el núcleo del SN 'Los hermosos paisajes naturales'.",
+    "suggestedAnswer": "paisajes."
+  },
+  {
+    "id": 3,
+    "name": "Sintagma verbal (SV)",
+    "category": "Sintagmas",
+    "teoria": "Estructura cuyo núcleo es un verbo. Puede llevar complementos directo, indirecto, circunstanciales, etc.",
+    "ejemplo": "Compró un libro en la librería.",
+    "ejercicio": "¿Cuál es el núcleo del SV 'ha estado lloviendo mucho'?",
+    "suggestedAnswer": "ha estado lloviendo (verbo compuesto)."
+  },
+  {
+    "id": 4,
+    "name": "Sintagma adjetival (SAdj)",
+    "category": "Sintagmas",
+    "teoria": "Estructura cuyo núcleo es un adjetivo, puede llevar modificadores (muy, bastante) y complementos.",
+    "ejemplo": "Muy interesante para todos.",
+    "ejercicio": "Señala el núcleo de 'bastante alto'.",
+    "suggestedAnswer": "alto."
+  },
+  {
+    "id": 5,
+    "name": "Sintagma preposicional (SPrep)",
+    "category": "Sintagmas",
+    "teoria": "Estructura formada por preposición + sintagma nominal (término).",
+    "ejemplo": "En la casa, con mi amigo.",
+    "ejercicio": "¿Cuál es el término del SPrep 'sin prisa'?",
+    "suggestedAnswer": "prisa."
+  },
+  {
+    "id": 6,
+    "name": "Sintagma adverbial (SAdv)",
+    "category": "Sintagmas",
+    "teoria": "Núcleo es un adverbio, puede tener modificadores (muy, más).",
+    "ejemplo": "Muy cerca, más lejos.",
+    "ejercicio": "Identifica el núcleo de 'bastante mal'.",
+    "suggestedAnswer": "mal."
+  },
+  {
+    "id": 7,
+    "name": "Núcleo sintáctico",
+    "category": "Estructura de frase",
+    "teoria": "Palabra que determina la categoría del sintagma y sus propiedades de concordancia.",
+    "ejemplo": "En 'SN: la casa', el núcleo es 'casa'; en 'SV: come pan', el núcleo es 'come'.",
+    "ejercicio": "¿Cuál es el núcleo de 'estudiosamente callado'?",
+    "suggestedAnswer": "callado (núcleo del SAdj)."
+  },
+  {
+    "id": 8,
+    "name": "Especificador",
+    "category": "Estructura de frase",
+    "teoria": "Elemento que aparece en la posición de especificador (Spec) del sintagma. En SN, los determinantes; en SV, los sujetos; en SComp, complementantes.",
+    "ejemplo": "El (det) especifica al SN 'el libro'.",
+    "ejercicio": "¿Cuál es el especificador en 'muchos libros'?",
+    "suggestedAnswer": "muchos (cuantificador)."
+  },
+  {
+    "id": 9,
+    "name": "Complemento (adjunto)",
+    "category": "Estructura de frase",
+    "teoria": "Elemento que modifica al núcleo y puede ser opcional (adjunto) o requerido (complemento argumental).",
+    "ejemplo": "En 'poner el libro en la mesa', 'en la mesa' es complemento circunstancial (adjunto).",
+    "ejercicio": "¿Es adjunto o complemento argumental 'de matemáticas' en 'el profesor de matemáticas'?",
+    "suggestedAnswer": "Complemento argumental (modifica al sustantivo, es requerido)."
+  },
+  {
+    "id": 10,
+    "name": "Estructura jerárquica",
+    "category": "Teoría estructural",
+    "teoria": "Las oraciones se representan como árboles sintácticos con nodos ramificados (constituyentes inmediatos).",
+    "ejemplo": "SN → Det N; SV → V SN.",
+    "ejercicio": "Dibuja mentalmente la estructura de 'El perro ladra'.",
+    "suggestedAnswer": "Oración con SN (El perro) y SV (ladra)."
+  },
+  {
+    "id": 11,
+    "name": "Regla de reescritura",
+    "category": "Gramática generativa (estructural)",
+    "teoria": "Regla que expande un símbolo no terminal en una secuencia de símbolos (Ej: O → SN SV).",
+    "ejemplo": "SN → (Det) (Adj) N (SPrep).",
+    "ejercicio": "Escribe una regla de reescritura para SV.",
+    "suggestedAnswer": "SV → V (SN) (SPrep) (SAdv)."
+  },
+  {
+    "id": 12,
+    "name": "Sujeto",
+    "category": "Funciones oracionales",
+    "teoria": "Constituyente que concuerda con el verbo en persona y número; suele ser el agente o el tema de la oración.",
+    "ejemplo": "El niño duerme.",
+    "ejercicio": "¿Cuál es el sujeto de 'Me duele la cabeza'?",
+    "suggestedAnswer": "la cabeza (sujeto paciente)."
+  },
+  {
+    "id": 13,
+    "name": "Predicado",
+    "category": "Funciones oracionales",
+    "teoria": "Lo que se dice del sujeto; núcleo verbal más sus complementos.",
+    "ejemplo": "En 'Juan corre rápido', 'corre rápido' es el predicado.",
+    "ejercicio": "Extrae el predicado de 'Ayer llovió mucho'.",
+    "suggestedAnswer": "llovió mucho."
+  },
+  {
+    "id": 14,
+    "name": "Complemento directo (CD)",
+    "category": "Funciones oracionales",
+    "teoria": "Sintagma nominal que recibe directamente la acción del verbo; se reconoce con la pregunta '¿qué?'.",
+    "ejemplo": "Leo un libro.",
+    "ejercicio": "Señala el CD en 'Vi a tu hermana'.",
+    "suggestedAnswer": "a tu hermana (CD de persona)."
+  },
+  {
+    "id": 15,
+    "name": "Complemento indirecto (CI)",
+    "category": "Funciones oracionales",
+    "teoria": "Destinatario o beneficiario de la acción; responde a '¿a quién?' o '¿para quién?'.",
+    "ejemplo": "Regalé un libro a mi amigo.",
+    "ejercicio": "Extrae el CI de 'Les dije la verdad a los niños'.",
+    "suggestedAnswer": "a los niños."
+  },
+  {
+    "id": 16,
+    "name": "Complemento circunstancial (CC)",
+    "category": "Funciones oracionales",
+    "teoria": "Indica lugar, tiempo, modo, causa, etc.; es adjunto (opcional).",
+    "ejemplo": "Vivo en Madrid (CC Lugar).",
+    "ejercicio": "Clasifica 'durante la noche' en 'Llovió durante la noche'.",
+    "suggestedAnswer": "CC Tiempo."
+  },
+  {
+    "id": 17,
+    "name": "Complemento de régimen (CRég)",
+    "category": "Funciones oracionales",
+    "teoria": "Complemento preposicional exigido por el verbo (verbos preposicionales).",
+    "ejemplo": "Me acuerdo de ti.",
+    "ejercicio": "¿Cuál es el CRég en 'Depende de la situación'?",
+    "suggestedAnswer": "de la situación."
+  },
+  {
+    "id": 18,
+    "name": "Atributo (en oraciones copulativas)",
+    "category": "Funciones oracionales",
+    "teoria": "Complemento de verbos copulativos (ser, estar, parecer) que expresa cualidad o estado del sujeto.",
+    "ejemplo": "Juan es inteligente.",
+    "ejercicio": "Identifica el atributo en 'La casa está limpia'.",
+    "suggestedAnswer": "limpia."
+  },
+  {
+    "id": 19,
+    "name": "Complemento predicativo",
+    "category": "Funciones oracionales",
+    "teoria": "Complemento que modifica al sujeto o al CD y concuerda en género y número.",
+    "ejemplo": "Los niños llegaron cansados (predicativo del sujeto).",
+    "ejercicio": "Señala el predicativo en 'Compré el coche usado'.",
+    "suggestedAnswer": "usado (predicativo del CD)."
+  },
+  {
+    "id": 20,
+    "name": "Oración simple",
+    "category": "Tipos de oraciones",
+    "teoria": "Una sola estructura de predicado (un verbo conjugado).",
+    "ejemplo": "El niño juega en el parque.",
+    "ejercicio": "¿Por qué 'Ven y verás' se considera oración compuesta?",
+    "suggestedAnswer": "Tiene dos verbos conjugados (ven y verás)."
+  },
+  {
+    "id": 21,
+    "name": "Oración compuesta (coordinación)",
+    "category": "Tipos de oraciones",
+    "teoria": "Dos o más oraciones unidas por conjunciones coordinantes (y, pero, o, ni, etc.).",
+    "ejemplo": "Estudia, pero no aprueba.",
+    "ejercicio": "¿Qué tipo de coordinación hay en 'Corrió y ganó'?",
+    "suggestedAnswer": "Copulativa."
+  },
+  {
+    "id": 22,
+    "name": "Oración compuesta (subordinación)",
+    "category": "Tipos de oraciones",
+    "teoria": "Una oración principal y una o más subordinadas (dependientes).",
+    "ejemplo": "Quiero que vengas.",
+    "ejercicio": "Señala la subordinada en 'El libro que leí es bueno'.",
+    "suggestedAnswer": "que leí (adjetiva)."
+  },
+  {
+    "id": 23,
+    "name": "Oración subordinada sustantiva",
+    "category": "Subordinación",
+    "teoria": "Proposición que funciona como sustantivo (sujeto, CD, etc.). Introducida por 'que', 'si', interrogativos.",
+    "ejemplo": "Espero que apruebes (CD).",
+    "ejercicio": "¿Qué función tiene 'que vengas' en 'Es necesario que vengas'?",
+    "suggestedAnswer": "Sujeto."
+  },
+  {
+    "id": 24,
+    "name": "Oración subordinada adjetiva (de relativo)",
+    "category": "Subordinación",
+    "teoria": "Equivale a un adjetivo, modifica a un sustantivo antecedente. Introducida por que, quien, el cual, cuyo, etc.",
+    "ejemplo": "La casa que compramos es grande.",
+    "ejercicio": "Señala el antecedente en 'El niño cuyo padre es médico'.",
+    "suggestedAnswer": "El niño."
+  },
+  {
+    "id": 25,
+    "name": "Oración subordinada adverbial",
+    "category": "Subordinación",
+    "teoria": "Equivale a un adverbio: expresa tiempo, lugar, modo, causa, condición, concesión, finalidad, etc.",
+    "ejemplo": "Salgo cuando tú llegas (tiempo).",
+    "ejercicio": "Clasifica 'Estudia para que apruebes'.",
+    "suggestedAnswer": "Final."
+  },
+  {
+    "id": 26,
+    "name": "Estructura profunda vs estructura superficial",
+    "category": "Gramática generativa transformacional (GGT)",
+    "teoria": "La estructura profunda es el nivel subyacente de significado; la estructura superficial es la forma final tras aplicar transformaciones.",
+    "ejemplo": "Activa y pasiva comparten estructura profunda: 'Juan lee el libro' → 'El libro es leído por Juan'.",
+    "ejercicio": "¿Qué transformación convierte 'María lava los platos' en 'Los platos son lavados por María'?",
+    "suggestedAnswer": "Pasiva."
+  },
+  {
+    "id": 27,
+    "name": "Transformación de pasiva",
+    "category": "Transformaciones",
+    "teoria": "Regla que convierte una oración activa en pasiva: mueve el CD a sujeto, el sujeto a agente (por) y añade el verbo ser + participio.",
+    "ejemplo": "Activa: El viento rompió la rama. Pasiva: La rama fue rota por el viento.",
+    "ejercicio": "Aplica la transformación pasiva a 'Los niños construyeron el castillo'.",
+    "suggestedAnswer": "El castillo fue construido por los niños."
+  },
+  {
+    "id": 28,
+    "name": "Movimiento de constituyente (Wh-movement)",
+    "category": "Transformaciones",
+    "teoria": "Desplazamiento de un constituyente interrogativo (qué, quién, cómo) al inicio de la oración en preguntas.",
+    "ejemplo": "Subyacente: 'Tú has visto qué' → Superficial: '¿Qué has visto?'.",
+    "ejercicio": "Aplica movimiento Wh a 'María compró qué'.",
+    "suggestedAnswer": "¿Qué compró María?"
+  },
+  {
+    "id": 29,
+    "name": "Huella (trace)",
+    "category": "GGT",
+    "teoria": "Marca en la posición original del constituyente movido, representada como t.",
+    "ejemplo": "¿Qué compraste t?",
+    "ejercicio": "Indica la huella en '¿A quién llamaste t?'.",
+    "suggestedAnswer": "t después de llamaste."
+  },
+  {
+    "id": 30,
+    "name": "Movimiento de núcleo",
+    "category": "GGT",
+    "teoria": "Desplazamiento del verbo o de otro núcleo a una posición más alta (ej. inversión verbo-sujeto).",
+    "ejemplo": "¿Ha llegado Juan? (movimiento de 'ha' al nodo Comp).",
+    "ejercicio": "¿Qué movimiento se da en 'Come frutas Juan' (inversión)?",
+    "suggestedAnswer": "Movimiento de V a C (en español las interrogativas)."
+  },
+  {
+    "id": 31,
+    "name": "Subida de clíticos (clitic climbing)",
+    "category": "Transformaciones",
+    "teoria": "Los pronombres átonos (me, te, se, lo) pueden subir desde un verbo subordinado al principal en perífrasis.",
+    "ejemplo": "Lo quiero ver (en lugar de 'quiero verlo').",
+    "ejercicio": "Reescribe 'Puedo hacerlo' con subida de clítico.",
+    "suggestedAnswer": "Lo puedo hacer."
+  },
+  {
+    "id": 32,
+    "name": "Rección (teoría de la rección)",
+    "category": "Teoría de la rección y el ligamiento (GB)",
+    "teoria": "Un núcleo (verbo, preposición, etc.) rige a su complemento si está en posición de ser regido (c‑mando).",
+    "ejemplo": "El verbo 'ver' rige a su complemento 'a Juan'.",
+    "ejercicio": "¿Qué núcleo rige el complemento 'de la verdad' en 'habló de la verdad'?",
+    "suggestedAnswer": "El verbo 'habló' (régimen preposicional)."
+  },
+  {
+    "id": 33,
+    "name": "C‑mando (c‑command)",
+    "category": "Teoría de la rección y el ligamiento",
+    "teoria": "Relación estructural entre nodos en un árbol sintáctico: A c‑manda a B si el primer nodo ramificante que domina a A también domina a B.",
+    "ejemplo": "En [SN Juan] [SV [V ve] [SN a María]], 'Juan' c‑manda a 'María'? No es directo.",
+    "ejercicio": "Usa c‑mando para explicar la anáfora en 'Juan se peina'.",
+    "suggestedAnswer": "El sujeto c‑manda al clítico anafórico 'se'."
+  },
+  {
+    "id": 34,
+    "name": "Principio A (teoría del ligamiento)",
+    "category": "Teoría de la rección y el ligamiento",
+    "teoria": "Los anafóricos (se, sí mismo) deben estar ligados en su categoría rectora (oración).",
+    "ejemplo": "Juan se peina (ligado por Juan). *A Juan se peina (no ligado).",
+    "ejercicio": "¿Por qué es agramatical 'Ella se vio' como reflexivo?",
+    "suggestedAnswer": "Anafórico 'se' requiere antecedente en la misma oración; 'ella' es el antecedente y lo liga."
+  },
+  {
+    "id": 35,
+    "name": "Principio B",
+    "category": "Teoría del ligamiento",
+    "teoria": "Los pronombres personales (él, ella, etc.) no pueden estar ligados en su categoría rectora.",
+    "ejemplo": "*Juan lo vio (si 'lo' refiere a Juan). Correcto: Juan lo vio a él (con antecedente fuera).",
+    "ejercicio": "Corrige '*Él se peina a sí mismo'.",
+    "suggestedAnswer": "Él se peina (reflexivo) o 'Él lo peina' (pronombre no reflexivo)."
+  },
+  {
+    "id": 36,
+    "name": "Principio C",
+    "category": "Teoría del ligamiento",
+    "teoria": "Las expresiones referenciales (nombres propios, descripciones) no pueden estar ligadas.",
+    "ejemplo": "*Él vino con Juan (si 'él' = Juan). Correcto: Juan vino con él.",
+    "ejercicio": "¿Por qué es incorrecto 'Juan lo dijo a Juan'?",
+    "suggestedAnswer": "El segundo 'Juan' es una expresión referencial que no puede ser ligada por el pronombre 'lo'."
+  },
+  {
+    "id": 37,
+    "name": "Caso nominal y acusativo",
+    "category": "Teoría del caso",
+    "teoria": "Los SN necesitan recibir caso (nominativo para sujeto, acusativo para CD, etc.). Las preposiciones también asignan caso.",
+    "ejemplo": "El sujeto recibe caso nominativo del verbo flexionado.",
+    "ejercicio": "¿Por qué 'Me gusta Juan' tiene 'me' en dativo?",
+    "suggestedAnswer": "'Gustar' asigna caso dativo al experimentante."
+  },
+  {
+    "id": 38,
+    "name": "Parámetro pro‑drop (sujeto nulo)",
+    "category": "Gramática comparada",
+    "teoria": "El español permite omitir el sujeto (sujeto nulo o pro), a diferencia del inglés (parámetro pro‑drop).",
+    "ejemplo": "(Yo) como manzanas. En inglés, '*Eat apples' es agramatical.",
+    "ejercicio": "¿Qué evidencia apoya que el español es pro‑drop?",
+    "suggestedAnswer": "Las oraciones impersonales con 'se' y la ausencia de sujeto explícito en muchos contextos."
+  },
+  {
+    "id": 39,
+    "name": "Marca de concordancia en flexión",
+    "category": "Morfosintaxis",
+    "teoria": "La flexión verbal codifica persona y número, permitiendo la identificación del sujeto nulo.",
+    "ejemplo": "En 'Cantamos', la desinencia '-mos' indica sujeto 'nosotros'.",
+    "ejercicio": "¿Qué persona se infiere de 'Cantabas' sin sujeto?",
+    "suggestedAnswer": "Tú (segunda persona singular)."
+  },
+  {
+    "id": 40,
+    "name": "Oraciones interrogativas directas",
+    "category": "Oraciones",
+    "teoria": "Preguntas que se formulan directamente; pueden ser totales (sí/no) o parciales (con pronombre interrogativo).",
+    "ejemplo": "¿Vienes? (total); ¿Qué quieres? (parcial).",
+    "ejercicio": "¿Qué tipo de interrogativa es '¿Dónde está la estación?'?",
+    "suggestedAnswer": "Parcial (Wh)."
+  },
+  {
+    "id": 41,
+    "name": "Oraciones exclamativas",
+    "category": "Oraciones",
+    "teoria": "Expresan emoción con entonación exclamativa y a menudo con adverbios o determinantes exclamativos (qué, cuánto).",
+    "ejemplo": "¡Qué bonito!",
+    "ejercicio": "Transforma 'Es muy grande' en exclamativa con 'qué'.",
+    "suggestedAnswer": "¡Qué grande es!"
+  },
+  {
+    "id": 42,
+    "name": "Oraciones imperativas",
+    "category": "Oraciones",
+    "teoria": "Expresan mandato, ruego o consejo. El verbo suele estar en imperativo o en subjuntivo (para negativo o cortesía).",
+    "ejemplo": "Ven aquí. No vengas.",
+    "ejercicio": "¿Qué modo se usa para imperativo negativo?",
+    "suggestedAnswer": "Subjuntivo (presente)."
+  },
+  {
+    "id": 43,
+    "name": "Estructura de la frase determinante (FD)",
+    "category": "Sintaxis extendida",
+    "teoria": "El sintagma nominal se analiza como un sintagma determinante (FD) con el determinante como núcleo, que lleva un SN complemento.",
+    "ejemplo": "[FD El [SN libro]].",
+    "ejercicio": "¿Cuál es el núcleo del FD 'Estos'?",
+    "suggestedAnswer": "Estos (determinante demostrativo)."
+  },
+  {
+    "id": 44,
+    "name": "Complemento del determinante",
+    "category": "Sintaxis extendida",
+    "teoria": "El determinante puede tener un complemento que sea una frase preposicional o una oración de relativo.",
+    "ejemplo": "El libro de gramática [FD El [SN [libro] [SPrep de gramática]]].",
+    "ejercicio": "Analiza el complemento del determinante en 'Aquellos que estudian'.",
+    "suggestedAnswer": "'que estudian' es cláusula de relativo complemento del determinante 'aquellos'."
+  },
+  {
+    "id": 45,
+    "name": "Estructura de la frase temporal (FT)",
+    "category": "Sintaxis extendida",
+    "teoria": "La oración se representa como una FT (frase de tiempo) encabezada por el rasgo Tiempo (flexión), con un SV como complemento.",
+    "ejemplo": "[FT Tiempo [SV ...]].",
+    "ejercicio": "¿Qué núcleo de FT contiene las marcas de tiempo y concordancia?",
+    "suggestedAnswer": "El rasgo T (tiempo)."
+  },
+  {
+    "id": 46,
+    "name": "Frase Complementante (FC)",
+    "category": "Sintaxis extendida",
+    "teoria": "Estructura que introduce oraciones subordinadas, con un complementante (que, si) en el núcleo.",
+    "ejemplo": "[FC Que [FT venga]].",
+    "ejercicio": "¿Cuál es el complementante en 'Pregunto si vendrá'?",
+    "suggestedAnswer": "si."
+  },
+  {
+    "id": 47,
+    "name": "Movimiento del verbo a Tiempo",
+    "category": "Teoría del movimiento",
+    "teoria": "En español, el verbo se mueve desde su posición en SV hasta el núcleo T para recoger los rasgos de tiempo y concordancia.",
+    "ejemplo": "En '[FT Juan [T come] [SV t manzanas]]'.",
+    "ejercicio": "¿Por qué 'Juan come' tiene el verbo delante del CD?",
+    "suggestedAnswer": "Porque el verbo subió a T y dejó una huella."
+  },
+  {
+    "id": 48,
+    "name": "Sujeto pospuesto",
+    "category": "Orden de palabras",
+    "teoria": "En español, el sujeto puede aparecer después del verbo (VS), especialmente con verbos inacusativos o en presentación.",
+    "ejemplo": "Llegó Juan. Apareció un fantasma.",
+    "ejercicio": "¿En qué tipo de verbos es más frecuente el sujeto pospuesto?",
+    "suggestedAnswer": "Inacusativos (llegar, ocurrir, nacer)."
+  },
+  {
+    "id": 49,
+    "name": "Construcciones con 'se' (impersonales y medias)",
+    "category": "Sintaxis del español",
+    "teoria": "Se puede usar para formar impersonales (se vive bien) o pasivas reflejas (se venden casas), así como reflexivas y recíprocas.",
+    "ejemplo": "Se alquilan pisos (pasiva refleja).",
+    "ejercicio": "¿Diferencia entre 'Se alquilan pisos' y 'Se vive bien'?",
+    "suggestedAnswer": "Primero pasiva refleja (pisos es sujeto); segundo impersonal (sin sujeto)."
+  },
+  {
+    "id": 50,
+    "name": "Concordancia de sujeto y verbo",
+    "category": "Concordancia",
+    "teoria": "El verbo concuerda en persona y número con el sujeto explícito o tácito.",
+    "ejemplo": "Los niños juegan (plural).",
+    "ejercicio": "¿Concuerda 'La mayoría de los estudiantes está de acuerdo'?",
+    "suggestedAnswer": "Sí, 'mayoría' es singular."
+  },
+  {
+    "id": 51,
+    "name": "Concordancia en oraciones partitivas",
+    "category": "Concordancia",
+    "teoria": "En construcciones partitivas (uno de los, la mayoría de), el verbo puede concordar en singular (con el cuantificador) o en plural (con el plural del complemento).",
+    "ejemplo": "Uno de ellos llegó (singular). / Uno de ellos llegaron (plural, aceptado).",
+    "ejercicio": "¿Cuál es la concordancia más normativa en 'El grupo de estudiantes (llegó/llegaron)'?",
+    "suggestedAnswer": "llegó (singular)."
+  },
+  {
+    "id": 52,
+    "name": "Oraciones relativas explicativas vs especificativas",
+    "category": "Subordinación adjetiva",
+    "teoria": "Explicativas: entre comas, añaden información no restrictiva. Especificativas: sin comas, restringen el antecedente.",
+    "ejemplo": "Los niños, que estaban cansados, durmieron (explicativa). Los niños que estaban cansados durmieron (especificativa).",
+    "ejercicio": "¿Qué tipo de relativa es 'El libro que leí'?",
+    "suggestedAnswer": "Especificativa (no hay comas)."
+  },
+  {
+    "id": 53,
+    "name": "Conectores condicionales (si, en caso de que)",
+    "category": "Subordinación adverbial",
+    "teoria": "Introducen oraciones que expresan condición para que se cumpla la principal.",
+    "ejemplo": "Si estudias, apruebas.",
+    "ejercicio": "¿Qué modo verbal suele usarse después de 'si' condicional?",
+    "suggestedAnswer": "Indicativo (si estudias) o subjuntivo (si vinieras) en contextos hipotéticos."
+  },
+  {
+    "id": 54,
+    "name": "Construcciones concesivas (aunque, a pesar de que)",
+    "category": "Subordinación adverbial",
+    "teoria": "Expresan un obstáculo que no impide que se realice lo principal.",
+    "ejemplo": "Aunque llueva, saldré.",
+    "ejercicio": "¿Cuándo se usa subjuntivo después de 'aunque'?",
+    "suggestedAnswer": "Cuando la concesión es hipotética o dudosa (aunque llueva)."
+  },
+  {
+    "id": 55,
+    "name": "Construcciones finales (para que, a fin de que)",
+    "category": "Subordinación adverbial",
+    "teoria": "Expresan la finalidad o propósito de la acción principal.",
+    "ejemplo": "Estudio para que apruebe.",
+    "ejercicio": "¿Qué modo va después de 'para que'?",
+    "suggestedAnswer": "Subjuntivo."
+  },
+  {
+    "id": 56,
+    "name": "Construcciones causales (porque, ya que, puesto que)",
+    "category": "Subordinación adverbial",
+    "teoria": "Expresan la causa de lo expresado en la principal.",
+    "ejemplo": "Llegó tarde porque perdió el autobús.",
+    "ejercicio": "¿Diferencia entre 'porque' y 'por qué'?",
+    "suggestedAnswer": "Porque (causal), por qué (interrogativo)."
+  },
+  {
+    "id": 57,
+    "name": "Construcciones consecutivas (por tanto, así que, conque)",
+    "category": "Subordinación adverbial",
+    "teoria": "Expresan consecuencia de lo dicho anteriormente.",
+    "ejemplo": "Estudió mucho, así que aprobó.",
+    "ejercicio": "¿Qué conector es más formal: 'por tanto' o 'así que'?",
+    "suggestedAnswer": "Por tanto."
+  },
+  {
+    "id": 58,
+    "name": "Coordinación copulativa (y, e, ni)",
+    "category": "Coordinación",
+    "teoria": "Une elementos sumándolos; 'y' se convierte en 'e' ante palabra que empieza por 'i' o 'hi'.",
+    "ejemplo": "Juan y María. Estudia e investiga.",
+    "ejercicio": "Corrige 'Padre y hijo' si 'hijo' empezara por i? No, es correcto."
+  },
+  {
+    "id": 59,
+    "name": "Coordinación disyuntiva (o, u)",
+    "category": "Coordinación",
+    "teoria": "Expresa alternativa; 'o' se convierte en 'u' ante palabra que empieza por 'o' u 'ho'.",
+    "ejemplo": "¿Té o café? Siete u ocho.",
+    "ejercicio": "Escribe 'mesa o silla' con 'u'? No porque silla no empieza por o."
+  },
+  {
+    "id": 60,
+    "name": "Coordinación adversativa (pero, sino, aunque, sino que)",
+    "category": "Coordinación",
+    "teoria": "Expresa oposición o contraste.",
+    "ejemplo": "Es tarde, pero iré. No canta, sino baila.",
+    "ejercicio": "Usa 'sino que' en una oración.",
+    "suggestedAnswer": "No solo corre, sino que nada."
+  },
+  {
+    "id": 61,
+    "name": "Coordinación distributiva (bien... bien, ora... ora, ya... ya)",
+    "category": "Coordinación",
+    "teoria": "Alternancia de opciones no excluyentes.",
+    "ejemplo": "Bien ríe, bien llora.",
+    "ejercicio": "Completa 'Ya estudia, ___ trabaja'.",
+    "suggestedAnswer": "ya."
+  },
+  {
+    "id": 62,
+    "name": "Oraciones yuxtapuestas",
+    "category": "Yuxtaposición",
+    "teoria": "Oraciones unidas sin conjunción, solo por puntuación (coma, punto y coma, dos puntos).",
+    "ejemplo": "Llegué, vi, vencí.",
+    "ejercicio": "¿Qué puntuación se usa en 'El sol brilla, el viento sopla'?",
+    "suggestedAnswer": "Coma (yuxtaposición)."
+  },
+  {
+    "id": 63,
+    "name": "Oraciones hendidas (foco)",
+    "category": "Estructura focalizadora",
+    "teoria": "Construcciones del tipo 'Ser + foco + que + resto' para destacar un elemento.",
+    "ejemplo": "Fue Juan quien vino.",
+    "ejercicio": "Hendea 'María cocinó la cena' para focalizar 'María'.",
+    "suggestedAnswer": "Fue María quien cocinó la cena."
+  },
+  {
+    "id": 64,
+    "name": "Oraciones escindidas (pseudo-hendidas)",
+    "category": "Estructura focalizadora",
+    "teoria": "Estructuras 'Lo que + verbo + es + foco'.",
+    "ejemplo": "Lo que quiero es paz.",
+    "ejercicio": "Transforma 'Necesito dinero' en pseudo-hendida.",
+    "suggestedAnswer": "Lo que necesito es dinero."
+  },
+  {
+    "id": 65,
+    "name": "Dislocación a la izquierda (tópico)",
+    "category": "Estructura de tópico",
+    "teoria": "Anteponer un constituyente al inicio de la oración, a menudo con un pronombre resuntivo.",
+    "ejemplo": "A Juan, lo vi ayer.",
+    "ejercicio": "Aplica dislocación a 'Compré el libro'",
+    "suggestedAnswer": "El libro, lo compré."
+  },
+  {
+    "id": 66,
+    "name": "Dislocación a la derecha",
+    "category": "Estructura de tópico",
+    "teoria": "Posponer un constituyente con pronombre resuntivo antepuesto.",
+    "ejemplo": "Lo vi ayer, a Juan.",
+    "ejercicio": "Disloca a la derecha 'María lo dijo' (con 'María' como foco).",
+    "suggestedAnswer": "Lo dijo, María."
+  },
+  {
+    "id": 67,
+    "name": "Oraciones negativas (negación preverbal y posverbal)",
+    "category": "Negación",
+    "teoria": "La negación 'no' se coloca antes del verbo. En contextos de polaridad, puede ir después en preguntas retóricas.",
+    "ejemplo": "No vino. ¿Acaso no vino?",
+    "ejercicio": "¿Por qué 'Vino no' es agramatical?",
+    "suggestedAnswer": "El 'no' debe preceder al verbo en español estándar."
+  },
+  {
+    "id": 68,
+    "name": "Negación múltiple (principio de concordancia negativa)",
+    "category": "Negación",
+    "teoria": "En español, si aparecen varias palabras negativas (nadie, nunca, tampoco) junto al verbo, el 'no' puede ser opcional o reforzador.",
+    "ejemplo": "No vino nadie / Nadie vino.",
+    "ejercicio": "¿Son equivalentes 'No vi a nadie' y 'Vi a nadie'?",
+    "suggestedAnswer": "Sí, en español la segunda es aceptable pero menos formal."
+  },
+  {
+    "id": 69,
+    "name": "Pares mínimo (estructura sintáctica)",
+    "category": "Metodología",
+    "teoria": "Par de oraciones que se diferencian solo en un elemento, para probar propiedades sintácticas.",
+    "ejemplo": "Juan quiere salir / *Juan quiere salir a.",
+    "ejercicio": "Construye un par mínimo que muestre que 'lo' puede ser CD pero no CI.",
+    "suggestedAnswer": "Lo vi (CD) / *Lo di un libro (CI)."
+  },
+  {
+    "id": 70,
+    "name": "Ambiguidad estructural",
+    "category": "Semántica sintáctica",
+    "teoria": "Una misma secuencia de palabras puede tener dos análisis sintácticos distintos, dando lugar a dos interpretaciones.",
+    "ejemplo": "Vi a un hombre con un telescopio (¿yo tenía el telescopio o el hombre lo llevaba?).",
+    "ejercicio": "Analiza la ambigüedad de 'Viejo banco'.",
+    "suggestedAnswer": "Banco viejo (antiguo) o el viejo (persona) banco."
+  },
+  {
+    "id": 71,
+    "name": "Vacío categorial (sujeto nulo, objeto nulo)",
+    "category": "Sintaxis del español",
+    "teoria": "El español permite sujetos nulos (pro) y, en algunos casos, objetos nulos (especialmente con verbos como 'saber').",
+    "ejemplo": "(Yo) sé. (Él) sabe. (Objeto nulo: 'No lo sé' pero si el contexto lo permite, 'Sé' sin objeto).",
+    "ejercicio": "¿Por qué 'Compré' puede ser oración completa?",
+    "suggestedAnswer": "Porque el objeto puede ser nulo si se sobreentiende (compré algo)."
+  },
+  {
+    "id": 72,
+    "name": "Inversión de orden (VS en oraciones declarativas)",
+    "category": "Orden de palabras",
+    "teoria": "El español admite inversión de verbo y sujeto en declarativas, sobre todo con verbos inacusativos o para efectos estilísticos.",
+    "ejemplo": "Cayó la lluvia. (En lugar de 'La lluvia cayó')",
+    "ejercicio": "Cambia a orden VS 'El libro llegó'.",
+    "suggestedAnswer": "Llegó el libro."
+  },
+  {
+    "id": 73,
+    "name": "Topicalización de constituyentes",
+    "category": "Estructura de tópico",
+    "teoria": "Desplazamiento de un elemento al inicio de la oración sin pronombre resuntivo (a diferencia de la dislocación).",
+    "ejemplo": "Vino compré (en lugar de 'Compré vino', coloquial).",
+    "ejercicio": "¿Qué efecto tiene 'Café quiero'?",
+    "suggestedAnswer": "Énfasis en 'café' (topicalización)."
+  },
+  {
+    "id": 74,
+    "name": "Frase de foco (Foco contrastivo)",
+    "category": "Estructura focalizadora",
+    "teoria": "El elemento en foco recibe acento más fuerte y puede moverse al inicio o recibir una marca prosódica.",
+    "ejemplo": "MANZANAS comió (no peras).",
+    "ejercicio": "Marca el foco en 'Ayer fui al cine' si se contrasta con 'hoy'.",
+    "suggestedAnswer": "AYER fui al cine."
+  },
+  {
+    "id": 75,
+    "name": "Rasgos de concordancia en la determinación",
+    "category": "Concordancia",
+    "teoria": "Los determinantes concuerdan en género y número con el núcleo nominal.",
+    "ejemplo": "El libro (masculino), la mesa (femenino).",
+    "ejercicio": "¿Por qué decimos 'el agua' siendo femenino?",
+    "suggestedAnswer": "Porque 'agua' empieza por /a/ tónica y para evitar cacofonía se usa 'el'."
+  },
+  {
+    "id": 76,
+    "name": "Adjetivos antepuestos vs pospuestos (cambio de significado)",
+    "category": "Sintaxis del adjetivo",
+    "teoria": "Algunos adjetivos cambian de significado según vayan antes o después del sustantivo.",
+    "ejemplo": "Un gran hombre (grande en sentido moral) / un hombre grande (tamaño físico).",
+    "ejercicio": "Interpreta 'pobre hombre' y 'hombre pobre'.",
+    "suggestedAnswer": "Pobre hombre: digno de lástima; hombre pobre: sin dinero."
+  },
+  {
+    "id": 77,
+    "name": "Orden de los pronombres átonos",
+    "category": "Pronombres",
+    "teoria": "Los pronombres átonos siguen el orden: se (reflexivo) + 2ª persona + 1ª persona + 3ª persona (se, te, me, nos, os, lo/la, etc.).",
+    "ejemplo": "Se me cayó. Te lo dije.",
+    "ejercicio": "Ordena los pronombres en 'Dámelo' (da + me + lo).",
+    "suggestedAnswer": "Dá-me-lo (imperativo + CI + CD)."
+  },
+  {
+    "id": 78,
+    "name": "Pronombres enclíticos y proclíticos",
+    "category": "Pronombres",
+    "teoria": "Enclíticos: pospuestos al verbo (imperativo afirmativo, infinitivo, gerundio). Proclíticos: antepuestos (formas personales, imperativo negativo).",
+    "ejemplo": "Dámelo (enclítico). No me lo des (proclítico).",
+    "ejercicio": "¿Por qué 'Dáselo' tiene enclítico y 'Se lo da' proclítico?",
+    "suggestedAnswer": "Imperativo afirmativo vs presente indicativo."
+  },
+  {
+    "id": 79,
+    "name": "Orden de palabras en preguntas (inversión verbo-sujeto)",
+    "category": "Interrogativas",
+    "teoria": "En interrogativas, el verbo y el sujeto pueden invertirse (¿Vino Juan?) aunque no es obligatorio (¿Juan vino?).",
+    "ejemplo": "¿Ha llegado María? (VS). ¿María ha llegado? (SV).",
+    "ejercicio": "¿Cuál es más común en español hablado?",
+    "suggestedAnswer": "La inversión (VS) es más natural en preguntas breves."
+  },
+  {
+    "id": 80,
+    "name": "Pronombres interrogativos (cuál, qué, quién)",
+    "category": "Interrogativas",
+    "teoria": "Se usan al inicio de preguntas parciales; pueden ir con preposición.",
+    "ejemplo": "¿Qué quieres? ¿De quién hablas?",
+    "ejercicio": "¿Cuándo se usa 'cuál' frente a 'qué'?",
+    "suggestedAnswer": "'Cuál' para elegir entre opciones; 'qué' para preguntar por la esencia."
+  },
+  {
+    "id": 81,
+    "name": "Subordinadas de relativo sin antecedente explícito (libres)",
+    "category": "Relativas",
+    "teoria": "Relativas introducidas por el relativo sin un sustantivo antecedente: 'Quien calla otorga'.",
+    "ejemplo": "El que venga, que traiga comida.",
+    "ejercicio": "Señala el relativo en 'Quien mal anda, mal acaba'.",
+    "suggestedAnswer": "Quien."
+  },
+  {
+    "id": 82,
+    "name": "Oraciones comparativas (tan... como, más... que)",
+    "category": "Subordinación adverbial",
+    "teoria": "Expresan comparación de igualdad, superioridad o inferioridad.",
+    "ejemplo": "Es tan alto como su padre. Es más rápido que yo.",
+    "ejercicio": "Completa: 'Estudia ___ tanto ___ su hermana'.",
+    "suggestedAnswer": "tanto como."
+  },
+  {
+    "id": 83,
+    "name": "Oraciones consecutivas con 'tanto... que'",
+    "category": "Subordinación adverbial",
+    "teoria": "Expresan consecuencia con intensificación: 'tanto... que'.",
+    "ejemplo": "Tiene tanto dinero que no sabe qué hacer.",
+    "ejercicio": "Forma una oración con 'tanto... que' a partir de 'Es muy inteligente; lo admiran'.",
+    "suggestedAnswer": "Es tan inteligente que lo admiran."
+  },
+  {
+    "id": 84,
+    "name": "Construcciones absolutas (gerundio absoluto, participio absoluto)",
+    "category": "Sintaxis",
+    "teoria": "Estructuras no subordinadas ni coordinadas, con significado de simultaneidad o causa, a menudo en aposición.",
+    "ejemplo": "Llegando yo, se fueron. / Terminada la reunión, salieron.",
+    "ejercicio": "Transforma 'Cuando llegó Juan, empezó la fiesta' en absoluta de gerundio.",
+    "suggestedAnswer": "Llegando Juan, empezó la fiesta."
+  },
+  {
+    "id": 85,
+    "name": "Infinitivo con preposición (al + infinitivo)",
+    "category": "Sintaxis del infinitivo",
+    "teoria": "La estructura 'al + infinitivo' expresa tiempo simultáneo o causa.",
+    "ejemplo": "Al llegar, lo saludé.",
+    "ejercicio": "¿Qué matiz aporta 'Al verla, sonrió'?",
+    "suggestedAnswer": "Simultaneidad o causa inmediata."
+  },
+  {
+    "id": 86,
+    "name": "Infinitivo como imperativo (valores exhortativos)",
+    "category": "Infinitivo",
+    "teoria": "En instrucciones, recetas, o carteles, se usa el infinitivo con valor de imperativo.",
+    "ejemplo": "No fumar. Agitar antes de usar.",
+    "ejercicio": "Escribe una orden en infinitivo para 'Tirar la basura'.",
+    "suggestedAnswer": "Tirar la basura aquí."
+  },
+  {
+    "id": 87,
+    "name": "Gerundio adverbial (gerundio no perifrástico)",
+    "category": "Gerundio",
+    "teoria": "El gerundio puede expresar modo, tiempo, causa o condición.",
+    "ejemplo": "Caminando, llegué tarde (causa). Se fue corriendo (modo).",
+    "ejercicio": "¿Qué expresa 'Estando yo allí, todo fue bien'?",
+    "suggestedAnswer": "Tiempo (al mismo tiempo)."
+  },
+  {
+    "id": 88,
+    "name": "Participio como adjetivo",
+    "category": "Participio",
+    "teoria": "Los participios pueden funcionar como adjetivos (concuerdan en género y número).",
+    "ejemplo": "Una casa construida, un libro leído.",
+    "ejercicio": "Forma un adjetivo participio de 'escribir'.",
+    "suggestedAnswer": "escrito."
+  },
+  {
+    "id": 89,
+    "name": "Perífrasis verbales (clasificación)",
+    "category": "Perífrasis",
+    "teoria": "Estructuras de dos verbos (auxiliar + principal en forma no personal) que aportan aspecto o modalidad.",
+    "ejemplo": "Voy a comer (futuro próximo), estoy comiendo (progresivo), he comido (perfecto).",
+    "ejercicio": "Identifica la perífrasis en 'Debe de ser tarde'.",
+    "suggestedAnswer": "deber de + infinitivo (probabilidad)."
+  },
+  {
+    "id": 90,
+    "name": "Perífrasis de infinitivo (tener que, deber, haber que)",
+    "category": "Perífrasis",
+    "teoria": "Expresan obligación, necesidad o probabilidad.",
+    "ejemplo": "Tengo que estudiar. Habrá que esperar.",
+    "ejercicio": "¿Cuál expresa obligación personal: 'hay que' o 'tener que'?",
+    "suggestedAnswer": "Tener que."
+  },
+  {
+    "id": 91,
+    "name": "Perífrasis de gerundio (estar + gerundio)",
+    "category": "Perífrasis",
+    "teoria": "Expresa acción en desarrollo en el momento del habla.",
+    "ejemplo": "Estoy leyendo.",
+    "ejercicio": "Cambia 'Leo ahora' por perífrasis.",
+    "suggestedAnswer": "Estoy leyendo ahora."
+  },
+  {
+    "id": 92,
+    "name": "Perífrasis de participio (tener + participio, dejar + participio)",
+    "category": "Perífrasis",
+    "teoria": "Expresan resultado o acción terminada.",
+    "ejemplo": "Tengo escrita la carta. Dejó dicho el mensaje.",
+    "ejercicio": "Construye una oración con 'tener + participio'.",
+    "suggestedAnswer": "Tengo preparada la comida."
+  },
+  {
+    "id": 93,
+    "name": "Perífrasis modales (deber, poder, querer)",
+    "category": "Perífrasis",
+    "teoria": "Expresan posibilidad, necesidad, deseo.",
+    "ejemplo": "Puedo salir. Quiero comer.",
+    "ejercicio": "¿'Deber' sin 'de' es perífrasis? Sí."
+  },
+  {
+    "id": 94,
+    "name": "Construcciones activas y pasivas de 'se'",
+    "category": "Sintaxis del 'se'",
+    "teoria": "Se distingue entre pasiva refleja (sujeto paciente) e impersonal (sin sujeto).",
+    "ejemplo": "Se venden pisos (pasiva). Se vive bien (impersonal).",
+    "ejercicio": "¿Cómo se puede transformar 'Se alquilan habitaciones' a activa?",
+    "suggestedAnswer": "Alquilan habitaciones (sujeto tácito)."
+  },
+  {
+    "id": 95,
+    "name": "Se dativo (no reflexivo)",
+    "category": "Sintaxis del 'se'",
+    "teoria": "Se puede usar como dativo de interés o ético (no cambia el significado, enfatiza la implicación del hablante).",
+    "ejemplo": "Se comió toda la pizza. (Énfasis, no reflexivo).",
+    "ejercicio": "Elimina 'se' de 'Se bebió el vaso de agua' y compara significado.",
+    "suggestedAnswer": "Bebió el vaso de agua (mismo significado, sin énfasis)."
+  },
+  {
+    "id": 96,
+    "name": "Se como marca de involuntariedad (se me/te/le...)",
+    "category": "Sintaxis del 'se'",
+    "teoria": "Construcción con 'se' + pronombre de dativo + verbo en singular para expresar acciones accidentales o involuntarias.",
+    "ejemplo": "Se me olvidó el paraguas. Se le cayó el vaso.",
+    "ejercicio": "Reescribe 'Olvidé la cita' como construcción de involuntariedad.",
+    "suggestedAnswer": "Se me olvidó la cita."
+  },
+  {
+    "id": 97,
+    "name": "Valencia verbal (argumentos y adjuntos)",
+    "category": "Semántica sintáctica",
+    "teoria": "Número de argumentos que requiere un verbo (actantes: sujeto, CD, CI, CRég).",
+    "ejemplo": "Dormir (1 argumento), dar (3 argumentos: sujeto, CD, CI).",
+    "ejercicio": "¿Cuántos argumentos tiene 'regalar'?",
+    "suggestedAnswer": "3: alguien regala algo a alguien."
+  },
+  {
+    "id": 98,
+    "name": "Estructura de la frase preposicional (SPrep) en español",
+    "category": "Sintagmas",
+    "teoria": "El SPrep está formado por una preposición (núcleo) y un sintagma nominal complemento.",
+    "ejemplo": "en [la casa], con [mi amigo].",
+    "ejercicio": "Identifica la preposición y su complemento en 'desde muy lejos'.",
+    "suggestedAnswer": "Preposición 'desde', complemento 'muy lejos' (SAdv)."
+  },
+  {
+    "id": 99,
+    "name": "Concordancia de adjetivos con varios núcleos",
+    "category": "Concordancia",
+    "teoria": "Cuando un adjetivo modifica a dos o más sustantivos, concuerda con el más cercano o en plural si están coordinados.",
+    "ejemplo": "La mesa y la silla son blancas. (plural).",
+    "ejercicio": "Corrige 'El libro y la pluma es azul'.",
+    "suggestedAnswer": "El libro y la pluma son azules."
+  },
+  {
+    "id": 100,
+    "name": "Sintaxis de las oraciones temporales con 'cuando'",
+    "category": "Subordinación adverbial",
+    "teoria": "'Cuando' puede ir seguido de indicativo (hechos reales) o subjuntivo (eventos futuros o hipotéticos).",
+    "ejemplo": "Cuando viene, me alegro (habitual). Cuando venga, lo verás (futuro).",
+    "ejercicio": "Elige el modo en 'Cuando (llegue/llega) el momento, actuaré'.",
+    "suggestedAnswer": "llegue (subjuntivo, futuro hipotético)."
+  }
+]

@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "name": "Realismo mágico",
+    "category": "Movimientos",
+    "teoria": "Inserción de elementos fantásticos o inexplicables en una narrativa realista, presentados como cotidianos. No se explican ni asombran a los personajes.",
+    "ejemplo": "En 'Cien años de soledad', Remedios la Bella asciende al cielo mientras tiende la ropa.",
+    "ejercicio": "Crea una breve escena realista con un elemento mágico que los personajes acepten con normalidad.",
+    "suggestedAnswer": "Mientras Juan cocinaba, los frijoles comenzaron a bailar en la olla; él solo sonrió y añadió más comino."
+  },
+  {
+    "id": 2,
+    "name": "Boom latinoamericano",
+    "category": "Movimientos",
+    "teoria": "Fenómeno editorial de los años 60-70 que internacionalizó la narrativa hispanoamericana con autores como García Márquez, Vargas Llosa, Cortázar, Fuentes.",
+    "ejemplo": "La publicación de 'Rayuela' (1963) y 'Cien años de soledad' (1967) marcó el auge.",
+    "ejercicio": "Menciona dos características comunes en las novelas del Boom.",
+    "suggestedAnswer": "Experimentación narrativa (saltos temporales, multiperspectivismo) y compromiso político."
+  },
+  {
+    "id": 3,
+    "name": "Postboom",
+    "category": "Movimientos",
+    "teoria": "Generación posterior al Boom (años 80-90) que reacciona contra el realismo mágico y privilegia la ironía, la cultura popular y una narrativa menos experimental.",
+    "ejemplo": "Autores como Antonio Skármeta, Isabel Allende, Laura Esquivel.",
+    "ejercicio": "¿Qué obra de Isabel Allende pertenece al Postboom?",
+    "suggestedAnswer": "La casa de los espíritus (1982)."
+  },
+  {
+    "id": 4,
+    "name": "Indigenismo",
+    "category": "Tendencias",
+    "teoria": "Corriente que reivindica la cultura indígena, denuncia su explotación y presenta al indio como protagonista. Alcanza su auge en la década de 1920-1940.",
+    "ejemplo": "Huasipungo de Jorge Icaza (Ecuador), El mundo es ancho y ajeno de Ciro Alegría (Perú).",
+    "ejercicio": "¿Cuál es la diferencia entre indigenismo e indianismo?",
+    "suggestedAnswer": "El indigenismo es escrito por autores no indígenas (o mestizos) y con mirada social; el indianismo es idealización romántica del indígena."
+  },
+  {
+    "id": 5,
+    "name": "Neoindigenismo",
+    "category": "Tendencias",
+    "teoria": "Narrativa indígena escrita por autores indígenas que emplean su propia lengua o una visión desde dentro. Surge a finales del siglo XX.",
+    "ejemplo": "José María Arguedas (Los ríos profundos) es un puente; luego autores como Elicura Chihuailaf (mapuche).",
+    "ejercicio": "¿Qué autor mapuche ha escrito poesía bilingüe?",
+    "suggestedAnswer": "Elicura Chihuailaf (mapudungun-español)."
+  },
+  {
+    "id": 6,
+    "name": "Realismo social",
+    "category": "Movimientos",
+    "teoria": "Corriente que denuncia las injusticias sociales, la explotación laboral y la opresión política, con personajes colectivos y lenguaje directo.",
+    "ejemplo": "El tungsteno (César Vallejo), Doña Bárbara (Rómulo Gallegos) tiene tintes realistas.",
+    "ejercicio": "¿Qué problema aborda 'Huasipungo'?",
+    "suggestedAnswer": "La explotación de los indígenas en los latifundios ecuatorianos."
+  },
+  {
+    "id": 7,
+    "name": "Modernismo hispanoamericano",
+    "category": "Movimientos",
+    "teoria": "Movimiento poético (finales del siglo XIX) que renueva el lenguaje literario con simbolismo, musicalidad, exotismo y escapismo. Máximo exponente: Rubén Darío.",
+    "ejemplo": "Azul (1888), Prosas profanas (1896) de Darío.",
+    "ejercicio": "Cita dos características del Modernismo.",
+    "suggestedAnswer": "Culto a la belleza, uso de mitología y temas exóticos, perfección formal."
+  },
+  {
+    "id": 8,
+    "name": "Vanguardismo hispanoamericano",
+    "category": "Movimientos",
+    "teoria": "Movimientos de principios del siglo XX (ultraísmo, creacionismo, surrealismo) que rompen con la métrica tradicional y exploran la imagen libre.",
+    "ejemplo": "Vicente Huidobro (creacionismo), César Vallejo (poesía vanguardista), Oliverio Girondo.",
+    "ejercicio": "¿Qué es el creacionismo?",
+    "suggestedAnswer": "Poética que sostiene que el poeta debe crear una realidad nueva, no imitar la naturaleza. El poema es un objeto autónomo."
+  },
+  {
+    "id": 9,
+    "name": "Poesía conversacional",
+    "category": "Movimientos",
+    "teoria": "Corriente de los años 60-70 que usa un tono coloquial, temas urbanos y cotidianos, a menudo con crítica política y social.",
+    "ejemplo": "Poemas de Nicanor Parra (antipoesía), Mario Benedetti, Juan Gelman.",
+    "ejercicio": "¿Qué diferencia la poesía conversacional del modernismo?",
+    "suggestedAnswer": "La poesía conversacional rechaza el esteticismo y la retórica elevada, usa el lenguaje de la calle."
+  },
+  {
+    "id": 10,
+    "name": "Antipoesía",
+    "category": "Movimientos",
+    "teoria": "Propuesta de Nicanor Parra que consiste en usar un lenguaje coloquial, irónico y antirretórico para criticar la solemnidad poética tradicional.",
+    "ejemplo": "Poemas y antipoemas (1954) de Parra.",
+    "ejercicio": "Escribe un verso al estilo antipoético.",
+    "suggestedAnswer": "Señores, no me vengan con metáforas / si apenas sé contar hasta tres."
+  },
+  {
+    "id": 11,
+    "name": "Nueva novela histórica",
+    "category": "Géneros",
+    "teoria": "Reescritura paródica o cuestionadora de la historia oficial, con metaficción y multiperspectivismo (S. XX-XXI).",
+    "ejemplo": "La campaña de Carlos Fuentes, El general en su laberinto de García Márquez.",
+    "ejercicio": "¿Cómo se diferencia de la novela histórica tradicional?",
+    "suggestedAnswer": "La nueva novela histórica cuestiona la verdad oficial, incluye anacronismos, parodia y personajes marginales."
+  },
+  {
+    "id": 12,
+    "name": "Testimonio",
+    "category": "Géneros",
+    "teoria": "Narrativa en primera persona de hechos reales (violencia política, supervivencia). Suele ser coescrita entre testigo y escritor.",
+    "ejemplo": "Biografía de un cimarrón (Barnet), Me llamo Rigoberta Menchú (Burgos-Debray).",
+    "ejercicio": "¿Qué debate ético plantea el testimonio?",
+    "suggestedAnswer": "El rol del escritor y la posible manipulación de la voz del testigo."
+  },
+  {
+    "id": 13,
+    "name": "Novela de la dictadura",
+    "category": "Subgéneros",
+    "teoria": "Narrativa que aborda la violencia política y las dictaduras latinoamericanas (Chile, Argentina, Uruguay, Brasil).",
+    "ejemplo": "El beso de la mujer araña (Manuel Puig), La fiesta del chivo (Vargas Llosa).",
+    "ejercicio": "¿Qué novela de Vargas Llosa trata sobre Trujillo?",
+    "suggestedAnswer": "La fiesta del chivo."
+  },
+  {
+    "id": 14,
+    "name": "Literatura gauchesca",
+    "category": "Tradición",
+    "teoria": "Género rioplatense que recrea la figura del gaucho, su lenguaje y su vida, con intención nacionalista (Martín Fierro de José Hernández).",
+    "ejemplo": "El gaucho Martín Fierro (1872).",
+    "ejercicio": "¿Qué valor simbólico tiene el gaucho en la literatura argentina?",
+    "suggestedAnswer": "Representa la libertad, la valentía y la identidad nacional frente al progreso urbano."
+  },
+  {
+    "id": 15,
+    "name": "Literatura de la violencia (Colombia)",
+    "category": "Temáticas",
+    "teoria": "Narrativa que representa el conflicto armado, el narcotráfico y la violencia política en Colombia.",
+    "ejemplo": "La virgen de los sicarios (Fernando Vallejo), Delirio (Laura Restrepo).",
+    "ejercicio": "¿Qué recurso literario usa Vallejo en 'La virgen de los sicarios'?",
+    "suggestedAnswer": "Lenguaje coloquial violento, narrador testigo e ironía."
+  },
+  {
+    "id": 16,
+    "name": "Afrohispanoamericanismo",
+    "category": "Tendencias",
+    "teoria": "Expresión literaria y cultural de la diáspora africana en el Caribe, incluyendo poesía, música y narrativa con ritmos y léxico afro.",
+    "ejemplo": "Poesía de Nicolás Guillén (Cuba), obras de Adalberto Ortiz (Ecuador).",
+    "ejercicio": "¿Qué recursos rítmicos emplea Guillén?",
+    "suggestedAnswer": "Son, rumba, motivos del lenguaje afrocubano."
+  },
+  {
+    "id": 17,
+    "name": "Neobarroco (Lezama Lima, Sarduy)",
+    "category": "Estilo",
+    "teoria": "Estilo caracterizado por la exuberancia verbal, sintaxis compleja, cultismos, hipérbatos y acumulación de imágenes, retomando el barroco colonial.",
+    "ejemplo": "Paradiso (Lezama Lima), Escrito en un cuerpo (Severo Sarduy).",
+    "ejercicio": "Señala un rasgo del neobarroco.",
+    "suggestedAnswer": "Uso de neologismos, hipérbaton, sincretismo cultural y sensorial."
+  },
+  {
+    "id": 18,
+    "name": "Microrelato hispanoamericano",
+    "category": "Géneros",
+    "teoria": "Relato brevísimo (generalmente menos de 200 palabras) que condensa una historia sorprendente o absurda.",
+    "ejemplo": "Cuentos breves de Augusto Monterroso, Luisa Valenzuela.",
+    "ejercicio": "Crea un microrelato de una línea.",
+    "suggestedAnswer": "Cuando despertó, el dinosaurio todavía estaba allí (Monterroso)."
+  },
+  {
+    "id": 19,
+    "name": "Crónica modernista",
+    "category": "Géneros",
+    "teoria": "Texto híbrido entre periodismo y literatura, con prosa poética y reflexión cultural, desarrollado por cronistas modernistas.",
+    "ejemplo": "Crónicas de José Martí y Rubén Darío.",
+    "ejercicio": "¿Qué tema trataba Martí en sus crónicas?",
+    "suggestedAnswer": "La realidad estadounidense, el racismo, la guerra de Cuba."
+  },
+  {
+    "id": 20,
+    "name": "Narrativa femenina contemporánea",
+    "category": "Tendencias",
+    "teoria": "Desde los años 80, escritoras hispanoamericanas abordan temas de género, cuerpo, memoria y territorio con innovación formal.",
+    "ejemplo": "Laura Esquivel, Elena Poniatowska, Diamela Eltit, Gabriela Cabezón Cámara.",
+    "ejercicio": "Cita una novela de Diamela Eltit.",
+    "suggestedAnswer": "Lumpérica (1983)."
+  },
+  {
+    "id": 21,
+    "name": "Poesía de la resistencia",
+    "category": "Temáticas",
+    "teoria": "Poesía comprometida políticamente contra dictaduras y opresión, escrita desde el exilio o la clandestinidad.",
+    "ejemplo": "Poemas de Roque Dalton, Gioconda Belli, Ernesto Cardenal.",
+    "ejercicio": "¿Qué país centroamericano destacó en poesía revolucionaria?",
+    "suggestedAnswer": "Nicaragua (poesía sandinista)."
+  },
+  {
+    "id": 22,
+    "name": "Novela de formación (Bildungsroman)",
+    "category": "Subgéneros",
+    "teoria": "Relato que sigue la evolución psicológica y moral de un protagonista desde la infancia a la madurez.",
+    "ejemplo": "Los ríos profundos (Arguedas), La ciudad y los perros (Vargas Llosa).",
+    "ejercicio": "¿Qué obra de Arguedas es una novela de formación?",
+    "suggestedAnswer": "Los ríos profundos."
+  },
+  {
+    "id": 23,
+    "name": "Realismo sucio (McOndo)",
+    "category": "Movimientos",
+    "teoria": "Movimiento de los 90 que rechaza el realismo mágico y retrata la violencia y el caos urbano con crudeza y humor negro.",
+    "ejemplo": "Antología McOndo, obras de Rodrigo Fresán, Jorge Volpi, Pedro Juan Gutiérrez.",
+    "ejercicio": "¿Qué crítica hace McOndo al realismo mágico?",
+    "suggestedAnswer": "Que idealiza la realidad latinoamericana y no representa la modernidad violenta, el consumismo y la globalización."
+  },
+  {
+    "id": 24,
+    "name": "Literatura de la amazonía",
+    "category": "Regional",
+    "teoria": "Narrativa que se desarrolla en la selva amazónica, con personajes indígenas, colonos y seres mitológicos.",
+    "ejemplo": "La vorágine (José Eustasio Rivera), Los pasos perdidos (Alejo Carpentier).",
+    "ejercicio": "¿Qué crítica social aparece en 'La vorágine'?",
+    "suggestedAnswer": "La explotación cauchera y la destrucción del medio ambiente."
+  },
+  {
+    "id": 25,
+    "name": "Literatura del exilio",
+    "category": "Temáticas",
+    "teoria": "Obra de escritores que se vieron forzados a salir de su país por razones políticas, y reflejan el desarraigo, la memoria y la identidad.",
+    "ejemplo": "El exilio de Cortázar (París), los escritores argentinos exiliados durante la dictadura.",
+    "ejercicio": "¿Qué obra de Cortázar trata el exilio?",
+    "suggestedAnswer": "Libro de Manuel (novela) o sus cuentos."
+  },
+  {
+    "id": 26,
+    "name": "Narrativa caribeña (negrismo)",
+    "category": "Regional",
+    "teoria": "Literatura que incorpora tradiciones orales afrocaribeñas, lengua criolla y temas de la identidad antillana.",
+    "ejemplo": "Cuentos de Lydia Cabrera, poesía de Nicolás Guillén.",
+    "ejercicio": "¿Qué elementos folkóricos incluye Lydia Cabrera?",
+    "suggestedAnswer": "Cuentos de origen africano, leyendas de orishas, lenguaje cubano popular."
+  },
+  {
+    "id": 27,
+    "name": "Poesía visual (vanguardista)",
+    "category": "Formas",
+    "teoria": "Poema que integra elementos gráficos, caligramas y juegos espaciales para significar visualmente.",
+    "ejemplo": "Caligramas de Guillermo de Torre (ultraísmo), obra de Octavio Paz.",
+    "ejercicio": "¿Qué es un caligrama?",
+    "suggestedAnswer": "Un poema cuya disposición tipográfica dibuja la figura aludida en el texto."
+  },
+  {
+    "id": 28,
+    "name": "Hibridación genérica",
+    "category": "Estructura",
+    "teoria": "Mezcla de géneros literarios (poesía, ensayo, crónica, teatro) en una misma obra.",
+    "ejemplo": "La novela 'La muerte de Artemio Cruz' incluye fragmentos de monólogo interior, epistolar y cinematográfico.",
+    "ejercicio": "¿Qué obra de Cortázar mezcla cuento, poesía y ensayo?",
+    "suggestedAnswer": "Rayuela, con capítulos prescindibles y collages."
+  },
+  {
+    "id": 29,
+    "name": "Jitanjáfora",
+    "category": "Recursos",
+    "teoria": "Palabra o verso con sonoridad musical y sin significado léxico, usada por su efecto fónico (Mariano Brull, vanguardista cubano).",
+    "ejemplo": "Filiflama alabe cundre / ala olalá (Brull).",
+    "ejercicio": "Crea una jitanjáfora de tres sílabas.",
+    "suggestedAnswer": "Tralalí, tarará, chumbambá."
+  },
+  {
+    "id": 30,
+    "name": "Monólogo interior y flujo de conciencia",
+    "category": "Técnicas",
+    "teoria": "Representación del pensamiento del personaje sin organización lógica ni puntuación convencional, imitando la corriente mental.",
+    "ejemplo": "Fragmentos de 'Rayuela' de Cortázar, 'El túnel' de Sábato.",
+    "ejercicio": "Escribe una frase en flujo de conciencia.",
+    "suggestedAnswer": "La luz de la tarde qué ruido el tráfico y ella se fue y yo aquí sentado recordando..."
+  },
+  {
+    "id": 31,
+    "name": "Multiperspectivismo",
+    "category": "Técnicas",
+    "teoria": "Presentación de una misma historia desde diferentes puntos de vista, a través de varios narradores.",
+    "ejemplo": "La muerte de Artemio Cruz (Fuentes), La ciudad y los perros (Vargas Llosa).",
+    "ejercicio": "¿Qué efecto produce el multiperspectivismo?",
+    "suggestedAnswer": "Enriquece la visión de los hechos, muestra la complejidad y subjetividad de la realidad."
+  },
+  {
+    "id": 32,
+    "name": "Metalepsis narrativa",
+    "category": "Técnicas",
+    "teoria": "Transgresión de los niveles narrativos (el narrador interactúa con los personajes o los personajes entran en la realidad del autor).",
+    "ejemplo": "En 'Rayuela', el narrador habla de los lectores y de cómo leer la novela.",
+    "ejercicio": "Construye un breve ejemplo de metalepsis.",
+    "suggestedAnswer": "El personaje cerró el libro y me dijo: '¿tú crees que existo?'."
+  },
+  {
+    "id": 33,
+    "name": "Estructura no lineal (fragmentaria)",
+    "category": "Estructura",
+    "teoria": "La obra se presenta como una colección de fragmentos, capítulos prescindibles o saltos temporales sin orden cronológico.",
+    "ejemplo": "Rayuela (Cortázar) con 'tablero de dirección'.",
+    "ejercicio": "¿Cómo se debe leer 'Rayuela' según el autor?",
+    "suggestedAnswer": "De manera no lineal, saltando de capítulo según un orden propuesto."
+  },
+  {
+    "id": 34,
+    "name": "Lo real maravilloso (Carpentier)",
+    "category": "Concepto",
+    "teoria": "Término acuñado por Alejo Carpentier para designar lo maravilloso que surge de la propia realidad americana (no es lo mismo que realismo mágico).",
+    "ejemplo": "El reino de este mundo (1949) explora lo real maravilloso de la revolución haitiana.",
+    "ejercicio": "¿Cuál es la diferencia entre real maravilloso y realismo mágico?",
+    "suggestedAnswer": "El real maravilloso considera que lo fantástico es inherente a la realidad americana; el realismo mágico es una técnica literaria."
+  },
+  {
+    "id": 35,
+    "name": "Narrador omnisciente equisciente (Sábato)",
+    "category": "Narrador",
+    "teoria": "Narrador en tercera persona que conoce solo lo que el personaje siente y piensa (perspectiva limitada).",
+    "ejemplo": "El túnel de Sábato: el narrador conoce la mente del protagonista pero no todo el contexto.",
+    "ejercicio": "Contrasta con el narrador omnisciente tradicional.",
+    "suggestedAnswer": "El omnisciente sabe todo; el equisciente sabe solo lo que sabe el personaje."
+  },
+  {
+    "id": 36,
+    "name": "El relato circular",
+    "category": "Estructura",
+    "teoria": "El inicio y el final de la narración coinciden o se repite un mismo episodio, dando sensación de ciclo.",
+    "ejemplo": "Cien años de soledad: la historia termina donde empezó, con la profecía de los gitanos.",
+    "ejercicio": "Menciona otra novela de estructura circular.",
+    "suggestedAnswer": "El obsceno pájaro de la noche (Donoso) o Pedro Páramo (Rulfo)."
+  },
+  {
+    "id": 37,
+    "name": "El mito fundacional",
+    "category": "Temáticas",
+    "teoria": "Relatos que narran el origen de un pueblo o comunidad, mezclando historia y leyenda.",
+    "ejemplo": "El Popol Vuh (mayas) o 'Los hijos de la Malinche' de Paz.",
+    "ejercicio": "¿Qué mito fundacional aparece en 'Cien años de soledad'?",
+    "suggestedAnswer": "La fundación de Macondo por José Arcadio Buendía y la llegada de los gitanos."
+  },
+  {
+    "id": 38,
+    "name": "Suplantación de identidad",
+    "category": "Recursos",
+    "teoria": "Un personaje asume la identidad de otro, ya sea por engaño, locura o destino.",
+    "ejemplo": "El personaje de Sombra en 'El beso de la mujer araña'.",
+    "ejercicio": "Da un ejemplo de suplantación en la literatura hispanoamericana.",
+    "suggestedAnswer": "El doble de Adán Buenosayres (Marechal) o los hermanos gemelos en 'La muerte de Artemio Cruz'."
+  },
+  {
+    "id": 39,
+    "name": "El doble (doppelgänger)",
+    "category": "Recursos",
+    "teoria": "Un personaje que se duplica en otro con características opuestas o complementarias, explorando la identidad.",
+    "ejemplo": "El doble en 'El túnel' (Sábato) y 'La invención de Morel' (Bioy Casares).",
+    "ejercicio": "¿Qué función cumple el doble en la literatura?",
+    "suggestedAnswer": "Reflejar las contradicciones del yo, el conflicto interno y la culpa."
+  },
+  {
+    "id": 40,
+    "name": "La estatua que cobra vida",
+    "category": "Tópicos",
+    "teoria": "Motivo recurrente del romanticismo y modernismo: objetos artísticos que se animan (como la estatua de la mujer amada).",
+    "ejemplo": "El poema 'La estatua de sal' de Rubén Darío.",
+    "ejercicio": "Escribe un verso breve sobre una estatua que despierta.",
+    "suggestedAnswer": "El mármol suspiró y abrió los ojos."
+  },
+  {
+    "id": 41,
+    "name": "El laberinto como símbolo",
+    "category": "Simbología",
+    "teoria": "El laberinto representa la confusión existencial, la búsqueda del sentido o la complejidad del poder.",
+    "ejemplo": "El laberinto de la soledad (Octavio Paz), el laberinto en 'Los reyes' (Cortázar).",
+    "ejercicio": "¿Qué simboliza el laberinto en Borges?",
+    "suggestedAnswer": "El tiempo, la infinitud, la incertidumbre del conocimiento."
+  },
+  {
+    "id": 42,
+    "name": "La biblioteca infinita",
+    "category": "Simbología",
+    "teoria": "Motivo borgeano que representa el universo, el conocimiento y la paradoja de lo infinito encerrado en lo finito.",
+    "ejemplo": "La biblioteca de Babel (Borges).",
+    "ejercicio": "Escribe una frase sobre una biblioteca infinita.",
+    "suggestedAnswer": "En ese laberinto de estanterías, uno puede encontrar todos los libros posibles, pero nunca el que busca."
+  },
+  {
+    "id": 43,
+    "name": "El espejo como símbolo",
+    "category": "Simbología",
+    "teoria": "El espejo refleja la duplicidad, la identidad, la vanidad o el acceso a otro mundo (Alicia).",
+    "ejemplo": "Funes el memorioso (Borges) y el espejo; los espejos en 'La casa de los espejos'.",
+    "ejercicio": "¿Qué significado adquiere el espejo en 'Rayuela'?",
+    "suggestedAnswer": "Refleja el doble de la realidad, la fragmentación del yo."
+  },
+  {
+    "id": 44,
+    "name": "El ángel como figura poética",
+    "category": "Recursos",
+    "teoria": "El ángel aparece en la poesía hispanoamericana como mensajero, ser perturbador o símbolo de la rebeldía (Rilke influye).",
+    "ejemplo": "Los heraldos negros (Vallejo), el ángel de la guarda en varios poemas.",
+    "ejercicio": "Cita un verso de Vallejo con 'ángel'.",
+    "suggestedAnswer": "No sabe el hombre, si su ángel de la guarda / le espera tras la puerta de la sombra."
+  },
+  {
+    "id": 45,
+    "name": "La lluvia como símbolo",
+    "category": "Simbología",
+    "teoria": "La lluvia puede representar limpieza, tristeza, fertilidad o muerte según el contexto.",
+    "ejemplo": "Lluvia en 'Pedro Páramo' que acompaña la desolación.",
+    "ejercicio": "¿Qué simboliza la lluvia en 'El llano en llamas'?",
+    "suggestedAnswer": "La esperanza frustrada, la aridez que se convierte en muerte."
+  },
+  {
+    "id": 46,
+    "name": "El viaje iniciático",
+    "category": "Temáticas",
+    "teoria": "El protagonista emprende un viaje físico o espiritual que le permite madurar y transformarse.",
+    "ejemplo": "Los pasos perdidos (Carpentier), El viaje definitivo de Lugones.",
+    "ejercicio": "Describa una etapa del viaje iniciático.",
+    "suggestedAnswer": "La separación del mundo conocido, las pruebas y el regreso con un conocimiento nuevo."
+  },
+  {
+    "id": 47,
+    "name": "La selva como personaje",
+    "category": "Temáticas",
+    "teoria": "La selva se presenta como un ente opresor, monstruoso o sagrado que devora a los personajes.",
+    "ejemplo": "La vorágine de Rivera, la selva amazónica en 'Los pasos perdidos'.",
+    "ejercicio": "¿Qué papel juega la selva en 'La vorágine'?",
+    "suggestedAnswer": "Es un personaje colectivo que devora a los explotados y a los propios explotadores."
+  },
+  {
+    "id": 48,
+    "name": "El carnaval (Bajtín) en la literatura",
+    "category": "Conceptos",
+    "teoria": "Aplicación de la teoría bajtiniana (carnavalización) a la novela hispanoamericana: inversión de jerarquías, humor y risa popular.",
+    "ejemplo": "La fiesta del chivo (Vargas Llosa) presenta elementos carnavalescos en la degradación de Trujillo.",
+    "ejercicio": "¿Cómo se manifiesta el carnaval en 'Rayuela'?",
+    "suggestedAnswer": "En el Club de la Serpiente, donde se invierten las normas sociales y se celebra el absurdo."
+  },
+  {
+    "id": 49,
+    "name": "El mito de Orfeo en la poesía",
+    "category": "Mitología",
+    "teoria": "Reescritura del mito de Orfeo y Eurídice en poetas hispanoamericanos (Lezama Lima, Paz, Vallejo).",
+    "ejemplo": "Piedra de Sol de Octavio Paz (evocación a Orfeo).",
+    "ejercicio": "¿Qué representa Eurídice en la poesía moderna?",
+    "suggestedAnswer": "La amada perdida, la musa y también la poesía misma."
+  },
+  {
+    "id": 50,
+    "name": "El mundo al revés",
+    "category": "Tópicos",
+    "teoria": "Tópico medieval (mundus inversus) presente en la literatura colonial hispanoamericana como crítica satírica del orden establecido.",
+    "ejemplo": "El 'Entremés del mundo al revés' en el Virreinato, o en la obra de Sor Juana.",
+    "ejercicio": "Describe una escena de mundo al revés.",
+    "suggestedAnswer": "Los burros dan clases en la universidad y los catedráticos rebuznan."
+  },
+  {
+    "id": 51,
+    "name": "La mascarada y el disfraz",
+    "category": "Recursos",
+    "teoria": "Uso del disfraz como recurso para la crítica social, el engaño o la exploración de la identidad.",
+    "ejemplo": "Personajes que se disfrazan en 'Los pasos perdidos', 'El beso de la mujer araña'.",
+    "ejercicio": "¿Por qué un personaje puede disfrazarse en una novela?",
+    "suggestedAnswer": "Para ocultar su identidad, para acceder a otro grupo social o para revelar hipocresías."
+  },
+  {
+    "id": 52,
+    "name": "Lo grotesco",
+    "category": "Recursos",
+    "teoria": "Exageración deformante de rasgos físicos o situaciones, con mezcla de lo cómico y lo terrible.",
+    "ejemplo": "El esperpento de Valle-Inclán tiene influencia; en Hispanoamérica, las novelas de Fernando Vallejo presentan lo grotesco.",
+    "ejercicio": "Cita una imagen grotesca de 'La virgen de los sicarios'.",
+    "suggestedAnswer": "Los cadáveres de los sicarios balanceándose o la descripción de una masacre como algo cotidiano."
+  },
+  {
+    "id": 53,
+    "name": "Lo fantástico (Todorov)",
+    "category": "Género",
+    "teoria": "Género donde se produce una vacilación entre una explicación natural y sobrenatural de los hechos.",
+    "ejemplo": "Cuentos de Julio Cortázar ('Casa tomada', 'La noche boca arriba'), de Amparo Dávila.",
+    "ejercicio": "¿Qué condición debe cumplir la vacilación en lo fantástico?",
+    "suggestedAnswer": "El lector y/o el personaje dudan si lo extraño es real o imaginario."
+  },
+  {
+    "id": 54,
+    "name": "Lo extraño (uncanny)",
+    "category": "Género",
+    "teoria": "Perturbador que surge de la familiaridad; aquello conocido que se vuelve inquietante.",
+    "ejemplo": "El cuento 'El almohadón de plumas' de Horacio Quiroga.",
+    "ejercicio": "¿Qué efecto produce la repetición en 'Casa tomada'?",
+    "suggestedAnswer": "Un extrañamiento progresivo de la casa familiar hasta ser invadida por una fuerza desconocida."
+  },
+  {
+    "id": 55,
+    "name": "El cuento de horror",
+    "category": "Género",
+    "teoria": "Género cultivado por Quiroga, Amparo Dávila, que busca provocar miedo o repulsión con atmósferas opresivas.",
+    "ejemplo": "El hijo (Quiroga), 'El huésped' de Dávila.",
+    "ejercicio": "¿Qué recursos usa Quiroga para generar horror?",
+    "suggestedAnswer": "Personajes indefensos, animales o insectos amenazantes, ambientes rurales y aislamiento."
+  },
+  {
+    "id": 56,
+    "name": "La ciencia ficción hispanoamericana",
+    "category": "Género",
+    "teoria": "Autores como Bioy Casares, Cortázar, Angélica Gorodischer, que exploran tecnologías, mundos posibles y crítica social.",
+    "ejemplo": "La invención de Morel, Trafalgar de Gorodischer.",
+    "ejercicio": "¿Qué elemento distópico aparece en 'La invención de Morel'?",
+    "suggestedAnswer": "La isla gobernada por una máquina que proyecta recuerdos eternos, trampa que atrapa al protagonista."
+  },
+  {
+    "id": 57,
+    "name": "El policial negro (hard-boiled)",
+    "category": "Género",
+    "teoria": "Novela negra adaptada al contexto latinoamericano, con detective corrupto o antihéroe, crítica social y violencia urbana.",
+    "ejemplo": "El complot mongol (Rafael Bernal), La serie del detective Pepe Carvalho en España, pero en Hispanoamérica 'No habrá más penas ni olvido' (Soriano).",
+    "ejercicio": "¿Qué caracteriza al detective latinoamericano de novela negra?",
+    "suggestedAnswer": "Suele ser un personaje cínico, alcohólico, enfrentado a la corrupción policial y política."
+  },
+  {
+    "id": 58,
+    "name": "Cuento popular y oralidad",
+    "category": "Tradición",
+    "teoria": "Incorporación de leyendas, cuentos de tradición oral y estructura de narrador testigo en la literatura.",
+    "ejemplo": "Los cuentos de Ricardo Güiraldes, los relatos de Juan Rulfo ('Luvina') con narrador oral.",
+    "ejercicio": "Escribe el inicio de un cuento popular hispanoamericano.",
+    "suggestedAnswer": "Cuentan los viejos que en la quebrada del águila, cuando cae la noche, se oyen gemidos de una mujer que busca a sus hijos perdidos."
+  },
+  {
+    "id": 59,
+    "name": "El diario íntimo como forma literaria",
+    "category": "Formas",
+    "teoria": "Uso del formato de diario personal para explorar la subjetividad, la soledad y el paso del tiempo.",
+    "ejemplo": "El diario de Helena Moro (Silvina Ocampo), 'El diario del año de la peste' (Enrique Serna).",
+    "ejercicio": "¿Qué ventajas tiene el diario frente a la narración en tercera persona?",
+    "suggestedAnswer": "Inmediatez, intimidad, registro de la evolución del personaje."
+  },
+  {
+    "id": 60,
+    "name": "La carta como recurso narrativo",
+    "category": "Formas",
+    "teoria": "Inserción de cartas en la novela para dar verosimilitud, mostrar distintos puntos de vista o avanzar la trama.",
+    "ejemplo": "Las cartas en 'Rayuela', 'La tregua' de Mario Benedetti.",
+    "ejercicio": "Escribe una breve carta ficticia que revelaría un secreto familiar.",
+    "suggestedAnswer": "Querida mamá: Siempre supe que tu hermano no murió en el río. Lo vi el año pasado en la feria. No te lo dije antes porque no quería hacerte daño."
+  },
+  {
+    "id": 61,
+    "name": "El manuscrito encontrado",
+    "category": "Recursos",
+    "teoria": "Introducción de un manuscrito hallado por azar que da pie a la historia, creando una distancia narrativa.",
+    "ejemplo": "En 'La invención de Morel', el narrador escribe un diario que será encontrado. 'Manuscrito hallado en un bolsillo' de Cortázar.",
+    "ejercicio": "¿Qué efecto produce el recurso del manuscrito encontrado?",
+    "suggestedAnswer": "Aumenta la sensación de veracidad, introduce un narrador testigo y permite metalepsis."
+  },
+  {
+    "id": 62,
+    "name": "Novela epistolar",
+    "category": "Género",
+    "teoria": "Novela compuesta exclusivamente por cartas intercambiadas entre personajes.",
+    "ejemplo": "La tregua (Benedetti) incluye cartas, pero no es puramente epistolar. 'El amante de Lady Chatterley' no es hispanoamericana. Mejor: 'Querido Diego, te abraza Quiela' de Elena Poniatowska (cartas a Diego Rivera).",
+    "ejercicio": "Ventaja de la novela epistolar.",
+    "suggestedAnswer": "Múltiples puntos de vista, subjetividad, inmediatez emocional."
+  },
+  {
+    "id": 63,
+    "name": "Poesía de la experiencia (narrativa)",
+    "category": "Tendencias",
+    "teoria": "Poesía que cuenta una anécdota o escena con tono conversacional, influida por la vida cotidiana.",
+    "ejemplo": "Poemas de Luis García Montero (España) y en Hispanoamérica, de Fabián Casas, Martín Gambarotta.",
+    "ejercicio": "Escribe dos versos de poesía de la experiencia.",
+    "suggestedAnswer": "Me despertó el café con leche / y la noticia de otro asalto en el subte."
+  },
+  {
+    "id": 64,
+    "name": "Soneto modernista",
+    "category": "Formas poéticas",
+    "teoria": "El soneto fue usado por los modernistas para experimentar con el ritmo y la musicalidad, rompiendo a veces la métrica tradicional.",
+    "ejemplo": "Sonetos de Rubén Darío, Julián del Casal.",
+    "ejercicio": "Escribe un soneto de 14 versos endecasílabos.",
+    "suggestedAnswer": "No se pide completo, pero un ejemplo de verso: 'Juventud, divino tesoro, ¡ya te vas para no volver!' (Darío)."
+  },
+  {
+    "id": 65,
+    "name": "Caligrama",
+    "category": "Recursos visuales",
+    "teoria": "Poema dispuesto en forma de dibujo que representa el tema (tradición vanguardista).",
+    "ejemplo": "Caligramas de Guillermo de Torre, algunos poemas de Vicente Huidobro.",
+    "ejercicio": "Describe cómo sería un caligrama que dibujara una mariposa.",
+    "suggestedAnswer": "Las palabras diseminadas como si fueran el vuelo, con los versos formando las alas simétricas."
+  },
+  {
+    "id": 66,
+    "name": "Haiku hispanoamericano",
+    "category": "Formas poéticas",
+    "teoria": "Adaptación del haiku japonés en español, manteniendo la brevedad y la referencia a la naturaleza o un instante.",
+    "ejemplo": "Octavio Paz, Jorge Luis Borges, José Juan Tablada.",
+    "ejercicio": "Escribe un haiku (5-7-5 sílabas).",
+    "suggestedAnswer": "Sobre la rama / el pájaro se calla / cae la lluvia."
+  },
+  {
+    "id": 67,
+    "name": "Pastoral y poesía ecológica",
+    "category": "Temáticas",
+    "teoria": "Poesía que refleja la relación del ser humano con la naturaleza, a menudo denunciando su destrucción.",
+    "ejemplo": "Poemas de Gonzalo Rojas, Juan Liscano.",
+    "ejercicio": "Menciona un poema hispanoamericano que critique la tala de árboles.",
+    "suggestedAnswer": "Defensa del árbol caído de Gonzalo Rojas."
+  },
+  {
+    "id": 68,
+    "name": "Memorial de agravios o sátira política",
+    "category": "Género",
+    "teoria": "Género que critica a los gobernantes o a la sociedad, a menudo en verso o en prosa humorística.",
+    "ejemplo": "Los poemas satíricos de 'El Perú' de Caviedes (colonial), o las crónicas de Cabrera Infante.",
+    "ejercicio": "Escribe una cuarteta satírica contra un político corrupto.",
+    "suggestedAnswer": "Paco el Grande prometió / medio puente y un canal, / pero todo se lo robó / y su fama se fue al mal."
+  },
+  {
+    "id": 69,
+    "name": "Animales simbólicos en la literatura",
+    "category": "Simbología",
+    "teoria": "Animales como alegorías: el jaguar (fuerza), el cóndor (libertad), la serpiente (sabiduría o mal), el perro (lealtad o traición).",
+    "ejemplo": "El jaguar en 'Las lanzas coloradas' (Uslar Pietri), el cóndor en 'Alturas de Macchu Picchu' (Neruda).",
+    "ejercicio": "¿Qué simboliza el caballo en 'Martín Fierro'?",
+    "suggestedAnswer": "La amistad, la fidelidad y el vínculo con la libertad del gaucho."
+  },
+  {
+    "id": 70,
+    "name": "El arquetipo del héroe",
+    "category": "Arquetipos",
+    "teoria": "El héroe tradicional es noble, valiente y busca justicia; en la novela moderna el héroe es a menudo un anti-héroe.",
+    "ejemplo": "Martín Fierro (héroe romántico), el detective de 'El complot mongol' (anti-héroe).",
+    "ejercicio": "Define al antihéroe hispanoamericano.",
+    "suggestedAnswer": "Personaje fracasado, marginal, cínico, sin ideales elevados, pero que puede tener una redención parcial."
+  },
+  {
+    "id": 71,
+    "name": "El arquetipo de la madre",
+    "category": "Arquetipos",
+    "teoria": "Figura de la madre como símbolo de protección, tierra, memoria o a veces autoridad opresiva.",
+    "ejemplo": "La madre en 'Pedro Páramo' (Dolores Preciado), en 'La casa de los espíritus' (Clara).",
+    "ejercicio": "¿Qué función cumple la madre en 'Los ríos profundos'?",
+    "suggestedAnswer": "Está ausente, pero evoca la identidad y el deseo de retorno."
+  },
+  {
+    "id": 72,
+    "name": "La figura del cacique o caudillo",
+    "category": "Arquetipos",
+    "teoria": "Personaje autoritario, a menudo dictador, que concentra el poder en la narrativa hispanoamericana.",
+    "ejemplo": "El Tirano Aguirre (Uslar Pietri), el General en 'El otoño del patriarca' (García Márquez).",
+    "ejercicio": "¿Cuál es el prototipo del dictador en la literatura?",
+    "suggestedAnswer": "El poder absoluto, la locura, la soledad, la represión."
+  },
+  {
+    "id": 73,
+    "name": "El personaje de la prostituta",
+    "category": "Arquetipos",
+    "teoria": "Figura marginal que a menudo simboliza la explotación o la redención en la novela urbana.",
+    "ejemplo": "La Maga en 'Rayuela' no es prostituta. Mejor, 'Santa' de Federico Gamboa (1903).",
+    "ejercicio": "¿Qué representa la prostituta en la literatura naturalista?",
+    "suggestedAnswer": "La degradación social, la hipocresía moral y la víctima del sistema."
+  },
+  {
+    "id": 74,
+    "name": "El espacio como protagonista: la ciudad",
+    "category": "Espacio",
+    "teoria": "La ciudad (Buenos Aires, México, La Habana) se convierte en un personaje activo, con su idiosincrasia.",
+    "ejemplo": "Buenos Aires en las ficciones de Borges, Cortázar; México en 'La región más transparente' (Fuentes).",
+    "ejercicio": "¿Qué ciudad aparece como laberinto en la obra de Borges?",
+    "suggestedAnswer": "Buenos Aires, pero también en 'El Aleph' se describe la ciudad."
+  },
+  {
+    "id": 75,
+    "name": "El espacio rural (hacienda, pampa)",
+    "category": "Espacio",
+    "teoria": "Espacios rurales: estancia, latifundio, pampa, que representan la tradición, la violencia y la identidad nacional.",
+    "ejemplo": "La pampa en 'Don Segundo Sombra' (Güiraldes), la hacienda en 'Doña Bárbara' (Gallegos).",
+    "ejercicio": "¿Qué enfrentamiento aparece en 'Doña Bárbara'?",
+    "suggestedAnswer": "Civilización vs barbarie, la ley contra el caudillismo."
+  },
+  {
+    "id": 76,
+    "name": "El espacio carcelario",
+    "category": "Espacio",
+    "teoria": "La prisión como escenario de opresión, resistencia y deshumanización.",
+    "ejemplo": "El beso de la mujer araña (Puig), 'Cárcel de mujeres' (Alicia Jurado).",
+    "ejercicio": "¿Qué función tiene el espacio cerrado de la celda?",
+    "suggestedAnswer": "Crear una atmósfera claustrofóbica, propiciar el diálogo íntimo y la reflexión."
+  },
+  {
+    "id": 77,
+    "name": "El tiempo cíclico",
+    "category": "Tiempo",
+    "teoria": "El tiempo no avanza linealmente, sino que se repite en espiral o circular.",
+    "ejemplo": "Cien años de soledad: la historia se repite en los descendientes. 'Pedro Páramo': el tiempo detenido en Comala.",
+    "ejercicio": "¿Qué efecto produce el tiempo cíclico en el lector?",
+    "suggestedAnswer": "Sensación de destino inexorable, de repetición trágica."
+  },
+  {
+    "id": 78,
+    "name": "El tiempo mítico",
+    "category": "Tiempo",
+    "teoria": "El tiempo mítico es intemporal, donde pasado y presente se funden, típico de las culturas indígenas.",
+    "ejemplo": "El mundo indígena en 'Los ríos profundos' (Arguedas) o 'Hombres de maíz' (Asturias).",
+    "ejercicio": "¿Cómo se manifiesta el tiempo mítico en 'Pedro Páramo'?",
+    "suggestedAnswer": "Los muertos conviven con los vivos en un presente eterno."
+  },
+  {
+    "id": 79,
+    "name": "El flashback (analepsis)",
+    "category": "Técnicas temporales",
+    "teoria": "Salto al pasado dentro de la narración para dar información contextual.",
+    "ejemplo": "En 'La muerte de Artemio Cruz' se alternan pasado y presente.",
+    "ejercicio": "Construye un flashback breve: 'Mientras miraba el viejo tren, recordó...'",
+    "suggestedAnswer": "Recordó la tarde en que su padre le regaló un ferrocarril a escala."
+  },
+  {
+    "id": 80,
+    "name": "La prolepsis (flashforward)",
+    "category": "Técnicas temporales",
+    "teoria": "Anticipación de un evento futuro en la narración.",
+    "ejemplo": "Inicio de 'Cien años de soledad': 'Muchos años después, frente al pelotón de fusilamiento, el coronel Aureliano Buendía había de recordar...'.",
+    "ejercicio": "Escribe una oración con prolepsis.",
+    "suggestedAnswer": "Veinte años más tarde, ella comprendería que aquel gesto era una declaración de amor."
+  },
+  {
+    "id": 81,
+    "name": "La enumeración caótica",
+    "category": "Recursos estilísticos",
+    "teoria": "Acumulación de elementos sin orden aparente para saturar al lector y sugerir exceso o caos.",
+    "ejemplo": "Listas de objetos en 'Paradiso' de Lezama Lima.",
+    "ejercicio": "Escribe una enumeración caótica de objetos de una casa.",
+    "suggestedAnswer": "Una taza quebrada, el reloj sin manecillas, tres calcetines sin par, un paraguas roto, periódicos viejos, una muñeca manchada."
+  },
+  {
+    "id": 82,
+    "name": "La sinestesia (recurso estilístico)",
+    "category": "Recursos",
+    "teoria": "Atribución de una sensación a un sentido que no le corresponde (ej. 'color cálido').",
+    "ejemplo": "En 'Alturas de Macchu Picchu', Neruda: 'el reino de la sal y de la sombra' (gusto y vista).",
+    "ejercicio": "Crea una sinestesia con 'sonido' y 'color'.",
+    "suggestedAnswer": "El violín soplaba una tarde amarilla."
+  },
+  {
+    "id": 83,
+    "name": "Elipsis narrativa",
+    "category": "Técnicas temporales",
+    "teoria": "Supresión de un período temporal para acelerar el ritmo.",
+    "ejemplo": "En 'El siglo de las luces' (Carpentier), se omiten años de la vida de los personajes.",
+    "ejercicio": "Escribe una elipsis en una oración.",
+    "suggestedAnswer": "Pasaron cinco años. Cuando despertó, el país había cambiado de nombre."
+  },
+  {
+    "id": 84,
+    "name": "La parodia y la sátira",
+    "category": "Recursos",
+    "teoria": "Imitación burlona de géneros literarios o de la realidad social.",
+    "ejemplo": "La novela 'La tía Julia y el escribidor' (Vargas Llosa) parodia los folletines radiofónicos.",
+    "ejercicio": "Parodia un poema romántico con un tema cotidiano.",
+    "suggestedAnswer": "Tu rostro, oh celular, me desvela / y tu pantalla enciende mi pasión."
+  },
+  {
+    "id": 85,
+    "name": "La metaficción",
+    "category": "Recursos",
+    "teoria": "La obra reflexiona sobre su propio proceso de creación, rompiendo la ilusión realista.",
+    "ejemplo": "En 'Rayuela', el autor juega con la estructura y el lector, y hay capítulos que discuten sobre la novela.",
+    "ejercicio": "Escribe una frase metaficticia.",
+    "suggestedAnswer": "El narrador dudó si incluir esta metáfora, pero al fin decidió que el lector la apreciaría."
+  },
+  {
+    "id": 86,
+    "name": "El epígrafe como paratexto",
+    "category": "Recursos",
+    "teoria": "Cita al inicio de un capítulo o libro que anticipa el tema o crea diálogo intertextual.",
+    "ejemplo": "Muchas novelas del Boom usan epígrafes de autores consagrados.",
+    "ejercicio": "Propón un epígrafe para una historia sobre la soledad.",
+    "suggestedAnswer": "'La soledad es el destino de todos' (García Márquez)."
+  },
+  {
+    "id": 87,
+    "name": "La dedicatoria como espacio narrativo",
+    "category": "Recursos",
+    "teoria": "La dedicatoria puede ser parte del relato, dirigirse al lector o a un personaje ficticio.",
+    "ejemplo": "La dedicatoria de 'Rayuela' 'a la lectora'.",
+    "ejercicio": "Escribe una dedicatoria breve e irónica.",
+    "suggestedAnswer": "A los que nunca me leen: este libro es para ustedes."
+  },
+  {
+    "id": 88,
+    "name": "El título como elemento poético",
+    "category": "Recursos",
+    "teoria": "El título anticipa el tono, el tema o juega con la ambigüedad.",
+    "ejemplo": "Títulos como 'El otoño del patriarca', 'El llano en llamas'.",
+    "ejercicio": "Sugiere un título para una historia sobre un bosque que se incendia.",
+    "suggestedAnswer": "Bosque que arde en silencio."
+  },
+  {
+    "id": 89,
+    "name": "La página en blanco",
+    "category": "Recursos gráficos",
+    "teoria": "Uso de espacios en blanco para significar silencio, interrupción o paso del tiempo.",
+    "ejemplo": "En 'Rayuela', hay capítulos marcados como 'no leídos' o espacios vacíos.",
+    "ejercicio": "¿Qué puede sugerir una página en blanco al final de un libro?",
+    "suggestedAnswer": "El final abierto, la muerte, la reflexión."
+  },
+  {
+    "id": 90,
+    "name": "El final abierto",
+    "category": "Estructura",
+    "teoria": "Final que no resuelve la trama, deja preguntas o invita al lector a imaginar el desenlace.",
+    "ejemplo": "El final de 'El túnel' (Sábato) es cerrado; pero 'La ciudad y los perros' tiene un final abierto en la línea de la amistad perdida.",
+    "ejercicio": "Escribe una última oración abierta para una historia de detectives.",
+    "suggestedAnswer": "El detective guardó el revólver, miró el expediente y pensó que quizás nunca se sabría la verdad."
+  },
+  {
+    "id": 91,
+    "name": "El narrador testigo",
+    "category": "Narrador",
+    "teoria": "Narrador en primera persona que no es el protagonista, sino que cuenta lo que observa.",
+    "ejemplo": "En 'El ojo del amo' o en 'La señora Muñoz' de Saer.",
+    "ejercicio": "Escribe un párrafo con narrador testigo.",
+    "suggestedAnswer": "Nunca supe qué pasó realmente entre ellos. Solo vi sus manos temblar sobre el mantel."
+  },
+  {
+    "id": 92,
+    "name": "El narrador infantil",
+    "category": "Narrador",
+    "teoria": "La voz de un niño narra los hechos, con su limitado conocimiento y lenguaje, creando efectos de extrañeza.",
+    "ejemplo": "La historia de 'Los cachorros' (Vargas Llosa) usa un narrador colectivo, pero no infantil. 'El chico de las estrellas' de Castellanos. Mejor: 'El principito' no es hispanoamericano. Ejemplo más cercano: 'El niño que enloqueció de amor' (Eduardo Barrios, chileno).",
+    "ejercicio": "Escribe una frase desde la mirada de un niño en un velorio.",
+    "suggestedAnswer": "El abuelo estaba quieto, pero yo pensaba que solo dormía una siesta larga."
+  },
+  {
+    "id": 93,
+    "name": "El narrador en segunda persona",
+    "category": "Narrador",
+    "teoria": "El narrador se dirige a un 'tú' que puede ser el lector o un personaje.",
+    "ejemplo": "En 'La ciudad ausente' (Piglia) hay uso de segunda persona.",
+    "ejercicio": "Comienza un cuento en segunda persona.",
+    "suggestedAnswer": "Entras al café y ves a la mujer del abrigo rojo. Sabes que es ella por la forma en que sostiene la taza."
+  },
+  {
+    "id": 94,
+    "name": "El narrador equívoco (que miente)",
+    "category": "Narrador",
+    "teoria": "Narrador en primera persona no confiable, que engaña al lector o distorsiona los hechos.",
+    "ejemplo": "El narrador de 'El túnel' (Sábato) es un asesino que justifica su crimen; el lector duda de su versión.",
+    "ejercicio": "Escribe una línea donde el narrador admita que miente.",
+    "suggestedAnswer": "Podría contarte la verdad, pero prefiero adornar un poco, como ella habría querido."
+  },
+  {
+    "id": 95,
+    "name": "El discurso indirecto libre",
+    "category": "Estilo",
+    "teoria": "Técnica que mezcla la narración en tercera persona con los pensamientos del personaje, sin verbo introductorio.",
+    "ejemplo": "En 'Cien años de soledad': 'Amaranta recordaba entonces...'. Uso del indirecto libre.",
+    "ejercicio": "Transforma 'Pensó que ya era tarde' a estilo indirecto libre.",
+    "suggestedAnswer": "Ya era tarde. Las sombras se alargaban en el patio."
+  },
+  {
+    "id": 96,
+    "name": "El estilo telegráfico",
+    "category": "Estilo",
+    "teoria": "Oraciones muy cortas, eliminación de conectores, efecto de velocidad o acción.",
+    "ejemplo": "Algunos cuentos de Quiroga y de Juan Rulfo ('El llano en llamas') tienen párrafos breves.",
+    "ejercicio": "Escribe un párrafo telegráfico de 3 oraciones muy breves.",
+    "suggestedAnswer": "Sonó el teléfono. Nadie contestó. Silencio."
+  },
+  {
+    "id": 97,
+    "name": "El barroco verbal (neobarroco)",
+    "category": "Estilo",
+    "teoria": "Sobrecarga de metáforas, cultismos, sintaxis compleja y juegos de palabras.",
+    "ejemplo": "Paradiso de Lezama Lima, algunos cuentos de Sarduy.",
+    "ejercicio": "Escribe una frase barroca que describa una puesta de sol.",
+    "suggestedAnswer": "El occiso sol derramaba sus purpúreas lágrimas de fuego en las heridas del ocaso."
+  },
+  {
+    "id": 98,
+    "name": "El lenguaje coloquial (registro popular)",
+    "category": "Estilo",
+    "teoria": "Uso de modismos, groserías y habla corriente para dar realismo a los personajes marginales o populares.",
+    "ejemplo": "Lenguaje de los sicarios en 'La virgen de los sicarios' (Vallejo), el lunfardo en 'Adán Buenosayres' (Marechal).",
+    "ejercicio": "Escribe una frase coloquial de un personaje de barrio.",
+    "suggestedAnswer": "Che, loco, ¿viste lo que pasó? Se armó un lío bárbaro."
+  },
+  {
+    "id": 99,
+    "name": "El 'yo' poético como máscara",
+    "category": "Poesía",
+    "teoria": "El poeta asume una identidad ficticia (persona) para explorar otros puntos de vista.",
+    "ejemplo": "En 'Los heraldos negros', Vallejo a veces habla desde la experiencia de un indígena.",
+    "ejercicio": "Escribe un verso como si fueras un niño perdido en la ciudad.",
+    "suggestedAnswer": "La torre me mira con sus ojos de cemento / y yo no encuentro la mano que me guíe a casa."
+  },
+  {
+    "id": 100,
+    "name": "El manifiesto literario",
+    "category": "Género",
+    "teoria": "Texto programático donde un grupo de escritores expone sus principios estéticos y su ruptura con la tradición.",
+    "ejemplo": "El 'Manifiesto de la revista Martín Fierro' (argentino), 'Yo acuso' de Neruda, manifiestos del Ultraísmo.",
+    "ejercicio": "Escribe la primera frase de un manifiesto antirrealista.",
+    "suggestedAnswer": "¡Abajo las descripciones de salones burgueses! ¡Viva la imagen libre y el delirio de los sentidos!"
+  }
+]

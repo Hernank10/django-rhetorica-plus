@@ -1,0 +1,899 @@
+[
+  {
+    "id": 1,
+    "name": "Variación lingüística",
+    "category": "Conceptos básicos",
+    "teoria": "Propiedad de las lenguas de presentar diferentes formas según el contexto geográfico, social o situacional.",
+    "ejemplo": "En español, el voseo (vos) es una variación diatópica frente al tuteo (tú).",
+    "ejercicio": "Da un ejemplo de variación dialectal en el léxico hispanoamericano.",
+    "suggestedAnswer": "En México, 'popote' (pajita); en Argentina, 'pajita'; en España, 'pajita' (o 'cañita')."
+  },
+  {
+    "id": 2,
+    "name": "Variación diatópica (geográfica)",
+    "category": "Variación",
+    "teoria": "Diferencias lingüísticas asociadas al lugar de origen de los hablantes.",
+    "ejemplo": "Uso de 'vos' (Río de la Plata) vs 'tú' (México).",
+    "ejercicio": "¿Qué palabra para 'autobús' se usa en Cuba?",
+    "suggestedAnswer": "Guagua (también en Canarias)."
+  },
+  {
+    "id": 3,
+    "name": "Variación diastrática (social)",
+    "category": "Variación",
+    "teoria": "Diferencias lingüísticas asociadas al nivel socioeconómico, educativo, edad o género.",
+    "ejemplo": "El uso del queísmo (omisión de 'de') es más frecuente en niveles educativos bajos.",
+    "ejercicio": "¿Qué rasgo diastrático diferencian a jóvenes de mayores?",
+    "suggestedAnswer": "El uso de anglicismos y jerga juvenil."
+  },
+  {
+    "id": 4,
+    "name": "Variación diafásica (estilo/registro)",
+    "category": "Variación",
+    "teoria": "Diferencias según la situación comunicativa (formal, informal, coloquial, técnico).",
+    "ejemplo": "En una entrevista formal: 'asimismo'; en una charla con amigos: 'también'.",
+    "ejercicio": "¿Qué registro usarías en un mensaje de texto a un amigo?",
+    "suggestedAnswer": "Coloquial, con abreviaturas (xq, tqm)."
+  },
+  {
+    "id": 5,
+    "name": "Prestigio lingüístico",
+    "category": "Actitudes",
+    "teoria": "Valoración positiva que una comunidad otorga a ciertas variedades o rasgos, a menudo la variedad estándar.",
+    "ejemplo": "En Colombia, el acento de Bogotá goza de prestigio; en Argentina, el rioplatense es prestigioso.",
+    "ejercicio": "¿Qué variedad de español se usa en los medios de comunicación internacionales?",
+    "suggestedAnswer": "El español neutro (basado en el mexicano o colombiano)."
+  },
+  {
+    "id": 6,
+    "name": "Estigmatización lingüística",
+    "category": "Actitudes",
+    "teoria": "Valoración negativa de ciertos rasgos considerados 'incorrectos' o de baja categoría.",
+    "ejemplo": "El voseo en algunos países fue estigmatizado durante siglos; hoy es normal en Argentina.",
+    "ejercicio": "¿Por qué el ceceo andaluz puede estar estigmatizado?",
+    "suggestedAnswer": "Por asociación con baja educación o falta de prestigio social."
+  },
+  {
+    "id": 7,
+    "name": "Norma culta y norma popular",
+    "category": "Norma",
+    "teoria": "La norma culta es la variedad prestigiosa usada por hablantes educados; la popular es la de los sectores no escolarizados.",
+    "ejemplo": "En la norma culta, 'hubo problemas'; en la popular, 'habían problemas' (considerado incorrecto).",
+    "ejercicio": "¿Qué forma es norma culta: 'llegamos a casa' o 'llegamos a la casa'?",
+    "suggestedAnswer": "Ambas son aceptables, pero 'llegamos a casa' es más general."
+  },
+  {
+    "id": 8,
+    "name": "Diglosia",
+    "category": "Situaciones de contacto",
+    "teoria": "Situación en la que dos lenguas o variedades coexisten con funciones diferenciadas: una alta (formal, escrita) y otra baja (coloquial).",
+    "ejemplo": "En Paraguay, español (alto) y guaraní (bajo) en muchos dominios.",
+    "ejercicio": "¿Hay diglosia entre español estándar y español coloquial?",
+    "suggestedAnswer": "No estrictamente, porque no son dos lenguas, pero hay diferencias funcionales."
+  },
+  {
+    "id": 9,
+    "name": "Bilingüismo",
+    "category": "Situaciones de contacto",
+    "teoria": "Capacidad de usar dos lenguas con cierto grado de competencia.",
+    "ejemplo": "Los hablantes de catalán y español en Cataluña son bilingües.",
+    "ejercicio": "¿Cuántos bilingües español-lengua indígena hay en América?",
+    "suggestedAnswer": "Millones (quechua, guaraní, aimara, náhuatl, etc.)."
+  },
+  {
+    "id": 10,
+    "name": "Lengua minoritaria y minorizada",
+    "category": "Contacto",
+    "teoria": "Lengua minoritaria: demográficamente inferior; minorizada: con menor poder social, incluso si es mayoritaria en número.",
+    "ejemplo": "El quechua es mayoritario en algunas zonas de Perú pero minorizado (estigmatizado).",
+    "ejercicio": "¿Es el mapudungun una lengua minoritaria o minorizada?",
+    "suggestedAnswer": "Minoritaria y minorizada (hablantes reducidos y baja presión social)."
+  },
+  {
+    "id": 11,
+    "name": "Política lingüística",
+    "category": "Planificación",
+    "teoria": "Decisiones estatales sobre el estatus, corpus y uso de las lenguas en el territorio.",
+    "ejemplo": "En Bolivia, la Constitución reconoce 36 lenguas como oficiales.",
+    "ejercicio": "¿Qué país hispanoamericano tiene una política lingüística activa de revitalización del quechua?",
+    "suggestedAnswer": "Perú, Bolivia, Ecuador (programas de educación intercultural bilingüe)."
+  },
+  {
+    "id": 12,
+    "name": "Planificación lingüística",
+    "category": "Planificación",
+    "teoria": "Intervención consciente para modificar una lengua o regular su uso (normalización, corpus, estatus).",
+    "ejemplo": "La RAE planifica el léxico y la ortografía del español.",
+    "ejercicio": "¿Qué organismo planifica el español panhispánico?",
+    "suggestedAnswer": "La Asociación de Academias de la Lengua Española (ASALE)."
+  },
+  {
+    "id": 13,
+    "name": "Prestigio abierto y encubierto",
+    "category": "Actitudes",
+    "teoria": "Prestigio abierto: variedad valorada positivamente de forma consciente; encubierto: variedad valorada en contextos informales (solidaridad).",
+    "ejemplo": "El voseo en Argentina tiene prestigio encubierto (señal de identidad) y abierto en algunos contextos.",
+    "ejercicio": "¿Qué prestigio puede tener el uso de anglicismos entre jóvenes?",
+    "suggestedAnswer": "Prestigio encubierto (modernidad, pertenencia a grupo)."
+  },
+  {
+    "id": 14,
+    "name": "Redes sociales lingüísticas (Milroy)",
+    "category": "Métodos",
+    "teoria": "Estudio de la influencia de las redes sociales en la variación: redes densas vs laxas.",
+    "ejemplo": "En comunidades cerradas, los rasgos lingüísticos se conservan más.",
+    "ejercicio": "¿Por qué en zonas rurales andinas se conservan más arcaísmos?",
+    "suggestedAnswer": "Porque las redes sociales son más densas y cerradas a la innovación."
+  },
+  {
+    "id": 15,
+    "name": "Mercado lingüístico",
+    "category": "Económico",
+    "teoria": "Concepto de Bourdieu: las variedades lingüísticas tienen valor en el mercado simbólico y económico.",
+    "ejemplo": "Hablar español estándar aumenta las oportunidades laborales en Hispanoamérica.",
+    "ejercicio": "¿Qué variedad tiene más capital lingüístico en los medios de comunicación?",
+    "suggestedAnswer": "El español neutro."
+  },
+  {
+    "id": 16,
+    "name": "Actitudes lingüísticas",
+    "category": "Actitudes",
+    "teoria": "Creencias y sentimientos de los hablantes hacia una lengua o variedad.",
+    "ejemplo": "En el Caribe, el seseo es valorado como normal, no como error.",
+    "ejercicio": "¿Qué actitud tienen muchos hispanoamericanos hacia el vosotros?",
+    "suggestedAnswer": "Lo perciben como ajeno, a veces arcaico o de España."
+  },
+  {
+    "id": 17,
+    "name": "Cambio lingüístico en curso",
+    "category": "Cambio",
+    "teoria": "Estudio de cambios fonéticos, gramaticales o léxicos que están ocurriendo en la actualidad.",
+    "ejemplo": "La aspiración de /s/ en el Caribe es un cambio en progreso.",
+    "ejercicio": "¿Qué cambio se observa en el yeísmo hispanoamericano?",
+    "suggestedAnswer": "Avance del yeísmo (pérdida de /ʎ/) frente a la distinción."
+  },
+  {
+    "id": 18,
+    "name": "Principio de curvatura (S-curve)",
+    "category": "Cambio",
+    "teoria": "Los cambios lingüísticos se difunden lentamente al principio, luego se aceleran y luego se desaceleran.",
+    "ejemplo": "La pérdida de la /d/ intervocálica en participios (-ao) se aceleró en el siglo XX.",
+    "ejercicio": "Explica por qué el voseo se expandió en América pero no en España.",
+    "suggestedAnswer": "Por factores sociopolíticos: en América se mantuvo como rasgo de identidad."
+  },
+  {
+    "id": 19,
+    "name": "Lengua en peligro de extinción",
+    "category": "Contacto",
+    "teoria": "Lengua que está perdiendo hablantes y no se transmite a nuevas generaciones.",
+    "ejemplo": "El chono (extinto), el selk'nam (casi extinto), el cumanagoto (extinto).",
+    "ejercicio": "¿Qué lenguas indígenas de México están en peligro?",
+    "suggestedAnswer": "Muchas: el kiliwa, el paipai, el lacandón, etc."
+  },
+  {
+    "id": 20,
+    "name": "Revitalización lingüística",
+    "category": "Contacto",
+    "teoria": "Esfuerzos para revertir el desplazamiento lingüístico y recuperar una lengua amenazada.",
+    "ejemplo": "En Chile, se promueve la enseñanza del mapudungun en escuelas de la Araucanía.",
+    "ejercicio": "¿Qué proyectos de revitalización hay para el quechua?",
+    "suggestedAnswer": "Programas de educación intercultural bilingüe en Perú, Bolivia, Ecuador."
+  },
+  {
+    "id": 21,
+    "name": "Educación intercultural bilingüe (EIB)",
+    "category": "Política",
+    "teoria": "Modelo educativo que enseña en lengua indígena y español, valorando ambas culturas.",
+    "ejemplo": "En Guatemala, se enseña en maya y español en comunidades mayas.",
+    "ejercicio": "¿Qué países andinos tienen EIB?",
+    "suggestedAnswer": "Perú, Bolivia, Ecuador, Colombia (algunas regiones)."
+  },
+  {
+    "id": 22,
+    "name": "Español como lengua de prestigio vs lenguas indígenas",
+    "category": "Contacto",
+    "teoria": "El español domina en educación, medios y administración; las lenguas indígenas sufren desplazamiento.",
+    "ejemplo": "En Paraguay, el guaraní es cooficial pero el español sigue siendo dominante en ámbitos formales.",
+    "ejercicio": "¿Por qué los padres indígenas dejan de hablar su lengua a sus hijos?",
+    "suggestedAnswer": "Por presión social, estigmatización y deseo de movilidad social."
+  },
+  {
+    "id": 23,
+    "name": "Selección de código (code choice)",
+    "category": "Contacto",
+    "teoria": "Elección de una lengua u otra según el contexto, los participantes, el tema.",
+    "ejemplo": "En Perú, una persona puede hablar quechua en casa y español en el trabajo.",
+    "ejercicio": "¿Qué lengua elegirías en una entrevista de trabajo en Paraguay?",
+    "suggestedAnswer": "Español (formal)."
+  },
+  {
+    "id": 24,
+    "name": "Alternancia de código (code-switching)",
+    "category": "Contacto",
+    "teoria": "Cambio de una lengua a otra dentro de un mismo discurso o enunciado.",
+    "ejemplo": "'El otro día fui a un meeting, you know?' (español-inglés en EE.UU.).",
+    "ejercicio": "Da un ejemplo de alternancia español-guaraní en Paraguay.",
+    "suggestedAnswer": "‘Voy a la tienda a comprar pan, entonces aha’ (aha = ya voy)."
+  },
+  {
+    "id": 25,
+    "name": "Cambio de código metafórico",
+    "category": "Contacto",
+    "teoria": "Alternancia para expresar cambio de identidad, tono o actitud, no por falta de palabra.",
+    "ejemplo": "Un hablante bilingüe cambia a inglés para mostrar autoridad.",
+    "ejercicio": "¿Por qué cambiarías a tu lengua materna en medio de una conversación formal?",
+    "suggestedAnswer": "Para crear intimidad o enfatizar un punto."
+  },
+  {
+    "id": 26,
+    "name": "Préstamo lingüístico",
+    "category": "Contacto",
+    "teoria": "Incorporación de palabras de otra lengua, adaptadas o no.",
+    "ejemplo": "Fútbol (inglés 'football'), tuit (inglés 'tweet'), pizza (italiano).",
+    "ejercicio": "¿De qué lengua proviene 'cóndor'?",
+    "suggestedAnswer": "Del quechua 'kuntur'."
+  },
+  {
+    "id": 27,
+    "name": "Calco semántico",
+    "category": "Contacto",
+    "teoria": "Traducción literal de una expresión extranjera, a veces con cambio de significado.",
+    "ejemplo": "Realizar (to realize) en algunos dialectos hispanoamericanos, por influencia del inglés.",
+    "ejercicio": "¿Es correcto 'aplicar a un trabajo'? (calco de 'apply to a job')",
+    "suggestedAnswer": "En español se dice 'solicitar un trabajo'."
+  },
+  {
+    "id": 28,
+    "name": "Espanglish (Spanglish)",
+    "category": "Contacto",
+    "teoria": "Variedad de contacto entre español e inglés en EE.UU., con préstamos, alternancias y creaciones.",
+    "ejemplo": "'Parquear' (park), 'wachar' (watch), 'librería' (library).",
+    "ejercicio": "¿Qué significa 'janguiar'?",
+    "suggestedAnswer": "Salir, pasar el rato (del inglés 'hang out')."
+  },
+  {
+    "id": 29,
+    "name": "Portuñol (fronterizo)",
+    "category": "Contacto",
+    "teoria": "Variedad mixta en zonas de contacto entre español y portugués (frontera Uruguay-Brasil, etc.).",
+    "ejemplo": "‘Voy a la cambia’ (cambiar dinero), ‘masa o menos’ (más o menos).",
+    "ejercicio": "¿En qué región se habla portuñol?",
+    "suggestedAnswer": "En la frontera entre Uruguay y Brasil, Argentina-Brasil, etc."
+  },
+  {
+    "id": 30,
+    "name": "Jopara (Paraguay)",
+    "category": "Contacto",
+    "teoria": "Mezcla de español y guaraní, con características propias.",
+    "ejemplo": "‘Ahá la tienda’ (voy a la tienda).",
+    "ejercicio": "¿Qué variedad se habla en Paraguay además del español y guaraní puros?",
+    "suggestedAnswer": "Jopara."
+  },
+  {
+    "id": 31,
+    "name": "Media lengua (Ecuador)",
+    "category": "Contacto",
+    "teoria": "Lengua mixta de quechua y español en algunas comunidades de Ecuador.",
+    "ejemplo": "Mezcla de léxico quechua con morfología española.",
+    "ejercicio": "¿Dónde se habla la media lengua?",
+    "suggestedAnswer": "En el norte de Ecuador (provincia de Imbabura)."
+  },
+  {
+    "id": 32,
+    "name": "Influencia del quechua en el español andino",
+    "category": "Contacto",
+    "teoria": "El español de los Andes presenta rasgos como el uso del gerundio en 'estoy cocinando pollo' (huevo?), uso de 'de' posesivo: 'la casa de mi mama' (redundante).",
+    "ejemplo": "‘Dame agüita’ (diminutivo), ‘Voy a hacer la tarea’ (sin cambios).",
+    "ejercicio": "¿Qué rasgo del español andino muestra influencia quechua?",
+    "suggestedAnswer": "El uso del diminutivo frecuente y la posposición de 'po' (pos)."
+  },
+  {
+    "id": 33,
+    "name": "Influencia del guaraní en el español paraguayo",
+    "category": "Contacto",
+    "teoria": "Léxico guaraní en español paraguayo: 'repócho' (cansado), 'ahá' (ya voy), 'ñembo' (jactancia).",
+    "ejemplo": "‘Che’ (interjección), ‘tera’ (expresión de sorpresa).",
+    "ejercicio": "¿Qué significa 'repochó'?",
+    "suggestedAnswer": "Cansado."
+  },
+  {
+    "id": 34,
+    "name": "Influencia del náhuatl en el español mexicano",
+    "category": "Contacto",
+    "teoria": "Miles de palabras de origen náhuatl en México: 'aguacate', 'chile', 'tomate', 'cacahuate', 'molcajete'.",
+    "ejemplo": "‘Aguacate’ (del náhuatl 'ahuacatl'), 'chocolate' (xocolātl).",
+    "ejercicio": "¿Qué palabra náhuatl designa una herramienta de moler?",
+    "suggestedAnswer": "Molcajete (metate)."
+  },
+  {
+    "id": 35,
+    "name": "Influencia del mapudungun en el español chileno",
+    "category": "Contacto",
+    "teoria": "Palabras como 'pololo' (novio), 'chucha' (vulva, pero también interjección), 'guata' (guatón, panza).",
+    "ejemplo": "‘Pichintún’ (poco), ‘catuto’ (pan de maíz).",
+    "ejercicio": "¿Qué significa 'pichintún'?",
+    "suggestedAnswer": "Poco, pequeña cantidad."
+  },
+  {
+    "id": 36,
+    "name": "Seseo y distinción en América",
+    "category": "Variación diatópica",
+    "teoria": "El seseo (pronunciación de /θ/ como /s/) es mayoritario en Hispanoamérica por influencia andaluza y canaria. La distinción solo se da en algunas zonas andinas.",
+    "ejemplo": "En México, 'caza' y 'casa' suenan igual; en zonas de Bolivia, se distinguen.",
+    "ejercicio": "¿Dónde se conserva la distinción /s/ - /θ/ en América?",
+    "suggestedAnswer": "En zonas andinas de Perú, Bolivia y Ecuador (por influencia castellana)."
+  },
+  {
+    "id": 37,
+    "name": "Yeísmo y conservación de /ʎ/",
+    "category": "Variación diatópica",
+    "teoria": "El yeísmo (fusión de 'll' e 'y') es mayoritario en Hispanoamérica; la 'elle' se conserva en algunas áreas andinas y Paraguay.",
+    "ejemplo": "En Argentina, 'calla' y 'caya' son homófonas; en Bolivia, pueden ser distintas.",
+    "ejercicio": "¿Dónde se conserva /ʎ/?",
+    "suggestedAnswer": "En los Andes (Perú, Bolivia), Paraguay, y en algunos hablantes del interior de Colombia."
+  },
+  {
+    "id": 38,
+    "name": "Voseo y tuteo",
+    "category": "Variación diatópica",
+    "teoria": "El voseo (uso de 'vos') es general en Argentina, Uruguay, Paraguay, Costa Rica, y parcial en otros países. El tuteo domina en México, Perú, Caribe, etc.",
+    "ejemplo": "Argentina: 'Vos sos'; México: 'Tú eres'.",
+    "ejercicio": "¿En qué país se usa el voseo con formas verbales distintas?",
+    "suggestedAnswer": "En Argentina (cantás, comés, vivís) y en otros lugares (vos cantás, etc.)."
+  },
+  {
+    "id": 39,
+    "name": "Usted como tratamiento de confianza (Colombia)",
+    "category": "Variación diatópica",
+    "teoria": "En Colombia y algunos otros países, 'usted' se usa también entre amigos y familiares, no solo formal.",
+    "ejemplo": "En Bogotá, los padres pueden tutearse o hablarse de 'usted' entre sí.",
+    "ejercicio": "¿En qué otro país se usa 'usted' para intimidad?",
+    "suggestedAnswer": "Costa Rica (usted generalizado)."
+  },
+  {
+    "id": 40,
+    "name": "Aspiración de /s/ en el Caribe",
+    "category": "Variación diatópica",
+    "teoria": "En Cuba, Puerto Rico, República Dominicana, Panamá y regiones costeras, la /s/ implosiva se aspira a [h] o se elide.",
+    "ejemplo": "'Las casas' → [lah ˈkasah].",
+    "ejercicio": "¿Cómo se pronuncia 'los dos' en Cuba?",
+    "suggestedAnswer": "[loh ˈðoh]."
+  },
+  {
+    "id": 41,
+    "name": "Elisión de /d/ intervocálica en participios",
+    "category": "Variación diastrática",
+    "teoria": "La pérdida de /d/ en participios (cantado → cantao) es común en habla popular de toda Hispanoamérica.",
+    "ejemplo": "‘He comprao’ en lugar de ‘he comprado’.",
+    "ejercicio": "¿Qué nivel educativo se asocia con esta elisión?",
+    "suggestedAnswer": "Niveles bajos o habla coloquial, aunque también ocurre en habla culta informal."
+  },
+  {
+    "id": 42,
+    "name": "Uso de 'habían' por 'hubo'",
+    "category": "Variación diastrática",
+    "teoria": "En habla popular, se usa 'habían' (plural) como impersonal: 'Habían muchos niños' (norma culta: 'Había muchos niños').",
+    "ejemplo": "‘Se me fueron la tarea’ por ‘Se me fue la tarea’.",
+    "ejercicio": "Corrige 'Habían varias soluciones'.",
+    "suggestedAnswer": "Había varias soluciones."
+  },
+  {
+    "id": 43,
+    "name": "Dequeísmo",
+    "category": "Variación diastrática",
+    "teoria": "Añadir 'de' antes de 'que' cuando no es necesario ('pienso de que...'), asociado a niveles educativos medios.",
+    "ejemplo": "‘Me dijo de que vendría’ (incorrecto).",
+    "ejercicio": "Corrige 'Espero de que vengas'.",
+    "suggestedAnswer": "Espero que vengas."
+  },
+  {
+    "id": 44,
+    "name": "Queísmo",
+    "category": "Variación diastrática",
+    "teoria": "Omisión de preposición exigida ('me acuerdo que' en lugar de 'me acuerdo de que'), común en habla coloquial.",
+    "ejemplo": "‘Estoy seguro que vendrá’ (falta 'de').",
+    "ejercicio": "Corrige 'Me doy cuenta que llegas tarde'.",
+    "suggestedAnswer": "Me doy cuenta de que llegas tarde."
+  },
+  {
+    "id": 45,
+    "name": "Leísmo, laísmo y loísmo",
+    "category": "Variación diatópica",
+    "teoria": "Uso de 'le' como CD (leísmo) es aceptado en España pero poco común en América; laísmo y loísmo (la/lo como CI) son estigmatizados.",
+    "ejemplo": "En España: 'Le vi' por 'lo vi'; en América no.",
+    "ejercicio": "¿Es correcto 'La dije la verdad'?",
+    "suggestedAnswer": "No; debe ser 'Le dije la verdad'."
+  },
+  {
+    "id": 46,
+    "name": "Uso de 'más que' por 'más de' (cuantificación)",
+    "category": "Variación diastrática",
+    "teoria": "En construcciones temporales, se usa 'más que' en lugar de 'más de' (más que tres años).",
+    "ejemplo": "‘Vivo aquí más que un año’ (incorrecto por 'más de un año').",
+    "ejercicio": "Corrige 'Trabajo más que diez horas'.",
+    "suggestedAnswer": "Trabajo más de diez horas."
+  },
+  {
+    "id": 47,
+    "name": "Adverbios en -mente con adjetivo corto",
+    "category": "Variación",
+    "teoria": "Formación de adverbios en -mente: solo el último lleva el sufijo si hay varios adjetivos ('clara y concisamente').",
+    "ejemplo": "‘Habló clara y concisamente’ (no ‘claramente y concisamente’).",
+    "ejercicio": "Corrige 'Respondió rápidamente y eficientemente'.",
+    "suggestedAnswer": "Respondió rápida y eficientemente."
+  },
+  {
+    "id": 48,
+    "name": "Concordancia con 'la mayoría'",
+    "category": "Variación diastrática",
+    "teoria": "Uso de 'la mayoría' con verbo en plural ('la mayoría están') es frecuente en Hispanoamérica, aunque la norma prefiere singular.",
+    "ejemplo": "‘La mayoría de los estudiantes aprobaron’ (aceptado).",
+    "ejercicio": "¿Cuál es la forma más normativa: 'La mayoría llegó' o 'llegaron'?",
+    "suggestedAnswer": "llegó (singular)."
+  },
+  {
+    "id": 49,
+    "name": "Uso de 'haber' en tercera persona plural",
+    "category": "Variación",
+    "teoria": "El uso de 'haber' como impersonal en singular (hay, hubo) no debe concordar; la forma 'habían' es considerada vulgar.",
+    "ejemplo": "‘Hubo problemas’ (correcto), ‘Habían problemas’ (incorrecto).",
+    "ejercicio": "Di cuál es correcto: 'Habrán sorpresas' o 'Habrá sorpresas'.",
+    "suggestedAnswer": "Habrá sorpresas."
+  },
+  {
+    "id": 50,
+    "name": "Voseo verbal y pronominal",
+    "category": "Variación",
+    "teoria": "El voseo puede incluir cambio de conjugación (vos hablás) y a veces de pronombre (vos te olvidas).",
+    "ejemplo": "Argentina: 'Vos te fuiste'; Chile: 'Vos te fuiste' (pero con diferente acento).",
+    "ejercicio": "Conjuga 'hablar' en voseo rioplatense.",
+    "suggestedAnswer": "Vos hablás."
+  },
+  {
+    "id": 51,
+    "name": "Voseo en el imperativo",
+    "category": "Variación",
+    "teoria": "El imperativo voseante tiene formas propias: 'cantá', 'comé', 'viví' (Argentina).",
+    "ejemplo": "‘¡Vení!’ en lugar de ‘¡Ven!’.",
+    "ejercicio": "¿Cómo se dice 'come' en voseo argentino?",
+    "suggestedAnswer": "Comé."
+  },
+  {
+    "id": 52,
+    "name": "Uso de 'ustedes' en lugar de 'vosotros'",
+    "category": "Variación",
+    "teoria": "En toda Hispanoamérica, 'ustedes' es la forma de plural para registro formal e informal, careciendo de 'vosotros'.",
+    "ejemplo": "‘Ustedes son’ (en lugar de ‘vosotros sois’).",
+    "ejercicio": "Convierte 'vosotros iréis' a hispanoamérica.",
+    "suggestedAnswer": "Ustedes irán."
+  },
+  {
+    "id": 53,
+    "name": "Forma apocopada 'pa' por 'para'",
+    "category": "Variación diastrática",
+    "teoria": "En habla rápida, 'para' se reduce a 'pa' (pa' mí, pa'l pueblo).",
+    "ejemplo": "‘Voy pa’ la casa’.",
+    "ejercicio": "¿En qué registros se evita esta reducción?",
+    "suggestedAnswer": "En registros formales y escritura."
+  },
+  {
+    "id": 54,
+    "name": "Diminutivos en -ito, -ico, -illo",
+    "category": "Variación",
+    "teoria": "El sufijo diminutivo varía regionalmente: -ito (general), -ico (Venezuela, Colombia, Costa Rica), -illo (España, menos en América).",
+    "ejemplo": "Perrito / perrico / perrillo.",
+    "ejercicio": "¿Qué diminutivo se usa en México?",
+    "suggestedAnswer": "-ito (aunque también -illo)."
+  },
+  {
+    "id": 55,
+    "name": "Uso de 'nomás' en México",
+    "category": "Variación",
+    "teoria": "'Nomás' se usa como 'solamente', 'solo que' en México y algunas zonas de Centroamérica.",
+    "ejemplo": "‘Nomás quería verte’.",
+    "ejercicio": "Da un sinónimo de 'nomás' en español estándar.",
+    "suggestedAnswer": "Solamente, tan solo."
+  },
+  {
+    "id": 56,
+    "name": "Uso de 'bacán' en la región andina",
+    "category": "Variación",
+    "teoria": "'Bacán' significa 'genial, excelente' en Perú, Ecuador, Bolivia y Chile.",
+    "ejemplo": "‘La fiesta estuvo bacán’.",
+    "ejercicio": "¿Qué significa 'bacán' en Argentina?",
+    "suggestedAnswer": "Similar: 'bueno, excelente'."
+  },
+  {
+    "id": 57,
+    "name": "Uso de 'chévere' en el Caribe y Colombia",
+    "category": "Variación",
+    "teoria": "'Chévere' significa 'estupendo, genial' en Colombia, Venezuela, y otras áreas del Caribe.",
+    "ejemplo": "‘¡Qué chévere!’",
+    "ejercicio": "¿En qué países se usa 'chévere'?",
+    "suggestedAnswer": "Colombia, Venezuela, Ecuador, Panamá, etc."
+  },
+  {
+    "id": 58,
+    "name": "Uso de 'pana' en Venezuela (amigo)",
+    "category": "Variación",
+    "teoria": "‘Pana’ es sinónimo de ‘amigo’ en Venezuela y algunos países del Caribe.",
+    "ejemplo": "‘Ese es mi pana’.",
+    "ejercicio": "¿Qué palabra similar usan en Argentina?",
+    "suggestedAnswer": "‘Amigo’ o ‘pibe’ (compañero)."
+  },
+  {
+    "id": 59,
+    "name": "Uso de 'coche' vs 'carro' vs 'auto'",
+    "category": "Variación",
+    "teoria": "Para 'automóvil', en España se dice 'coche', en México 'carro', en Argentina 'auto'.",
+    "ejemplo": "México: 'carro'; Argentina: 'auto'; España: 'coche'.",
+    "ejercicio": "¿Qué palabra para 'coche' se usa en Chile?",
+    "suggestedAnswer": "Auto (principalmente) o 'coche' también."
+  },
+  {
+    "id": 60,
+    "name": "Uso de 'fútbol' vs 'fulbo'",
+    "category": "Variación",
+    "teoria": "En Argentina y Uruguay, la pronunciación 'fulbo' es común por influencia italiana.",
+    "ejemplo": "‘Juego al fulbo’.",
+    "ejercicio": "¿En qué países se pronuncia 'fútbol' con 'u' cerrada?",
+    "suggestedAnswer": "En Argentina y Uruguay (por influencia del italiano)."
+  },
+  {
+    "id": 61,
+    "name": "Uso de 'llamarse' vs 'llamarse' con 'se'",
+    "category": "Variación",
+    "teoria": "En algunos dialectos, 'llamar' es reflexivo: 'me llamo Juan'; en otros, usan 'se' con otro orden.",
+    "ejemplo": "No varía; es generalizado."
+  },
+  {
+    "id": 62,
+    "name": "Posición de clíticos en imperativo con pronombres",
+    "category": "Variación",
+    "teoria": "El imperativo afirmativo lleva enclíticos ('dame'), el negativo proclíticos ('no me des').",
+    "ejemplo": "‘Dímelo’ vs ‘No me lo digas’.",
+    "ejercicio": "¿Cuál es la forma correcta: 'No te me vayas' o 'No vayaste'? El primero."
+  },
+  {
+    "id": 63,
+    "name": "Futuro perifrástico vs morfológico",
+    "category": "Variación",
+    "teoria": "En el español coloquial, la perífrasis 'ir a + infinitivo' está reemplazando al futuro sintético en muchas áreas.",
+    "ejemplo": "‘Mañana voy a ir’ en lugar de ‘Mañana iré’.",
+    "ejercicio": "¿En qué contexto se usa más el futuro sintético?",
+    "suggestedAnswer": "En contextos formales o para expresar probabilidad (serán las tres)."
+  },
+  {
+    "id": 64,
+    "name": "Uso del pretérito perfecto compuesto en América",
+    "category": "Variación",
+    "teoria": "En Hispanoamérica, el pretérito perfecto compuesto (he cantado) se usa para pasado reciente, pero el simple (canté) es más frecuente incluso para acciones recientes.",
+    "ejemplo": "‘Hoy desayuné’ en lugar de ‘He desayunado’.",
+    "ejercicio": "¿En qué país de América se usa más el compuesto?",
+    "suggestedAnswer": "En el Perú, por influencia española, se usa más; en Argentina, muy poco."
+  },
+  {
+    "id": 65,
+    "name": "Uso del presente de subjuntivo en lugar del futuro de subjuntivo",
+    "category": "Variación",
+    "teoria": "El futuro de subjuntivo (cantare) ha desaparecido del habla hispanoamericana, reemplazado por presente de subjuntivo.",
+    "ejemplo": "‘Cuando vengas’ (no ‘cuando vinieres’).",
+    "ejercicio": "¿En qué tipo de textos se conserva aún el futuro de subjuntivo?",
+    "suggestedAnswer": "En textos jurídicos y literarios arcaizantes."
+  },
+  {
+    "id": 66,
+    "name": "Simplificación de la conjugación verbal en el voseo",
+    "category": "Variación",
+    "teoria": "En el voseo, las desinencias del presente de subjuntivo pueden ser análogas a las del indicativo (vos llegue en lugar de llegués).",
+    "ejemplo": "‘Quiero que vos llegue temprano’ (chileno).",
+    "ejercicio": "¿Qué país presenta esta simplificación?",
+    "suggestedAnswer": "Chile (voseo chileno)."
+  },
+  {
+    "id": 67,
+    "name": "Discriminación lingüística",
+    "category": "Actitudes",
+    "teoria": "Prejuicio contra hablantes de ciertas variedades dialectales o lenguas originarias.",
+    "ejemplo": "En Bolivia, el quechua hablante puede ser discriminado en ámbitos urbanos.",
+    "ejercicio": "¿Cómo se manifiesta la discriminación lingüística en las escuelas?",
+    "suggestedAnswer": "Prohibiendo hablar lenguas indígenas, castigando el uso de dialectos no prestigiosos."
+  },
+  {
+    "id": 68,
+    "name": "Racismo lingüístico",
+    "category": "Actitudes",
+    "teoria": "Asociar rasgos lingüísticos con inferioridad racial o étnica.",
+    "ejemplo": "Desprecio al habla afrocaribeña asociándola a baja educación.",
+    "ejercicio": "¿Qué consecuencias tiene el racismo lingüístico?",
+    "suggestedAnswer": "Exclusión social, abandono de la lengua materna, baja autoestima."
+  },
+  {
+    "id": 69,
+    "name": "Lengua franca y el español como lingua franca",
+    "category": "Contacto",
+    "teoria": "El español es lengua franca en muchos países hispanoamericanos y a nivel global.",
+    "ejemplo": "El español es usado como lengua de comunicación entre personas de diferentes lenguas originarias en mercados andinos.",
+    "ejercicio": "¿Qué lenguas originarias se usan como lingua franca?",
+    "suggestedAnswer": "El quechua en los Andes (en el Imperio Inca)."
+  },
+  {
+    "id": 70,
+    "name": "Política lingüística en la independencia",
+    "category": "Historia",
+    "teoria": "Tras la independencia, se buscó una lengua común para unificar los nuevos países, favoreciendo el español sobre las lenguas indígenas.",
+    "ejemplo": "Se promovió el castellano en la educación y la administración, marginando al quechua y al náhuatl.",
+    "ejercicio": "¿Por qué el náhuatl dejó de ser lengua oficial del México independiente?",
+    "suggestedAnswer": "Por la política de unificación lingüística que impuso el español."
+  },
+  {
+    "id": 71,
+    "name": "Indigenismos en el español de cada país",
+    "category": "Léxico",
+    "teoria": "Cada país hispanoamericano tiene su propio conjunto de indigenismos (palabras de lenguas indígenas locales).",
+    "ejemplo": "México: 'cuate' (amigo, del náhuatl 'coatl'), 'chapulín' (saltamontes).",
+    "ejercicio": "¿Qué indigenismo peruano significa 'hermano'?",
+    "suggestedAnswer": "‘Pana’ (no, es venezolano). En quechua, 'wayqui'."
+  },
+  {
+    "id": 72,
+    "name": "Africanismos en el español caribeño",
+    "category": "Léxico",
+    "teoria": "El contacto con lenguas africanas (yoruba, bantú) dejó léxico en el Caribe: 'chévere', 'mambo', 'candombe', 'macuto'.",
+    "ejemplo": "‘Candombe’ (danza uruguaya), ‘chévere’ (del yoruba 'chévere').",
+    "ejercicio": "¿Qué palabra africana significa 'alegría'?",
+    "suggestedAnswer": "‘Mambo’ (ritmo musical)."
+  },
+  {
+    "id": 73,
+    "name": "Anglicismos en el español contemporáneo",
+    "category": "Contacto",
+    "teoria": "El inglés es la principal fuente de préstamos: 'internet', 'marketing', 'chat', 'email', 'software'.",
+    "ejemplo": "‘Hacer clic’, ‘enviar un correo electrónico’ (con adaptación).",
+    "ejercicio": "Cita tres anglicismos adaptados al español.",
+    "suggestedAnswer": "‘Estrés’, ‘fútbol’, ‘líder’."
+  },
+  {
+    "id": 74,
+    "name": "Falsos anglicismos",
+    "category": "Léxico",
+    "teoria": "Palabras creadas por hispanohablantes que parecen inglesas pero no lo son o tienen distinto significado.",
+    "ejemplo": "‘Parking’ (estacionamiento) en España; ‘footing’ (correr) no es inglés real.",
+    "ejercicio": "¿Qué significa 'zapping' en español?",
+    "suggestedAnswer": "Cambiar rápidamente de canal de televisión."
+  },
+  {
+    "id": 75,
+    "name": "Extranjerismos innecesarios",
+    "category": "Actitudes",
+    "teoria": "Uso de palabras extranjeras cuando existe equivalente español, criticado por puristas.",
+    "ejemplo": "‘Delivery’ vs ‘reparto a domicilio’, ‘meeting’ vs ‘reunión’.",
+    "ejercicio": "Sustituye 'marketing' por una palabra española.",
+    "suggestedAnswer": "‘Mercadotecnia’."
+  },
+  {
+    "id": 76,
+    "name": "Lenguaje inclusivo",
+    "category": "Actitudes",
+    "teoria": "Uso de formas como '-e', '-x', '@' para evitar el masculino genérico o visibilizar otros géneros.",
+    "ejemplo": "‘Todes’, ‘amigues’, ‘les niñes’.",
+    "ejercicio": "¿Cuál es la postura de la RAE sobre el lenguaje inclusivo?",
+    "suggestedAnswer": "Lo considera ajeno a la morfología del español, no lo prohíbe en usos particulares."
+  },
+  {
+    "id": 77,
+    "name": "Lenguaje políticamente correcto",
+    "category": "Actitudes",
+    "teoria": "Sustitución de términos discriminatorios o estigmatizantes por otros neutros o respetuosos.",
+    "ejemplo": "‘Personas con discapacidad’ en lugar de ‘minusválidos’; ‘personas mayores’ en lugar de ‘ancianos’.",
+    "ejercicio": "Da un ejemplo de lenguaje políticamente correcto en el ámbito laboral.",
+    "suggestedAnswer": "‘Trabajador doméstico’ en lugar de ‘sirviente’."
+  },
+  {
+    "id": 78,
+    "name": "Tabú y eufemismo",
+    "category": "Léxico",
+    "teoria": "Palabras tabú (muerte, sexo, excreciones) se evitan mediante eufemismos.",
+    "ejemplo": "‘Fallecer’ por ‘morir’, ‘pasó a mejor vida’.",
+    "ejercicio": "¿Qué eufemismo se usa para 'despedir a un empleado'?",
+    "suggestedAnswer": "‘Reestructurar el personal’, ‘prescindir de sus servicios’."
+  },
+  {
+    "id": 79,
+    "name": "Disfemismo",
+    "category": "Léxico",
+    "teoria": "Uso de términos más groseros o despectivos que el neutro, para expresar agresividad o humor negro.",
+    "ejemplo": "‘Tragar’ por ‘comer’, ‘palmar’ por ‘morir’.",
+    "ejercicio": "Da un disfemismo para 'beber'.",
+    "suggestedAnswer": "‘Pimplar’, ‘meterle al trago’."
+  },
+  {
+    "id": 80,
+    "name": "Lenguaje juvenil (jerga)",
+    "category": "Variación",
+    "teoria": "Vocabulario y expresiones propias de jóvenes, cambian rápidamente y a menudo son incomprensibles para adultos.",
+    "ejemplo": "‘Chido’, ‘padre’ (México), ‘fome’ (Chile), ‘copado’ (Argentina).",
+    "ejercicio": "¿Qué significa 'crush' en jerga juvenil?",
+    "suggestedAnswer": "Atracción o persona que gusta."
+  },
+  {
+    "id": 81,
+    "name": "Lenguaje de la delincuencia (germanía)",
+    "category": "Variación",
+    "teoria": "Argot del hampa, con términos propios o deformados.",
+    "ejemplo": "‘Choro’ (ladrón) en Perú y Chile, ‘tirar’ (robar) en Argentina.",
+    "ejercicio": "¿Qué significa 'afanar'?",
+    "suggestedAnswer": "Robar (en lunfardo argentino)."
+  },
+  {
+    "id": 82,
+    "name": "Lunfardo (Argentina)",
+    "category": "Variación",
+    "teoria": "Argot de Buenos Aires, con influencias italianas y afrocaribeñas.",
+    "ejemplo": "‘Mina’ (mujer), ‘laburo’ (trabajo), ‘guita’ (dinero).",
+    "ejercicio": "¿Qué significa 'chancho' en lunfardo?",
+    "suggestedAnswer": "Cerdo (también en español general). En lunfardo, 'chancho' puede ser problema."
+  },
+  {
+    "id": 83,
+    "name": "Coa (Chile)",
+    "category": "Variación",
+    "teoria": "Argot carcelario y delictivo chileno.",
+    "ejemplo": "‘Luca’ (mil pesos), ‘paco’ (carabinero).",
+    "ejercicio": "¿Qué significa 'paco' en Coa?",
+    "suggestedAnswer": "Policía (carabinero)."
+  },
+  {
+    "id": 84,
+    "name": "Pachuco (México)",
+    "category": "Variación",
+    "teoria": "Argot de la comunidad mexicano-estadounidense en los años 40-50, con mezcla de español e inglés.",
+    "ejemplo": "‘Chale’, ‘órale’, ‘ese’.",
+    "ejercicio": "¿Qué significa 'simón' en pachuco?",
+    "suggestedAnswer": "Sí."
+  },
+  {
+    "id": 85,
+    "name": "Cheli (España)",
+    "category": "Variación",
+    "teoria": "Argot madrileño marginal, con deformaciones léxicas.",
+    "ejemplo": "‘Chaval’, ‘molar’, ‘currar’.",
+    "ejercicio": "¿Qué significa 'currar'?",
+    "suggestedAnswer": "Trabajar."
+  },
+  {
+    "id": 86,
+    "name": "Lenguaje de la política (recursos de persuasión)",
+    "category": "Análisis",
+    "teoria": "Uso de eufemismos, nominalizaciones, metáforas bélicas y pronombres inclusivos en el discurso político.",
+    "ejemplo": "‘Ajuste fiscal’ (recortes), ‘lucha contra el paro’ (metáfora bélica).",
+    "ejercicio": "Analiza el pronombre en 'Nosotros estamos construyendo el futuro'.",
+    "suggestedAnswer": "Uso inclusivo (nosotros) para crear identidad."
+  },
+  {
+    "id": 87,
+    "name": "Lenguaje de la publicidad",
+    "category": "Análisis",
+    "teoria": "Uso de imperativos, comparativos, adjetivos valorativos, extranjerismos y tópicos para persuadir.",
+    "ejemplo": "‘Nuevo, mejor, más fuerte’.",
+    "ejercicio": "¿Qué función tiene '¿Y tú? ¿A qué esperas?'?",
+    "suggestedAnswer": "Apelativa (conativa)."
+  },
+  {
+    "id": 88,
+    "name": "Lenguaje de los medios de comunicación",
+    "category": "Análisis",
+    "teoria": "Los medios crean y difunden estereotipos lingüísticos y estandarizan ciertas variedades.",
+    "ejemplo": "El uso del español neutro en el doblaje latinoamericano.",
+    "ejercicio": "¿Por qué se critica el español neutro?",
+    "suggestedAnswer": "Porque es artificial y no corresponde a la lengua real de ningún país."
+  },
+  {
+    "id": 89,
+    "name": "Esterotipia (estereotipos lingüísticos)",
+    "category": "Actitudes",
+    "teoria": "Creencias generalizadas sobre la forma de hablar de un grupo (p.ej., 'los andaluces hablan muy rápido').",
+    "ejemplo": "‘Los argentinos cantan al hablar’.",
+    "ejercicio": "¿Qué estereotipo hay sobre el habla caribeña?",
+    "suggestedAnswer": "Que se comen las eses y hablan rápido."
+  },
+  {
+    "id": 90,
+    "name": "Metáfora del lenguaje como instrumento",
+    "category": "Teoría",
+    "teoria": "Concepción del lenguaje como herramienta neutral para transmitir información (criticada por la sociolingüística).",
+    "ejemplo": "El español es un instrumento de comunicación; pero también es un marcador de identidad.",
+    "ejercicio": "¿Por qué el lenguaje no es solo un instrumento?",
+    "suggestedAnswer": "Porque también construye identidad, poder y desigualdad."
+  },
+  {
+    "id": 91,
+    "name": "Identidad lingüística",
+    "category": "Teoría",
+    "teoria": "El uso de una lengua o variedad contribuye a la construcción de la identidad personal y colectiva.",
+    "ejemplo": "El uso del voseo en Argentina es un rasgo de identidad nacional.",
+    "ejercicio": "¿Cómo influye la lengua en la identidad de un inmigrante?",
+    "suggestedAnswer": "Mantener la lengua materna puede ser un ancla cultural y fuente de orgullo."
+  },
+  {
+    "id": 92,
+    "name": "Lengua y poder",
+    "category": "Teoría",
+    "teoria": "Las variedades de prestigio son las usadas por los grupos dominantes; imponer una variedad es una forma de ejercicio de poder.",
+    "ejemplo": "La imposición del español sobre las lenguas indígenas durante la colonia.",
+    "ejercicio": "¿Cómo se ejerce el poder lingüístico en la escuela?",
+    "suggestedAnswer": "Sancionando el uso de dialectos no estándar o lenguas indígenas."
+  },
+  {
+    "id": 93,
+    "name": "Lenguaje sexista y no sexista",
+    "category": "Actitudes",
+    "teoria": "Uso del masculino genérico o alternativas como desdoblamientos ('los ciudadanos y las ciudadanas') o sustantivos colectivos.",
+    "ejemplo": "‘Los médicos’ vs ‘el personal médico’.",
+    "ejercicio": "Da una alternativa no sexista para 'los alumnos'.",
+    "suggestedAnswer": "‘El alumnado’, ‘los estudiantes’."
+  },
+  {
+    "id": 94,
+    "name": "Microagresiones lingüísticas",
+    "category": "Actitudes",
+    "teoria": "Comentarios que denigran sutilmente la forma de hablar de una persona o grupo.",
+    "ejemplo": "‘Hablas muy bien español para ser extranjero’ (asume que un extranjero no debería hablarlo bien).",
+    "ejercicio": "¿Por qué es microagresión decir 'no se te nota el acento'?",
+    "suggestedAnswer": "Insiste en que tener acento extranjero es negativo."
+  },
+  {
+    "id": 95,
+    "name": "Integración de inmigrantes y lengua",
+    "category": "Contacto",
+    "teoria": "La adquisición del español por parte de inmigrantes es clave para su integración social y laboral.",
+    "ejemplo": "En EE.UU., los hispanohablantes mantienen el español en casa pero sus hijos adoptan el inglés.",
+    "ejercicio": "¿Qué programa lingüístico beneficia a los inmigrantes?",
+    "suggestedAnswer": "Clases de español como segunda lengua (ELE)."
+  },
+  {
+    "id": 96,
+    "name": "Pérdida de lengua de herencia",
+    "category": "Contacto",
+    "teoria": "Los descendientes de inmigrantes hispanohablantes en EE.UU. suelen perder el español en tres generaciones.",
+    "ejemplo": "Los nietos de inmigrantes mexicanos suelen ser monolingües en inglés.",
+    "ejercicio": "¿Qué factores aceleran la pérdida?",
+    "suggestedAnswer": "Presión social, falta de educación bilingüe, matrimonios mixtos."
+  },
+  {
+    "id": 97,
+    "name": "Mantenimiento de lengua",
+    "category": "Contacto",
+    "teoria": "Esfuerzos por preservar una lengua minoritaria mediante políticas educativas, medios comunitarios, etc.",
+    "ejemplo": "Escuelas bilingües en Cataluña mantienen el catalán.",
+    "ejercicio": "¿Qué estrategia usa la comunidad quechua en Perú?",
+    "suggestedAnswer": "Educación intercultural bilingüe y programas de radio en quechua."
+  },
+  {
+    "id": 98,
+    "name": "Cambio de lealtad lingüística",
+    "category": "Actitudes",
+    "teoria": "Los hablantes pueden cambiar su identificación con una lengua hacia otra más prestigiosa o útil.",
+    "ejemplo": "Padres indígenas que dejan de hablar su lengua a sus hijos para que aprendan bien español y tengan éxito social.",
+    "ejercicio": "¿Cómo afecta la lealtad lingüística a la transmisión intergeneracional?",
+    "suggestedAnswer": "Si la lealtad a la lengua minoritaria es baja, se deja de transmitir."
+  },
+  {
+    "id": 99,
+    "name": "Fenómeno de la jerga de internet",
+    "category": "Variación",
+    "teoria": "El lenguaje en redes sociales presenta abreviaturas, emoticonos, siglas y extranjerismos.",
+    "ejemplo": "‘Xq’ (por qué), ‘tqm’ (te quiero mucho), ‘dnd’ (donde).",
+    "ejercicio": "¿Qué significa 'ntp'?",
+    "suggestedAnswer": "No te preocupes."
+  },
+  {
+    "id": 100,
+    "name": "Futuro del español en el mundo",
+    "category": "Teoría",
+    "teoria": "El español crecerá en número de hablantes pero enfrenta retos como la influencia del inglés, la fragmentación dialectal y la política lingüística.",
+    "ejemplo": "Se estima que en 2100 habrá 600 millones de hispanohablantes.",
+    "ejercicio": "¿Cuál es el principal riesgo para la unidad del español?",
+    "suggestedAnswer": "La influencia del inglés y la falta de prestigio de algunas variedades hispanoamericanas."
+  }
+]

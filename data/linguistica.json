@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "name": "Fonema",
+    "category": "Fonología",
+    "teoria": "Unidad abstracta más pequeña que puede diferenciar significados en una lengua. Se representa entre barras / /.",
+    "ejemplo": "/p/ y /b/ diferencian 'pata' y 'bata'.",
+    "ejercicio": "¿Cuál es el fonema que diferencia 'casa' y 'caza' en el español peninsular?",
+    "suggestedAnswer": "/s/ y /θ/."
+  },
+  {
+    "id": 2,
+    "name": "Alófono",
+    "category": "Fonología",
+    "teoria": "Realización concreta de un fonema, que no cambia el significado. Se representa entre corchetes [ ].",
+    "ejemplo": "En español, /b/ se realiza como [b] tras nasal y como [β] entre vocales.",
+    "ejercicio": "Da un alófono de /d/ en posición intervocálica.",
+    "suggestedAnswer": "[ð] como en 'dedo'."
+  },
+  {
+    "id": 3,
+    "name": "Sílaba",
+    "category": "Fonología",
+    "teoria": "Unidad de organización de los sonidos, con un núcleo vocálico (a veces consonántico).",
+    "ejemplo": "'Trans-por-te' tiene tres sílabas.",
+    "ejercicio": "Divide en sílabas la palabra 'aeropuerto'.",
+    "suggestedAnswer": "a-e-ro-puer-to (5 sílabas)."
+  },
+  {
+    "id": 4,
+    "name": "Acento fonológico",
+    "category": "Prosodia",
+    "teoria": "Mayor intensidad o altura melódica sobre una sílaba, que puede diferenciar significados.",
+    "ejemplo": "'término' (sustantivo), 'termino' (verbo, presente), 'terminó' (pretérito).",
+    "ejercicio": "Señala la sílaba tónica en 'características'.",
+    "suggestedAnswer": "ca-rac-te-RÍS-ti-cas (en 'rís')."
+  },
+  {
+    "id": 5,
+    "name": "Morfema",
+    "category": "Morfología",
+    "teoria": "Unidad mínima con significado. Puede ser léxico (raíz) o gramatical (flexivo, derivativo).",
+    "ejemplo": "En 'niñ-os', 'niñ-' es morfema léxico, '-os' es morfema flexivo de número.",
+    "ejercicio": "Descompón 'releer' en morfemas.",
+    "suggestedAnswer": "re- (prefijo) + le- (raíz) + -er (infinitivo)."
+  },
+  {
+    "id": 6,
+    "name": "Lexema",
+    "category": "Morfología",
+    "teoria": "Morfema que aporta el significado léxico (raíz).",
+    "ejemplo": "En 'cantamos', el lexema es 'cant-'.",
+    "ejercicio": "Identifica el lexema en 'floristería'.",
+    "suggestedAnswer": "flor- (aunque también podría ser 'florist-'; la raíz es 'flor')."
+  },
+  {
+    "id": 7,
+    "name": "Afijo (prefijo, sufijo, infijo)",
+    "category": "Morfología derivativa",
+    "teoria": "Morfema que se añade a la raíz para formar palabras derivadas.",
+    "ejemplo": "pre- (prefijo), -ción (sufijo), -ec- (infijo en 'piececito').",
+    "ejercicio": "¿Qué sufijo forma adjetivos a partir de verbos (ej. 'hablador')?",
+    "suggestedAnswer": "-dor (también -or, -ivo)."
+  },
+  {
+    "id": 8,
+    "name": "Flexión verbal",
+    "category": "Morfología flexiva",
+    "teoria": "Desinencias que indican persona, número, tiempo, modo, aspecto.",
+    "ejemplo": "En 'cantábamos', '-ba-' indica pretérito imperfecto, '-mos' 1ª persona plural.",
+    "ejercicio": "Identifica el morfema de tiempo en 'hablaron'.",
+    "suggestedAnswer": "-aro- (pretérito perfecto simple) o '-ron' (desinencia)."
+  },
+  {
+    "id": 9,
+    "name": "Género gramatical",
+    "category": "Morfología flexiva",
+    "teoria": "Propiedad inherente de los sustantivos y concordancia con adjetivos, determinantes, pronombres.",
+    "ejemplo": "El niño alto / La niña alta.",
+    "ejercicio": "¿Cuál es el género de 'azúcar'? ¿Es variable?",
+    "suggestedAnswer": "Masculino (el azúcar), aunque en algunos países se usa femenino (la azúcar)."
+  },
+  {
+    "id": 10,
+    "name": "Número gramatical",
+    "category": "Morfología flexiva",
+    "teoria": "Singular o plural, marcado en sustantivos, adjetivos y verbos.",
+    "ejemplo": "Casa / casas; alto / altos.",
+    "ejercicio": "¿Cómo se forma el plural de 'crisis'?",
+    "suggestedAnswer": "Invariable: 'las crisis'."
+  },
+  {
+    "id": 11,
+    "name": "Sintagma nominal",
+    "category": "Sintaxis",
+    "teoria": "Construcción cuyo núcleo es un sustantivo o pronombre, puede incluir determinantes y complementos.",
+    "ejemplo": "El perro grande de mi vecino.",
+    "ejercicio": "Señala el núcleo del sintagma 'Los hermosos paisajes naturales'.",
+    "suggestedAnswer": "paisajes."
+  },
+  {
+    "id": 12,
+    "name": "Sintagma verbal",
+    "category": "Sintaxis",
+    "teoria": "Construcción cuyo núcleo es un verbo, con posibles complementos (directo, indirecto, circunstanciales).",
+    "ejemplo": "Compré un libro en la librería.",
+    "ejercicio": "Identifica el complemento directo en 'Juan regaló flores a María'.",
+    "suggestedAnswer": "flores."
+  },
+  {
+    "id": 13,
+    "name": "Sujeto",
+    "category": "Sintaxis",
+    "teoria": "Elemento de la oración que concuerda con el verbo en persona y número. Puede ser explícito o tácito.",
+    "ejemplo": "Ellos estudian. (Sujeto explícito) / Estudiamos. (Sujeto tácito: nosotros).",
+    "ejercicio": "¿Cuál es el sujeto de 'Me duele la cabeza'?",
+    "suggestedAnswer": "La cabeza (sujeto paciente)."
+  },
+  {
+    "id": 14,
+    "name": "Complemento directo",
+    "category": "Sintaxis",
+    "teoria": "Sintagma nominal o pronombre que recibe directamente la acción del verbo. Se reconoce con la pregunta '¿qué?'. Puede duplicarse con 'lo/la/los/las'.",
+    "ejemplo": "Veo la televisión. (¿Qué veo? la televisión).",
+    "ejercicio": "Señala el CD en 'Ayer vi a tu hermana'.",
+    "suggestedAnswer": "a tu hermana (complemento directo de persona, con 'a')."
+  },
+  {
+    "id": 15,
+    "name": "Complemento indirecto",
+    "category": "Sintaxis",
+    "teoria": "Indica al destinatario o beneficiario de la acción. Responde a '¿a quién?' o '¿para quién?'. Se duplica con 'le/les'.",
+    "ejemplo": "Regalé un libro a mi amigo. (¿A quién? a mi amigo).",
+    "ejercicio": "Extrae el CI de 'Les compré un regalo a los niños'.",
+    "suggestedAnswer": "a los niños."
+  },
+  {
+    "id": 16,
+    "name": "Complemento circunstancial",
+    "category": "Sintaxis",
+    "teoria": "Indica circunstancias de lugar, tiempo, modo, causa, etc. Responde a preguntas como '¿dónde?', '¿cuándo?', '¿cómo?'.",
+    "ejemplo": "Vivo en Madrid (lugar).",
+    "ejercicio": "Clasifica el complemento en 'Llegamos tarde'.",
+    "suggestedAnswer": "Circunstancial de modo (tarde)."
+  },
+  {
+    "id": 17,
+    "name": "Oración compuesta",
+    "category": "Sintaxis",
+    "teoria": "Oración con más de un verbo conjugado, unidas por yuxtaposición, coordinación o subordinación.",
+    "ejemplo": "Llegué, comí y me fui. (coordinada).",
+    "ejercicio": "Clasifica 'Aunque llueva, saldré'.",
+    "suggestedAnswer": "Oración compuesta subordinada adverbial concesiva."
+  },
+  {
+    "id": 18,
+    "name": "Subordinación sustantiva",
+    "category": "Sintaxis",
+    "teoria": "Proposición que funciona como sustantivo (sujeto, CD, etc.) introducida por 'que', 'si', interrogativos.",
+    "ejemplo": "Quiero que vengas. (CD).",
+    "ejercicio": "¿Qué función tiene 'que estudies' en 'Es necesario que estudies'?",
+    "suggestedAnswer": "Sujeto (oración subordinada sustantiva)."
+  },
+  {
+    "id": 19,
+    "name": "Subordinación adjetiva (de relativo)",
+    "category": "Sintaxis",
+    "teoria": "Proposición introducida por un relativo (que, quien, el cual, cuyo) que modifica a un sustantivo.",
+    "ejemplo": "El libro que leí es interesante.",
+    "ejercicio": "Señala el antecedente en 'La casa donde vivo es vieja'.",
+    "suggestedAnswer": "casa."
+  },
+  {
+    "id": 20,
+    "name": "Subordinación adverbial",
+    "category": "Sintaxis",
+    "teoria": "Proposición que expresa circunstancias (tiempo, lugar, modo, causa, condición, concesión, finalidad, etc.).",
+    "ejemplo": "Salgo cuando tú llegas (tiempo).",
+    "ejercicio": "¿Qué tipo de subordinada es 'Estudia para que apruebes'?",
+    "suggestedAnswer": "Final."
+  },
+  {
+    "id": 21,
+    "name": "Anáfora y catáfora",
+    "category": "Texto y discurso",
+    "teoria": "La anáfora remite a un elemento anterior; la catáfora, a uno posterior.",
+    "ejemplo": "Anáfora: 'María llegó; ella estaba cansada'. Catáfora: 'Te digo esto: no voy'.",
+    "ejercicio": "Identifica si 'lo siguiente' en 'Lo siguiente es importante: estudia' es anáfora o catáfora.",
+    "suggestedAnswer": "Catáfora (remite a lo que sigue)."
+  },
+  {
+    "id": 22,
+    "name": "Deíxis",
+    "category": "Pragmática",
+    "teoria": "Mecanismo que relaciona el enunciado con la situación comunicativa: persona, tiempo, espacio.",
+    "ejemplo": "Yo, aquí, ahora, ese, aquel.",
+    "ejercicio": "Señala los deícticos en 'Mañana te veré allí'.",
+    "suggestedAnswer": "mañana (tiempo), te (persona), allí (espacio)."
+  },
+  {
+    "id": 23,
+    "name": "Acto de habla directivo",
+    "category": "Pragmática",
+    "teoria": "Acto ilocutivo que busca que el interlocutor realice algo: orden, ruego, consejo.",
+    "ejemplo": "¡Cierra la puerta! (orden).",
+    "ejercicio": "¿Qué acto de habla es '¿Podrías ayudarme?'?",
+    "suggestedAnswer": "Directivo (petición), aunque sea interrogativo."
+  },
+  {
+    "id": 24,
+    "name": "Máxima de cantidad (Grice)",
+    "category": "Pragmática",
+    "teoria": "Proporcionar la información necesaria, ni más ni menos de la requerida.",
+    "ejemplo": "P: ¿Cuántos años tienes? R: 25. (Correcto; no añadir detalles irrelevantes).",
+    "ejercicio": "¿Qué máxima viola alguien que al preguntarle la hora responde con la historia de su reloj?",
+    "suggestedAnswer": "Máxima de cantidad (da información excesiva)."
+  },
+  {
+    "id": 25,
+    "name": "Implicatura conversacional",
+    "category": "Pragmática",
+    "teoria": "Significado implícito que el oyente deduce de lo dicho, basado en las máximas.",
+    "ejemplo": "A: ¿Vienes a la fiesta? B: Tengo mucho trabajo. (Implicatura: no va a ir).",
+    "ejercicio": "¿Qué se implica en 'El profesor llegó tarde; el tráfico estaba fatal'?",
+    "suggestedAnswer": "Que la causa de la tardanza fue el tráfico."
+  },
+  {
+    "id": 26,
+    "name": "Cortesía verbal",
+    "category": "Pragmática",
+    "teoria": "Estrategias lingüísticas para mitigar imposiciones o mantener la imagen social.",
+    "ejemplo": "¿Podría decirme la hora? (más cortés que 'Dime la hora').",
+    "ejercicio": "¿Por qué usar el condicional 'Quisiera' en lugar de 'Quiero'?",
+    "suggestedAnswer": "Aumenta la cortesía al expresar deseo de manera menos directa."
+  },
+  {
+    "id": 27,
+    "name": "Variación dialectal",
+    "category": "Sociolingüística",
+    "teoria": "Diferencias lingüísticas relacionadas con la procedencia geográfica de los hablantes.",
+    "ejemplo": "En Argentina se usa 'vos' en lugar de 'tú'; en España, 'coche'; en México, 'carro'.",
+    "ejercicio": "¿Qué palabra para 'fresa' se usa en Argentina?",
+    "suggestedAnswer": "Frutilla."
+  },
+  {
+    "id": 28,
+    "name": "Seseo",
+    "category": "Fenómenos dialectales",
+    "teoria": "Pronunciación de /θ/ como /s/ (caza = casa). Mayoritario en Hispanoamérica y algunas zonas de España.",
+    "ejemplo": "En México, 'zapato' se dice ['sapato].",
+    "ejercicio": "¿En qué región de España no hay seseo?",
+    "suggestedAnswer": "En la mayor parte de la España peninsular, excepto Canarias y Andalucía occidental."
+  },
+  {
+    "id": 29,
+    "name": "Yeísmo",
+    "category": "Fenómenos dialectales",
+    "teoria": "Fusión de 'll' e 'y' en un solo fonema, mayoritario en Hispanoamérica y España.",
+    "ejemplo": "Calle y caye (como 'cayó') se pronuncian igual.",
+    "ejercicio": "¿Dónde se conserva la 'll' lateral?",
+    "suggestedAnswer": "En zonas de los Andes (Perú, Bolivia) y Paraguay."
+  },
+  {
+    "id": 30,
+    "name": "Voseo",
+    "category": "Variedades hispanoamericanas",
+    "teoria": "Uso de 'vos' en lugar de 'tú', con conjugaciones verbales propias (cantás, comés, vivís).",
+    "ejemplo": "Vos sos mi amigo. (Argentina, Uruguay, etc.)",
+    "ejercicio": "¿Cómo se dice 'tú eres' en voseo rioplatense?",
+    "suggestedAnswer": "Vos sos."
+  },
+  {
+    "id": 31,
+    "name": "Lengua estándar",
+    "category": "Sociolingüística",
+    "teoria": "Variedad prestigiosa y codificada, usada en medios, educación y ámbitos formales.",
+    "ejemplo": "El español estándar panhispánico evita localismos excesivos.",
+    "ejercicio": "¿Quién fija la norma estándar del español?",
+    "suggestedAnswer": "La Real Academia Española y la Asociación de Academias de la Lengua Española."
+  },
+  {
+    "id": 32,
+    "name": "Préstamo lingüístico",
+    "category": "Lexicología",
+    "teoria": "Palabra tomada de otra lengua, adaptada o no.",
+    "ejemplo": "Fútbol (del inglés football), tuit (del inglés tweet).",
+    "ejercicio": "¿De qué lengua proviene 'chocolate'?",
+    "suggestedAnswer": "Del náhuatl 'xocolātl'."
+  },
+  {
+    "id": 33,
+    "name": "Neologismo",
+    "category": "Lexicología",
+    "teoria": "Palabra nueva creada por derivación, composición o préstamo.",
+    "ejemplo": "Ciberacoso, posverdad, tuitear.",
+    "ejercicio": "Forma un neologismo con el sufijo '-izar' a partir de 'memoria'.",
+    "suggestedAnswer": "Memorizar (ya existe). Busca otro: 'viralizar'."
+  },
+  {
+    "id": 34,
+    "name": "Dialecto",
+    "category": "Sociolingüística",
+    "teoria": "Variedad geográfica de una lengua, con rasgos fonéticos, gramaticales o léxicos propios.",
+    "ejemplo": "El español caribeño (Cuba, Puerto Rico, República Dominicana).",
+    "ejercicio": "Menciona un rasgo del español andaluz.",
+    "suggestedAnswer": "Aspiración de /s/ implosiva o pérdida de /d/ intervocálica (cansao)."
+  },
+  {
+    "id": 35,
+    "name": "Registro",
+    "category": "Sociolingüística",
+    "teoria": "Variedad de lengua según la situación comunicativa (formal, informal, técnico, coloquial).",
+    "ejemplo": "En un trabajo académico: 'asimismo' ; en una charla: 'también'.",
+    "ejercicio": "¿Qué registro usarías en una entrevista de trabajo?",
+    "suggestedAnswer": "Formal o semiformal."
+  },
+  {
+    "id": 36,
+    "name": "Jerga",
+    "category": "Sociolingüística",
+    "teoria": "Variedad de grupo (profesional, juvenil) con léxico específico no compartido por toda la comunidad.",
+    "ejemplo": "Jerga médica: 'afebril', 'disnea'. Jerga juvenil: 'guay', 'chido'.",
+    "ejercicio": "Da un ejemplo de jerga informática.",
+    "suggestedAnswer": "Bug, código, compilar."
+  },
+  {
+    "id": 37,
+    "name": "Interferencia lingüística",
+    "category": "Adquisición",
+    "teoria": "Influencia de la primera lengua sobre la segunda en el aprendizaje.",
+    "ejemplo": "Un anglohablante dice 'hacer una foto' en lugar de 'tomar una foto' por analogía con 'take a photo'.",
+    "ejercicio": "¿Por qué un francófono puede decir 'estoy aquí desde dos horas' en lugar de 'desde hace dos horas'?",
+    "suggestedAnswer": "Por interferencia del francés 'depuis deux heures'."
+  },
+  {
+    "id": 38,
+    "name": "Cambio lingüístico",
+    "category": "Historia de la lengua",
+    "teoria": "Evolución de los elementos de una lengua a lo largo del tiempo (fonético, morfológico, sintáctico, léxico).",
+    "ejemplo": "La pérdida de la /f/ inicial latina en español: facere > hacer.",
+    "ejercicio": "¿Qué palabra latina dio 'leche'?",
+    "suggestedAnswer": "Lactem (con evolución fonética)."
+  },
+  {
+    "id": 39,
+    "name": "Analogía",
+    "category": "Morfología histórica",
+    "teoria": "Proceso por el cual una forma irregular se regulariza por influencia de otras regulares.",
+    "ejemplo": "El antiguo 'andé' por 'anduve' (en habla popular) por analogía con 'canté'.",
+    "ejercicio": "¿Qué forma analógica es 'trajieron' en lugar de 'trajeron'?",
+    "suggestedAnswer": "Por analogía con 'dijeron', 'hicieron'."
+  },
+  {
+    "id": 40,
+    "name": "Etimología popular",
+    "category": "Lexicología",
+    "teoria": "Reinterpretación de una palabra por parecido con otra más familiar, a menudo cambiando su forma.",
+    "ejemplo": "'Vagabundo' reinterpretado como 'vaga-mundo' (vaga por el mundo).",
+    "ejercicio": "¿Qué palabra se transformó por etimología popular en 'azotea'?",
+    "suggestedAnswer": "Del árabe 'sutayha', reinterpretado como 'azotea'."
+  },
+  {
+    "id": 41,
+    "name": "Campo semántico",
+    "category": "Semántica",
+    "teoria": "Conjunto de palabras con un significado común (color, parentesco, deportes).",
+    "ejemplo": "Campo de los colores: rojo, azul, verde, amarillo.",
+    "ejercicio": "Menciona tres elementos del campo semántico de 'mobiliario'.",
+    "suggestedAnswer": "Mesa, silla, armario."
+  },
+  {
+    "id": 42,
+    "name": "Sinonimia",
+    "category": "Semántica",
+    "teoria": "Relación entre palabras con significado igual o muy parecido (sinónimos). Rara vez total.",
+    "ejemplo": "Comenzar / empezar; feliz / contento.",
+    "ejercicio": "Da un sinónimo de 'rápido'.",
+    "suggestedAnswer": "Veloz."
+  },
+  {
+    "id": 43,
+    "name": "Antonimia",
+    "category": "Semántica",
+    "teoria": "Relación entre palabras de significado opuesto.",
+    "ejemplo": "Alto / bajo; bueno / malo; comprar / vender.",
+    "ejercicio": "¿Cuál es el antónimo de 'entrada'?",
+    "suggestedAnswer": "Salida."
+  },
+  {
+    "id": 44,
+    "name": "Homonimia",
+    "category": "Semántica",
+    "teoria": "Palabras con la misma forma (homógrafas) o sonido (homófonas) pero diferente significado y origen.",
+    "ejemplo": "Vino (bebida) y vino (verbo venir); 'baca' y 'vaca' (homófonas).",
+    "ejercicio": "¿Hay homonimia entre 'coral' (color) y 'coral' (animal marino)?",
+    "suggestedAnswer": "Sí, son homógrafas (misma escritura, diferente significado)."
+  },
+  {
+    "id": 45,
+    "name": "Polisemia",
+    "category": "Semántica",
+    "teoria": "Palabra con varios significados relacionados (por extensión metafórica o metonímica).",
+    "ejemplo": "Cabo: 1. extremo, 2. militar, 3. accidente geográfico.",
+    "ejercicio": "Da un ejemplo de polisemia con 'planta'.",
+    "suggestedAnswer": "Planta (vegetal), planta (de un edificio), planta (del pie)."
+  },
+  {
+    "id": 46,
+    "name": "Hiperonimia / hiponimia",
+    "category": "Semántica",
+    "teoria": "Hiperónimo es la palabra de significado más general; hipónimo, la más específica.",
+    "ejemplo": "Animal (hiperónimo) → perro, gato (hipónimos).",
+    "ejercicio": "¿Cuál es el hiperónimo de 'rosa', 'tulipán', 'margarita'?",
+    "suggestedAnswer": "Flor."
+  },
+  {
+    "id": 47,
+    "name": "Denotación",
+    "category": "Semántica",
+    "teoria": "Significado objetivo, referencial, de una palabra.",
+    "ejemplo": "La denotación de 'perro' es mamífero doméstico de la familia de los cánidos.",
+    "ejercicio": "¿Cuál es la denotación de 'estrella'?",
+    "suggestedAnswer": "Cuerpo celeste que brilla con luz propia."
+  },
+  {
+    "id": 48,
+    "name": "Connotación",
+    "category": "Semántica",
+    "teoria": "Significados subjetivos, culturales o emotivos asociados a una palabra.",
+    "ejemplo": "La connotación de 'perro' puede ser fidelidad o desprecio (perro como insulto).",
+    "ejercicio": "¿Qué connota 'paloma' en un contexto de paz?",
+    "suggestedAnswer": "Paz, libertad, esperanza."
+  },
+  {
+    "id": 49,
+    "name": "Acto de habla asertivo",
+    "category": "Pragmática",
+    "teoria": "Acto ilocutivo mediante el cual se representa un estado de cosas (afirmar, describir, informar).",
+    "ejemplo": "El cielo está nublado.",
+    "ejercicio": "¿Qué acto asertivo realiza 'Te aseguro que es verdad'?",
+    "suggestedAnswer": "Afirmación o aseveración."
+  },
+  {
+    "id": 50,
+    "name": "Acto de habla expresivo",
+    "category": "Pragmática",
+    "teoria": "Expresa un estado psicológico del hablante (disculparse, agradecer, felicitar).",
+    "ejemplo": "Te agradezco tu ayuda.",
+    "ejercicio": "¿Qué acto expresivo hay en '¡Qué bien!'?",
+    "suggestedAnswer": "Expresa alegría o satisfacción."
+  },
+  {
+    "id": 51,
+    "name": "Acto de habla compromisorio",
+    "category": "Pragmática",
+    "teoria": "Compromete al hablante a realizar una acción futura (prometer, ofrecer, jurar).",
+    "ejemplo": "Te prometo que vendré.",
+    "ejercicio": "¿Qué acto compromisorio es 'Te ofrezco mi ayuda'?",
+    "suggestedAnswer": "Ofrecimiento."
+  },
+  {
+    "id": 52,
+    "name": "Acto de habla declarativo",
+    "category": "Pragmática",
+    "teoria": "Cambia la realidad por el mero hecho de ser enunciado por una autoridad (bautizar, nombrar, condenar).",
+    "ejemplo": "Queda inaugurado el congreso.",
+    "ejercicio": "¿Qué declarativo realiza el juez al decir 'Lo declaro culpable'?",
+    "suggestedAnswer": "Sentencia judicial."
+  },
+  {
+    "id": 53,
+    "name": "Dialectología",
+    "category": "Lingüística descriptiva",
+    "teoria": "Estudio de las variedades geográficas de una lengua.",
+    "ejemplo": "El español de México, de Argentina, de Chile, etc.",
+    "ejercicio": "¿Qué estudia la dialectología?",
+    "suggestedAnswer": "Las diferencias regionales en fonética, gramática y léxico."
+  },
+  {
+    "id": 54,
+    "name": "Sociolingüística",
+    "category": "Sociolingüística",
+    "teoria": "Estudio de la relación entre lengua y sociedad: variables sociales (edad, clase, género, educación).",
+    "ejemplo": "El uso del voseo en distintos estratos sociales en Argentina.",
+    "ejercicio": "¿Por qué en situaciones formales se evita el voseo en algunos países?",
+    "suggestedAnswer": "Porque se asocia a informalidad o falta de prestigio."
+  },
+  {
+    "id": 55,
+    "name": "Prestigio lingüístico",
+    "category": "Sociolingüística",
+    "teoria": "Valoración social positiva de ciertas variedades o rasgos lingüísticos.",
+    "ejemplo": "El acento de Madrid tiene prestigio en España; el de Bogotá en Colombia.",
+    "ejercicio": "¿Qué variedad tiene prestigio en los medios de comunicación hispanoamericanos?",
+    "suggestedAnswer": "El español neutro (basado en el mexicano o colombiano)."
+  },
+  {
+    "id": 56,
+    "name": "Diglosia",
+    "category": "Sociolingüística",
+    "teoria": "Situación en la que dos variedades de una lengua coexisten con funciones sociales diferenciadas (una alta, otra baja).",
+    "ejemplo": "En Paraguay, el guaraní (bajo) y el español (alto) en ciertos contextos.",
+    "ejercicio": "¿Hay diglosia entre el castellano estándar y el dialecto andaluz?",
+    "suggestedAnswer": "No es diglosia, porque el andaluz no es una lengua separada, pero hay diferencias de prestigio."
+  },
+  {
+    "id": 57,
+    "name": "Lengua criolla",
+    "category": "Contacto lingüístico",
+    "teoria": "Lengua estable resultante del contacto entre hablantes de lenguas diferentes, con gramática simplificada y léxico mayoritariamente de una lengua lexificadora.",
+    "ejemplo": "El chabacano de Filipinas (base española).",
+    "ejercicio": "¿En qué país se habla el chabacano?",
+    "suggestedAnswer": "Filipinas (Zamboanga, Cavite)."
+  },
+  {
+    "id": 58,
+    "name": "Pidgin",
+    "category": "Contacto lingüístico",
+    "teoria": "Lengua auxiliar simplificada, sin hablantes nativos, usada para comunicación básica entre grupos de distinta lengua.",
+    "ejemplo": "El pidgin inglés de Papúa Nueva Guinea, pero no hay pidgin español actualmente.",
+    "ejercicio": "¿Qué diferencia un pidgin de una lengua criolla?",
+    "suggestedAnswer": "El criollo tiene hablantes nativos; el pidgin no."
+  },
+  {
+    "id": 59,
+    "name": "Código alternancia (code-switching)",
+    "category": "Contacto lingüístico",
+    "teoria": "Cambio de una lengua a otra dentro de un mismo discurso o enunciado.",
+    "ejemplo": "'El otro día fui a un meeting, you know?' (mezcla español-inglés).",
+    "ejercicio": "¿Qué fenómeno es común en las comunidades hispanas de Estados Unidos?",
+    "suggestedAnswer": "El espanglish o code-switching."
+  },
+  {
+    "id": 60,
+    "name": "Lengua en peligro de extinción",
+    "category": "Sociolingüística",
+    "teoria": "Lengua que pierde hablantes y no se transmite a nuevas generaciones.",
+    "ejemplo": "El chavacano no está en peligro; algunas variedades indígenas de México sí.",
+    "ejercicio": "¿Qué lenguas originarias de América están en peligro?",
+    "suggestedAnswer": "Muchas: el cumanagoto, el selk'nam, entre otras."
+  },
+  {
+    "id": 61,
+    "name": "Lengua planificada",
+    "category": "Planificación lingüística",
+    "teoria": "Intervención consciente para modificar una lengua (normalización, estandarización).",
+    "ejemplo": "La RAE planifica la ortografía y el léxico normativo.",
+    "ejercicio": "¿Qué organismo planifica el español en Hispanoamérica?",
+    "suggestedAnswer": "La Asociación de Academias de la Lengua Española (ASALE)."
+  },
+  {
+    "id": 62,
+    "name": "Política lingüística",
+    "category": "Sociolingüística",
+    "teoria": "Decisiones de los estados sobre el estatus y uso de las lenguas en su territorio.",
+    "ejemplo": "En Perú, el quechua es cooficial; en Paraguay, el guaraní.",
+    "ejercicio": "¿En qué países hispanoamericanos hay lenguas cooficiales con el español?",
+    "suggestedAnswer": "Perú (quechua, aimara), Paraguay (guaraní), Bolivia (36 lenguas), etc."
+  },
+  {
+    "id": 63,
+    "name": "Lingüística cognitiva",
+    "category": "Teorías lingüísticas",
+    "teoria": "Estudio de la lengua como reflejo de los procesos cognitivos: metáfora conceptual, esquemas de imagen, etc.",
+    "ejemplo": "La metáfora 'el amor es un viaje' (relación tormentosa, puntos muertos, etc.).",
+    "ejercicio": "¿Qué metáfora conceptual subyace a 'estamos en un callejón sin salida'?",
+    "suggestedAnswer": "La vida es un camino (o la solución es un camino)."
+  },
+  {
+    "id": 64,
+    "name": "Gramática generativa (Chomsky)",
+    "category": "Teorías lingüísticas",
+    "teoria": "Teoría que postula una gramática universal innata y reglas de transformación de estructuras profundas a superficiales.",
+    "ejemplo": "La frase activa 'Juan come manzanas' se transforma en pasiva 'Las manzanas son comidas por Juan'.",
+    "ejercicio": "¿Qué estudia la sintaxis generativa?",
+    "suggestedAnswer": "La competencia lingüística del hablante-oyente ideal."
+  },
+  {
+    "id": 65,
+    "name": "Estructuralismo (Saussure)",
+    "category": "Teorías lingüísticas",
+    "teoria": "Concibe la lengua como un sistema de signos donde cada elemento se define por sus relaciones (oposiciones).",
+    "ejemplo": "Los fonemas se definen por sus rasgos distintivos (sonoridad, punto de articulación).",
+    "ejercicio": "¿Qué principio saussureano habla de la relación entre significante y significado?",
+    "suggestedAnswer": "La arbitrariedad del signo."
+  },
+  {
+    "id": 66,
+    "name": "Funcionalismo",
+    "category": "Teorías lingüísticas",
+    "teoria": "Estudio de la lengua a partir de sus funciones comunicativas (informativa, expresiva, apelativa, etc.).",
+    "ejemplo": "La función apelativa se realiza con el vocativo o el imperativo.",
+    "ejercicio": "¿Qué función predomina en '¡Auxilio!'?",
+    "suggestedAnswer": "Expresiva (también apelativa)."
+  },
+  {
+    "id": 67,
+    "name": "Funciones del lenguaje (Jakobson)",
+    "category": "Funcionalismo",
+    "teoria": "Seis funciones: referencial, emotiva, conativa, fática, metalingüística, poética.",
+    "ejemplo": "'El agua hierve a 100°C' es referencial; '¡Qué bonito!' es emotiva.",
+    "ejercicio": "¿Qué función cumple '¿Me escuchas?'?",
+    "suggestedAnswer": "Fática (verificar el canal)."
+  },
+  {
+    "id": 68,
+    "name": "Morfofonología",
+    "category": "Interfaz morfología-fonología",
+    "teoria": "Estudio de cómo los procesos fonológicos afectan a los morfemas (alternancias).",
+    "ejemplo": "El verbo 'pedir' alterna /e/ ~ /i/ en la raíz según la vocal del sufijo (pido, pedimos).",
+    "ejercicio": "¿Qué alternancia se da en 'dormir' ~ 'duermo'?",
+    "suggestedAnswer": "/o/ ~ /ue/ (diptongación)."
+  },
+  {
+    "id": 69,
+    "name": "Alomorfo",
+    "category": "Morfología",
+    "teoria": "Cada una de las variantes formales de un morfema.",
+    "ejemplo": "El morfema de plural tiene alomorfos: -s (casa-s), -es (coche-s, pero con cambio ortográfico), -Ø (en algunos cultismos).",
+    "ejercicio": "¿Cuáles son los alomorfos del morfema de diminutivo?",
+    "suggestedAnswer": "-ito, -illo, -ico, -ín, según la región."
+  },
+  {
+    "id": 70,
+    "name": "Categoría gramatical",
+    "category": "Morfosintaxis",
+    "teoria": "Clases de palabras (sustantivo, adjetivo, verbo, adverbio, etc.) con propiedades morfológicas y sintácticas comunes.",
+    "ejemplo": "Los verbos expresan acción o estado y tienen flexión de tiempo, modo, persona.",
+    "ejercicio": "¿Qué categoría puede tener grados?",
+    "suggestedAnswer": "El adjetivo (positivo, comparativo, superlativo)."
+  },
+  {
+    "id": 71,
+    "name": "Oración unimembre",
+    "category": "Sintaxis",
+    "teoria": "Oración sin estructura de sujeto-predicado (construcciones impersonales, exclamativas, etc.).",
+    "ejemplo": "Llueve. ¡Qué bonito! ¡Adiós!",
+    "ejercicio": "Clasifica 'Hay muchos niños' (unimembre o bimembre?).",
+    "suggestedAnswer": "Unimembre (impersonal con 'hay')."
+  },
+  {
+    "id": 72,
+    "name": "Oración bimembre",
+    "category": "Sintaxis",
+    "teoria": "Oración con sujeto y predicado explícitos o elípticos.",
+    "ejemplo": "El perro ladra. (Sujeto + predicado).",
+    "ejercicio": "¿Cuántos miembros tiene 'Compraron'?",
+    "suggestedAnswer": "Bimembre con sujeto tácito (ellos)."
+  },
+  {
+    "id": 73,
+    "name": "Perífrasis verbal",
+    "category": "Sintaxis",
+    "teoria": "Estructura de verbo auxiliar + verbo principal en forma no personal (infinitivo, gerundio, participio).",
+    "ejemplo": "Voy a comer, estoy estudiando, he llegado.",
+    "ejercicio": "Identifica la perífrasis en 'Debes estudiar más'.",
+    "suggestedAnswer": "deber + infinitivo (perífrasis de obligación)."
+  },
+  {
+    "id": 74,
+    "name": "Pragmática",
+    "category": "Pragmática",
+    "teoria": "Estudio del significado en contexto y de los actos de habla.",
+    "ejemplo": "Interpretar un enunciado 'Tengo frío' como petición de cerrar la ventana.",
+    "ejercicio": "¿Por qué la pragmática estudia la inferencia?",
+    "suggestedAnswer": "Porque el significado literal no siempre coincide con el intencionado."
+  },
+  {
+    "id": 75,
+    "name": "Tema y rema (estructura informativa)",
+    "category": "Pragmática",
+    "teoria": "El tema es la información conocida o punto de partida; el rema es la información nueva que se aporta.",
+    "ejemplo": "En 'A María, le regalaron un libro', 'A María' es el tema, 'le regalaron un libro' es el rema.",
+    "ejercicio": "¿Cuál es el rema en 'El niño rompió el jarrón'?",
+    "suggestedAnswer": "rompió el jarrón."
+  },
+  {
+    "id": 76,
+    "name": "Foco contrastivo",
+    "category": "Pragmática",
+    "teoria": "Elemento de la oración que se destaca por contraste con otro posible.",
+    "ejemplo": "JUAN llegó tarde (y no Pedro).",
+    "ejercicio": "¿Cuál es el foco en 'Ayer fui al cine, no al teatro'?",
+    "suggestedAnswer": "cine (por oposición a teatro)."
+  },
+  {
+    "id": 77,
+    "name": "Presuposición",
+    "category": "Pragmática",
+    "teoria": "Información implícita que se da por supuesta en un enunciado.",
+    "ejemplo": "El rey de Francia es calvo presupone que existe un rey de Francia.",
+    "ejercicio": "¿Qué presupone 'Dejó de fumar'?",
+    "suggestedAnswer": "Que fumaba antes."
+  },
+  {
+    "id": 78,
+    "name": "Negación metalingüística",
+    "category": "Pragmática",
+    "teoria": "Negación que no rechaza el hecho, sino la forma de decirlo (corrección).",
+    "ejemplo": "No es 'cocreta', es 'croqueta'.",
+    "ejercicio": "¿Por qué es metalingüística 'No es que sea tonto, sino que es despistado'?",
+    "suggestedAnswer": "Corrige el término 'tonto' por 'despistado'."
+  },
+  {
+    "id": 79,
+    "name": "Forma marcada / no marcada",
+    "category": "Teoría lingüística",
+    "teoria": "En una oposición, el término marcado tiene algún rasgo extra (morfológico, semántico, pragmático).",
+    "ejemplo": "León (no marcado) / leona (marcado por género femenino).",
+    "ejercicio": "¿Cuál es el término no marcado en la oposición 'bueno' / 'malo'?",
+    "suggestedAnswer": "Bueno (positivo, neutral)."
+  },
+  {
+    "id": 80,
+    "name": "Lingüística de corpus",
+    "category": "Metodología",
+    "teoria": "Estudio de la lengua basado en grandes colecciones de textos auténticos (corpus).",
+    "ejemplo": "El Corpus del Español del Siglo XXI (CORPES) de la RAE.",
+    "ejercicio": "¿Para qué sirve un corpus lingüístico?",
+    "suggestedAnswer": "Para obtener datos reales de frecuencia, colocaciones, variación, etc."
+  },
+  {
+    "id": 81,
+    "name": "Lexicografía",
+    "category": "Lingüística aplicada",
+    "teoria": "Técnica de elaboración de diccionarios.",
+    "ejemplo": "El Diccionario de la Real Academia Española (DLE).",
+    "ejercicio": "¿Qué diferencia lexicografía de semántica?",
+    "suggestedAnswer": "La lexicografía es práctica (hacer diccionarios); la semántica estudia el significado teórico."
+  },
+  {
+    "id": 82,
+    "name": "Lexicología",
+    "category": "Lingüística descriptiva",
+    "teoria": "Estudio del léxico o vocabulario de una lengua: formación de palabras, relaciones semánticas, etc.",
+    "ejemplo": "Estudio de las familias léxicas: pan, panadería, empanar, panecillo.",
+    "ejercicio": "¿Qué campo de la lingüística estudia los neologismos?",
+    "suggestedAnswer": "La lexicología."
+  },
+  {
+    "id": 83,
+    "name": "Psicolingüística",
+    "category": "Lingüística interdisciplinar",
+    "teoria": "Estudio de los procesos cognitivos implicados en la adquisición, producción y comprensión del lenguaje.",
+    "ejemplo": "Cómo los niños adquieren las irregularidades verbales.",
+    "ejercicio": "¿Qué estudia la psicolingüística del bilingüismo?",
+    "suggestedAnswer": "La organización de dos lenguas en la mente y los procesos de cambio de código."
+  },
+  {
+    "id": 84,
+    "name": "Neurolingüística",
+    "category": "Lingüística interdisciplinar",
+    "teoria": "Estudio de las bases cerebrales del lenguaje (áreas de Broca, Wernicke, afasias).",
+    "ejemplo": "La afasia de Broca afecta la producción del lenguaje.",
+    "ejercicio": "¿Qué área cerebral se asocia con la comprensión del lenguaje?",
+    "suggestedAnswer": "Área de Wernicke."
+  },
+  {
+    "id": 85,
+    "name": "Adquisición del lenguaje",
+    "category": "Psicolingüística",
+    "teoria": "Proceso por el cual los niños aprenden su lengua materna.",
+    "ejemplo": "Etapa holofrástica (una palabra), etapa telegráfica (dos palabras).",
+    "ejercicio": "¿Qué ocurre en la etapa del balbuceo?",
+    "suggestedAnswer": "El niño produce sílabas repetitivas (mamama, bababa)."
+  },
+  {
+    "id": 86,
+    "name": "Bilingüismo",
+    "category": "Contacto lingüístico",
+    "teoria": "Capacidad de usar dos lenguas con cierto grado de competencia.",
+    "ejemplo": "En Cataluña, muchos son bilingües (catalán-español).",
+    "ejercicio": "¿Qué es el bilingüismo social?",
+    "suggestedAnswer": "Situación en la que una comunidad usa dos lenguas habitualmente."
+  },
+  {
+    "id": 87,
+    "name": "Lengua de herencia",
+    "category": "Adquisición",
+    "teoria": "Lengua materna de los padres que no es la dominante en la sociedad donde crece el niño.",
+    "ejemplo": "Un niño hispano nacido en EE.UU. que habla español en casa pero inglés fuera.",
+    "ejercicio": "¿Qué problemas de adquisición puede tener la lengua de herencia?",
+    "suggestedAnswer": "Pérdida de vocabulario, influencia de la lengua dominante, menor competencia formal."
+  },
+  {
+    "id": 88,
+    "name": "Análisis del discurso",
+    "category": "Lingüística del texto",
+    "teoria": "Estudio de la lengua en uso por encima del nivel oracional: conversaciones, textos, géneros.",
+    "ejemplo": "Análisis de la estructura de un debate político.",
+    "ejercicio": "¿Qué estudia la cohesión textual?",
+    "suggestedAnswer": "Los mecanismos que conectan oraciones (anáforas, conectores, elipsis)."
+  },
+  {
+    "id": 89,
+    "name": "Mecanismos de cohesión",
+    "category": "Análisis del discurso",
+    "teoria": "Recursos que conectan las partes de un texto: repetición, sinonimia, pronombres, conectores, elipsis.",
+    "ejemplo": "María llegó tarde. Ella siempre hace lo mismo. (Pronombre anafórico).",
+    "ejercicio": "Identifica un conector en 'Estudió mucho, por lo tanto, aprobó'.",
+    "suggestedAnswer": "Por lo tanto (consecutivo)."
+  },
+  {
+    "id": 90,
+    "name": "Conectores discursivos",
+    "category": "Análisis del discurso",
+    "teoria": "Palabras o locuciones que guían la interpretación del texto: aditivos (además), opositivos (sin embargo), causales (porque), etc.",
+    "ejemplo": "No me gusta el frío; sin embargo, vivo en Canadá.",
+    "ejercicio": "¿Qué tipo de conector es 'en consecuencia'?",
+    "suggestedAnswer": "Consecutivo."
+  },
+  {
+    "id": 91,
+    "name": "Género discursivo (Bajtín)",
+    "category": "Análisis del discurso",
+    "teoria": "Tipos relativamente estables de enunciados (carta, conferencia, tuit, conversación cotidiana).",
+    "ejemplo": "El género 'receta de cocina' tiene una estructura fija: título, ingredientes, instrucciones.",
+    "ejercicio": "¿Qué género discursivo es un sermón?",
+    "suggestedAnswer": "Discurso religioso (oral)."
+  },
+  {
+    "id": 92,
+    "name": "Polifonía (Bajtín)",
+    "category": "Análisis del discurso",
+    "teoria": "En un texto conviven distintas voces (citas, discursos indirectos, ironía).",
+    "ejemplo": "En una novela, el narrador y los personajes tienen voces diferentes.",
+    "ejercicio": "¿Cómo se manifiesta la polifonía en un artículo que cita a varias fuentes?",
+    "suggestedAnswer": "Cada fuente aporta su propia voz."
+  },
+  {
+    "id": 93,
+    "name": "Intertextualidad",
+    "category": "Análisis del discurso",
+    "teoria": "Relación de un texto con otros textos (citas, alusiones, parodias).",
+    "ejemplo": "Un poema que empieza 'Érase una vez...' alude a los cuentos.",
+    "ejercicio": "¿Qué intertextualidad hay en 'El Quijote' con los libros de caballerías?",
+    "suggestedAnswer": "Parodia de los libros de caballerías."
+  },
+  {
+    "id": 94,
+    "name": "Ironía verbal",
+    "category": "Pragmática",
+    "teoria": "Decir lo contrario de lo que se piensa, con entonación o contexto que lo señala.",
+    "ejemplo": "¡Qué bien has hecho el examen! (sabiendo que lo suspendió).",
+    "ejercicio": "¿Por qué la ironía a veces requiere un guiño o tono especial?",
+    "suggestedAnswer": "Para que el oyente interprete el sentido opuesto."
+  },
+  {
+    "id": 95,
+    "name": "Sarcasmo",
+    "category": "Pragmática",
+    "teoria": "Ironía más agresiva o burlona.",
+    "ejemplo": "¡Qué inteligente eres! (cuando alguien comete un error tonto).",
+    "ejercicio": "¿Diferencia entre ironía y sarcasmo?",
+    "suggestedAnswer": "El sarcasmo es más hiriente y explícitamente burlón."
+  },
+  {
+    "id": 96,
+    "name": "Metáfora conceptual",
+    "category": "Lingüística cognitiva",
+    "teoria": "Entender un dominio abstracto (target) en términos de otro más concreto (source).",
+    "ejemplo": "El amor es un viaje: 'llegamos a un callejón sin salida'.",
+    "ejercicio": "¿Qué metáfora conceptual subyace a 'perder el tiempo'?",
+    "suggestedAnswer": "El tiempo es un recurso valioso (que se puede perder)."
+  },
+  {
+    "id": 97,
+    "name": "Prototipo (categorización)",
+    "category": "Semántica cognitiva",
+    "teoria": "Miembro más representativo de una categoría (el más típico).",
+    "ejemplo": "El prototipo de 'ave' es un gorrión, no un pingüino.",
+    "ejercicio": "¿Cuál es el prototipo de 'mueble'?",
+    "suggestedAnswer": "La silla o la mesa."
+  },
+  {
+    "id": 98,
+    "name": "Etnografía de la comunicación (Gumperz, Hymes)",
+    "category": "Sociolingüística",
+    "teoria": "Estudio del uso del lenguaje en su contexto cultural, incluyendo normas de interacción.",
+    "ejemplo": "Análisis de los saludos en diferentes culturas hispanas.",
+    "ejercicio": "¿Qué aspecto del evento comunicativo estudia el 'escenario'?",
+    "suggestedAnswer": "El lugar y momento en que ocurre la comunicación."
+  },
+  {
+    "id": 99,
+    "name": "Modelo de competencia comunicativa (Canale y Swain)",
+    "category": "Adquisición",
+    "teoria": "Competencia gramatical, sociolingüística, discursiva y estratégica.",
+    "ejemplo": "Saber pedir disculpas (sociolingüístico) y reparar malentendidos (estratégico).",
+    "ejercicio": "¿Qué competencia permite interpretar una ironía?",
+    "suggestedAnswer": "Pragmática (o sociolingüística)."
+  },
+  {
+    "id": 100,
+    "name": "Análisis crítico del discurso",
+    "category": "Lingüística aplicada",
+    "teoria": "Estudio del discurso que revela relaciones de poder e ideología.",
+    "ejemplo": "Analizar cómo los políticos usan la primera persona del plural para generar solidaridad.",
+    "ejercicio": "¿Qué objetivo tiene el análisis crítico?",
+    "suggestedAnswer": "Desenmascarar la dominación y la desigualdad a través del lenguaje."
+  }
+]

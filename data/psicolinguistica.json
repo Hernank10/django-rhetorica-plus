@@ -1,0 +1,903 @@
+[
+  {
+    "id": 1,
+    "name": "Adquisición del lenguaje",
+    "category": "Adquisición",
+    "teoria": "Proceso mediante el cual los niños aprenden su lengua materna, desde el balbuceo hasta la gramática compleja.",
+    "ejemplo": "A los 12 meses, el niño produce primeras palabras; a los 24 meses, combina dos palabras.",
+    "ejercicio": "¿En qué etapa aparece la morfología flexiva?",
+    "suggestedAnswer": "Alrededor de los 2-3 años."
+  },
+  {
+    "id": 2,
+    "name": "Balbuceo",
+    "category": "Adquisición",
+    "teoria": "Producción de sílabas repetitivas (ma-ma, pa-pa) entre los 6 y 10 meses.",
+    "ejemplo": "‘bababa’, ‘dadada’.",
+    "ejercicio": "¿El balbuceo es universal?",
+    "suggestedAnswer": "Sí, en todas las lenguas."
+  },
+  {
+    "id": 3,
+    "name": "Etapa holofrástica",
+    "category": "Adquisición",
+    "teoria": "Uso de una palabra para expresar una oración completa (entre 12 y 18 meses).",
+    "ejemplo": "‘Agua’ puede significar ‘quiero agua’ o ‘hay agua’.",
+    "ejercicio": "Da un ejemplo de holofrase en español infantil.",
+    "suggestedAnswer": "‘Mama’ (quiero a mamá, mamá ven, etc.)."
+  },
+  {
+    "id": 4,
+    "name": "Etapa telegráfica",
+    "category": "Adquisición",
+    "teoria": "Combinación de dos o tres palabras sin morfemas gramaticales (alrededor de los 24 meses).",
+    "ejemplo": "‘Mamá agua’, ‘papa coche’.",
+    "ejercicio": "¿Por qué se llama telegráfica?",
+    "suggestedAnswer": "Porque omite palabras funcionales como preposiciones, artículos."
+  },
+  {
+    "id": 5,
+    "name": "Sobregeneralización morfológica",
+    "category": "Adquisición",
+    "teoria": "Aplicación de reglas regulares a palabras irregulares (ej. ‘decí’, ‘sabió’).",
+    "ejemplo": "Un niño dice ‘rompido’ en lugar de ‘roto’.",
+    "ejercicio": "Corrige la sobregeneralización ‘ponió’.",
+    "suggestedAnswer": "‘Puso’."
+  },
+  {
+    "id": 6,
+    "name": "Período crítico (Lenneberg)",
+    "category": "Adquisición",
+    "teoria": "Período en la infancia (hasta la pubertad) en el que la adquisición del lenguaje es óptima; después, se dificulta.",
+    "ejemplo": "Los niños expuestos a una lengua después de los 12 años raramente alcanzan nativismo completo.",
+    "ejercicio": "¿Qué evidencia apoya el período crítico?",
+    "suggestedAnswer": "Casos de niños ferales o privados de lenguaje (Genie)."
+  },
+  {
+    "id": 7,
+    "name": "Gramática universal (Chomsky)",
+    "category": "Teorías",
+    "teoria": "Dispositivo innato que guía la adquisición del lenguaje, común a todas las lenguas.",
+    "ejemplo": "El conocimiento de que las oraciones tienen estructura jerárquica es innato.",
+    "ejercicio": "¿Qué evidencia se esgrime para la GU?",
+    "suggestedAnswer": "La rapidez de adquisición y la pobreza del estímulo."
+  },
+  {
+    "id": 8,
+    "name": "Fase crítica para la fonología",
+    "category": "Adquisición",
+    "teoria": "La capacidad de percibir y producir sonidos de una segunda lengua se reduce después de los 12 años.",
+    "ejemplo": "Un adulto hispanohablante tendrá acento extranjero al aprender inglés.",
+    "ejercicio": "¿Por qué los niños aprenden sin acento y los adultos no?",
+    "suggestedAnswer": "La plasticidad cerebral disminuye con la edad."
+  },
+  {
+    "id": 9,
+    "name": "Innatismo del lenguaje",
+    "category": "Teorías",
+    "teoria": "Chomsky propone que la facultad del lenguaje es innata, no aprendida por imitación.",
+    "ejemplo": "Los niños producen oraciones que nunca han oído (creatividad).",
+    "ejercicio": "¿Qué contrapropone el conductismo?",
+    "suggestedAnswer": "Que el lenguaje se aprende por imitación y refuerzo."
+  },
+  {
+    "id": 10,
+    "name": "Conductismo y lenguaje (Skinner)",
+    "category": "Teorías",
+    "teoria": "El lenguaje se adquiere por imitación, repetición y refuerzo positivo.",
+    "ejemplo": "Un niño dice ‘agua’, la madre le da agua y refuerza la palabra.",
+    "ejercicio": "¿Cómo explicaría Skinner la producción de oraciones nuevas?",
+    "suggestedAnswer": "Por generalización de patrones aprendidos."
+  },
+  {
+    "id": 11,
+    "name": "Aprendizaje implícito vs explícito",
+    "category": "Adquisición L2",
+    "teoria": "Implícito: adquirir reglas sin conciencia (como en la L1); explícito: estudio consciente de reglas (como en la L2 en adultos).",
+    "ejemplo": "Un niño aprende ‘yo he comido’ sin saber qué es el pretérito perfecto.",
+    "ejercicio": "¿Qué método favorece el aprendizaje implícito?",
+    "suggestedAnswer": "Inmersión lingüística."
+  },
+  {
+    "id": 12,
+    "name": "Interlengua (Selinker)",
+    "category": "Adquisición L2",
+    "teoria": "Sistema lingüístico intermedio que desarrolla el aprendiente de una segunda lengua, con reglas propias en evolución.",
+    "ejemplo": "Un estudiante de español dice ‘yo no sabo’ (en lugar de ‘sé’).",
+    "ejercicio": "¿La interlengua es estable o cambia?",
+    "suggestedAnswer": "Cambia a medida que el aprendiente progresa."
+  },
+  {
+    "id": 13,
+    "name": "Fosilización",
+    "category": "Adquisición L2",
+    "teoria": "Detención del desarrollo en la interlengua, con errores persistentes (pronunciación, gramática).",
+    "ejemplo": "Un hispanohablante que dice ‘she go’ de forma permanente.",
+    "ejercicio": "¿Cómo se puede evitar la fosilización?",
+    "suggestedAnswer": "Feedback correctivo explícito y práctica consciente."
+  },
+  {
+    "id": 14,
+    "name": "Transferencia lingüística (interferencia)",
+    "category": "Adquisición L2",
+    "teoria": "Influencia de la primera lengua en la segunda (préstamos, calcos, errores).",
+    "ejemplo": "Un francófono dice ‘estoy aquí desde dos horas’ (interferencia del francés ‘depuis’).",
+    "ejercicio": "¿Qué tipo de transferencia produce ‘coche rojo’?",
+    "suggestedAnswer": "Ninguna, es igual en inglés ‘red car’ con orden diferente."
+  },
+  {
+    "id": 15,
+    "name": "Procesamiento del lenguaje (comprensión y producción)",
+    "category": "Procesamiento",
+    "teoria": "El cerebro procesa el lenguaje en tiempo real, integrando información fonológica, sintáctica y semántica.",
+    "ejemplo": "Al oír ‘el perro muerde al niño’, el oyente activa representaciones mentales.",
+    "ejercicio": "¿Qué áreas cerebrales intervienen?",
+    "suggestedAnswer": "Área de Broca (producción), Wernicke (comprensión)."
+  },
+  {
+    "id": 16,
+    "name": "Priming semántico",
+    "category": "Procesamiento",
+    "teoria": "Facilitación en el reconocimiento de una palabra tras haber escuchado otra relacionada semánticamente.",
+    "ejemplo": "Tras ‘perro’, se reconoce más rápido ‘gato’ que ‘mesa’.",
+    "ejercicio": "¿Qué experimento mide el priming?",
+    "suggestedAnswer": "Tarea de decisión léxica."
+  },
+  {
+    "id": 17,
+    "name": "Efecto de frecuencia",
+    "category": "Procesamiento",
+    "teoria": "Las palabras más frecuentes se reconocen más rápido.",
+    "ejemplo": "‘Casa’ se reconoce antes que ‘zulo’.",
+    "ejercicio": "¿Cómo influye la frecuencia en el acceso léxico?",
+    "suggestedAnswer": "A mayor frecuencia, menor tiempo de reacción."
+  },
+  {
+    "id": 18,
+    "name": "Ambiguidad léxica y contexto",
+    "category": "Procesamiento",
+    "teoria": "El contexto desambigua palabras polisémicas o homónimas durante la comprensión.",
+    "ejemplo": "‘Banco’ en ‘sentarse en un banco’ es asiento; en ‘pedir dinero al banco’, entidad financiera.",
+    "ejercicio": "¿Cómo se resuelve la ambigüedad?",
+    "suggestedAnswer": "El contexto activa el significado relevante."
+  },
+  {
+    "id": 19,
+    "name": "Parsing (análisis sintáctico)",
+    "category": "Procesamiento",
+    "teoria": "Proceso por el cual el oyente/lector asigna estructura sintáctica a una oración.",
+    "ejemplo": "Al leer ‘El perro que ladra al gato es peligroso’, se analiza la cláusula relativa.",
+    "ejercicio": "¿Qué estrategia de parsing evita ambigüedad?",
+    "suggestedAnswer": "Late closure (cerrar sintagmas lo más tarde posible)."
+  },
+  {
+    "id": 20,
+    "name": "Efecto de expectativa sintáctica (garden path)",
+    "category": "Procesamiento",
+    "teoria": "Las oraciones ambiguas llevan al oyente por un camino sintáctico erróneo temporal (‘garden path’).",
+    "ejemplo": "‘La anciana enterró las herramientas en el jardín ayer’ (sin ambigüedad). Mejor: ‘El niño vio al ladrón con el telescopio’.",
+    "ejercicio": "Ejemplo de ‘garden path’ en español.",
+    "suggestedAnswer": "‘El policía ayudó a la víctima del accidente con la radio’ (¿quién tenía la radio?)."
+  },
+  {
+    "id": 21,
+    "name": "Potenciales relacionados con eventos (ERP)",
+    "category": "Neurociencia",
+    "teoria": "Técnica de electroencefalografía que mide la respuesta cerebral a estímulos lingüísticos (N400, P600).",
+    "ejemplo": "Una anomalía semántica (dijo ‘el café salado’) produce N400.",
+    "ejercicio": "¿Qué ERP se asocia a anomalías sintácticas?",
+    "suggestedAnswer": "P600."
+  },
+  {
+    "id": 22,
+    "name": "N400 (anomalía semántica)",
+    "category": "Neurociencia",
+    "teoria": "Onda negativa que aparece 400 ms después de un estímulo semánticamente anómalo.",
+    "ejemplo": "‘El desayuno de Juan era tostadas con té de serpiente’ (anómalo).",
+    "ejercicio": "¿Qué tipo de estímulo produce N400?",
+    "suggestedAnswer": "Palabra inesperada semánticamente."
+  },
+  {
+    "id": 23,
+    "name": "P600 (anomalía sintáctica)",
+    "category": "Neurociencia",
+    "teoria": "Onda positiva 600 ms después de una violación sintáctica.",
+    "ejemplo": "‘Los niños juega’ (concordancia incorrecta).",
+    "ejercicio": "¿Qué anomalía provoca P600?",
+    "suggestedAnswer": "Concordancia, orden de palabras, etc."
+  },
+  },
+  {
+    "id": 24,
+    "name": "Afasia de Broca",
+    "category": "Patologías",
+    "teoria": "Lesión en el área de Broca (lóbulo frontal izquierdo) que causa habla no fluida, agramatical, con comprensión relativamente preservada.",
+    "ejemplo": "‘… café… yo… mañana…’ (lenguaje telegráfico).",
+    "ejercicio": "¿Qué tipo de errores cometen los afásicos de Broca?",
+    "suggestedAnswer": "Omisión de morfemas (preposiciones, conjunciones)."
+  },
+  {
+    "id": 25,
+    "name": "Afasia de Wernicke",
+    "category": "Patologías",
+    "teoria": "Lesión en el área de Wernicke (lóbulo temporal izquierdo) que causa habla fluida pero sin sentido, con comprensión afectada.",
+    "ejemplo": "‘El perro volaba en el árbol y la risa’ (jergafasia).",
+    "ejercicio": "¿El paciente con afasia de Wernicke es consciente de sus errores?",
+    "suggestedAnswer": "No, suele no ser consciente."
+  },
+  {
+    "id": 26,
+    "name": "Afasia global",
+    "category": "Patologías",
+    "teoria": "Lesión extensa en las áreas de Broca y Wernicke, produciendo pérdida severa de producción y comprensión.",
+    "ejemplo": "Emisión de pocas sílabas sin sentido.",
+    "ejercicio": "¿Qué áreas están dañadas?",
+    "suggestedAnswer": "Broca y Wernicke."
+  },
+  {
+    "id": 27,
+    "name": "Anomia",
+    "category": "Patologías",
+    "teoria": "Dificultad para encontrar palabras, típica en afasias y en el envejecimiento normal.",
+    "ejemplo": "‘Pásame eso… la cosa…’",
+    "ejercicio": "¿Qué test detecta anomia?",
+    "suggestedAnswer": "Denominación de imágenes (Boston Naming Test)."
+  },
+  {
+    "id": 28,
+    "name": "Dislexia evolutiva",
+    "category": "Patologías del desarrollo",
+    "teoria": "Dificultad específica en el aprendizaje de la lectura, a pesar de inteligencia normal y escolarización adecuada.",
+    "ejemplo": "Confusión de letras simétricas (b/d, p/q), omisiones, rotaciones.",
+    "ejercicio": "¿Qué tipo de dislexia es la fonológica?",
+    "suggestedAnswer": "Dificultad en la ruta fonológica (leer pseudopalabras)."
+  },
+  {
+    "id": 29,
+    "name": "Dislexia superficial",
+    "category": "Patologías del desarrollo",
+    "teoria": "Dificultad en la ruta léxica; lee de forma fonológica pero falla en palabras irregulares.",
+    "ejemplo": "Leer ‘mujer’ como ‘mújer’ (si fuera una palabra irregular, pero el español es transparente). En español, más afectación de palabras con tilde.",
+    "ejercicio": "¿En español se da dislexia superficial?",
+    "suggestedAnswer": "Sí, con acentuación y palabras con variaciones."
+  },
+  {
+    "id": 30,
+    "name": "Trastorno específico del lenguaje (TEL)",
+    "category": "Patologías del desarrollo",
+    "teoria": "Alteración en la adquisición del lenguaje sin déficit cognitivo, sensorial o motor.",
+    "ejemplo": "Niño que a los 4 años aún no combina palabras o tiene errores gramaticales.",
+    "ejercicio": "¿Qué diferencia TEL del autismo?",
+    "suggestedAnswer": "En el TEL no hay problemas de comunicación social ni estereotipias."
+  },
+  {
+    "id": 31,
+    "name": "Trastorno fonológico",
+    "category": "Patologías del desarrollo",
+    "teoria": "Dificultad en la producción de fonemas, con omisiones, sustituciones o distorsiones.",
+    "ejemplo": "‘Tato’ por ‘gato’, ‘lale’ por ‘dale’.",
+    "ejercicio": "¿A qué edad se considera patológico?",
+    "suggestedAnswer": "A partir de los 4 años, si persiste."
+  },
+  {
+    "id": 32,
+    "name": "Tartamudez (disfluencia)",
+    "category": "Patologías",
+    "teoria": "Trastorno de la fluidez con repeticiones, prolongaciones y bloqueos.",
+    "ejemplo": "‘Yo- yo- yo quiero agua’.",
+    "ejercicio": "¿Qué factores psicológicos influyen?",
+    "suggestedAnswer": "Ansiedad, presión social, fatiga."
+  },
+  {
+    "id": 33,
+    "name": "Deterioro del lenguaje en demencias (Alzheimer)",
+    "category": "Patologías",
+    "teoria": "Pérdida gradual de la capacidad lingüística: anomia, discurso vacío, dificultad para seguir instrucciones.",
+    "ejemplo": "‘Pásame... el... el...’",
+    "ejercicio": "¿En qué etapa aparecen los problemas de comprensión?",
+    "suggestedAnswer": "En fases moderadas a avanzadas."
+  },
+  {
+    "id": 34,
+    "name": "Bilingüismo y cognición",
+    "category": "Bilingüismo",
+    "teoria": "El bilingüismo produce ventajas en control ejecutivo (atención, inhibición) y mayor flexibilidad mental.",
+    "ejemplo": "Los niños bilingües obtienen mejores resultados en tareas de cambio de reglas.",
+    "ejercicio": "¿Qué desventaja puede tener el bilingüismo?",
+    "suggestedAnswer": "Menor vocabulario en cada lengua, mezcla de códigos."
+  },
+  {
+    "id": 35,
+    "name": "Cambio de código (code-switching) como estrategia comunicativa",
+    "category": "Bilingüismo",
+    "teoria": "Alternancia de lenguas dentro del mismo discurso para marcar identidad, énfasis o eficiencia.",
+    "ejemplo": "‘Voy al meeting, ¿vienes?’",
+    "ejercicio": "¿Qué tipo de bilingüe cambia más de código?",
+    "suggestedAnswer": "Bilingües competentes en contextos informales."
+  },
+  {
+    "id": 36,
+    "name": "Mezcla de idiomas (lengua mixta)",
+    "category": "Bilingüismo",
+    "teoria": "Producción espontánea que mezcla elementos de ambas lenguas en la misma frase.",
+    "ejemplo": "‘Spanglish: Vacunar la carpeta’.",
+    "ejercicio": "¿Es un signo de incompetencia?",
+    "suggestedAnswer": "No, es una estrategia normal del bilingüismo."
+  },
+  {
+    "id": 37,
+    "name": "Efecto de la lengua materna en la percepción fonética",
+    "category": "Percepción",
+    "teoria": "Los hablantes de una lengua categorizan los sonidos según su sistema fonológico (percepción categorial).",
+    "ejemplo": "Los españoles no distinguen ‘ship’ y ‘sheep’ en inglés.",
+    "ejercicio": "¿Qué fenómeno explica la dificultad para oír diferencias de otra lengua?",
+    "suggestedAnswer": "Percepción categorial, influencia del inventario fonológico nativo."
+  },
+  {
+    "id": 38,
+    "name": "Percepción del acento extranjero",
+    "category": "Percepción",
+    "teoria": "Los hablantes nativos perciben automáticamente un acento extranjero, incluso en oraciones cortas.",
+    "ejemplo": "Un hablante hispano dice ‘I think’ con /θ/ en lugar de /ð/.",
+    "ejercicio": "¿Se puede eliminar por completo el acento extranjero?",
+    "suggestedAnswer": "Es posible en niños, difícil en adultos."
+  },
+  {
+    "id": 39,
+    "name": "Modelo de cohorte (acceso léxico)",
+    "category": "Procesamiento",
+    "teoria": "Durante el reconocimiento de palabras, se activa un conjunto de candidatos que coinciden con el input auditivo, que se va reduciendo.",
+    "ejemplo": "Al oír ‘ca…’ se activan ‘casa’, ‘cara’, ‘cama’; luego ‘casa’ sobrevive.",
+    "ejercicio": "¿Qué tipo de contexto ayuda a reducir la cohorte?",
+    "suggestedAnswer": "El contexto semántico."
+  },
+  {
+    "id": 40,
+    "name": "Modelo de red semántica (Collins y Loftus)",
+    "category": "Representación",
+    "teoria": "El léxico mental se organiza en una red de nodos interconectados por relaciones semánticas.",
+    "ejemplo": "‘Perro’ conecta con ‘animal’, ‘gato’, ‘ladrar’.",
+    "ejercicio": "¿Qué es la propagación de activación?",
+    "suggestedAnswer": "Activar un nodo difunde activación a nodos relacionados."
+  },
+  {
+    "id": 41,
+    "name": "Efecto Stroop (interferencia semántica)",
+    "category": "Procesamiento",
+    "teoria": "Dificultad para nombrar el color de una palabra cuando esta palabra nombra un color diferente.",
+    "ejemplo": "Decir ‘azul’ cuando la palabra ‘ROJO’ está impresa en color azul.",
+    "ejercicio": "¿Qué proceso cognitivo subyace?",
+    "suggestedAnswer": "Interferencia entre lectura automática y denominación de color."
+  },
+  {
+    "id": 42,
+    "name": "Efecto de la frecuencia léxica en producción",
+    "category": "Producción",
+    "teoria": "Las palabras de alta frecuencia se recuperan más rápido que las de baja frecuencia.",
+    "ejemplo": "Nombrar una imagen de ‘perro’ es más rápido que ‘avestruz’.",
+    "ejercicio": "¿Cómo se mide el tiempo de acceso léxico?",
+    "suggestedAnswer": "Tarea de denominación de imágenes o decisión léxica."
+  },
+  {
+    "id": 43,
+    "name": "Efecto de la edad de adquisición",
+    "category": "Léxico",
+    "teoria": "Las palabras aprendidas tempranamente se procesan más rápido que las aprendidas más tarde.",
+    "ejemplo": "‘Mamá’ se recupera antes que ‘patrimonio’.",
+    "ejercicio": "¿Por qué las palabras tardías son más difíciles?",
+    "suggestedAnswer": "Menor conexión en la red léxica."
+  },
+  {
+    "id": 44,
+    "name": "Error de la punta de la lengua (TOT)",
+    "category": "Producción",
+    "teoria": "Fenómeno en el que el hablante sabe que conoce la palabra, pero no puede recuperarla en ese momento.",
+    "ejemplo": "‘La palabra empieza con ‘p’… ya sé… algo así como ‘psicología’…’",
+    "ejercicio": "¿En qué se diferencian los TOT entre jóvenes y mayores?",
+    "suggestedAnswer": "Son más frecuentes en mayores."
+  },
+  {
+    "id": 45,
+    "name": "Planificación sintáctica en producción",
+    "category": "Producción",
+    "teoria": "Antes de hablar, el hablante planifica la estructura de la oración, incluyendo la concordancia.",
+    "ejemplo": "El error en la concordancia de número (los niño) puede deberse a un fallo de planificación.",
+    "ejercicio": "¿Qué es el ‘efecto de concordancia atractiva’?",
+    "suggestedAnswer": "El número del complemento atrae la concordancia del verbo (el resultado de las pruebas fue/fueron)."
+  },
+  {
+    "id": 46,
+    "name": "Memoria de trabajo verbal",
+    "category": "Memoria",
+    "teoria": "Componente de la memoria que retiene y manipula información fonológica de manera temporal (bucle fonológico).",
+    "ejemplo": "Repetir una serie de dígitos en orden inverso.",
+    "ejercicio": "¿Qué tarea evalúa la memoria de trabajo verbal?",
+    "suggestedAnswer": "Span de dígitos."
+  },
+  {
+    "id": 47,
+    "name": "Efecto de la longitud de palabra en el span",
+    "category": "Memoria",
+    "teoria": "Las palabras más largas tienen menor probabilidad de ser recordadas en tareas de repetición.",
+    "ejemplo": "Se recuerdan menos palabras polisílabas que monosílabas.",
+    "ejercicio": "¿Cuál es la causa del efecto?",
+    "suggestedAnswer": "El bucle fonológico tiene capacidad limitada en tiempo."
+  },
+  {
+    "id": 48,
+    "name": "Efecto de similitud fonológica",
+    "category": "Memoria",
+    "teoria": "Las palabras similares fonológicamente se confunden más en la memoria a corto plazo.",
+    "ejemplo": "‘beca’, ‘beta’, ‘beba’ (errores de confusión).",
+    "ejercicio": "¿Qué principio explica el efecto?",
+    "suggestedAnswer": "Almacenamiento en el bucle fonológico basado en trazos fonológicos."
+  },
+  {
+    "id": 49,
+    "name": "Olvido de palabras y envejecimiento",
+    "category": "Envejecimiento",
+    "teoria": "Los adultos mayores experimentan más dificultades de acceso léxico (anomia), especialmente con nombres propios.",
+    "ejemplo": "No recordar el nombre de un conocido.",
+    "ejercicio": "¿Qué estrategia usan para compensar?",
+    "suggestedAnswer": "Perífrasis: ‘el hijo de Juan’."
+  },
+  {
+    "id": 50,
+    "name": "Plasticidad cerebral y recuperación del lenguaje en afasias",
+    "category": "Neuroplasticidad",
+    "teoria": "Tras una lesión cerebral, áreas no dañadas pueden asumir funciones lingüísticas (reorganización).",
+    "ejemplo": "Rehabilitación logopédica en afásicos.",
+    "ejercicio": "¿Qué técnica de neuroimagen muestra la plasticidad?",
+    "suggestedAnswer": "fMRI, MEG."
+  },
+  {
+    "id": 51,
+    "name": "Hemisferio derecho y lenguaje",
+    "category": "Neurociencia",
+    "teoria": "El hemisferio derecho participa en la prosodia, la comprensión de metáforas y el discurso pragmático.",
+    "ejemplo": "Daño en HD afecta la interpretación de ironías.",
+    "ejercicio": "¿Qué déficit presenta un paciente con lesión derecha?",
+    "suggestedAnswer": "Dificultad para captar el sentido figurado."
+  },
+  {
+    "id": 52,
+    "name": "Bilingüismo secuencial vs simultáneo",
+    "category": "Bilingüismo",
+    "teoria": "Simultáneo: dos lenguas desde la cuna; secuencial: primera lengua y luego segunda.",
+    "ejemplo": "Niño criado por padres que le hablan español e inglés (simultáneo).",
+    "ejercicio": "¿Cuál produce mejor competencia nativa?",
+    "suggestedAnswer": "El simultáneo."
+  },
+  {
+    "id": 53,
+    "name": "Ventaja bilingüe en control inhibitorio",
+    "category": "Bilingüismo",
+    "teoria": "Los bilingües tienen que inhibir la lengua no deseada constantemente, lo que fortalece la función ejecutiva.",
+    "ejemplo": "Mejor rendimiento en tareas tipo Stroop.",
+    "ejercicio": "¿En qué grupo de edad es más notable?",
+    "suggestedAnswer": "En niños y mayores."
+  },
+  {
+    "id": 54,
+    "name": "Costo de cambio de lengua (language switching)",
+    "category": "Bilingüismo",
+    "teoria": "Cambiar de lengua en producción implica un costo de tiempo (más lentitud) respecto a no cambiar.",
+    "ejemplo": "Nombrar imágenes en español es más lento si la prueba alterna con inglés.",
+    "ejercicio": "¿Cuál es el efecto asimétrico?",
+    "suggestedAnswer": "Cambiar de L2 a L1 cuesta menos que de L1 a L2."
+  },
+  {
+    "id": 55,
+    "name": "Modelo de activación selectiva",
+    "category": "Bilingüismo",
+    "teoria": "Las dos lenguas están siempre activas en el bilingüe, pero se inhibe la no relevante.",
+    "ejemplo": "Un bilingüe español-inglés, al ver el dibujo de una manzana, activa tanto ‘apple’ como ‘manzana’.",
+    "ejercicio": "¿Qué evidencia apoya la coactivación?",
+    "suggestedAnswer": "Interferencia en tareas de Stroop interlingüístico."
+  },
+  {
+    "id": 56,
+    "name": "Neuropsicología de la lectura: ruta fonológica y léxica",
+    "category": "Lectura",
+    "teoria": "Doble ruta: fonológica (conversión grafema-fonema) y léxica (reconocimiento directo de palabras).",
+    "ejemplo": "En español, la ruta fonológica es suficiente por su transparencia.",
+    "ejercicio": "¿Qué tipo de dislexia afecta a la ruta léxica?",
+    "suggestedAnswer": "Dislexia superficial."
+  },
+  {
+    "id": 57,
+    "name": "Efecto de longitud de palabra en lectura (español)",
+    "category": "Lectura",
+    "teoria": "Las palabras más largas tardan más tiempo en ser leídas, incluso en español.",
+    "ejemplo": "‘desafortunadamente’ más lento que ‘casa’.",
+    "ejercicio": "¿Qué explica el efecto?",
+    "suggestedAnswer": "La ruta fonológica requiere procesar cada letra."
+  },
+  {
+    "id": 58,
+    "name": "Efecto de la frecuencia de palabras en lectura",
+    "category": "Lectura",
+    "teoria": "Las palabras de alta frecuencia se leen más rápido que las de baja frecuencia.",
+    "ejemplo": "‘casa’ más rápido que ‘cabaña’.",
+    "ejercicio": "¿En qué ruta influye más la frecuencia?",
+    "suggestedAnswer": "En la ruta léxica."
+  },
+  {
+    "id": 59,
+    "name": "Efecto de la regularidad ortográfica en español",
+    "category": "Lectura",
+    "teoria": "En español, casi todas las palabras son regulares (excepto acentos). La irregularidad afecta mínimamente.",
+    "ejemplo": "‘médico’ sigue reglas de acentuación; no hay irregularidades como en inglés.",
+    "ejercicio": "¿Qué palabra española podría considerarse irregular?",
+    "suggestedAnswer": "‘líder’ con tilde, pero es regular."
+  },
+  {
+    "id": 60,
+    "name": "Lectura en niños: evolución de la conciencia fonológica",
+    "category": "Adquisición de la lectura",
+    "teoria": "La conciencia fonológica (segmentar sílabas, fonemas) es predictora del éxito lector.",
+    "ejemplo": "Niño que reconoce rimas o segmenta palabras en sílabas.",
+    "ejercicio": "¿Qué actividad de conciencia fonológica se recomienda?",
+    "suggestedAnswer": "Contar fonemas, eliminar un sonido inicial."
+  },
+  {
+    "id": 61,
+    "name": "Efecto Stroop emocional en español",
+    "category": "Emoción",
+    "teoria": "Palabras con carga emocional (miedo, alegría) interfieren más en la tarea Stroop.",
+    "ejemplo": "Nombrar el color de la palabra ‘odio’ es más lento que ‘mesa’.",
+    "ejercicio": "¿Qué sesgo atencional se observa?",
+    "suggestedAnswer": "Atención automática hacia palabras amenazantes."
+  },
+  {
+    "id": 62,
+    "name": "Lenguaje y emociones: representación emocional en el léxico",
+    "category": "Emoción",
+    "teoria": "Las palabras emocionales tienen una representación diferente en el cerebro, involucrando la amígdala.",
+    "ejemplo": "Las palabras tabú o insultos generan respuestas fisiológicas.",
+    "ejercicio": "¿Qué área se activa con palabras negativas?",
+    "suggestedAnswer": "Amígdala."
+  },
+  {
+    "id": 63,
+    "name": "La metáfora como proceso cognitivo",
+    "category": "Cognición",
+    "teoria": "La metáfora no es solo un recurso literario, sino un mecanismo para entender conceptos abstractos.",
+    "ejemplo": "‘El tiempo es dinero’ (waste time, invest time).",
+    "ejercicio": "¿Qué metáfora conceptual subyace en ‘perder el tiempo’?",
+    "suggestedAnswer": "El tiempo es un recurso valioso."
+  },
+  {
+    "id": 64,
+    "name": "Comprensión de ironía en niños",
+    "category": "Pragmática",
+    "teoria": "La comprensión de ironía se desarrolla tarde (hacia los 6-8 años) porque requiere teoría de la mente.",
+    "ejemplo": "Un niño puede no entender ‘¡Qué bien!’ cuando algo sale mal.",
+    "ejercicio": "¿Qué habilidad cognitiva necesitan?",
+    "suggestedAnswer": "Teoría de la mente, entender intenciones."
+  },
+  {
+    "id": 65,
+    "name": "Discurso narrativo en niños con TEL",
+    "category": "Desarrollo",
+    "teoria": "Los niños con TEL tienen narrativas más cortas, con menos conectores y mayor desorganización.",
+    "ejemplo": "Cuentan una historia saltándose pasos clave.",
+    "ejercicio": "¿Qué evaluación se usa para medir narrativa?",
+    "suggestedAnswer": "Recontar un cuento o generar una historia a partir de láminas."
+  },
+  {
+    "id": 66,
+    "name": "Lectura en dislexia: activación cerebral anómala",
+    "category": "Neurociencia",
+    "teoria": "En dislexia, hay menor activación en las regiones occípito-temporales izquierdas (área de la forma visual de la palabra).",
+    "ejemplo": "fMRI muestra hipoactivación en la circunvolución fusiforme.",
+    "ejercicio": "¿Qué tipo de intervención puede normalizar la activación?",
+    "suggestedAnswer": "Intervención fonológica intensiva."
+  },
+  {
+    "id": 67,
+    "name": "Planificación motora del habla (apraxia)",
+    "category": "Patologías",
+    "teoria": "Dificultad para programar los movimientos articulatorios, a pesar de la ausencia de debilidad muscular.",
+    "ejemplo": "El paciente sabe qué quiere decir, pero no puede coordinar los movimientos.",
+    "ejercicio": "¿En qué se diferencia de la disartria?",
+    "suggestedAnswer": "En la disartria hay debilidad muscular; en la apraxia es un problema de planificación."
+  },
+  {
+    "id": 68,
+    "name": "Mutismo selectivo",
+    "category": "Patologías del desarrollo",
+    "teoria": "Incapacidad de hablar en situaciones específicas (escuela) a pesar de hablar normalmente en casa.",
+    "ejemplo": "Un niño que habla con su familia pero no en clase.",
+    "ejercicio": "¿Qué tipo de intervención es efectiva?",
+    "suggestedAnswer": "Terapia conductual, refuerzo positivo, exposición gradual."
+  },
+  {
+    "id": 69,
+    "name": "Trastorno del espectro autista (TEA) y lenguaje",
+    "category": "Patologías",
+    "teoria": "En TEA, puede haber retraso en el desarrollo del lenguaje o lenguaje peculiar (ecolalia, inversión pronominal).",
+    "ejemplo": "‘Tú quieres agua’ en lugar de ‘yo quiero agua’.",
+    "ejercicio": "¿Qué es la ecolalia?",
+    "suggestedAnswer": "Repetición de palabras o frases oídas."
+  },
+  {
+    "id": 70,
+    "name": "Prosodia y autismo",
+    "category": "Prosodia",
+    "teoria": "Las personas con autismo pueden tener prosodia atípica (entonación monótona, ritmo anormal), afectando la comunicación pragmática.",
+    "ejemplo": "Hablan con voz plana sin variación tonal.",
+    "ejercicio": "¿Qué tipo de terapia ayuda?",
+    "suggestedAnswer": "Terapia de prosodia y habilidades pragmáticas."
+  },
+  {
+    "id": 71,
+    "name": "Procesamiento de oraciones negativas",
+    "category": "Procesamiento",
+    "teoria": "Las negaciones requieren más tiempo de procesamiento porque implican la representación de una alternativa.",
+    "ejemplo": "‘El tren no llegó tarde’ es más difícil de procesar que ‘El tren llegó a tiempo’.",
+    "ejercicio": "¿Qué modelo explica la complejidad de la negación?",
+    "suggestedAnswer": "Modelo de simulación mental (reprimir escenario afirmativo)."
+  },
+  {
+    "id": 72,
+    "name": "Comprensión de pasivas en niños",
+    "category": "Adquisición",
+    "teoria": "Las oraciones pasivas se comprenden más tarde que las activas (hacia los 5-6 años).",
+    "ejemplo": "‘El perro fue mordido por el gato’ es más difícil que ‘El gato mordió al perro’.",
+    "ejercicio": "¿Por qué las pasivas cortas son más fáciles?",
+    "suggestedAnswer": "Porque no tienen el complemento agente con ‘por’."
+  },
+  {
+    "id": 73,
+    "name": "Efecto de la imagenabilidad",
+    "category": "Léxico",
+    "teoria": "Las palabras concretas (mesa, perro) se procesan más rápido que las abstractas (justicia, esperanza).",
+    "ejemplo": "‘Paz’ se recuerda peor que ‘casa’.",
+    "ejercicio": "¿En qué tareas se observa el efecto?",
+    "suggestedAnswer": "Decisión léxica, recuerdo libre."
+  },
+  {
+    "id": 74,
+    "name": "Procesamiento de verbos de movimiento ficticio",
+    "category": "Procesamiento",
+    "teoria": "Frases como ‘la carretera va de Madrid a Barcelona’ (movimiento ficticio) se procesan más lentamente que ‘María va de Madrid a Barcelona’.",
+    "ejemplo": "El verbo ‘ir’ con sujeto inanimado es metafórico.",
+    "ejercicio": "¿Qué muestra este efecto?",
+    "suggestedAnswer": "Procesamiento de metáforas implica más recursos."
+  },
+  {
+    "id": 75,
+    "name": "Modelo de producción del habla (Levelt)",
+    "category": "Producción",
+    "teoria": "Modelo de tres etapas: conceptualización, formulación (léxico y sintaxis) y articulación.",
+    "ejemplo": "Primero se concibe el mensaje, luego se selecciona la palabra, luego se articula.",
+    "ejercicio": "¿En qué etapa ocurre el error de la punta de la lengua?",
+    "suggestedAnswer": "En la formulación (acceso léxico)."
+  },
+  {
+    "id": 76,
+    "name": "Errores de selección de palabras (parafasias)",
+    "category": "Producción",
+    "teoria": "En afasias, sustitución de una palabra por otra relacionada semántica (parafasia semántica) o fonológica.",
+    "ejemplo": "‘Manzana’ por ‘pera’ (semántica); ‘mesa’ por ‘besa’ (fonológica).",
+    "ejercicio": "¿Qué tipo de parafasia indica daño en la ruta semántica?",
+    "suggestedAnswer": "Semántica."
+  },
+  {
+    "id": 77,
+    "name": "Recuperación léxica en adultos mayores",
+    "category": "Envejecimiento",
+    "teoria": "Los mayores tienen más dificultad para recuperar nombres propios y palabras de baja frecuencia.",
+    "ejemplo": "‘El hijo de... ese actor...’",
+    "ejercicio": "¿Qué estrategia de facilitación se usa en logopedia?",
+    "suggestedAnswer": "Fluidez fonológica y semántica, asociación."
+  },
+  {
+    "id": 78,
+    "name": "Capacidad de aprendizaje implícito en gramática artificial",
+    "category": "Aprendizaje",
+    "teoria": "Los niños pueden aprender reglas gramaticales complejas sin instrucción explícita (aprendizaje implícito).",
+    "ejemplo": "Tarea de gramática artificial: descubrir secuencias regulares sin que se les explique.",
+    "ejercicio": "¿Cómo se mide el aprendizaje implícito?",
+    "suggestedAnswer": "Pruebas de gramaticalidad."
+  },
+  {
+    "id": 79,
+    "name": "Conciencia metalingüística",
+    "category": "Metacognición",
+    "teoria": "Capacidad de reflexionar sobre el lenguaje como objeto (identificar palabras, corregir errores).",
+    "ejemplo": "Decir ‘coche’ tiene 5 letras, o ‘esa frase está mal dicha’.",
+    "ejercicio": "¿A qué edad aparece?",
+    "suggestedAnswer": "Alrededor de los 4-5 años, se desarrolla más en la escuela."
+  },
+  {
+    "id": 80,
+    "name": "Efecto de la exposición temprana a la lectura",
+    "category": "Lectura",
+    "teoria": "La exposición a libros infantiles en casa mejora el desarrollo del lenguaje y la adquisición de la lectura.",
+    "ejemplo": "Niños a los que se les lee cuentos diariamente tienen mayor vocabulario.",
+    "ejercicio": "¿Qué actividad es más beneficiosa?",
+    "suggestedAnswer": "Lectura compartida con preguntas sobre la historia."
+  },
+  {
+    "id": 81,
+    "name": "Memoria semántica y redes conceptuales",
+    "category": "Memoria",
+    "teoria": "La memoria semántica almacena el conocimiento general y está organizada en categorías y propiedades.",
+    "ejemplo": "Saber que ‘pájaro’ tiene plumas, vuela, etc.",
+    "ejercicio": "¿Qué prueba evalúa la memoria semántica?",
+    "suggestedAnswer": "Fluidez verbal (animales, frutas)."
+  },
+  {
+    "id": 82,
+    "name": "Demencia semántica",
+    "category": "Patologías",
+    "teoria": "Pérdida progresiva del conocimiento léxico-semántico (olvidan el significado de palabras).",
+    "ejemplo": "No saber qué es un ‘perro’ aunque ven la imagen.",
+    "ejercicio": "¿Qué áreas cerebrales afecta?",
+    "suggestedAnswer": "Lóbulos temporales anteriores."
+  },
+  {
+    "id": 83,
+    "name": "Alta capacidad de memoria de trabajo y aprendizaje de segundas lenguas",
+    "category": "Adquisición L2",
+    "teoria": "La memoria de trabajo es un buen predictor de la velocidad de aprendizaje de L2.",
+    "ejemplo": "Personas con mayor span de dígitos aprenden vocabulario más rápido.",
+    "ejercicio": "¿Qué tipo de memoria de trabajo influye más?",
+    "suggestedAnswer": "Memoria fonológica."
+  },
+  {
+    "id": 84,
+    "name": "Tipos de afasia en hispanohablantes",
+    "category": "Patologías",
+    "teoria": "Las características de las afasias se manifiestan específicamente en español (omisión de morfemas verbales, dificultad con artículos).",
+    "ejemplo": "Afásico de Broca: ‘niño… manzana… comer’.",
+    "ejercicio": "¿Qué morfemas se omiten en afasia de Broca en español?",
+    "suggestedAnswer": "Flexión verbal y preposiciones."
+  },
+  {
+    "id": 85,
+    "name": "Trastorno del desarrollo de la coordinación motora y escritura",
+    "category": "Patologías",
+    "teoria": "Dificultad en la motricidad fina que afecta la escritura (disgrafía).",
+    "ejemplo": "Letra ilegible, mala presión del lápiz.",
+    "ejercicio": "¿Qué actividades mejoran la grafomotricidad?",
+    "suggestedAnswer": "Recortar, hacer plastilina, punteado."
+  },
+  {
+    "id": 86,
+    "name": "Síndrome de Williams: lenguaje conservado",
+    "category": "Patologías",
+    "teoria": "A pesar de discapacidad intelectual, los niños con síndrome de Williams tienen lenguaje fluido y vocabulario rico, pero déficits visoespaciales.",
+    "ejemplo": "Hablan con frases complejas pero no pueden dibujar una bicicleta.",
+    "ejercicio": "¿Qué gen está relacionado?",
+    "suggestedAnswer": "Eliminación en el cromosoma 7 (gen ELN)."
+  },
+  {
+    "id": 87,
+    "name": "Mutismo acinético",
+    "category": "Patologías",
+    "teoria": "Pérdida de la capacidad de hablar voluntariamente, con preservación de la comprensión y movimientos reflejos.",
+    "ejemplo": "El paciente puede seguir órdenes básicas pero no inicia comunicación.",
+    "ejercicio": "¿Por qué se diferencia de la afasia?",
+    "suggestedAnswer": "En la afasia hay alteración lingüística; aquí es un trastorno del inicio motor."
+  },
+  {
+    "id": 88,
+    "name": "Lexicón mental en sordos signantes",
+    "category": "Lengua de señas",
+    "teoria": "Los sordos signantes tienen un léxico mental de señas, organizado por parámetros formales (configuración, orientación, movimiento).",
+    "ejemplo": "Las señas semánticamente relacionadas también producen priming.",
+    "ejercicio": "¿Qué es la ruta de acceso al léxico de señas?",
+    "suggestedAnswer": "Similar al léxico oral, con representación viso-gestual."
+  },
+  {
+    "id": 89,
+    "name": "Escritura y disortografía",
+    "category": "Escritura",
+    "teoria": "Trastorno específico de la escritura que no se debe a problemas sensoriales o intelectuales, con errores ortográficos (omisión, adición, sustitución).",
+    "ejemplo": "‘csaa’ por ‘casa’.",
+    "ejercicio": "¿Qué diferencia hay entre disortografía y disgrafía?",
+    "suggestedAnswer": "Disgrafía afecta la grafía; disortografía, la ortografía."
+  },
+  {
+    "id": 90,
+    "name": "Modelo de doble ruta para la escritura",
+    "category": "Escritura",
+    "teoria": "Al escribir, se puede usar la ruta léxica (palabras conocidas) o la fonológica (conversión sonido-grafema).",
+    "ejemplo": "Escribir ‘casa’ sin pensar (léxica) o dictar una palabra inventada (fonológica).",
+    "ejercicio": "¿Qué tipo de disortografía afecta a la ruta léxica?",
+    "suggestedAnswer": "Disortografía superficial."
+  },
+  {
+    "id": 91,
+    "name": "Apraxia del habla adquirida",
+    "category": "Patologías",
+    "teoria": "Dificultad para secuenciar los movimientos articulatorios, con intentos de corrección, groping (tanteo).",
+    "ejemplo": "El paciente intenta decir ‘casa’, dice ‘cata’, ‘tasa’, ‘casa’.",
+    "ejercicio": "¿En qué se diferencia de la disartria?",
+    "suggestedAnswer": "La disartria tiene afectación muscular; la apraxia es de planificación."
+  },
+  {
+    "id": 92,
+    "name": "Trastorno semántico-pragmático (autismo de alto funcionamiento)",
+    "category": "Pragmática",
+    "teoria": "Dificultad para usar el lenguaje en contexto (turnos, temas, inferencias), a pesar de buena gramática.",
+    "ejemplo": "Interpretación literal de ‘ponte las pilas’.",
+    "ejercicio": "¿Qué terapia es útil?",
+    "suggestedAnswer": "Historias sociales, entrenamiento en pragmática."
+  },
+  {
+    "id": 93,
+    "name": "Lateralización cerebral del lenguaje en diestros",
+    "category": "Neurociencia",
+    "teoria": "En la mayoría de diestros, el lenguaje está lateralizado en el hemisferio izquierdo.",
+    "ejemplo": "Prueba de Wada o escucha dicótica muestran dominancia izquierda.",
+    "ejercicio": "¿En zurdos qué porcentaje tiene lenguaje izquierdo?",
+    "suggestedAnswer": "Un 70% también."
+  },
+  {
+    "id": 94,
+    "name": "Técnica de escucha dicótica",
+    "category": "Neuropsicología",
+    "teoria": "Se presentan estímulos diferentes a cada oído; el oído derecho tiene ventaja para estímulos verbales debido a la vía contralateral izquierda.",
+    "ejemplo": "Escuchar ‘casa’ en oído derecho y ‘perro’ en izquierdo; se recuerda mejor la derecha.",
+    "ejercicio": "¿Qué revela esta técnica?",
+    "suggestedAnswer": "Dominancia hemisférica del lenguaje."
+  },
+  {
+    "id": 95,
+    "name": "Electroencefalografía y lenguaje (ERN)",
+    "category": "Neurociencia",
+    "teoria": "Potencial relacionado con errores (ERN) que aumenta cuando el hablante comete un error lingüístico auto-monitoreado.",
+    "ejemplo": "Al decir ‘he rompido’, se produce una ERN.",
+    "ejercicio": "¿Qué diferencia hay entre la corrección interna y externa?",
+    "suggestedAnswer": "La ERN se da por autocorrección interna."
+  },
+  {
+    "id": 96,
+    "name": "Efecto de la especificidad del recuerdo léxico",
+    "category": "Memoria",
+    "teoria": "Recordar una palabra en el contexto en que se aprendió facilita su recuperación (efecto de codificación específica).",
+    "ejemplo": "Aprender ‘banco’ en una calle facilita recordarlo en el mismo lugar.",
+    "ejercicio": "¿Cómo puede aplicarse al aprendizaje de vocabulario?",
+    "suggestedAnswer": "Aprender palabras asociadas a imágenes o situaciones."
+  },
+  {
+    "id": 97,
+    "name": "Fluidez verbal semántica (categorías)",
+    "category": "Evaluación",
+    "teoria": "Tarea que mide la capacidad de generar palabras de una categoría (animales, frutas). Evaluación de memoria semántica y funciones ejecutivas.",
+    "ejemplo": "Decir el mayor número de animales en 1 minuto.",
+    "ejercicio": "¿Qué patología reduce la fluidez semántica?",
+    "suggestedAnswer": "Demencia tipo Alzheimer."
+  },
+  {
+    "id": 98,
+    "name": "Fluidez verbal fonológica (letras)",
+    "category": "Evaluación",
+    "teoria": "Generar palabras que empiecen con una letra (F, A, S). Evalúa funciones ejecutivas y acceso léxico.",
+    "ejemplo": "Decir palabras que empiecen por ‘M’.",
+    "ejercicio": "¿En qué trastorno la fluidez fonológica está más afectada que la semántica?",
+    "suggestedAnswer": "En afasia, sobre todo frontal."
+  },
+  {
+    "id": 99,
+    "name": "Test de denominación de Boston (BNT)",
+    "category": "Evaluación",
+    "teoria": "Prueba de denominación de 60 dibujos, sensible a anomia y deterioro léxico.",
+    "ejemplo": "Dibujos de ‘tijeras’, ‘canguro’, ‘trípode’.",
+    "ejercicio": "¿Qué puntuación indica normalidad?",
+    "suggestedAnswer": "Depende de edad y educación."
+  },
+  {
+    "id": 100,
+    "name": "Evaluación del lenguaje en español (test NEURONARRATIVA)",
+    "category": "Evaluación",
+    "teoria": "Batería de evaluación neuropsicológica del lenguaje en español, que incluye comprensión, expresión, repetición, lectura y escritura.",
+    "ejemplo": "Prueba de comprensión de órdenes, denominación, repetición de pseudopalabras.",
+    "ejercicio": "¿Qué áreas evalúa el test de Boston para afasias?",
+    "suggestedAnswer": "Lenguaje expresivo y comprensivo, lectura, escritura."
+  }
+]
