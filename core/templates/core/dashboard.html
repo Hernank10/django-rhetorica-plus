@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+{% block content %}
+<h2><i class="fas fa-tachometer-alt"></i> Mi Dashboard</h2>
+<div class="row g-4 mb-4">
+    <div class="col-md-3"><div class="card bg-primary text-white text-center"><div class="card-body"><i class="fas fa-star fa-2x"></i><h3>{{ usuario.points }}</h3><p>Puntos</p></div></div></div>
+    <div class="col-md-3"><div class="card bg-success text-white text-center"><div class="card-body"><i class="fas fa-check-circle fa-2x"></i><h3>{{ correctas }}/{{ total }}</h3><p>Aciertos</p></div></div></div>
+    <div class="col-md-3"><div class="card bg-info text-white text-center"><div class="card-body"><i class="fas fa-chart-line fa-2x"></i><h3>{{ porcentaje }}%</h3><p>Rendimiento</p></div></div></div>
+    <div class="col-md-3"><div class="card bg-warning text-dark text-center"><div class="card-body"><i class="fas fa-medal fa-2x"></i><h3>{{ usuario.nivel }}</h3><p>Nivel</p></div></div></div>
+</div>
+<div class="row">
+    <div class="col-md-6"><div class="card"><div class="card-header">Progreso por categorías</div><div class="card-body">{% for p in progreso %}<b>{{ p.categoria }}</b>: {{ p.porcentaje }}% ({{ p.aciertos }}/{{ p.intentos }})<div class="progress mb-2"><div class="progress-bar bg-success" style="width:{{ p.porcentaje }}%"></div></div>{% empty %}Sin datos aún. Realiza ejercicios para ver tu progreso.{% endfor %}</div></div></div>
+    <div class="col-md-6"><div class="card"><div class="card-header">Recomendaciones</div><div class="card-body">{% for rec in recomendaciones %}<li>{{ rec }}</li>{% empty %}¡Sigue así! Completa más ejercicios para ganar puntos.{% endfor %}</div></div></div>
+</div>
+<div class="mt-4 text-center"><a href="{% url 'retorica' %}" class="btn btn-success">Practicar Retórica</a> <a href="{% url 'etimologia' %}" class="btn btn-warning">Practicar Etimología</a> <a href="{% url 'examen_form' %}" class="btn btn-primary">Generar Examen</a></div>
+{% endblock %}

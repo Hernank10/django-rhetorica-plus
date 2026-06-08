@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhetorica+</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { background: #f5f3ef; font-family: 'Segoe UI', system-ui, sans-serif; }
+        .navbar-brand { font-weight: 700; font-size: 1.5rem; }
+        .footer { background: #1e2a3a; color: #cddde9; margin-top: 3rem; padding: 1.5rem 0; text-align: center; }
+        .card-flash { transition: transform 0.2s, box-shadow 0.2s; border-radius: 1.2rem; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card-flash:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+        .btn-sound { background: #2c3e50; color: white; border-radius: 40px; padding: 0.25rem 0.9rem; font-size: 0.75rem; }
+        .btn-sound:hover { background: #d4af37; color: #1e2a3a; }
+        .original-script { font-family: 'Times New Roman', serif; font-size: 1.1rem; background: #f0ece4; padding: 0.2rem 0.6rem; border-radius: 20px; }
+        .float-voice-btn { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%; background: #2c3e50; color: white; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); cursor: pointer; z-index: 1000; transition: 0.3s; }
+        .float-voice-btn:hover { background: #d4af37; color: #1e2a3a; transform: scale(1.1); }
+        .voice-controls { position: fixed; bottom: 100px; right: 30px; background: white; border-radius: 15px; padding: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 999; display: none; }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}"><i class="fas fa-scroll me-2"></i>Rhetorica+</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'retorica' %}"><i class="fas fa-comment-dots"></i> Retórica</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'etimologia' %}"><i class="fas fa-language"></i> Etimología</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'examen_form' %}"><i class="fas fa-pen-alt"></i> Examen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    {% if user.is_admin %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_panel' %}"><i class="fas fa-shield-alt"></i> Admin</a></li>
+                    {% endif %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'proyecto' %}"><i class="fas fa-book-open"></i> Proyecto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}"><i class="fas fa-user-plus"></i> Registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'proyecto' %}"><i class="fas fa-book-open"></i> Proyecto</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+<main class="container my-4">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show">{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>
+        {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+</main>
+<footer class="footer"><div class="container"><small><i class="fas fa-microphone-alt"></i> Lector de voz integrado · 100 técnicas retóricas · 100 raíces grecolatinas</small></div></footer>
+<button class="float-voice-btn" onclick="toggleVoiceControls()"><i class="fas fa-head-side-vr fa-2x"></i></button>
+<div class="voice-controls" id="voiceControls">
+    <div class="d-flex flex-column gap-2">
+        <button class="btn btn-sm btn-primary" onclick="readPageContent()"><i class="fas fa-play"></i> Leer página</button>
+        <button class="btn btn-sm btn-secondary" onclick="stopSpeech()"><i class="fas fa-stop"></i> Detener</button>
+        <select id="voiceSelect" class="form-select form-select-sm" onchange="setVoice()"></select>
+        <input type="range" id="rateControl" min="0.5" max="2" step="0.1" value="0.9" onchange="setRate()">
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    let currentUtterance = null, availableVoices = [];
+    function toggleVoiceControls() { let c = document.getElementById('voiceControls'); c.style.display = c.style.display === 'none' ? 'block' : 'none'; if (!availableVoices.length) loadVoices(); }
+    function loadVoices() { availableVoices = window.speechSynthesis.getVoices(); let sel = document.getElementById('voiceSelect'); let es = availableVoices.filter(v=>v.lang.startsWith('es')); let list = es.length ? es : availableVoices; sel.innerHTML = '<option value="">Voz por defecto</option>' + list.map(v=>`<option value="${v.name}">${v.name} (${v.lang})</option>`).join(''); }
+    if(window.speechSynthesis) window.speechSynthesis.onvoiceschanged = loadVoices;
+    function setVoice() { if(!currentUtterance) return; let name = document.getElementById('voiceSelect').value; if(name) currentUtterance.voice = availableVoices.find(v=>v.name===name); }
+    function setRate() { if(currentUtterance) currentUtterance.rate = parseFloat(document.getElementById('rateControl').value); }
+    function speakText(t) { if(!window.speechSynthesis) return; if(currentUtterance) window.speechSynthesis.cancel(); currentUtterance = new SpeechSynthesisUtterance(t); currentUtterance.lang = 'es-ES'; currentUtterance.rate = parseFloat(document.getElementById('rateControl').value); let name = document.getElementById('voiceSelect').value; if(name) currentUtterance.voice = availableVoices.find(v=>v.name===name); window.speechSynthesis.speak(currentUtterance); }
+    function stopSpeech() { if(window.speechSynthesis) window.speechSynthesis.cancel(); currentUtterance=null; }
+    function readPageContent() { let txt = ''; document.querySelectorAll('main h1, main h2, main h3, main p, main li, .card-text, .alert').forEach(el=>{ if(el.innerText) txt+=el.innerText+'. '; }); if(txt) speakText(txt.substring(0,3000)); else speakText('No hay contenido para leer'); }
+</script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

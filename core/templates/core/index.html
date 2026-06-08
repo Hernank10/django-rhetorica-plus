@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% block content %}
+<div class="text-center py-5">
+    <h1 class="display-4">Bienvenido a Rhetorica+</h1>
+    <p class="lead">Aprende 100 técnicas retóricas y 100 raíces grecolatinas con ejercicios interactivos y lector de voz.</p>
+    {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Iniciar sesión</a>
+        <a href="{% url 'registro' %}" class="btn btn-success btn-lg">Registrarse</a>
+    {% else %}
+        <a href="{% url 'retorica' %}" class="btn btn-primary btn-lg">Comenzar a practicar</a>
+    {% endif %}
+</div>
+<div class="row mt-5">
+    <div class="col-md-4"><div class="card text-center p-3"><i class="fas fa-comment-dots fa-3x text-success"></i><h3>100 técnicas retóricas</h3><p>Teoría, ejemplos y ejercicios de redacción con retroalimentación.</p></div></div>
+    <div class="col-md-4"><div class="card text-center p-3"><i class="fas fa-language fa-3x text-warning"></i><h3>100 raíces grecolatinas</h3><p>Escritura original, ejemplos y autoevaluación.</p></div></div>
+    <div class="col-md-4"><div class="card text-center p-3"><i class="fas fa-chart-line fa-3x text-info"></i><h3>Dashboard personalizado</h3><p>Puntos, niveles, progreso por categorías y recomendaciones.</p></div></div>
+</div>
+{% endblock %}

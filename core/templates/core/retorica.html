@@ -1,0 +1,42 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+<h2><i class="fas fa-comment-dots"></i> Técnicas retóricas</h2>
+<div class="alert alert-info"><i class="fas fa-graduation-cap"></i> Cada respuesta aceptada suma 10 puntos.</div>
+<div class="row g-4">
+    {% for fig in figuras %}
+    <div class="col-md-6 col-lg-4">
+        <div class="card card-flash h-100">
+            <div class="card-header bg-transparent border-0 pt-3">
+                <div class="d-flex justify-content-between">
+                    <div><h5 class="fw-bold">{{ fig.name }}</h5><span class="badge bg-secondary">{{ fig.category }}</span></div>
+                    <button class="btn btn-sound btn-sm" onclick="speakText('{{ fig.name }}. {{ fig.teoria }} Ejemplo: {{ fig.ejemplo }}')"><i class="fas fa-volume-up"></i> Leer</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bg-light p-2 rounded"><strong>Teoría:</strong> {{ fig.teoria }}</div>
+                <div class="bg-warning bg-opacity-10 p-2 rounded mt-2"><strong>Ejemplo:</strong> “{{ fig.ejemplo }}”</div>
+                <textarea id="ans-{{ fig.id }}" class="form-control mt-3" rows="2" placeholder="Tu ejemplo..."></textarea>
+                <button class="btn btn-outline-success btn-sm mt-2" onclick="guardarRetorica({{ fig.id }}, '{{ fig.suggestedAnswer|escapejs }}')">Verificar y guardar</button>
+                <div id="fb-{{ fig.id }}" class="small mt-2"></div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script>
+function guardarRetorica(id, sugerencia) {
+    let userAns = document.getElementById('ans-'+id).value;
+    let fb = document.getElementById('fb-'+id);
+    let correcta = userAns.length > 10;
+    fetch('/api/guardar_respuesta/', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json', 'X-CSRFToken':'{{ csrf_token }}'},
+        body: JSON.stringify({tipo:'retorica', item_id:id, es_correcta:correcta, respuesta_usuario:userAns, categoria:'Retórica'})
+    }).then(r=>r.json()).then(data=>{
+        let msg = correcta ? '<span class="text-success">✓ Correcto (+10 pts)</span>' : '<span class="text-info">Respuesta guardada</span>';
+        fb.innerHTML = `${msg}<br><strong>Sugerencia:</strong> ${sugerencia}`;
+    });
+}
+</script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+{% block content %}
+<h2><i class="fas fa-scroll"></i> Raíces grecolatinas</h2>
+<div class="row g-4">
+    {% for r in raices %}
+    <div class="col-md-6 col-lg-4">
+        <div class="card card-flash h-100">
+            <div class="card-header bg-transparent border-0 pt-3">
+                <div class="d-flex justify-content-between">
+                    <div><h4 class="fw-bold">{{ r.element }}</h4><span class="badge bg-warning text-dark">{{ r.origin }}</span><br><span class="original-script small">{{ r.originalScript }}</span></div>
+                    <button class="btn btn-sound btn-sm" onclick="speakText('Raíz {{ r.element }}. Significado {{ r.meaning }}. Ejemplos: {{ r.examples }}')"><i class="fas fa-volume-up"></i></button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bg-light p-2 rounded"><strong>Significado:</strong> {{ r.meaning }}</div>
+                <div class="bg-info bg-opacity-10 p-2 rounded mt-2"><strong>Ejemplos:</strong> {{ r.examples }}</div>
+                <textarea id="ans-{{ r.id }}" class="form-control mt-3" rows="2" placeholder="Crea una palabra con esta raíz..."></textarea>
+                <button class="btn btn-outline-info btn-sm mt-2" onclick="autoevaluar({{ r.id }}, '{{ r.suggestedAnswer|escapejs }}', '{{ r.evalQuestion|escapejs }}')">Autoevaluación</button>
+                <div id="fb-{{ r.id }}" class="small mt-2"></div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script>
+function autoevaluar(id, sugerencia, pregunta) {
+    let userAns = document.getElementById('ans-'+id).value;
+    let fb = document.getElementById('fb-'+id);
+    fetch('/api/guardar_respuesta/', {
+        method:'POST', headers:{'Content-Type':'application/json', 'X-CSRFToken':'{{ csrf_token }}'},
+        body: JSON.stringify({tipo:'etimologia', item_id:id, es_correcta:false, respuesta_usuario:userAns, categoria:'Etimología'})
+    });
+    fb.innerHTML = `<div class="alert alert-secondary mt-2"><strong>${pregunta}</strong><br>Tu respuesta: "${userAns}"<br><strong>✅ Sugerida:</strong> ${sugerencia}</div>`;
+}
+</script>
+{% endblock %}
