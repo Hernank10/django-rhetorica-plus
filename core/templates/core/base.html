@@ -1,84 +1,289 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhetorica+</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>{% block title %}Rhetorica Plus{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background: #f5f3ef; font-family: 'Segoe UI', system-ui, sans-serif; }
-        .navbar-brand { font-weight: 700; font-size: 1.5rem; }
-        .footer { background: #1e2a3a; color: #cddde9; margin-top: 3rem; padding: 1.5rem 0; text-align: center; }
-        .card-flash { transition: transform 0.2s, box-shadow 0.2s; border-radius: 1.2rem; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .card-flash:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
-        .btn-sound { background: #2c3e50; color: white; border-radius: 40px; padding: 0.25rem 0.9rem; font-size: 0.75rem; }
-        .btn-sound:hover { background: #d4af37; color: #1e2a3a; }
-        .original-script { font-family: 'Times New Roman', serif; font-size: 1.1rem; background: #f0ece4; padding: 0.2rem 0.6rem; border-radius: 20px; }
-        .float-voice-btn { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%; background: #2c3e50; color: white; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); cursor: pointer; z-index: 1000; transition: 0.3s; }
-        .float-voice-btn:hover { background: #d4af37; color: #1e2a3a; transform: scale(1.1); }
-        .voice-controls { position: fixed; bottom: 100px; right: 30px; background: white; border-radius: 15px; padding: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 999; display: none; }
+        :root {
+            --primary: #1e2a3a;
+            --gold: #d4af37;
+        }
+        body {
+            background: #f8f5f0;
+            font-family: 'Georgia', serif;
+        }
+        .navbar {
+            background: var(--primary) !important;
+            border-bottom: 3px solid var(--gold);
+        }
+        .navbar-brand {
+            color: var(--gold) !important;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .nav-link {
+            color: #fff !important;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            color: var(--gold) !important;
+        }
+        .btn-gold {
+            background: var(--gold);
+            color: var(--primary);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-gold:hover {
+            background: #c5a030;
+            color: #fff;
+            transform: scale(1.05);
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            background: #fff;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .float-voice-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .float-voice-btn:hover {
+            background: var(--gold);
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+        .voice-controls {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            display: none;
+        }
+        .original-script {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1rem;
+            background: #f0ece4;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+        .footer {
+            background: var(--primary);
+            color: #fff;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-top: 3px solid var(--gold);
+        }
+        .footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        {% block extra_css %}{% endblock %}
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-    <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}"><i class="fas fa-scroll me-2"></i>Rhetorica+</a>
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'retorica' %}"><i class="fas fa-comment-dots"></i> Retórica</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'etimologia' %}"><i class="fas fa-language"></i> Etimología</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'examen_form' %}"><i class="fas fa-pen-alt"></i> Examen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}"><i class="fas fa-chart-line"></i> Dashboard</a></li>
-                    {% if user.is_admin %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_panel' %}"><i class="fas fa-shield-alt"></i> Admin</a></li>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-scroll me-2"></i>Rhetorica+
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
+                        {% if user.is_staff %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'core:dashboard_profesor' %}">
+                                    <i class="fas fa-chalkboard-teacher"></i> Profesor
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'core:dashboard_estudiante' %}">
+                                    <i class="fas fa-user-graduate"></i> Estudiante
+                                </a>
+                            </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'core:dashboard_gamificacion' %}">
+                                <i class="fas fa-trophy"></i> Gamificación
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'core:certificaciones_lista' %}">
+                                <i class="fas fa-certificate"></i> Certificaciones
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/api/ejercicios/">
+                                <i class="fas fa-book"></i> Ejercicios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/api/tecnicas/">
+                                <i class="fas fa-lightbulb"></i> Técnicas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'core:perfil_usuario' %}">
+                                <i class="fas fa-user"></i> {{ user.username }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'core:logout' %}">
+                                <i class="fas fa-sign-out-alt"></i> Salir
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'core:login' %}">
+                                <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'core:registro' %}">
+                                <i class="fas fa-user-plus"></i> Registrarse
+                            </a>
+                        </li>
                     {% endif %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'proyecto' %}"><i class="fas fa-book-open"></i> Proyecto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
-                {% else %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}"><i class="fas fa-user-plus"></i> Registro</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'proyecto' %}"><i class="fas fa-book-open"></i> Proyecto</a></li>
-                {% endif %}
-            </ul>
+                </ul>
+            </div>
         </div>
+    </nav>
+
+    <main class="container py-4">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'error' %}danger{% elif message.tags == 'warning' %}warning{% elif message.tags == 'success' %}success{% else %}info{% endif %} alert-dismissible fade show">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-0">
+                <i class="fas fa-scroll me-2"></i>
+                Rhetorica Plus - Plataforma de Ejercicios Lingüísticos
+            </p>
+            <small>
+                <a href="/admin/">Administración</a> |
+                <a href="/api/ejercicios/">API Ejercicios</a> |
+                <a href="/api/tecnicas/">API Técnicas</a>
+            </small>
+        </div>
+    </footer>
+
+    <!-- Botón de voz flotante -->
+    <button class="float-voice-btn" id="voiceToggle" title="Texto a Voz">
+        <i class="fas fa-volume-up fa-2x"></i>
+    </button>
+    <div class="voice-controls" id="voiceControls">
+        <button class="btn btn-sm btn-gold" id="playVoice">
+            <i class="fas fa-play"></i> Leer
+        </button>
+        <button class="btn btn-sm btn-outline-secondary" id="pauseVoice">
+            <i class="fas fa-pause"></i>
+        </button>
+        <button class="btn btn-sm btn-outline-secondary" id="stopVoice">
+            <i class="fas fa-stop"></i>
+        </button>
+        <br>
+        <small class="text-muted">Velocidad: 
+            <input type="range" id="voiceSpeed" min="0.5" max="2" step="0.1" value="1">
+        </small>
     </div>
-</nav>
-<main class="container my-4">
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show">{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>
-        {% endfor %}
-    {% endif %}
-    {% block content %}{% endblock %}
-</main>
-<footer class="footer"><div class="container"><small><i class="fas fa-microphone-alt"></i> Lector de voz integrado · 100 técnicas retóricas · 100 raíces grecolatinas</small></div></footer>
-<button class="float-voice-btn" onclick="toggleVoiceControls()"><i class="fas fa-head-side-vr fa-2x"></i></button>
-<div class="voice-controls" id="voiceControls">
-    <div class="d-flex flex-column gap-2">
-        <button class="btn btn-sm btn-primary" onclick="readPageContent()"><i class="fas fa-play"></i> Leer página</button>
-        <button class="btn btn-sm btn-secondary" onclick="stopSpeech()"><i class="fas fa-stop"></i> Detener</button>
-        <select id="voiceSelect" class="form-select form-select-sm" onchange="setVoice()"></select>
-        <input type="range" id="rateControl" min="0.5" max="2" step="0.1" value="0.9" onchange="setRate()">
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    let currentUtterance = null, availableVoices = [];
-    function toggleVoiceControls() { let c = document.getElementById('voiceControls'); c.style.display = c.style.display === 'none' ? 'block' : 'none'; if (!availableVoices.length) loadVoices(); }
-    function loadVoices() { availableVoices = window.speechSynthesis.getVoices(); let sel = document.getElementById('voiceSelect'); let es = availableVoices.filter(v=>v.lang.startsWith('es')); let list = es.length ? es : availableVoices; sel.innerHTML = '<option value="">Voz por defecto</option>' + list.map(v=>`<option value="${v.name}">${v.name} (${v.lang})</option>`).join(''); }
-    if(window.speechSynthesis) window.speechSynthesis.onvoiceschanged = loadVoices;
-    function setVoice() { if(!currentUtterance) return; let name = document.getElementById('voiceSelect').value; if(name) currentUtterance.voice = availableVoices.find(v=>v.name===name); }
-    function setRate() { if(currentUtterance) currentUtterance.rate = parseFloat(document.getElementById('rateControl').value); }
-    function speakText(t) { if(!window.speechSynthesis) return; if(currentUtterance) window.speechSynthesis.cancel(); currentUtterance = new SpeechSynthesisUtterance(t); currentUtterance.lang = 'es-ES'; currentUtterance.rate = parseFloat(document.getElementById('rateControl').value); let name = document.getElementById('voiceSelect').value; if(name) currentUtterance.voice = availableVoices.find(v=>v.name===name); window.speechSynthesis.speak(currentUtterance); }
-    function stopSpeech() { if(window.speechSynthesis) window.speechSynthesis.cancel(); currentUtterance=null; }
-    function readPageContent() { let txt = ''; document.querySelectorAll('main h1, main h2, main h3, main p, main li, .card-text, .alert').forEach(el=>{ if(el.innerText) txt+=el.innerText+'. '; }); if(txt) speakText(txt.substring(0,3000)); else speakText('No hay contenido para leer'); }
-</script>
-{% block scripts %}{% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Texto a Voz
+        const voiceToggle = document.getElementById('voiceToggle');
+        const voiceControls = document.getElementById('voiceControls');
+        let utterance = null;
+
+        voiceToggle.addEventListener('click', () => {
+            voiceControls.style.display = voiceControls.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.getElementById('playVoice').addEventListener('click', () => {
+            const text = document.body.innerText;
+            if (window.speechSynthesis) {
+                if (utterance) {
+                    window.speechSynthesis.cancel();
+                }
+                utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'es-ES';
+                utterance.rate = parseFloat(document.getElementById('voiceSpeed').value);
+                utterance.pitch = 1;
+                window.speechSynthesis.speak(utterance);
+            }
+        });
+
+        document.getElementById('pauseVoice').addEventListener('click', () => {
+            if (window.speechSynthesis) {
+                if (window.speechSynthesis.speaking) {
+                    window.speechSynthesis.pause();
+                }
+            }
+        });
+
+        document.getElementById('stopVoice').addEventListener('click', () => {
+            if (window.speechSynthesis) {
+                window.speechSynthesis.cancel();
+            }
+        });
+
+        document.getElementById('voiceSpeed').addEventListener('change', (e) => {
+            if (utterance) {
+                utterance.rate = parseFloat(e.target.value);
+            }
+        });
+
+        // Cerrar controles al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.voice-controls') && !e.target.closest('#voiceToggle')) {
+                voiceControls.style.display = 'none';
+            }
+        });
+
+        {% block extra_js %}{% endblock %}
+    </script>
 </body>
 </html>

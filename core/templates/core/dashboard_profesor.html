@@ -1,0 +1,250 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Dashboard del Profesor - Rhetorica Plus{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2>
+            <i class="fas fa-chalkboard-teacher me-2" style="color: var(--gold);"></i>
+            Dashboard del Profesor
+        </h2>
+        <p class="text-muted">Bienvenido, {{ user.username }}. Aquí puedes gestionar tu contenido educativo.</p>
+        <hr>
+    </div>
+</div>
+
+<!-- Estadísticas Generales -->
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="card-body">
+                <h3 class="display-6" style="color: var(--gold);">{{ total_ejercicios }}</h3>
+                <p class="text-muted"><i class="fas fa-book me-1"></i> Ejercicios</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="card-body">
+                <h3 class="display-6" style="color: var(--gold);">{{ total_tecnicas }}</h3>
+                <p class="text-muted"><i class="fas fa-lightbulb me-1"></i> Técnicas</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="card-body">
+                <h3 class="display-6" style="color: var(--gold);">{{ total_contenidos }}</h3>
+                <p class="text-muted"><i class="fas fa-database me-1"></i> Contenidos</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="card-body">
+                <h3 class="display-6" style="color: var(--gold);">{{ total_estudiantes }}</h3>
+                <p class="text-muted"><i class="fas fa-users me-1"></i> Estudiantes</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Acciones Rápidas -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-bolt me-2" style="color: var(--gold);"></i>
+                Acciones Rápidas
+            </h4>
+            <div class="d-flex gap-3 flex-wrap mt-3">
+                <a href="/admin/core/ejerciciolinguistico/add/" class="btn btn-gold">
+                    <i class="fas fa-plus me-1"></i> Nuevo Ejercicio
+                </a>
+                <a href="/admin/core/tecnicalinguistica/add/" class="btn btn-gold">
+                    <i class="fas fa-plus me-1"></i> Nueva Técnica
+                </a>
+                <a href="/admin/core/contenidojson/add/" class="btn btn-gold">
+                    <i class="fas fa-plus me-1"></i> Nuevo Contenido JSON
+                </a>
+                <a href="/admin/" class="btn btn-gold">
+                    <i class="fas fa-cog me-1"></i> Panel Admin
+                </a>
+                <a href="/api/ejercicios/" class="btn btn-gold">
+                    <i class="fas fa-code me-1"></i> API Ejercicios
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Gestión de Contenido -->
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-list me-2" style="color: var(--gold);"></i>
+                Últimos Ejercicios
+            </h4>
+            <div class="list-group mt-3">
+                {% for ejercicio in ejercicios_recientes|slice:":5" %}
+                <div class="list-group-item">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">{{ ejercicio.titulo|truncatechars:60 }}</h6>
+                        <small class="text-muted">{{ ejercicio.creado_en|date:"d/m/Y" }}</small>
+                    </div>
+                    <small class="text-muted">
+                        <i class="fas fa-tag me-1"></i> {{ ejercicio.categoria|default:"Sin categoría" }}
+                    </small>
+                    <div class="mt-1">
+                        <a href="/admin/core/ejerciciolinguistico/{{ ejercicio.id }}/change/" class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="/admin/core/ejerciciolinguistico/{{ ejercicio.id }}/delete/" class="btn btn-sm btn-outline-danger">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-muted">No hay ejercicios cargados aún.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-file-code me-2" style="color: var(--gold);"></i>
+                Contenidos JSON Cargados
+            </h4>
+            <div class="list-group mt-3">
+                {% for contenido in contenidos_recientes|slice:":5" %}
+                <div class="list-group-item">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">{{ contenido.nombre|truncatechars:60 }}</h6>
+                        <small class="text-muted">{{ contenido.creado_en|date:"d/m/Y" }}</small>
+                    </div>
+                    <small class="text-muted">
+                        <i class="fas fa-folder me-1"></i> {{ contenido.categoria|default:"General" }}
+                    </small>
+                    <div class="mt-1">
+                        <a href="/admin/core/contenidojson/{{ contenido.id }}/change/" class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="#" class="btn btn-sm btn-outline-info" onclick="verJSON({{ contenido.id }})">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-muted">No hay contenidos JSON cargados aún.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Carga Masiva -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-upload me-2" style="color: var(--gold);"></i>
+                Carga Masiva de Datos
+            </h4>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Script de carga:</strong> Usa el comando <code>python cargar_datos_seguro.py</code> para cargar todos los JSON de la carpeta <code>data/</code>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>Nota:</strong> Los archivos JSON con errores de sintaxis se omitirán automáticamente.
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2">
+                <a href="#" class="btn btn-gold" onclick="cargarDatos()">
+                    <i class="fas fa-sync me-1"></i> Recargar Datos desde JSON
+                </a>
+                <button class="btn btn-outline-secondary" onclick="verEstadisticas()">
+                    <i class="fas fa-chart-bar me-1"></i> Ver Estadísticas
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para ver JSON -->
+<div class="modal fade" id="jsonModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-code me-2"></i>Contenido JSON</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <pre id="jsonContent" style="max-height: 500px; overflow: auto; background: #f8f5f0; padding: 15px; border-radius: 8px;"></pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function verJSON(id) {
+    fetch(`/api/contenidos/`)
+        .then(response => response.json())
+        .then(data => {
+            const contenido = data.find(item => item.id === id);
+            if (contenido) {
+                document.getElementById('jsonContent').textContent = JSON.stringify(contenido.datos, null, 2);
+                new bootstrap.Modal(document.getElementById('jsonModal')).show();
+            }
+        })
+        .catch(error => {
+            alert('Error al cargar el JSON: ' + error);
+        });
+}
+
+function cargarDatos() {
+    if (confirm('¿Estás seguro de que quieres recargar todos los datos desde los archivos JSON?')) {
+        // Aquí puedes implementar una llamada AJAX a un endpoint que ejecute la carga
+        alert('Funcionalidad en desarrollo. Usa el comando: python cargar_datos_seguro.py');
+    }
+}
+
+function verEstadisticas() {
+    fetch('/api/ejercicios/')
+        .then(response => response.json())
+        .then(data => {
+            const total = data.length;
+            const categorias = {};
+            data.forEach(item => {
+                const cat = item.categoria || 'Sin categoría';
+                categorias[cat] = (categorias[cat] || 0) + 1;
+            });
+            let msg = `📊 Estadísticas de Ejercicios\n`;
+            msg += `Total: ${total}\n\n`;
+            msg += `📂 Por categoría:\n`;
+            for (const [cat, count] of Object.entries(categorias)) {
+                msg += `  - ${cat}: ${count}\n`;
+            }
+            alert(msg);
+        })
+        .catch(error => {
+            alert('Error al obtener estadísticas: ' + error);
+        });
+}
+</script>
+{% endblock %}

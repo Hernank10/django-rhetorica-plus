@@ -45,3 +45,7 @@ Thumbs.db
 
 # Environment variables
 .env
+data/ejercicios_completos-lengua-castellana/
+*.json
+*.pyc
+__pycache__/

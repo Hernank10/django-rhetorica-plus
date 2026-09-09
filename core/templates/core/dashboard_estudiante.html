@@ -1,0 +1,419 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Dashboard del Estudiante - Rhetorica Plus{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2>
+            <i class="fas fa-user-graduate me-2" style="color: var(--gold);"></i>
+            Dashboard del Estudiante
+        </h2>
+        <p class="text-muted">¡Bienvenido, {{ user.username }}! Sigue practicando para mejorar tus habilidades lingüísticas.</p>
+        <hr>
+    </div>
+</div>
+
+<!-- Tarjetas de Progreso -->
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="card-body">
+                <h3 class="display-6" style="color: var(--gold);">{{ user.points }}</h3>
+                <p class="text-muted"><i class="fas fa-star me-1"></i> Puntos</p>
+                <div class="progress" style="height: 8px;">
+                    <div class="progress-bar bg-warning" style="width: {{ user.points }}%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="card-body">
+                <h3 class="display-6" style="color: var(--gold);">{{ user.nivel }}</h3>
+                <p class="text-muted"><i class="fas fa-medal me-1"></i> Nivel</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="card-body">
+                <h3 class="display-6" style="color: var(--gold);">{{ total_ejercicios }}</h3>
+                <p class="text-muted"><i class="fas fa-book me-1"></i> Ejercicios Disponibles</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="card-body">
+                <h3 class="display-6" style="color: var(--gold);">{{ ejercicios_completados }}</h3>
+                <p class="text-muted"><i class="fas fa-check-circle me-1"></i> Completados</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Categorías y Progreso -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-chart-pie me-2" style="color: var(--gold);"></i>
+                Progreso por Categorías
+            </h4>
+            <div class="row mt-3">
+                {% for categoria in categorias_progreso %}
+                <div class="col-md-4 mb-3">
+                    <div class="card p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0">{{ categoria.nombre }}</h6>
+                            <span class="badge bg-warning text-dark">{{ categoria.porcentaje }}%</span>
+                        </div>
+                        <div class="progress mt-2" style="height: 10px;">
+                            <div class="progress-bar bg-success" style="width: {{ categoria.porcentaje }}%;"></div>
+                        </div>
+                        <small class="text-muted mt-1">
+                            {{ categoria.completados }}/{{ categoria.total }} ejercicios
+                        </small>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12">
+                    <p class="text-muted">Comienza a practicar para ver tu progreso por categorías.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ejercicios Recomendados -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-lightbulb me-2" style="color: var(--gold);"></i>
+                Ejercicios Recomendados para Ti
+            </h4>
+            <div class="row mt-3">
+                {% for ejercicio in ejercicios_recomendados %}
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100 p-3">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h6 class="card-title mb-1">{{ ejercicio.titulo|truncatechars:80 }}</h6>
+                            <span class="badge bg-info text-dark">{{ ejercicio.categoria|default:"General" }}</span>
+                        </div>
+                        <p class="card-text small text-muted mt-2">
+                            <i class="fas fa-tag me-1"></i> {{ ejercicio.tipo|default:"Sin tipo" }}
+                        </p>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-gold btn-sm" onclick="iniciarEjercicio({{ ejercicio.id }})">
+                                <i class="fas fa-play me-1"></i> Practicar
+                            </a>
+                            <button class="btn btn-outline-secondary btn-sm" onclick="verEjercicio({{ ejercicio.id }})">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12">
+                    <p class="text-muted">No hay ejercicios disponibles aún. Vuelve más tarde.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Logros y Medallas -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-trophy me-2" style="color: var(--gold);"></i>
+                Tus Logros
+            </h4>
+            <div class="d-flex gap-3 flex-wrap mt-3">
+                {% if user.points >= 100 %}
+                <div class="card p-3 text-center" style="min-width: 120px;">
+                    <i class="fas fa-seedling fa-3x" style="color: #28a745;"></i>
+                    <small class="mt-1">Aprendiz</small>
+                </div>
+                {% endif %}
+                {% if user.points >= 300 %}
+                <div class="card p-3 text-center" style="min-width: 120px;">
+                    <i class="fas fa-graduation-cap fa-3x" style="color: #17a2b8;"></i>
+                    <small class="mt-1">Conocedor</small>
+                </div>
+                {% endif %}
+                {% if user.points >= 600 %}
+                <div class="card p-3 text-center" style="min-width: 120px;">
+                    <i class="fas fa-star fa-3x" style="color: #ffc107;"></i>
+                    <small class="mt-1">Experto</small>
+                </div>
+                {% endif %}
+                {% if user.points >= 1000 %}
+                <div class="card p-3 text-center" style="min-width: 120px;">
+                    <i class="fas fa-crown fa-3x" style="color: #d4af37;"></i>
+                    <small class="mt-1">Maestro Retórico</small>
+                </div>
+                {% endif %}
+                {% if user.points < 100 %}
+                <div class="card p-3 text-center" style="min-width: 120px;">
+                    <i class="fas fa-rocket fa-3x" style="color: #6c757d;"></i>
+                    <small class="mt-1">¡Comienza tu viaje!</small>
+                </div>
+                {% endif %}
+            </div>
+            <div class="mt-3">
+                <small class="text-muted">
+                    <i class="fas fa-info-circle me-1"></i>
+                    Logros desbloqueables: Aprendiz (100pts) → Conocedor (300pts) → Experto (600pts) → Maestro Retórico (1000pts)
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Racha y Consejos -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-fire me-2" style="color: var(--gold);"></i>
+                Racha de Práctica
+            </h4>
+            <div class="text-center mt-3">
+                <span class="display-4" style="color: #dc3545;">{{ racha }}</span>
+                <p class="text-muted">días consecutivos practicando</p>
+                <div class="d-flex justify-content-center gap-2">
+                    {% for i in "1234567" %}
+                    <div class="border p-2 rounded" style="width: 40px; height: 40px; {% if forloop.counter <= racha %}background: #28a745; color: white;{% else %}background: #e9ecef;{% endif %}">
+                        {{ forloop.counter }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-tips me-2" style="color: var(--gold);"></i>
+                Consejo del Día
+            </h4>
+            <div class="mt-3">
+                <p class="fst-italic">
+                    <i class="fas fa-quote-left me-2" style="color: var(--gold);"></i>
+                    {{ consejo_dia }}
+                </p>
+                <hr>
+                <h6><i class="fas fa-bullseye me-2" style="color: var(--gold);"></i> Próximo objetivo:</h6>
+                <p>
+                    {% if user.points < 100 %}
+                    Alcanza <strong>100 puntos</strong> para convertirte en <strong>Aprendiz</strong>
+                    ({{ user.points }}/100 puntos)
+                    {% elif user.points < 300 %}
+                    Alcanza <strong>300 puntos</strong> para convertirte en <strong>Conocedor</strong>
+                    ({{ user.points }}/300 puntos)
+                    {% elif user.points < 600 %}
+                    Alcanza <strong>600 puntos</strong> para convertirte en <strong>Experto</strong>
+                    ({{ user.points }}/600 puntos)
+                    {% elif user.points < 1000 %}
+                    Alcanza <strong>1000 puntos</strong> para convertirte en <strong>Maestro Retórico</strong>
+                    ({{ user.points }}/1000 puntos)
+                    {% else %}
+                    ¡Has alcanzado el máximo nivel! Sigue practicando para mantenerte.
+                    {% endif %}
+                </p>
+                <div class="progress" style="height: 20px;">
+                    {% if user.points < 100 %}
+                    <div class="progress-bar bg-success" style="width: {{ user.points }}%;">
+                        {{ user.points }}%
+                    </div>
+                    {% elif user.points < 300 %}
+                    <div class="progress-bar bg-info" style="width: {{ user.points|divisibleby:3 }}%;">
+                        {{ user.points|divisibleby:3 }}%
+                    </div>
+                    {% elif user.points < 600 %}
+                    <div class="progress-bar bg-warning" style="width: {{ user.points|divisibleby:6 }}%;">
+                        {{ user.points|divisibleby:6 }}%
+                    </div>
+                    {% else %}
+                    <div class="progress-bar bg-danger" style="width: {{ user.points|divisibleby:10 }}%;">
+                        {{ user.points|divisibleby:10 }}%
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para ver ejercicio -->
+<div class="modal fade" id="ejercicioModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-book me-2" style="color: var(--gold);"></i>
+                    <span id="ejercicioTitulo"></span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="ejercicioContenido" style="max-height: 500px; overflow: auto; background: #f8f5f0; padding: 20px; border-radius: 8px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-gold" onclick="iniciarEjercicioDesdeModal()">
+                    <i class="fas fa-play me-1"></i> Practicar
+                </button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para practicar -->
+<div class="modal fade" id="practicarModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-pen-alt me-2" style="color: var(--gold);"></i>
+                    Practicando: <span id="practicarTitulo"></span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="practicarContenido"></div>
+                <div class="mt-3">
+                    <textarea class="form-control" id="respuestaUsuario" rows="4" placeholder="Escribe tu respuesta aquí..."></textarea>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-gold" onclick="enviarRespuesta()">
+                        <i class="fas fa-check me-1"></i> Enviar Respuesta
+                    </button>
+                    <span id="resultadoFeedback" class="ms-3"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let ejercicioActual = null;
+
+function verEjercicio(id) {
+    fetch(`/api/ejercicios/`)
+        .then(response => response.json())
+        .then(data => {
+            const ejercicio = data.find(item => item.id === id);
+            if (ejercicio) {
+                document.getElementById('ejercicioTitulo').textContent = ejercicio.titulo;
+                document.getElementById('ejercicioContenido').innerHTML = 
+                    `<pre style="white-space: pre-wrap; word-wrap: break-word;">${JSON.stringify(ejercicio.contenido, null, 2)}</pre>`;
+                ejercicioActual = ejercicio;
+                new bootstrap.Modal(document.getElementById('ejercicioModal')).show();
+            }
+        })
+        .catch(error => {
+            alert('Error al cargar el ejercicio: ' + error);
+        });
+}
+
+function iniciarEjercicio(id) {
+    fetch(`/api/ejercicios/`)
+        .then(response => response.json())
+        .then(data => {
+            const ejercicio = data.find(item => item.id === id);
+            if (ejercicio) {
+                document.getElementById('practicarTitulo').textContent = ejercicio.titulo;
+                document.getElementById('practicarContenido').innerHTML = 
+                    `<div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Instrucciones:</strong> Lee el contenido y responde la pregunta.
+                    </div>
+                    <pre style="white-space: pre-wrap; word-wrap: break-word; background: #f8f5f0; padding: 15px; border-radius: 8px;">
+                        ${JSON.stringify(ejercicio.contenido, null, 2)}
+                    </pre>`;
+                ejercicioActual = ejercicio;
+                document.getElementById('respuestaUsuario').value = '';
+                document.getElementById('resultadoFeedback').textContent = '';
+                new bootstrap.Modal(document.getElementById('practicarModal')).show();
+            }
+        })
+        .catch(error => {
+            alert('Error al cargar el ejercicio: ' + error);
+        });
+}
+
+function iniciarEjercicioDesdeModal() {
+    if (ejercicioActual) {
+        bootstrap.Modal.getInstance(document.getElementById('ejercicioModal')).hide();
+        setTimeout(() => {
+            iniciarEjercicio(ejercicioActual.id);
+        }, 500);
+    }
+}
+
+function enviarRespuesta() {
+    const respuesta = document.getElementById('respuestaUsuario').value.trim();
+    if (!respuesta) {
+        alert('Por favor, escribe una respuesta antes de enviar.');
+        return;
+    }
+    
+    // Simular verificación de respuesta
+    const feedback = document.getElementById('resultadoFeedback');
+    feedback.innerHTML = '<span class="text-success"><i class="fas fa-spinner fa-spin me-1"></i> Verificando respuesta...</span>';
+    
+    setTimeout(() => {
+        // Simular respuesta (en producción, esto iría a un endpoint real)
+        const puntos = Math.floor(Math.random() * 10) + 1;
+        const esCorrecta = Math.random() > 0.3;
+        
+        if (esCorrecta) {
+            feedback.innerHTML = `
+                <span class="text-success">
+                    <i class="fas fa-check-circle me-1"></i>
+                    ¡Excelente! Has ganado <strong>${puntos} puntos</strong>
+                </span>
+            `;
+            // Actualizar puntos del usuario (simulado)
+            document.querySelector('.display-6').textContent = 
+                parseInt(document.querySelector('.display-6').textContent) + puntos;
+        } else {
+            feedback.innerHTML = `
+                <span class="text-danger">
+                    <i class="fas fa-times-circle me-1"></i>
+                    Respuesta incorrecta. Sigue practicando.
+                </span>
+            `;
+        }
+    }, 1500);
+}
+
+// Consejos del día (rotación)
+const consejos = [
+    "La práctica constante es la clave para dominar cualquier disciplina lingüística.",
+    "Lee en voz alta para mejorar tu pronunciación y comprensión.",
+    "La escritura a mano ayuda a fijar mejor los conceptos.",
+    "Cada error es una oportunidad para aprender algo nuevo.",
+    "La retórica es el arte de la persuasión: practícala en tu vida diaria.",
+    "La etimología te ayuda a comprender el origen y evolución de las palabras.",
+    "La gramática es la columna vertebral de cualquier idioma."
+];
+document.querySelector('.fst-italic').innerHTML = 
+    `<i class="fas fa-quote-left me-2" style="color: var(--gold);"></i>
+     ${consejos[Math.floor(Math.random() * consejos.length)]}`;
+</script>
+{% endblock %}

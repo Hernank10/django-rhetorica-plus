@@ -1,2 +1,80 @@
-{% extends "core/base.html" %}
-{% block content %}<div class="row justify-content-center"><div class="col-md-5"><div class="card"><div class="card-header">Registro</div><div class="card-body"><form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit" class="btn btn-success w-100">Registrarse</button></form></div></div></div></div>{% endblock %}
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Registro - Rhetorica Plus{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="card p-4 shadow">
+            <div class="text-center mb-4">
+                <i class="fas fa-scroll fa-3x" style="color: var(--gold);"></i>
+                <h2 class="mt-2" style="color: var(--primary);">Crear Cuenta</h2>
+                <p class="text-muted">Únete a la comunidad de Rhetorica Plus</p>
+            </div>
+            
+            <form method="post">
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <label for="username" class="form-label">
+                        <i class="fas fa-user me-1"></i> Usuario
+                    </label>
+                    <input type="text" class="form-control" id="username" name="username" 
+                           placeholder="Elige un nombre de usuario" required>
+                    <small class="text-muted">Mínimo 3 caracteres</small>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">
+                        <i class="fas fa-envelope me-1"></i> Correo Electrónico
+                    </label>
+                    <input type="email" class="form-control" id="email" name="email" 
+                           placeholder="tu@email.com" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password1" class="form-label">
+                        <i class="fas fa-lock me-1"></i> Contraseña
+                    </label>
+                    <input type="password" class="form-control" id="password1" name="password1" 
+                           placeholder="Crea una contraseña segura" required>
+                    <small class="text-muted">Mínimo 8 caracteres</small>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password2" class="form-label">
+                        <i class="fas fa-lock me-1"></i> Confirmar Contraseña
+                    </label>
+                    <input type="password" class="form-control" id="password2" name="password2" 
+                           placeholder="Repite tu contraseña" required>
+                </div>
+                
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="terms" required>
+                    <label class="form-check-label" for="terms">
+                        Acepto los <a href="#" class="text-decoration-none">términos y condiciones</a>
+                    </label>
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-gold">
+                        <i class="fas fa-user-plus me-1"></i> Crear Cuenta
+                    </button>
+                </div>
+            </form>
+            
+            <hr class="my-4">
+            
+            <div class="text-center">
+                <p class="mb-0">
+                    ¿Ya tienes cuenta? 
+                    <a href="{% url 'core:login' %}" class="text-decoration-none fw-bold" style="color: var(--gold);">
+                        <i class="fas fa-sign-in-alt me-1"></i> Inicia Sesión
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

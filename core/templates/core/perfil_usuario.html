@@ -1,0 +1,250 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Mi Perfil - Rhetorica Plus{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2>
+            <i class="fas fa-user-circle me-2" style="color: var(--gold);"></i>
+            Mi Perfil
+        </h2>
+        <hr>
+    </div>
+</div>
+
+<!-- Información Personal -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <div class="position-relative d-inline-block mx-auto">
+                <i class="fas fa-user-circle" style="font-size: 100px; color: var(--gold);"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge bg-warning rounded-pill">
+                    Nv. {{ user.nivel_experiencia }}
+                </span>
+            </div>
+            <h3 class="mt-2">{{ user.get_full_name|default:user.username }}</h3>
+            <p class="text-muted">@{{ user.username }}</p>
+            <span class="badge badge-gold fs-5 p-2">
+                <i class="fas fa-star me-1"></i> {{ user.nivel }}
+            </span>
+            <div class="mt-3">
+                <a href="{% url 'core:editar_perfil' %}" class="btn btn-gold btn-sm">
+                    <i class="fas fa-edit me-1"></i> Editar Perfil
+                </a>
+                <a href="{% url 'core:cambiar_contrasena' %}" class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-key me-1"></i> Cambiar Contraseña
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card p-4">
+            <h4><i class="fas fa-info-circle me-2" style="color: var(--gold);"></i> Información Personal</h4>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <p><strong><i class="fas fa-user me-1"></i> Usuario:</strong> {{ user.username }}</p>
+                    <p><strong><i class="fas fa-envelope me-1"></i> Email:</strong> {{ user.email }}</p>
+                    <p><strong><i class="fas fa-calendar-alt me-1"></i> Miembro desde:</strong> {{ user.date_joined|date:"d/m/Y" }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong><i class="fas fa-star me-1"></i> Puntos:</strong> {{ user.points }}</p>
+                    <p><strong><i class="fas fa-level-up-alt me-1"></i> Nivel:</strong> {{ user.nivel }}</p>
+                    <p><strong><i class="fas fa-fire me-1"></i> Racha:</strong> {{ user.racha }} días</p>
+                </div>
+            </div>
+            <div class="progress mt-2" style="height: 20px;">
+                {% if user.points < 100 %}
+                    <div class="progress-bar bg-success" style="width: {{ user.points }}%;">
+                        {{ user.points }}/100
+                    </div>
+                {% elif user.points < 300 %}
+                    <div class="progress-bar bg-info" style="width: {{ user.points|divisibleby:3 }}%;">
+                        {{ user.points|divisibleby:3 }}/100
+                    </div>
+                {% elif user.points < 600 %}
+                    <div class="progress-bar bg-warning" style="width: {{ user.points|divisibleby:6 }}%;">
+                        {{ user.points|divisibleby:6 }}/100
+                    </div>
+                {% else %}
+                    <div class="progress-bar bg-danger" style="width: 100%;">
+                        ¡MAX!
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Estadísticas -->
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <h3 class="display-6" style="color: var(--gold);">{{ total_respuestas }}</h3>
+            <p class="text-muted"><i class="fas fa-check-circle me-1"></i> Respuestas</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <h3 class="display-6" style="color: var(--gold);">{{ respuestas_correctas }}</h3>
+            <p class="text-muted"><i class="fas fa-check-double me-1"></i> Correctas</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <h3 class="display-6" style="color: var(--gold);">{{ tasa_aciertos }}%</h3>
+            <p class="text-muted"><i class="fas fa-percentage me-1"></i> Tasa de Aciertos</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <h3 class="display-6" style="color: var(--gold);">{{ dias_activos }}</h3>
+            <p class="text-muted"><i class="fas fa-calendar-check me-1"></i> Días Activos</p>
+        </div>
+    </div>
+</div>
+
+<!-- Tiempo Practicado -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card p-4">
+            <h4><i class="fas fa-clock me-2" style="color: var(--gold);"></i> Tiempo de Práctica</h4>
+            <div class="row text-center mt-3">
+                <div class="col-md-4">
+                    <h2 class="display-6" style="color: var(--gold);">{{ horas }}</h2>
+                    <p class="text-muted">Horas</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="display-6" style="color: var(--gold);">{{ minutos }}</h2>
+                    <p class="text-muted">Minutos</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="display-6" style="color: var(--gold);">{{ segundos }}</h2>
+                    <p class="text-muted">Segundos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Logros y Medallas -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h4><i class="fas fa-award me-2" style="color: var(--gold);"></i> Mis Logros</h4>
+            <div class="d-flex flex-wrap gap-3 mt-3">
+                {% for logro in logros_obtenidos %}
+                    <div class="text-center" style="flex: 0 0 80px;">
+                        <div class="insignia-item obtenida">
+                            <span style="font-size: 35px;">{{ logro.logro.icono|safe }}</span>
+                        </div>
+                        <small class="d-block mt-1 text-success">{{ logro.logro.nombre }}</small>
+                    </div>
+                {% empty %}
+                    <p class="text-muted">Aún no has obtenido logros. ¡Sigue practicando!</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h4><i class="fas fa-medal me-2" style="color: var(--gold);"></i> Medallas y Certificaciones</h4>
+            <div class="mt-3">
+                {% if medallas %}
+                    <h6>Medallas:</h6>
+                    <div class="d-flex flex-wrap gap-3">
+                        {% for medalla in medallas %}
+                            <span class="badge badge-gold p-2">
+                                <i class="fas fa-medal me-1"></i> {{ medalla }}
+                            </span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if certificaciones %}
+                    <h6 class="mt-3">Certificaciones:</h6>
+                    <div class="d-flex flex-wrap gap-3">
+                        {% for cert in certificaciones %}
+                            <span class="badge bg-primary p-2">
+                                <i class="fas fa-certificate me-1"></i> {{ cert }}
+                            </span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if not medallas and not certificaciones %}
+                    <p class="text-muted">Aún no tienes medallas o certificaciones.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Actividad Reciente -->
+<div class="row">
+    <div class="col-12">
+        <div class="card p-4">
+            <h4><i class="fas fa-history me-2" style="color: var(--gold);"></i> Actividad Reciente</h4>
+            <div class="table-responsive mt-3">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Ejercicio</th>
+                            <th>Categoría</th>
+                            <th>Resultado</th>
+                            <th>Puntos</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for respuesta in actividad_reciente %}
+                        <tr>
+                            <td>{{ respuesta.tipo_ejercicio|truncatechars:30 }}</td>
+                            <td>{{ respuesta.tipo_ejercicio }}</td>
+                            <td>
+                                {% if respuesta.es_correcta %}
+                                    <span class="badge bg-success"><i class="fas fa-check me-1"></i> Correcta</span>
+                                {% else %}
+                                    <span class="badge bg-danger"><i class="fas fa-times me-1"></i> Incorrecta</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ respuesta.puntuacion }}</td>
+                            <td>{{ respuesta.fecha|date:"d/m/Y H:i" }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="text-center text-muted">No hay actividad reciente</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .insignia-item {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        background: #f8f5f0;
+        border: 3px solid #ddd;
+        transition: all 0.3s;
+    }
+    .insignia-item.obtenida {
+        border-color: var(--gold);
+        background: linear-gradient(135deg, #fff, #fef9e7);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+    .badge-gold {
+        background: linear-gradient(135deg, #f7971e, #ffd200);
+        color: #1e2a3a;
+    }
+</style>
+{% endblock %}

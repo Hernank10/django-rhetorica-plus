@@ -1,15 +1,78 @@
-{% extends "core/base.html" %}
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Dashboard - Rhetorica Plus{% endblock %}
+
 {% block content %}
-<h2><i class="fas fa-tachometer-alt"></i> Mi Dashboard</h2>
-<div class="row g-4 mb-4">
-    <div class="col-md-3"><div class="card bg-primary text-white text-center"><div class="card-body"><i class="fas fa-star fa-2x"></i><h3>{{ usuario.points }}</h3><p>Puntos</p></div></div></div>
-    <div class="col-md-3"><div class="card bg-success text-white text-center"><div class="card-body"><i class="fas fa-check-circle fa-2x"></i><h3>{{ correctas }}/{{ total }}</h3><p>Aciertos</p></div></div></div>
-    <div class="col-md-3"><div class="card bg-info text-white text-center"><div class="card-body"><i class="fas fa-chart-line fa-2x"></i><h3>{{ porcentaje }}%</h3><p>Rendimiento</p></div></div></div>
-    <div class="col-md-3"><div class="card bg-warning text-dark text-center"><div class="card-body"><i class="fas fa-medal fa-2x"></i><h3>{{ usuario.nivel }}</h3><p>Nivel</p></div></div></div>
-</div>
 <div class="row">
-    <div class="col-md-6"><div class="card"><div class="card-header">Progreso por categorías</div><div class="card-body">{% for p in progreso %}<b>{{ p.categoria }}</b>: {{ p.porcentaje }}% ({{ p.aciertos }}/{{ p.intentos }})<div class="progress mb-2"><div class="progress-bar bg-success" style="width:{{ p.porcentaje }}%"></div></div>{% empty %}Sin datos aún. Realiza ejercicios para ver tu progreso.{% endfor %}</div></div></div>
-    <div class="col-md-6"><div class="card"><div class="card-header">Recomendaciones</div><div class="card-body">{% for rec in recomendaciones %}<li>{{ rec }}</li>{% empty %}¡Sigue así! Completa más ejercicios para ganar puntos.{% endfor %}</div></div></div>
+    <div class="col-12">
+        <h2>
+            <i class="fas fa-chart-line me-2" style="color: var(--gold);"></i>
+            Dashboard de {{ user.username }}
+        </h2>
+        <hr>
+    </div>
 </div>
-<div class="mt-4 text-center"><a href="{% url 'retorica' %}" class="btn btn-success">Practicar Retórica</a> <a href="{% url 'etimologia' %}" class="btn btn-warning">Practicar Etimología</a> <a href="{% url 'examen_form' %}" class="btn btn-primary">Generar Examen</a></div>
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-trophy me-2" style="color: var(--gold);"></i>
+                Tu Progreso
+            </h4>
+            <div class="mt-3">
+                <div class="d-flex justify-content-between">
+                    <span>Puntos:</span>
+                    <span class="badge bg-warning text-dark">{{ user.points }}</span>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                    <span>Nivel:</span>
+                    <span class="badge bg-success">{{ user.nivel }}</span>
+                </div>
+                <div class="progress mt-3" style="height: 20px;">
+                    <div class="progress-bar bg-warning" style="width: {{ user.points }}%;" role="progressbar">
+                        {{ user.points }}%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-info-circle me-2" style="color: var(--gold);"></i>
+                Estadísticas
+            </h4>
+            <ul class="list-unstyled mt-3">
+                <li><i class="fas fa-check-circle text-success me-2"></i> Ejercicios completados: 0</li>
+                <li><i class="fas fa-star text-warning me-2"></i> Técnicas aprendidas: 0</li>
+                <li><i class="fas fa-fire text-danger me-2"></i> Racha: 0 días</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card p-4">
+            <h4>
+                <i class="fas fa-rocket me-2" style="color: var(--gold);"></i>
+                Acciones Rápidas
+            </h4>
+            <div class="d-flex gap-3 flex-wrap mt-3">
+                <a href="/api/ejercicios/" class="btn btn-gold">
+                    <i class="fas fa-play me-1"></i> Practicar Ejercicios
+                </a>
+                <a href="/admin/" class="btn btn-gold">
+                    <i class="fas fa-cog me-1"></i> Administrar
+                </a>
+                <a href="/" class="btn btn-gold">
+                    <i class="fas fa-home me-1"></i> Inicio
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
