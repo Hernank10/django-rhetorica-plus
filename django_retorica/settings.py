@@ -152,3 +152,7 @@ CSRF_COOKIE_HTTPONLY = False
 # Para debugging
 DEBUG = True
 
+
+# Zona horaria
+TIME_ZONE = 'America/Bogota'
+USE_TZ = True
