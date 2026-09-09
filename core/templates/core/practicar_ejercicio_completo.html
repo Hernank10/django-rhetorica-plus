@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-gradient-success text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="mb-0">
+                    <i class="fas fa-graduation-cap"></i> Practicar: {{ ejercicio.titulo }}
+                </h2>
+                <div>
+                    <span class="badge badge-light badge-pill px-3 py-2">
+                        <i class="fas fa-tag"></i> {{ ejercicio.categoria }}
+                    </span>
+                    <span class="badge badge-info badge-pill px-3 py-2">
+                        <i class="fas fa-signal"></i> Nivel {{ ejercicio.nivel }}
+                    </span>
+                    <span class="badge badge-warning badge-pill px-3 py-2">
+                        <i class="fas fa-star"></i> {{ ejercicio.puntos }} pts
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card-body">
+            <!-- Teoría breve -->
+            {% if contenido.teoria %}
+            <div class="alert alert-info">
+                <h5><i class="fas fa-book-open"></i> Teoría</h5>
+                <p class="mb-0">{{ contenido.teoria|truncatechars:200 }}</p>
+                <small>
+                    <a href="{% url 'detalle_ejercicio' ejercicio.id %}" class="alert-link">
+                        Ver teoría completa
+                    </a>
+                </small>
+            </div>
+            {% endif %}
+
+            <!-- Ejercicio a resolver -->
+            <div class="ejercicio-container mb-4">
+                <h4 class="text-primary">
+                    <i class="fas fa-question-circle"></i> Resuelve el siguiente ejercicio:
+                </h4>
+                <div class="card p-4 bg-light border border-primary">
+                    <p class="h5 mb-0">{{ contenido.ejercicio|linebreaks }}</p>
+                </div>
+            </div>
+
+            <!-- Formulario de respuesta -->
+            <form method="post" id="respuestaForm" action="{% url 'enviar_respuesta' ejercicio.id %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="respuesta" class="font-weight-bold">
+                        <i class="fas fa-pen"></i> Tu respuesta:
+                    </label>
+                    <textarea class="form-control form-control-lg" 
+                              id="respuesta" 
+                              name="respuesta" 
+                              rows="5" 
+                              placeholder="Escribe tu respuesta aquí..."
+                              required></textarea>
+                </div>
+                
+                <div class="mt-4 d-flex gap-2 flex-wrap">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="fas fa-paper-plane"></i> Enviar respuesta
+                    </button>
+                    <button type="button" class="btn btn-info btn-lg" onclick="togglePista()">
+                        <i class="fas fa-lightbulb"></i> Mostrar pista
+                    </button>
+                    <button type="button" class="btn btn-warning btn-lg" onclick="limpiarRespuesta()">
+                        <i class="fas fa-eraser"></i> Limpiar
+                    </button>
+                    <a href="{% url 'detalle_ejercicio' ejercicio.id %}" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-arrow-left"></i> Volver
+                    </a>
+                </div>
+            </form>
+
+            <!-- Pista -->
+            <div id="pista-container" style="display:none;" class="mt-4">
+                <div class="alert alert-warning shadow">
+                    <h5><i class="fas fa-lightbulb"></i> Pista:</h5>
+                    {% if contenido.suggestedAnswer %}
+                        <p class="mb-0">{{ contenido.suggestedAnswer|linebreaks }}</p>
+                    {% else %}
+                        <p class="mb-0">No hay pista disponible para este ejercicio.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Resultado (si se envió) -->
+            {% if resultado %}
+            <div class="mt-4">
+                <div class="alert alert-{{ resultado.tipo }} shadow">
+                    <h4><i class="fas fa-{{ resultado.icono }}"></i> {{ resultado.mensaje }}</h4>
+                    {% if resultado.respuesta_correcta %}
+                        <p>✅ ¡Correcto! Has ganado <strong>{{ ejercicio.puntos }} puntos</strong>.</p>
+                    {% else %}
+                        <p>❌ No es correcto. Sigue practicando.</p>
+                        {% if contenido.suggestedAnswer %}
+                            <p><strong>Respuesta correcta:</strong> {{ contenido.suggestedAnswer }}</p>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="card-footer">
+            <div class="d-flex justify-content-between">
+                <small class="text-muted">
+                    <i class="fas fa-info-circle"></i> ID: {{ ejercicio.id }}
+                </small>
+                <small class="text-muted">
+                    <i class="fas fa-clock"></i> Tiempo estimado: 5 minutos
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function togglePista() {
+    var pista = document.getElementById('pista-container');
+    var btn = event.target;
+    if (pista.style.display === 'none') {
+        pista.style.display = 'block';
+        btn.innerHTML = '<i class="fas fa-lightbulb"></i> Ocultar pista';
+    } else {
+        pista.style.display = 'none';
+        btn.innerHTML = '<i class="fas fa-lightbulb"></i> Mostrar pista';
+    }
+}
+
+function limpiarRespuesta() {
+    document.getElementById('respuesta').value = '';
+}
+
+// Auto-guardar respuesta (opcional)
+document.addEventListener('DOMContentLoaded', function() {
+    var textarea = document.getElementById('respuesta');
+    textarea.addEventListener('input', function() {
+        localStorage.setItem('respuesta_temp', this.value);
+    });
+    
+    // Recuperar respuesta guardada
+    var saved = localStorage.getItem('respuesta_temp');
+    if (saved) {
+        textarea.value = saved;
+    }
+});
+</script>
+
+<style>
+    .bg-gradient-success {
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    }
+    .gap-2 {
+        gap: 0.5rem;
+    }
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+    }
+    .badge-pill {
+        border-radius: 50rem;
+    }
+    textarea.form-control-lg {
+        font-size: 1.1rem;
+    }
+</style>
+{% endblock %}

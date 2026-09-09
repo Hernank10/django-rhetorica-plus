@@ -1,0 +1,85 @@
+
+[96m======================================================================[0m
+[1m🔍 DIAGNÓSTICO DE EJERCICIOS - RHETORICA PLUS[0m
+[96m======================================================================[0m
+📅 2026-09-09 13:15:29
+
+[1m📊 1. ESTADO DE LA BASE DE DATOS[0m
+--------------------------------------------------
+[92m✅ Total ejercicios: 1400[0m
+
+[1m📋 2. ESTRUCTURA DE EJERCICIOS[0m
+--------------------------------------------------
+[92m✅ Válidos: 100[0m
+
+[1m🎯 3. TIPOS DE PREGUNTAS DETECTADOS[0m
+--------------------------------------------------
+✏️ Correccion: 38 ejercicios
+📝 Completar: 18 ejercicios
+🔄 Reescribir: 18 ejercicios
+✅ Elegir: 2 ejercicios
+📌 Otros: 24 ejercicios
+
+[1m📖 4. MUESTRA DE 5 TIPOS DE PREGUNTAS[0m
+--------------------------------------------------
+
+[95m📌 Ejemplo 1: CORRECCION[0m
+   ID: 5085 - Item 100
+   [96mTeoría:[0m 'Acorde' significa 'conforme' y puede usarse como adjetivo invariable o seguido de 'con'....
+   [93mEjercicio:[0m Corrige: 'Debe actuar acorde las reglas'....
+   [92mRespuesta sugerida:[0m Debe actuar acorde con las reglas (o 'acorde a las reglas')....
+
+[95m📌 Ejemplo 2: COMPLETAR[0m
+   ID: 5084 - Item 99
+   [96mTeoría:[0m Se aplica una cosa 'a' alguien o algo, o se aplica 'en' un campo. Depende del contexto: 'aplicar la ...
+   [93mEjercicio:[0m Completa: 'Debemos aplicar la normativa ___ todos los trabajadores'....
+   [92mRespuesta sugerida:[0m a...
+
+[95m📌 Ejemplo 3: REESCRIBIR[0m
+   ID: 5083 - Item 98
+   [96mTeoría:[0m 'Demás' equivale a 'otros' o 'los restantes' y se usa con artículo....
+   [93mEjercicio:[0m Reemplaza 'otros' por 'demás': 'Otros vinieron tarde'....
+   [92mRespuesta sugerida:[0m Los demás vinieron tarde....
+
+[95m📌 Ejemplo 4: ELEGIR[0m
+   ID: 5039 - Item 54
+   [96mTeoría:[0m 'Hacerse' indica cambio logrado por esfuerzo, 'volverse' cambio brusco negativo, 'ponerse' cambio tr...
+   [93mEjercicio:[0m Elige el verbo adecuado: 'Se ___ triste cuando llueve'....
+   [92mRespuesta sugerida:[0m pone...
+
+[95m📌 Ejemplo 5: EXPLICAR[0m
+   ID: 4703 - Item 18
+   [96mTeoría:[0m Los cambios lingüísticos se difunden lentamente al principio, luego se aceleran y luego se desaceler...
+   [93mEjercicio:[0m Explica por qué el voseo se expandió en América pero no en España....
+   [92mRespuesta sugerida:[0m Por factores sociopolíticos: en América se mantuvo como rasgo de identidad....
+
+[1m🔍 5. VERIFICACIÓN DE CONTENIDO[0m
+--------------------------------------------------
+[93m⚠️ 1 problemas detectados (mostrando primeros 5):[0m
+   - ID 5084: Sin respuesta sugerida
+
+[96m======================================================================[0m
+[1m📊 RESUMEN FINAL[0m
+[96m======================================================================[0m
+
+[92m✅ Total ejercicios: 1400[0m
+[92m✅ Ejercicios válidos: 100[0m
+
+[92m🎉 ¡No se encontraron errores![0m
+
+[96m======================================================================[0m
+[1m💡 RECOMENDACIONES:[0m
+1. Los ejercicios tienen buena estructura general
+2. Verificar que todos tengan 'suggestedAnswer'
+3. Asegurar que 'ejercicio' esté completo
+4. Revisar que 'teoria' sea explicativa
+5. Considerar agregar más categorías específicas
+
+[93m¿Deseas ejecutar corrección automática? (s/n)[0m
+> 
+[96m======================================================================[0m
+[1m🛠️ CORRECCIÓN AUTOMÁTICA[0m
+[96m======================================================================[0m
+[92m✅ Ejercicios corregidos: 0[0m
+
+[92m✅ Diagnóstico completado[0m

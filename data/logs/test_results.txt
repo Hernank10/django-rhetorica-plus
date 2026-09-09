@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/workspaces/django-rhetorica-plus/test_app.py", line 12, in <module>
+    from django.contrib.auth.models import User
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/contrib/auth/models.py", line 5, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/contrib/auth/base_user.py", line 43, in <module>
+    class AbstractBaseUser(models.Model):
+    ...<120 lines>...
+            )
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/db/models/base.py", line 132, in __new__
+    app_config = apps.get_containing_app_config(module)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/apps/registry.py", line 260, in get_containing_app_config
+    self.check_apps_ready()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/apps/registry.py", line 137, in check_apps_ready
+    settings.INSTALLED_APPS
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/conf/__init__.py", line 122, in __getattr__
+    self._setup(name)
+    ~~~~~~~~~~~^^^^^^
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/conf/__init__.py", line 102, in _setup
+    raise ImproperlyConfigured(
+    ...<4 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card bg-gradient-primary text-white shadow">
+                <div class="card-body py-4">
+                    <h1 class="display-4 mb-2">
+                        <i class="fas fa-graduation-cap"></i> Cursos Disponibles
+                    </h1>
+                    <p class="lead mb-0">
+                        <span class="badge bg-light text-dark">{{ total_cursos }}</span> cursos disponibles
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for curso in cursos %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm curso-card">
+                <div class="card-header bg-primary text-white">
+                    <span class="badge bg-light text-dark">{{ curso.get_nivel_display|default:"Sin nivel" }}</span>
+                    <span class="badge bg-warning text-dark float-end">
+                        <i class="fas fa-clock"></i> {{ curso.get_duracion_texto|default:"2h" }}
+                    </span>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ curso.titulo }}</h5>
+                    <p class="card-text text-muted small">{{ curso.descripcion|truncatechars:120 }}</p>
+                    
+                    <div class="mt-3">
+                        <div class="d-flex justify-content-between">
+                            <small>Progreso</small>
+                            <small>{{ curso.progreso_usuario|default:0 }}%</small>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" 
+                                 style="width: {{ curso.progreso_usuario|default:0 }}%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a href="{% url 'detalle_curso' curso.slug %}" class="btn btn-primary w-100">
+                        <i class="fas fa-play"></i> Ver curso
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info text-center py-5">
+                <i class="fas fa-info-circle fa-3x"></i>
+                <h4 class="mt-3">No hay cursos disponibles</h4>
+                <p>Los cursos se generarán automáticamente cuando estén disponibles.</p>
+                <a href="{% url 'dashboard_estudiante' %}" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> Volver al dashboard
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .curso-card {
+        transition: all 0.3s ease;
+    }
+    .curso-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+    }
+    .progress {
+        height: 8px;
+    }
+</style>
+{% endblock %}

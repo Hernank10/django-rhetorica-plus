@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>
+            <i class="fas fa-list"></i> Lista de Ejercicios
+            <span class="badge badge-primary badge-pill ml-2">{{ ejercicios|length }}</span>
+        </h1>
+        <div>
+            <a href="{% url 'dashboard_estudiante' %}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
+        </div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="get" class="row g-3">
+                <div class="col-md-3">
+                    <label class="font-weight-bold">Categoría</label>
+                    <select name="categoria" class="form-control">
+                        <option value="">Todas</option>
+                        {% for categoria in categorias %}
+                            <option value="{{ categoria }}" {% if categoria_seleccionada == categoria %}selected{% endif %}>
+                                {{ categoria }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="font-weight-bold">Nivel</label>
+                    <select name="nivel" class="form-control">
+                        <option value="">Todos</option>
+                        {% for i in "12345"|make_list %}
+                            <option value="{{ i }}" {% if nivel_seleccionado == i %}selected{% endif %}>
+                                Nivel {{ i }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="font-weight-bold">Tipo</label>
+                    <select name="tipo" class="form-control">
+                        <option value="">Todos</option>
+                        <option value="General" {% if tipo_seleccionado == 'General' %}selected{% endif %}>General</option>
+                        <option value="Especifico" {% if tipo_seleccionado == 'Especifico' %}selected{% endif %}>Específico</option>
+                    </select>
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-filter"></i> Filtrar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Grid de ejercicios -->
+    <div class="row">
+        {% for ejercicio in ejercicios %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm hover-shadow">
+                <div class="card-header bg-light">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge badge-primary">{{ ejercicio.categoria|default:"Sin categoría" }}</span>
+                        <span class="badge badge-info">Nivel {{ ejercicio.nivel|default:1 }}</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-pencil-alt text-primary"></i>
+                        {{ ejercicio.titulo|truncatechars:50 }}
+                    </h5>
+                    
+                    <!-- Mostrar tipo de ejercicio -->
+                    {% if ejercicio.tipo %}
+                        <span class="badge badge-secondary">{{ ejercicio.tipo }}</span>
+                    {% endif %}
+                    
+                    <!-- Mostrar puntos -->
+                    <div class="mt-2">
+                        <span class="badge badge-success">
+                            <i class="fas fa-star"></i> {{ ejercicio.puntos|default:10 }} pts
+                        </span>
+                    </div>
+                    
+                    <!-- Resumen del contenido -->
+                    {% if ejercicio.contenido.ejercicio %}
+                        <p class="card-text text-muted small mt-2">
+                            {{ ejercicio.contenido.ejercicio|truncatechars:80 }}
+                        </p>
+                    {% endif %}
+                </div>
+                <div class="card-footer bg-transparent">
+                    <div class="d-flex gap-1">
+                        <a href="{% url 'detalle_ejercicio' ejercicio.id %}" class="btn btn-outline-primary btn-sm flex-grow-1">
+                            <i class="fas fa-eye"></i> Ver
+                        </a>
+                        <a href="{% url 'practicar_ejercicio' ejercicio.id %}" class="btn btn-primary btn-sm flex-grow-1">
+                            <i class="fas fa-play"></i> Practicar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle fa-3x"></i>
+                <h4 class="mt-2">No hay ejercicios disponibles</h4>
+                <p>Los ejercicios se cargarán automáticamente cuando estén disponibles.</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Paginación -->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo; Anterior</a>
+                </li>
+            {% endif %}
+            
+            {% for num in page_obj.paginator.page_range %}
+                <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                    <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                </li>
+            {% endfor %}
+            
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Siguiente &raquo;</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+
+<style>
+    .hover-shadow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        transition: all 0.3s ease;
+    }
+    .gap-1 {
+        gap: 0.25rem;
+    }
+    .flex-grow-1 {
+        flex: 1;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'lista_cursos' %}">Cursos</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'detalle_curso' curso.slug %}">{{ curso.titulo }}</a></li>
+                    <li class="breadcrumb-item active">{{ leccion.titulo }}</li>
+                </ol>
+            </nav>
+
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0"><i class="fas fa-book-open"></i> {{ leccion.titulo }}</h4>
+                        <div>
+                            <span class="badge bg-light text-dark">{{ leccion.get_tipo_display|default:"Teoría" }}</span>
+                            <span class="badge bg-warning text-dark">
+                                <i class="fas fa-star"></i> {{ leccion.puntos|default:10 }} pts
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="leccion-contenido">
+                        {{ leccion.contenido|linebreaks }}
+                    </div>
+
+                    {% if ejercicios %}
+                    <div class="mt-4">
+                        <h5><i class="fas fa-pencil-alt"></i> Ejercicios relacionados</h5>
+                        <div class="row">
+                            {% for ejercicio in ejercicios %}
+                            <div class="col-md-6 mb-2">
+                                <div class="card bg-light">
+                                    <div class="card-body p-2">
+                                        <small>{{ ejercicio.titulo }}</small>
+                                        <a href="{% url 'practicar_ejercicio' ejercicio.id %}" 
+                                           class="btn btn-sm btn-outline-primary float-end">
+                                            Practicar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if tecnicas %}
+                    <div class="mt-3">
+                        <h5><i class="fas fa-lightbulb"></i> Técnicas relacionadas</h5>
+                        {% for tecnica in tecnicas %}
+                        <span class="badge bg-info">{{ tecnica.nombre }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div class="mt-4 d-flex justify-content-between">
+                        <div>
+                            {% if leccion_anterior %}
+                            <a href="{% url 'ver_leccion' curso.slug modulo.id leccion_anterior.id %}" 
+                               class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Anterior
+                            </a>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <form method="post" action="{% url 'marcar_leccion_completa' leccion.id %}" class="d-inline">
+                                {% csrf_token %}
+                                {% if progreso.completado %}
+                                    <button type="button" class="btn btn-success" disabled>
+                                        <i class="fas fa-check"></i> Completado
+                                    </button>
+                                {% else %}
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fas fa-check"></i> Marcar como completado
+                                    </button>
+                                {% endif %}
+                            </form>
+                            {% if leccion_siguiente %}
+                            <a href="{% url 'ver_leccion' curso.slug modulo.id leccion_siguiente.id %}" 
+                               class="btn btn-primary">
+                                Siguiente <i class="fas fa-arrow-right"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

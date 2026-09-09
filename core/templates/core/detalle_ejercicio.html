@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h2>{{ ejercicio.titulo }}</h2>
+            <div class="mt-2">
+                <span class="badge badge-light">{{ ejercicio.categoria }}</span>
+                <span class="badge badge-info">Nivel {{ ejercicio.nivel }}</span>
+                <span class="badge badge-success">{{ ejercicio.puntos }} puntos</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Teoría -->
+            {% if contenido.teoria %}
+            <div class="section-teoria mb-4">
+                <h4>📖 Teoría</h4>
+                <div class="card bg-light p-3 border-left-info">
+                    {{ contenido.teoria|linebreaks }}
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Ejemplo -->
+            {% if contenido.ejemplo %}
+            <div class="section-ejemplo mb-4">
+                <h4>💡 Ejemplo</h4>
+                <div class="card bg-info text-white p-3">
+                    {{ contenido.ejemplo|linebreaks }}
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Ejercicio -->
+            {% if contenido.ejercicio %}
+            <div class="section-ejercicio mb-4">
+                <h4>✏️ Ejercicio</h4>
+                <div class="card bg-warning p-3">
+                    <strong>{{ contenido.ejercicio|linebreaks }}</strong>
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Respuesta sugerida -->
+            {% if contenido.suggestedAnswer %}
+            <div class="section-respuesta mb-4">
+                <h4>📝 Respuesta sugerida</h4>
+                <div class="card bg-success text-white p-3">
+                    {{ contenido.suggestedAnswer|linebreaks }}
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Botones -->
+            <div class="mt-4">
+                <a href="{% url 'practicar_ejercicio' ejercicio.id %}" class="btn btn-primary btn-lg">
+                    🎯 Practicar
+                </a>
+                <a href="{% url 'dashboard_estudiante' %}" class="btn btn-secondary">
+                    ⬅ Volver al Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

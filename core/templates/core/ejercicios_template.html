@@ -1,0 +1,316 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Encabezado -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card bg-gradient-primary text-white shadow">
+                <div class="card-body py-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1 class="display-4 mb-2">
+                                <i class="fas fa-book-open"></i> Biblioteca de Ejercicios
+                            </h1>
+                            <p class="lead mb-0">
+                                <span class="badge bg-light text-dark me-2">{{ total_ejercicios }}</span> ejercicios disponibles
+                                en <span class="badge bg-light text-dark">{{ total_categorias }}</span> categorías
+                            </p>
+                        </div>
+                        <div>
+                            <a href="{% url 'dashboard_estudiante' %}" class="btn btn-light btn-lg">
+                                <i class="fas fa-arrow-left"></i> Volver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de búsqueda y filtros -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form method="get" class="row g-3" id="filtroForm">
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                <input type="text" class="form-control" id="busqueda" 
+                                       placeholder="Buscar ejercicios..." name="q">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select" id="filtroCategoria" name="categoria">
+                                <option value="">Todas las categorías</option>
+                                {% for categoria in categorias %}
+                                    <option value="{{ categoria.nombre }}">{{ categoria.nombre }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-select" id="filtroNivel" name="nivel">
+                                <option value="">Todos los niveles</option>
+                                <option value="1">Nivel 1</option>
+                                <option value="2">Nivel 2</option>
+                                <option value="3">Nivel 3</option>
+                                <option value="4">Nivel 4</option>
+                                <option value="5">Nivel 5</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-filter"></i> Filtrar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Estadísticas rápidas -->
+    <div class="row mb-4">
+        <div class="col-md-3 col-6">
+            <div class="card bg-info text-white shadow-sm">
+                <div class="card-body text-center">
+                    <h3>{{ total_ejercicios }}</h3>
+                    <p class="mb-0">Ejercicios totales</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="card bg-success text-white shadow-sm">
+                <div class="card-body text-center">
+                    <h3>{{ total_categorias }}</h3>
+                    <p class="mb-0">Categorías</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="card bg-warning text-dark shadow-sm">
+                <div class="card-body text-center">
+                    <h3>10</h3>
+                    <p class="mb-0">Puntos promedio</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="card bg-danger text-white shadow-sm">
+                <div class="card-body text-center">
+                    <h3>100+</h3>
+                    <p class="mb-0">Temas cubiertos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ejercicios Destacados -->
+    {% if destacados %}
+    <div class="row mb-4">
+        <div class="col-12">
+            <h3 class="mb-3">
+                <i class="fas fa-star text-warning"></i> Ejercicios Destacados
+            </h3>
+        </div>
+        {% for ejercicio in destacados %}
+        <div class="col-md-4 col-lg-2 mb-3">
+            <div class="card h-100 shadow-sm hover-card">
+                <div class="card-body text-center p-2">
+                    <span class="badge bg-primary">{{ ejercicio.categoria|default:"General"|truncatechars:15 }}</span>
+                    <h6 class="card-title mt-2">{{ ejercicio.titulo|truncatechars:20 }}</h6>
+                    <span class="badge bg-info">Nivel {{ ejercicio.nivel|default:"1" }}</span>
+                    <span class="badge bg-success">{{ ejercicio.puntos|default:"10" }} pts</span>
+                    <a href="{% url 'practicar_ejercicio' ejercicio.id %}" 
+                       class="btn btn-outline-primary btn-sm mt-2 w-100">
+                        Practicar
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Ejercicios por Categoría -->
+    <div class="row">
+        <div class="col-12">
+            <h3 class="mb-3">
+                <i class="fas fa-folder-open text-primary"></i> Explorar por Categoría
+            </h3>
+        </div>
+        
+        {% for categoria in categorias %}
+        <div class="col-12 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-tag text-primary"></i> {{ categoria.nombre }}
+                        <span class="badge bg-secondary ms-2">{{ categoria.total }}</span>
+                    </h5>
+                    <button class="btn btn-sm btn-outline-primary" 
+                            onclick="toggleCategoria('{{ categoria.nombre|slugify }}')">
+                        <i class="fas fa-chevron-down" id="icon-{{ categoria.nombre|slugify }}"></i>
+                    </button>
+                </div>
+                <div class="card-body" id="categoria-{{ categoria.nombre|slugify }}">
+                    <div class="row">
+                        {% for ejercicio in categoria.ejercicios|slice:":6" %}
+                        <div class="col-md-4 col-lg-2 mb-3">
+                            <div class="card h-100 shadow-sm ejercicio-card">
+                                <div class="card-body p-2 text-center">
+                                    <span class="badge bg-secondary">{{ ejercicio.tipo|default:"General" }}</span>
+                                    <h6 class="card-title mt-1 small">{{ ejercicio.titulo|truncatechars:20 }}</h6>
+                                    <div class="d-flex justify-content-center gap-1 mb-2">
+                                        <span class="badge bg-info">N{{ ejercicio.nivel|default:"1" }}</span>
+                                        <span class="badge bg-success">{{ ejercicio.puntos|default:"10" }}</span>
+                                    </div>
+                                    <a href="{% url 'practicar_ejercicio' ejercicio.id %}" 
+                                       class="btn btn-primary btn-sm w-100">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% if categoria.total > 6 %}
+                    <div class="text-center mt-2">
+                        <button class="btn btn-sm btn-outline-primary" 
+                                onclick="verMas('{{ categoria.nombre|slugify }}')">
+                            Ver más ({{ categoria.total|add:"-6" }})
+                        </button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle fa-3x"></i>
+                <h4 class="mt-2">No hay ejercicios disponibles</h4>
+                <p>Los ejercicios se cargarán automáticamente cuando estén disponibles.</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .hover-card {
+        transition: all 0.3s ease;
+    }
+    .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+    }
+    .ejercicio-card {
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+    .ejercicio-card:hover {
+        border-color: #667eea;
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    }
+    .badge {
+        font-size: 0.7rem;
+    }
+    .card-title {
+        font-size: 0.85rem;
+    }
+    .gap-1 {
+        gap: 0.25rem;
+    }
+    
+    @media (max-width: 768px) {
+        .display-4 {
+            font-size: 2rem;
+        }
+        .col-md-4.col-lg-2 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+</style>
+
+<script>
+// Función para colapsar/expandir categorías
+function toggleCategoria(categoriaId) {
+    const container = document.getElementById('categoria-' + categoriaId);
+    const icon = document.getElementById('icon-' + categoriaId);
+    
+    if (container.style.display === 'none') {
+        container.style.display = 'block';
+        icon.className = 'fas fa-chevron-down';
+    } else {
+        container.style.display = 'none';
+        icon.className = 'fas fa-chevron-right';
+    }
+}
+
+// Función para ver más ejercicios
+function verMas(categoriaId) {
+    alert('Cargando más ejercicios de esta categoría...');
+    // Aquí se podría implementar una carga AJAX
+}
+
+// Filtro de búsqueda dinámico
+document.getElementById('busqueda').addEventListener('keyup', function() {
+    const busqueda = this.value.toLowerCase();
+    const cards = document.querySelectorAll('.ejercicio-card');
+    
+    cards.forEach(card => {
+        const titulo = card.querySelector('.card-title')?.textContent?.toLowerCase() || '';
+        const badges = card.querySelectorAll('.badge');
+        let texto = titulo;
+        badges.forEach(b => texto += ' ' + b.textContent);
+        
+        if (texto.includes(busqueda)) {
+            card.closest('.col-md-4')?.style.display = '';
+        } else {
+            card.closest('.col-md-4')?.style.display = 'none';
+        }
+    });
+});
+
+// Filtrar por categoría
+document.getElementById('filtroCategoria').addEventListener('change', function() {
+    const categoria = this.value;
+    const cards = document.querySelectorAll('.ejercicio-card');
+    
+    cards.forEach(card => {
+        const badge = card.querySelector('.badge.bg-primary');
+        const catTexto = badge?.textContent || '';
+        
+        if (!categoria || catTexto.includes(categoria)) {
+            card.closest('.col-md-4')?.style.display = '';
+        } else {
+            card.closest('.col-md-4')?.style.display = 'none';
+        }
+    });
+});
+
+// Filtrar por nivel
+document.getElementById('filtroNivel').addEventListener('change', function() {
+    const nivel = this.value;
+    const cards = document.querySelectorAll('.ejercicio-card');
+    
+    cards.forEach(card => {
+        const badge = card.querySelector('.badge.bg-info');
+        const nivelTexto = badge?.textContent?.replace('N', '') || '';
+        
+        if (!nivel || nivelTexto === nivel) {
+            card.closest('.col-md-4')?.style.display = '';
+        } else {
+            card.closest('.col-md-4')?.style.display = 'none';
+        }
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow">
+                <div class="card-header bg-gradient-primary text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">
+                            <i class="fas fa-pencil-alt"></i> {{ ejercicio.titulo }}
+                        </h4>
+                        <div>
+                            <span class="badge bg-light text-dark">{{ ejercicio.categoria|default:"General" }}</span>
+                            <span class="badge bg-info">Nivel {{ ejercicio.nivel|default:1 }}</span>
+                            <span class="badge bg-warning text-dark">{{ ejercicio.puntos|default:10 }} pts</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    <!-- Teoría -->
+                    {% if contenido.teoria %}
+                    <div class="alert alert-info">
+                        <h5><i class="fas fa-book-open"></i> Teoría</h5>
+                        <p>{{ contenido.teoria|linebreaks }}</p>
+                    </div>
+                    {% endif %}
+
+                    <!-- Ejemplo -->
+                    {% if contenido.ejemplo %}
+                    <div class="alert alert-secondary">
+                        <h5><i class="fas fa-lightbulb"></i> Ejemplo</h5>
+                        <p>{{ contenido.ejemplo|linebreaks }}</p>
+                    </div>
+                    {% endif %}
+
+                    <!-- Ejercicio -->
+                    <div class="alert alert-warning">
+                        <h5><i class="fas fa-question-circle"></i> Ejercicio</h5>
+                        <p class="mb-0">{{ contenido.ejercicio|default:"Completa el ejercicio"|linebreaks }}</p>
+                    </div>
+
+                    <!-- Respuesta sugerida (Pista) -->
+                    {% if contenido.suggestedAnswer %}
+                    <div class="alert alert-success">
+                        <h5><i class="fas fa-lightbulb"></i> Pista</h5>
+                        <p>{{ contenido.suggestedAnswer|linebreaks }}</p>
+                    </div>
+                    {% endif %}
+
+                    <!-- Formulario de respuesta -->
+                    <form method="post" action="{% url 'enviar_respuesta' ejercicio.id %}" class="mt-4">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="respuesta" class="form-label">
+                                <h5><i class="fas fa-pen"></i> Tu respuesta:</h5>
+                            </label>
+                            <textarea class="form-control" id="respuesta" name="respuesta" rows="4" 
+                                      placeholder="Escribe tu respuesta aquí..."></textarea>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-paper-plane"></i> Enviar respuesta
+                            </button>
+                            <a href="{% url 'ejercicios_biblioteca' %}" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Volver
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .gap-2 {
+        gap: 0.5rem;
+    }
+    .badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+</style>
+{% endblock %}

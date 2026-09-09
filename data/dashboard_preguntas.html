@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard de Preguntas - Rhetorica Plus</title>
+    <style>
+        body { font-family: Arial; margin: 20px; background: #f5f5f5; }
+        .card { background: white; padding: 20px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .tipo { display: inline-block; padding: 4px 12px; border-radius: 4px; color: white; font-size: 12px; }
+        .correccion { background: #e74c3c; }
+        .completar { background: #3498db; }
+        .reescribir { background: #2ecc71; }
+        .elegir { background: #f39c12; }
+        .explicar { background: #9b59b6; }
+        .verdadero_falso { background: #1abc9c; }
+        .relacionar { background: #e67e22; }
+        .ordenar { background: #34495e; }
+        .multiple_choice { background: #16a085; }
+        .desarrollo { background: #c0392b; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .stats { display: flex; gap: 10px; flex-wrap: wrap; }
+        .stat-item { background: white; padding: 10px 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <h1>📚 Dashboard de Preguntas - Rhetorica Plus</h1>
+    
+    <div id="stats" class="stats"></div>
+    <div id="preguntas" class="grid"></div>
+
+    <script>
+        // Cargar el archivo JSON generado
+        fetch('preguntas_generadas_20260909_132309.json')
+            .then(response => response.json())
+            .then(data => {
+                // Mostrar estadísticas
+                const statsDiv = document.getElementById('stats');
+                statsDiv.innerHTML = `
+                    <div class="stat-item">📊 Total: ${data.total}</div>
+                    ${Object.entries(data.estadisticas).map(([tipo, count]) => 
+                        `<div class="stat-item"><span class="tipo ${tipo}">${tipo}</span> ${count}</div>`
+                    ).join('')}
+                `;
+
+                // Mostrar preguntas
+                const preguntasDiv = document.getElementById('preguntas');
+                preguntasDiv.innerHTML = data.preguntas.map(p => `
+                    <div class="card">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <h3>${p.titulo}</h3>
+                            <span class="tipo ${p.tipo}">${p.tipo}</span>
+                        </div>
+                        <p><strong>Enunciado:</strong> ${p.enunciado}</p>
+                        <p><strong>Respuesta:</strong> ${p.respuesta_correcta}</p>
+                        <p><small>Dificultad: ${p.dificultad} | Puntos: ${p.puntos}</small></p>
+                    </div>
+                `).join('');
+            });
+    </script>
+</body>
+</html>

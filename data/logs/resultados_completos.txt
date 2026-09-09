@@ -1,0 +1,204 @@
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/utils/deprecation.py", line 440, in __call__
+    response = self.process_request(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/http/request.py", line 210, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/utils/deprecation.py", line 440, in __call__
+    response = self.process_request(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/http/request.py", line 210, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/utils/deprecation.py", line 440, in __call__
+    response = self.process_request(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/http/request.py", line 210, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/utils/deprecation.py", line 440, in __call__
+    response = self.process_request(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/http/request.py", line 210, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/utils/deprecation.py", line 440, in __call__
+    response = self.process_request(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/http/request.py", line 210, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/utils/deprecation.py", line 440, in __call__
+    response = self.process_request(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/http/request.py", line 210, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/utils/deprecation.py", line 440, in __call__
+    response = self.process_request(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/http/request.py", line 210, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/utils/deprecation.py", line 440, in __call__
+    response = self.process_request(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/http/request.py", line 210, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/utils/deprecation.py", line 440, in __call__
+    response = self.process_request(request)
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/workspaces/django-rhetorica-plus/venv/lib/python3.14/site-packages/django/http/request.py", line 210, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+
+[1m[94m🚀 INICIANDO PRUEBAS DE DJANGO RHETORICA PLUS[0m
+[96m============================================================[0m
+
+[96m============================================================[0m
+[1mPRUEBA 1: CONEXIÓN A LA BASE DE DATOS[0m
+[96m============================================================[0m
+[92m✅ PASÓ[0m - [1mConexión a base de datos[0m
+   ✅ Resultado: 1
+
+[96m============================================================[0m
+[1mPRUEBA 2: VERIFICAR MODELOS[0m
+[96m============================================================[0m
+[92m✅ PASÓ[0m - [1mModelo EjercicioLinguistico[0m
+   ✅ 1400 registros
+[92m✅ PASÓ[0m - [1mModelo TecnicaLinguistica[0m
+   ✅ 1 registros
+[92m✅ PASÓ[0m - [1mModelo ContenidoJSON[0m
+   ✅ 14 registros
+[92m✅ PASÓ[0m - [1mModelo Evaluacion[0m
+   ✅ 0 registros
+[92m✅ PASÓ[0m - [1mModelo Logro[0m
+   ✅ 0 registros
+[92m✅ PASÓ[0m - [1mModelo Respuesta[0m
+   ✅ 0 registros
+[92m✅ PASÓ[0m - [1mModelo ProgresoCategoria[0m
+   ✅ 0 registros
+[92m✅ PASÓ[0m - [1mModelo ResultadoEvaluacion[0m
+   ✅ 0 registros
+[92m✅ PASÓ[0m - [1mModelo LogroObtenido[0m
+   ✅ 0 registros
+[92m✅ PASÓ[0m - [1mModelo Certificacion[0m
+   ✅ 0 registros
+[92m✅ PASÓ[0m - [1mModelo CertificacionObtenida[0m
+   ✅ 0 registros
+
+[96m============================================================[0m
+[1mPRUEBA 3: CREAR USUARIO[0m
+[96m============================================================[0m
+[92m✅ PASÓ[0m - [1mCrear usuario[0m
+   ✅ Usuario: testuser (ID: 2)
+
+[96m============================================================[0m
+[1mPRUEBA 4: LOGIN DE USUARIO[0m
+[96m============================================================[0m
+[91m❌ FALLÓ[0m - [1mLogin de usuario[0m
+   ❌ Login falló (status: 400)
+
+[96m============================================================[0m
+[1mPRUEBA 5: VERIFICAR URLs[0m
+[96m============================================================[0m
+[92m✅ PASÓ[0m - [1mURL /[0m
+   ✅ 400
+[92m✅ PASÓ[0m - [1mURL /login/[0m
+   ✅ 400
+[92m✅ PASÓ[0m - [1mURL /registro/[0m
+   ✅ 400
+[92m✅ PASÓ[0m - [1mURL /dashboard/[0m
+   ✅ 400
+[92m✅ PASÓ[0m - [1mURL /admin/[0m
+   ✅ 400
+
+[96m============================================================[0m
+[1mPRUEBA 6: CREAR DATOS DE PRUEBA[0m
+[96m============================================================[0m
+[92m✅ PASÓ[0m - [1mCrear técnica[0m
+   ✅ Técnica de Prueba (ID: 2)
+[91m❌ FALLÓ[0m - [1mCrear ejercicio[0m
+   ❌ Error: EjercicioLinguistico() got unexpected keyword argu
+
+[96m============================================================[0m
+[1mPRUEBA 7: ENDPOINTS DE API[0m
+[96m============================================================[0m
+[91m❌ FALLÓ[0m - [1mAPI /api/ejercicios/[0m
+   ❌ 400
+[91m❌ FALLÓ[0m - [1mAPI /api/tecnicas/[0m
+   ❌ 400
+[91m❌ FALLÓ[0m - [1mAPI /api/contenidos/[0m
+   ❌ 400
+
+[96m============================================================[0m
+[1mPRUEBA 8: TEMPLATES[0m
+[96m============================================================[0m
+[92m✅ PASÓ[0m - [1mTemplate core/index.html[0m
+   ✅ Encontrado
+[92m✅ PASÓ[0m - [1mTemplate core/login.html[0m
+   ✅ Encontrado
+[92m✅ PASÓ[0m - [1mTemplate core/registro.html[0m
+   ✅ Encontrado
+[92m✅ PASÓ[0m - [1mTemplate core/dashboard_estudiante.html[0m
+   ✅ Encontrado
+
+[96m============================================================[0m
+[1mRESUMEN FINAL[0m
+[96m============================================================[0m
+✅ Pruebas exitosas: [92m23[0m
+❌ Pruebas fallidas: [91m5[0m
+📊 Total: 28 pruebas
+
+[91m[1m⚠️ Algunas pruebas fallaron. Revisa los errores.[0m
+
+[1m📋 RECOMENDACIONES:[0m
+- Inicia el servidor: python manage.py runserver
+- Accede a: http://localhost:8000/login/
+- Usa testuser / TestPassword123! para probar

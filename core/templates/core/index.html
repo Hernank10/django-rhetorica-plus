@@ -1,291 +1,46 @@
-{% extends 'core/base.html' %}
-{% load static %}
-
-{% block title %}Rhetorica+ - Aprende 100 técnicas retóricas y 100 raíces grecolatinas{% endblock %}
-
-{% block extra_css %}
-<style>
-    .hero-section {
-        background: linear-gradient(135deg, #1e2a3a 0%, #2c3e50 100%);
-        color: white;
-        padding: 80px 0;
-        border-radius: 0 0 50px 50px;
-        margin-bottom: 40px;
-    }
-    .hero-section h1 {
-        font-size: 3.5rem;
-        font-weight: bold;
-        color: var(--gold);
-    }
-    .hero-section .subtitle {
-        font-size: 1.3rem;
-        opacity: 0.9;
-    }
-    .feature-card {
-        background: white;
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-        height: 100%;
-        border: 2px solid transparent;
-    }
-    .feature-card:hover {
-        transform: translateY(-10px);
-        border-color: var(--gold);
-        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
-    }
-    .feature-card .icon {
-        font-size: 3rem;
-        color: var(--gold);
-        margin-bottom: 15px;
-    }
-    .feature-card h3 {
-        color: var(--primary);
-        font-weight: bold;
-    }
-    .feature-card .badge-feature {
-        background: var(--gold);
-        color: var(--primary);
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: bold;
-    }
-    .stats-section {
-        background: #f8f5f0;
-        padding: 40px 0;
-        border-radius: 20px;
-        margin: 40px 0;
-    }
-    .stat-number {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: var(--gold);
-    }
-    .cta-section {
-        background: linear-gradient(135deg, var(--gold), #c5a030);
-        color: var(--primary);
-        padding: 50px 0;
-        border-radius: 20px;
-        margin: 40px 0;
-    }
-    .cta-section h2 {
-        font-weight: bold;
-    }
-    .btn-cta {
-        background: var(--primary);
-        color: white;
-        padding: 12px 35px;
-        border-radius: 30px;
-        font-weight: bold;
-        transition: all 0.3s;
-        text-decoration: none;
-        display: inline-block;
-    }
-    .btn-cta:hover {
-        transform: scale(1.05);
-        background: #2c3e50;
-        color: var(--gold);
-    }
-    .btn-outline-cta {
-        background: transparent;
-        color: var(--primary);
-        border: 2px solid var(--primary);
-        padding: 12px 35px;
-        border-radius: 30px;
-        font-weight: bold;
-        transition: all 0.3s;
-        text-decoration: none;
-        display: inline-block;
-    }
-    .btn-outline-cta:hover {
-        background: var(--primary);
-        color: white;
-        transform: scale(1.05);
-    }
-    .nav-links {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-    }
-    .nav-links a {
-        color: white;
-        text-decoration: none;
-        transition: color 0.3s;
-        font-weight: 500;
-    }
-    .nav-links a:hover {
-        color: var(--gold);
-    }
-    .nav-links .btn-nav {
-        background: var(--gold);
-        color: var(--primary);
-        padding: 8px 20px;
-        border-radius: 25px;
-        font-weight: bold;
-        transition: all 0.3s;
-    }
-    .nav-links .btn-nav:hover {
-        background: #c5a030;
-        color: white;
-        transform: scale(1.05);
-    }
-    @media (max-width: 768px) {
-        .hero-section h1 {
-            font-size: 2.2rem;
-        }
-        .hero-section {
-            padding: 40px 0;
-        }
-        .feature-card {
-            margin-bottom: 20px;
-        }
-        .nav-links {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-    }
-</style>
-{% endblock %}
+{% extends 'base.html' %}
 
 {% block content %}
-<!-- Hero Section -->
-<div class="hero-section text-center">
-    <div class="container">
-        <h1 class="display-3 mb-3">📚 Rhetorica+</h1>
-        <p class="subtitle fs-4 mb-4">
-            Aprende <strong>100 técnicas retóricas</strong> y <strong>100 raíces grecolatinas</strong><br>
-            con ejercicios interactivos y lector de voz.
-        </p>
-        <div class="nav-links justify-content-center">
-            <a href="{% url 'core:login' %}" class="btn-nav">
-                <i class="fas fa-sign-in-alt me-1"></i> Login
-            </a>
-            <a href="{% url 'core:registro' %}" class="btn-nav">
-                <i class="fas fa-user-plus me-1"></i> Registro
-            </a>
-            <a href="#" class="text-white-50">
-                <i class="fas fa-info-circle me-1"></i> Proyecto
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Features -->
-<div class="container">
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="feature-card text-center">
-                <div class="icon">🎯</div>
-                <span class="badge-feature">100 técnicas</span>
-                <h3 class="mt-2">Técnicas Retóricas</h3>
-                <p class="text-muted">
-                    Teoría, ejemplos y ejercicios de redacción con retroalimentación para dominar el arte de la persuasión.
-                </p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="feature-card text-center">
-                <div class="icon">📜</div>
-                <span class="badge-feature">100 raíces</span>
-                <h3 class="mt-2">Raíces Grecolatinas</h3>
-                <p class="text-muted">
-                    Escritura original, ejemplos y autoevaluación para enriquecer tu vocabulario y comprensión lingüística.
-                </p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="feature-card text-center">
-                <div class="icon">📊</div>
-                <span class="badge-feature">Dashboard</span>
-                <h3 class="mt-2">Dashboard Personalizado</h3>
-                <p class="text-muted">
-                    Puntos, niveles, progreso por categorías y recomendaciones para seguir tu aprendizaje.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Stats Section -->
-<div class="container">
-    <div class="stats-section text-center">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="stat-number">{{ total_ejercicios }}</div>
-                <p class="text-muted">Ejercicios Disponibles</p>
-            </div>
-            <div class="col-md-4">
-                <div class="stat-number">{{ total_tecnicas }}</div>
-                <p class="text-muted">Técnicas Aprendidas</p>
-            </div>
-            <div class="col-md-4">
-                <div class="stat-number">{{ total_contenidos }}</div>
-                <p class="text-muted">Contenidos Educativos</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- CTA Section -->
-<div class="container">
-    <div class="cta-section text-center">
-        <div class="row align-items-center">
-            <div class="col-md-8">
-                <h2>🚀 ¡Comienza tu viaje retórico ahora!</h2>
-                <p class="mb-0">
-                    <i class="fas fa-volume-up me-2"></i>
-                    Lector de voz integrado · 100 técnicas retóricas · 100 raíces grecolatinas
-                </p>
-            </div>
-            <div class="col-md-4 mt-3 mt-md-0">
-                <a href="{% url 'core:registro' %}" class="btn-cta">
-                    <i class="fas fa-rocket me-2"></i> Empezar
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Ejercicios Recientes -->
-{% if ejercicios_recientes %}
-<div class="container mb-5">
-    <h3 class="mb-3" style="color: var(--primary);">
-        <i class="fas fa-clock me-2" style="color: var(--gold);"></i>
-        Ejercicios Recientes
-    </h3>
-    <div class="row g-3">
-        {% for ejercicio in ejercicios_recientes|slice:":3" %}
-        <div class="col-md-4">
-            <div class="card p-3">
-                <h6 class="card-title">{{ ejercicio.titulo|truncatechars:60 }}</h6>
-                <p class="card-text small text-muted">
-                    <i class="fas fa-tag me-1"></i> {{ ejercicio.categoria|default:"General" }}
-                    <span class="badge bg-warning text-dark ms-2">
-                        <i class="fas fa-star me-1"></i> {{ ejercicio.puntos|default:10 }} pts
-                    </span>
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <small class="text-muted">
-                        <i class="fas fa-level-up-alt me-1"></i> Nivel {{ ejercicio.nivel|default:1 }}
-                    </small>
-                    <a href="{% url 'core:practicar_ejercicio' ejercicio.id %}" class="btn btn-gold btn-sm">
-                        <i class="fas fa-play me-1"></i> Practicar
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <h1 class="display-3 mb-4">
+                <i class="fas fa-feather-alt text-primary"></i>
+                Rhetorica+
+            </h1>
+            <p class="lead mb-4">
+                Aprende y practica retórica con ejercicios interactivos y cursos diseñados para mejorar tus habilidades comunicativas.
+            </p>
+            
+            {% if user.is_authenticated %}
+                <div class="row mt-4">
+                    <div class="col-md-4 mb-3">
+                        <a href="{% url 'dashboard_estudiante' %}" class="btn btn-primary btn-lg w-100">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="{% url 'ejercicios_biblioteca' %}" class="btn btn-success btn-lg w-100">
+                            <i class="fas fa-book-open"></i> Ejercicios
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="{% url 'lista_cursos' %}" class="btn btn-warning btn-lg w-100">
+                            <i class="fas fa-graduation-cap"></i> Cursos
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="mt-4">
+                    <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-2">
+                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                    </a>
+                    <a href="{% url 'registro' %}" class="btn btn-success btn-lg">
+                        <i class="fas fa-user-plus"></i> Registrarse
                     </a>
                 </div>
-            </div>
+            {% endif %}
         </div>
-        {% endfor %}
     </div>
-</div>
-{% endif %}
-
-<!-- Footer extra -->
-<div class="container text-center py-3">
-    <p class="text-muted small">
-        <i class="fas fa-scroll me-1" style="color: var(--gold);"></i>
-        Rhetorica+ - Plataforma de aprendizaje de retórica y lingüística
-    </p>
 </div>
 {% endblock %}

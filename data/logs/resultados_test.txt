@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspaces/django-rhetorica-plus/test_app_corregido.py", line 22, in <module>
+    from core.models import Ejercicio, Tecnica, Contenido, Evaluacion, Logro, Perfil, Gamificacion
+ImportError: cannot import name 'Ejercicio' from 'core.models' (/workspaces/django-rhetorica-plus/core/models.py)

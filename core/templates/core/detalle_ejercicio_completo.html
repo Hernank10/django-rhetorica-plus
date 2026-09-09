@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-gradient-primary text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="mb-0">
+                    <i class="fas fa-pencil-alt"></i> {{ ejercicio.titulo }}
+                </h2>
+                <div>
+                    <span class="badge badge-light badge-pill px-3 py-2">
+                        <i class="fas fa-tag"></i> {{ ejercicio.categoria }}
+                    </span>
+                    <span class="badge badge-info badge-pill px-3 py-2">
+                        <i class="fas fa-signal"></i> Nivel {{ ejercicio.nivel }}
+                    </span>
+                    <span class="badge badge-success badge-pill px-3 py-2">
+                        <i class="fas fa-star"></i> {{ ejercicio.puntos }} pts
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card-body">
+            <!-- Mostrar contenido del ejercicio -->
+            {% if contenido %}
+                <!-- Teoría -->
+                {% if contenido.teoria %}
+                <div class="section-teoria mb-4">
+                    <h4 class="text-primary">
+                        <i class="fas fa-book-open"></i> Teoría
+                    </h4>
+                    <div class="card bg-light p-4 border-left-primary">
+                        <p class="mb-0">{{ contenido.teoria|linebreaks }}</p>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Ejemplo -->
+                {% if contenido.ejemplo %}
+                <div class="section-ejemplo mb-4">
+                    <h4 class="text-info">
+                        <i class="fas fa-lightbulb"></i> Ejemplo
+                    </h4>
+                    <div class="card bg-info text-white p-4">
+                        <p class="mb-0">{{ contenido.ejemplo|linebreaks }}</p>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Ejercicio -->
+                {% if contenido.ejercicio %}
+                <div class="section-ejercicio mb-4">
+                    <h4 class="text-warning">
+                        <i class="fas fa-question-circle"></i> Ejercicio
+                    </h4>
+                    <div class="card bg-warning p-4">
+                        <p class="mb-0 font-weight-bold">{{ contenido.ejercicio|linebreaks }}</p>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Respuesta Sugerida -->
+                {% if contenido.suggestedAnswer %}
+                <div class="section-respuesta mb-4">
+                    <h4 class="text-success">
+                        <i class="fas fa-check-circle"></i> Respuesta Sugerida
+                    </h4>
+                    <div class="card bg-success text-white p-4">
+                        <p class="mb-0">{{ contenido.suggestedAnswer|linebreaks }}</p>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Categoría adicional -->
+                {% if contenido.category %}
+                <div class="mt-3">
+                    <span class="badge badge-secondary badge-pill px-3 py-2">
+                        <i class="fas fa-folder"></i> {{ contenido.category }}
+                    </span>
+                    {% if contenido.name %}
+                    <span class="badge badge-secondary badge-pill px-3 py-2 ml-2">
+                        <i class="fas fa-tag"></i> {{ contenido.name }}
+                    </span>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+            {% else %}
+                <!-- Si no hay contenido estructurado -->
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle"></i> No hay contenido disponible para este ejercicio.
+                </div>
+            {% endif %}
+
+            <!-- Botones de acción -->
+            <div class="mt-4 d-flex gap-2">
+                <a href="{% url 'practicar_ejercicio' ejercicio.id %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-play"></i> Practicar
+                </a>
+                <a href="{% url 'dashboard_estudiante' %}" class="btn btn-secondary btn-lg">
+                    <i class="fas fa-arrow-left"></i> Volver al Dashboard
+                </a>
+                <button class="btn btn-outline-info btn-lg" onclick="window.print()">
+                    <i class="fas fa-print"></i> Imprimir
+                </button>
+            </div>
+        </div>
+
+        <div class="card-footer text-muted">
+            <small>
+                <i class="fas fa-info-circle"></i> ID: {{ ejercicio.id }} | 
+                <i class="fas fa-calendar-alt"></i> Creado: {{ ejercicio.created_at|default:"N/A" }}
+            </small>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .border-left-primary {
+        border-left: 4px solid #667eea !important;
+    }
+    .gap-2 {
+        gap: 0.5rem;
+    }
+    .badge-pill {
+        border-radius: 50rem;
+    }
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+    }
+    @media print {
+        .btn, .gap-2, .card-footer {
+            display: none !important;
+        }
+        .card-header {
+            background-color: #333 !important;
+            color: white !important;
+        }
+        .card {
+            border: 1px solid #ddd !important;
+        }
+    }
+</style>
+{% endblock %}

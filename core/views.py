@@ -1717,3 +1717,205 @@ def verificar_logros(user):
                 user.estrellas += 1
             
             user.save()
+
+def ver_tecnicas(request):
+    """Vista para mostrar técnicas"""
+    from .models import TecnicaLinguistica
+    tecnicas = TecnicaLinguistica.objects.all()
+    return render(request, 'core/tecnicas.html', {'tecnicas': tecnicas})
+
+def practicar_ejercicio(request, ejercicio_id):
+    """Vista para practicar un ejercicio específico"""
+    from django.shortcuts import get_object_or_404, render
+    from .models import EjercicioLinguistico
+    
+    ejercicio = get_object_or_404(EjercicioLinguistico, id=ejercicio_id)
+    
+    # Procesar contenido
+    contenido = ejercicio.contenido if isinstance(ejercicio.contenido, dict) else {}
+    
+    context = {
+        'ejercicio': ejercicio,
+        'contenido': contenido,
+    }
+    
+    return render(request, 'core/practicar_ejercicio.html', context)
+
+def dashboard_estudiante(request):
+    """Dashboard del estudiante con ejercicios y técnicas"""
+    from django.shortcuts import render
+    from .models import EjercicioLinguistico, TecnicaLinguistica
+    
+    # Obtener ejercicios y técnicas
+    ejercicios = EjercicioLinguistico.objects.all().order_by('?')[:12]  # 12 aleatorios
+    tecnicas = TecnicaLinguistica.objects.all()
+    
+    context = {
+        'ejercicios': ejercicios,
+        'ejercicios_count': EjercicioLinguistico.objects.count(),
+        'tecnicas': tecnicas,
+        'tecnicas_count': tecnicas.count(),
+        'puntos_total': 0,  # Aquí puedes calcular puntos reales
+        'certificaciones_count': 0,  # Aquí puedes contar certificaciones reales
+    }
+    
+    return render(request, 'core/dashboard_estudiante.html', context)
+
+# ============================================================
+# VISTAS DE AUTENTICACIÓN
+# ============================================================
+
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+from django.contrib import messages
+
+def login_view(request):
+    """Vista de inicio de sesión"""
+    if request.user.is_authenticated:
+        return redirect('dashboard_estudiante')
+    
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
+            messages.success(request, f'✅ ¡Bienvenido {user.username}!')
+            return redirect('dashboard_estudiante')
+        else:
+            messages.error(request, '❌ Usuario o contraseña incorrectos')
+    
+    return render(request, 'core/login.html')
+
+def registro_view(request):
+    """Vista de registro de usuarios"""
+    if request.user.is_authenticated:
+        return redirect('dashboard_estudiante')
+    
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+        
+        # Validaciones
+        if password1 != password2:
+            messages.error(request, '❌ Las contraseñas no coinciden')
+            return render(request, 'core/registro.html')
+        
+        if len(password1) < 6:
+            messages.error(request, '❌ La contraseña debe tener al menos 6 caracteres')
+            return render(request, 'core/registro.html')
+        
+        if User.objects.filter(username=username).exists():
+            messages.error(request, '❌ El nombre de usuario ya existe')
+            return render(request, 'core/registro.html')
+        
+        if User.objects.filter(email=email).exists():
+            messages.error(request, '❌ El email ya está registrado')
+            return render(request, 'core/registro.html')
+        
+        # Crear usuario
+        try:
+            user = User.objects.create_user(
+                username=username,
+                email=email,
+                password=password1
+            )
+            messages.success(request, f'✅ ¡Usuario {username} creado exitosamente!')
+            return redirect('login')
+        except Exception as e:
+            messages.error(request, f'❌ Error al crear usuario: {str(e)}')
+    
+    return render(request, 'core/registro.html')
+
+def logout_view(request):
+    """Vista de cierre de sesión"""
+    logout(request)
+    messages.info(request, '👋 Sesión cerrada exitosamente')
+    return redirect('index')
+
+def perfil_usuario(request):
+    """Vista del perfil del usuario"""
+    if not request.user.is_authenticated:
+        return redirect('login')
+    
+    context = {
+        'user': request.user,
+    }
+    return render(request, 'core/perfil_usuario.html', context)
+
+def editar_perfil(request):
+    """Vista para editar perfil"""
+    if not request.user.is_authenticated:
+        return redirect('login')
+    
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        
+        user = request.user
+        user.email = email
+        user.first_name = first_name
+        user.last_name = last_name
+        user.save()
+        
+        messages.success(request, '✅ Perfil actualizado exitosamente')
+        return redirect('perfil_usuario')
+    
+    return render(request, 'core/editar_perfil.html', {'user': request.user})
+
+def cambiar_contrasena(request):
+    """Vista para cambiar contraseña"""
+    if not request.user.is_authenticated:
+        return redirect('login')
+    
+    if request.method == 'POST':
+        password_actual = request.POST.get('password_actual')
+        password_nueva = request.POST.get('password_nueva')
+        password_confirm = request.POST.get('password_confirm')
+        
+        user = request.user
+        
+        if not user.check_password(password_actual):
+            messages.error(request, '❌ Contraseña actual incorrecta')
+            return render(request, 'core/cambiar_contrasena.html')
+        
+        if password_nueva != password_confirm:
+            messages.error(request, '❌ Las nuevas contraseñas no coinciden')
+            return render(request, 'core/cambiar_contrasena.html')
+        
+        if len(password_nueva) < 6:
+            messages.error(request, '❌ La nueva contraseña debe tener al menos 6 caracteres')
+            return render(request, 'core/cambiar_contrasena.html')
+        
+        user.set_password(password_nueva)
+        user.save()
+        
+        messages.success(request, '✅ Contraseña actualizada exitosamente')
+        return redirect('login')
+    
+    return render(request, 'core/cambiar_contrasena.html')
+
+def enviar_respuesta(request, ejercicio_id):
+    """Vista para enviar una respuesta a un ejercicio"""
+    from django.shortcuts import get_object_or_404, redirect
+    from django.contrib import messages
+    from .models import EjercicioLinguistico
+    
+    if request.method != 'POST':
+        return redirect('practicar_ejercicio', ejercicio_id=ejercicio_id)
+    
+    ejercicio = get_object_or_404(EjercicioLinguistico, id=ejercicio_id)
+    respuesta = request.POST.get('respuesta', '').strip()
+    
+    if respuesta:
+        messages.success(request, f'✅ Respuesta enviada para: {ejercicio.titulo}')
+    else:
+        messages.warning(request, '⚠️ Por favor, escribe una respuesta')
+    
+    return redirect('practicar_ejercicio', ejercicio_id=ejercicio_id)

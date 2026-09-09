@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>
+            <i class="fas fa-database"></i> Ejercicios desde API
+            <span class="badge badge-primary badge-pill ml-2" id="total-ejercicios">0</span>
+        </h1>
+        <div>
+            <button class="btn btn-success" onclick="recargarDatos()">
+                <i class="fas fa-sync"></i> Recargar
+            </button>
+            <a href="{% url 'dashboard_estudiante' %}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
+        </div>
+    </div>
+
+    <!-- Cargando -->
+    <div id="cargando" class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+        <p class="mt-2">Cargando ejercicios desde la API...</p>
+    </div>
+
+    <!-- Grid de ejercicios -->
+    <div id="ejercicios-container" style="display:none;">
+        <div class="row" id="ejercicios-grid"></div>
+        
+        <!-- Paginación -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center" id="pagination"></ul>
+        </nav>
+    </div>
+
+    <!-- Error -->
+    <div id="error-container" style="display:none;" class="alert alert-danger text-center">
+        <i class="fas fa-exclamation-triangle fa-3x"></i>
+        <h4 class="mt-2">Error al cargar los ejercicios</h4>
+        <p id="error-mensaje">No se pudieron cargar los datos de la API.</p>
+        <button class="btn btn-primary" onclick="recargarDatos()">
+            <i class="fas fa-sync"></i> Intentar de nuevo
+        </button>
+    </div>
+</div>
+
+<script>
+let todosEjercicios = [];
+let paginaActual = 1;
+const itemsPorPagina = 9;
+
+function recargarDatos() {
+    document.getElementById('cargando').style.display = 'block';
+    document.getElementById('ejercicios-container').style.display = 'none';
+    document.getElementById('error-container').style.display = 'none';
+    
+    fetch('/api/ejercicios/')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            todosEjercicios = data;
+            document.getElementById('cargando').style.display = 'none';
+            document.getElementById('ejercicios-container').style.display = 'block';
+            
+            // Actualizar total
+            document.getElementById('total-ejercicios').textContent = todosEjercicios.length;
+            
+            // Mostrar primera página
+            mostrarPagina(1);
+        })
+        .catch(error => {
+            document.getElementById('cargando').style.display = 'none';
+            document.getElementById('error-container').style.display = 'block';
+            document.getElementById('error-mensaje').textContent = error.message;
+            console.error('Error:', error);
+        });
+}
+
+function mostrarPagina(pagina) {
+    paginaActual = pagina;
+    const inicio = (pagina - 1) * itemsPorPagina;
+    const fin = Math.min(inicio + itemsPorPagina, todosEjercicios.length);
+    const ejerciciosPagina = todosEjercicios.slice(inicio, fin);
+    
+    // Renderizar tarjetas
+    const grid = document.getElementById('ejercicios-grid');
+    grid.innerHTML = '';
+    
+    if (ejerciciosPagina.length === 0) {
+        grid.innerHTML = `
+            <div class="col-12">
+                <div class="alert alert-info text-center">
+                    <i class="fas fa-info-circle fa-3x"></i>
+                    <h4 class="mt-2">No hay ejercicios disponibles</h4>
+                </div>
+            </div>
+        `;
+        return;
+    }
+    
+    ejerciciosPagina.forEach(ejercicio => {
+        const contenido = ejercicio.contenido || {};
+        const card = document.createElement('div');
+        card.className = 'col-md-6 col-lg-4 mb-4';
+        card.innerHTML = `
+            <div class="card h-100 shadow-sm hover-card">
+                <div class="card-header bg-light">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge badge-primary">${ejercicio.categoria || 'Sin categoría'}</span>
+                        <span class="badge badge-info">Nivel ${ejercicio.nivel || 1}</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-pencil-alt text-primary"></i>
+                        ${ejercicio.titulo || 'Sin título'}
+                    </h5>
+                    
+                    ${ejercicio.tipo ? `<span class="badge badge-secondary">${ejercicio.tipo}</span>` : ''}
+                    
+                    <div class="mt-2">
+                        <span class="badge badge-success">
+                            <i class="fas fa-star"></i> ${ejercicio.puntos || 10} pts
+                        </span>
+                    </div>
+                    
+                    ${contenido.ejercicio ? `
+                        <p class="card-text text-muted small mt-2">
+                            ${contenido.ejercicio.length > 80 ? contenido.ejercicio.substring(0, 80) + '...' : contenido.ejercicio}
+                        </p>
+                    ` : ''}
+                </div>
+                <div class="card-footer bg-transparent">
+                    <div class="d-flex gap-1">
+                        <a href="/ejercicio/${ejercicio.id}/detalle/" class="btn btn-outline-primary btn-sm flex-grow-1">
+                            <i class="fas fa-eye"></i> Ver
+                        </a>
+                        <a href="/ejercicio/${ejercicio.id}/practicar/" class="btn btn-primary btn-sm flex-grow-1">
+                            <i class="fas fa-play"></i> Practicar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+    
+    // Actualizar paginación
+    actualizarPaginacion();
+}
+
+function actualizarPaginacion() {
+    const totalPaginas = Math.ceil(todosEjercicios.length / itemsPorPagina);
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+    
+    if (totalPaginas <= 1) {
+        pagination.innerHTML = '<li class="page-item disabled"><span class="page-link">Página 1</span></li>';
+        return;
+    }
+    
+    // Anterior
+    pagination.innerHTML += `
+        <li class="page-item ${paginaActual === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="cambiarPagina(${paginaActual - 1}); return false;">
+                &laquo; Anterior
+            </a>
+        </li>
+    `;
+    
+    // Números
+    for (let i = 1; i <= totalPaginas; i++) {
+        if (i === paginaActual || i === 1 || i === totalPaginas || Math.abs(i - paginaActual) <= 2) {
+            pagination.innerHTML += `
+                <li class="page-item ${i === paginaActual ? 'active' : ''}">
+                    <a class="page-link" href="#" onclick="cambiarPagina(${i}); return false;">
+                        ${i}
+                    </a>
+                </li>
+            `;
+        } else if (i === paginaActual - 3 || i === paginaActual + 3) {
+            pagination.innerHTML += `
+                <li class="page-item disabled"><span class="page-link">...</span></li>
+            `;
+        }
+    }
+    
+    // Siguiente
+    pagination.innerHTML += `
+        <li class="page-item ${paginaActual === totalPaginas ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="cambiarPagina(${paginaActual + 1}); return false;">
+                Siguiente &raquo;
+            </a>
+        </li>
+    `;
+}
+
+function cambiarPagina(pagina) {
+    const totalPaginas = Math.ceil(todosEjercicios.length / itemsPorPagina);
+    if (pagina < 1 || pagina > totalPaginas) return;
+    mostrarPagina(pagina);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Iniciar al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    recargarDatos();
+});
+</script>
+
+<style>
+    .hover-card {
+        transition: all 0.3s ease;
+    }
+    .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+    .gap-1 {
+        gap: 0.25rem;
+    }
+    .flex-grow-1 {
+        flex: 1;
+    }
+    .spinner-border {
+        width: 3rem;
+        height: 3rem;
+    }
+</style>
+{% endblock %}
