@@ -168,427 +168,87 @@ def dashboard_estudiante(request):
 
 @login_required
 def dashboard_gamificacion(request):
-    """Dashboard de gamificación con logros, medallas y certificaciones"""
-    user = request.user
+    """Dashboard de gamificación del usuario"""
+    from django.shortcuts import render, redirect
+    from django.contrib import messages
+    from django.contrib.auth.decorators import login_required
+    from .models import Logro, LogroObtenido, CertificacionObtenida, ProgresoCategoria
     
-    logros_disponibles = Logro.objects.all()
-    logros_obtenidos = LogroObtenido.objects.filter(user=user)
-    logros_obtenidos_ids = list(logros_obtenidos.values_list('logro_id', flat=True))
+    # ✅ Importar el modelo User correcto (el de core.models)
+    from .models import User as CoreUser
     
-    total_ejercicios = EjercicioLinguistico.objects.count()
-    total_completados = Respuesta.objects.filter(user=user).values('item_id').distinct().count()
+    if not request.user.is_authenticated:
+        messages.warning(request, '⚠️ Debes iniciar sesión para ver tu gamificación')
+        return redirect('login')
     
-    respuestas_correctas = Respuesta.objects.filter(user=user, es_correcta=True).count()
-    respuestas_totales = Respuesta.objects.filter(user=user).count()
-    tasa_aciertos = int((respuestas_correctas / respuestas_totales) * 100) if respuestas_totales > 0 else 0
+    # ✅ Obtener el usuario del modelo core.models.User
+    try:
+        usuario = CoreUser.objects.get(username=request.user.username)
+        print(f"✅ Usuario core: {usuario.username} (ID: {usuario.id})")
+    except CoreUser.DoesNotExist:
+        messages.error(request, '❌ Usuario no encontrado en core')
+        return redirect('login')
     
-    evaluaciones_disponibles = Evaluacion.objects.filter(
-        activa=True,
-        nivel_requerido__lte=user.nivel_experiencia
-    )[:5]
+    # ✅ Filtrar con el objeto usuario de core.models
+    logros_obtenidos = LogroObtenido.objects.filter(user=usuario)
+    certificaciones_obtenidas = CertificacionObtenida.objects.filter(user=usuario)
+    progreso = ProgresoCategoria.objects.filter(user=usuario)
     
-    ejercicios_completados_ids = Respuesta.objects.filter(
-        user=user
-    ).values_list('item_id', flat=True)
+    # Calcular puntos totales
+    puntos_totales = 0
+    for lo in logros_obtenidos:
+        if hasattr(lo, 'logro') and lo.logro:
+            puntos_totales += getattr(lo.logro, 'puntos_requeridos', 10)
     
-    actividades_recomendadas = EjercicioLinguistico.objects.exclude(
-        id__in=ejercicios_completados_ids
-    ).order_by('?')[:5]
+    # Lista de logros obtenidos
+    logros_lista = []
+    for lo in logros_obtenidos:
+        if hasattr(lo, 'logro') and lo.logro:
+            logros_lista.append({
+                'nombre': lo.logro.nombre,
+                'descripcion': getattr(lo.logro, 'descripcion', ''),
+                'icono': getattr(lo.logro, 'icono', '🏆'),
+                'fecha': getattr(lo, 'fecha_obtenida', None)
+            })
     
-    ranking_estudiantes = User.objects.filter(
-        is_staff=False
-    ).order_by('-points')[:10]
+    # Lista de certificaciones
+    certificaciones_lista = []
+    for co in certificaciones_obtenidas:
+        if hasattr(co, 'certificacion') and co.certificacion:
+            certificaciones_lista.append({
+                'nombre': co.certificacion.nombre,
+                'fecha': getattr(co, 'fecha_obtenida', None)
+            })
     
-    user_medallas = user.medallas if user.medallas else []
-    user_certificaciones = user.certificaciones if user.certificaciones else []
+    # Total de logros disponibles
+    total_logros = Logro.objects.count()
+    logros_count = logros_obtenidos.count()
+    
+    # Progreso
+    siguiente_nivel = (puntos_totales // 100 + 1) * 100 if puntos_totales > 0 else 100
+    progreso_porcentaje = int((puntos_totales % 100) / 100 * 100) if puntos_totales > 0 else 0
+    
+    # Actividad reciente
+    if logros_count > 0:
+        actividad = [f'🎯 Logro desbloqueado: {l["nombre"]}' for l in logros_lista[:3]]
+    else:
+        actividad = ['📝 Completa tu primer ejercicio para comenzar']
     
     context = {
-        'user': user,
-        'logros_disponibles': logros_disponibles,
+        'usuario': usuario,
         'logros_obtenidos': logros_obtenidos,
-        'logros_obtenidos_ids': logros_obtenidos_ids,
-        'total_ejercicios': total_ejercicios,
-        'total_completados': total_completados,
-        'tasa_aciertos': tasa_aciertos,
-        'evaluaciones_disponibles': evaluaciones_disponibles,
-        'actividades_recomendadas': actividades_recomendadas,
-        'ranking_estudiantes': ranking_estudiantes,
-        'user_medallas': user_medallas,
-        'user_certificaciones': user_certificaciones,
+        'logros': logros_lista,
+        'certificaciones': certificaciones_lista,
+        'puntos_total': puntos_totales,
+        'logros_count': logros_count,
+        'total_logros': total_logros,
+        'progreso': progreso_porcentaje,
+        'siguiente_nivel': siguiente_nivel,
+        'actividad': actividad,
+        'progreso_categorias': progreso,
     }
     
     return render(request, 'core/dashboard_gamificacion.html', context)
-
-# ==================== DASHBOARD DEL PROFESOR ====================
-
-@staff_member_required
-def dashboard_profesor(request):
-    """Dashboard principal del profesor con estadísticas y gestión"""
-    total_ejercicios = EjercicioLinguistico.objects.count()
-    total_tecnicas = TecnicaLinguistica.objects.count()
-    total_contenidos = ContenidoJSON.objects.count()
-    total_estudiantes = User.objects.filter(is_staff=False).count()
-    total_evaluaciones = Evaluacion.objects.count()
-    total_logros = Logro.objects.count()
-    
-    estudiantes_activos = User.objects.filter(
-        is_staff=False,
-        ultima_actividad__gte=timezone.now() - timedelta(days=7)
-    ).count()
-    
-    promedio_puntos = User.objects.filter(is_staff=False).aggregate(
-        avg_points=Avg('points')
-    )['avg_points'] or 0
-    
-    ejercicios_populares = EjercicioLinguistico.objects.annotate(
-        total_respuestas=Count('respuesta')
-    ).order_by('-total_respuestas')[:5]
-    
-    top_estudiantes = User.objects.filter(
-        is_staff=False
-    ).order_by('-points')[:5]
-    
-    evaluaciones_recientes = ResultadoEvaluacion.objects.filter(
-        completada=True
-    ).order_by('-fecha_completada')[:10]
-    
-    progreso_general = []
-    for categoria in EjercicioLinguistico.objects.values('categoria').distinct():
-        if categoria['categoria']:
-            total = EjercicioLinguistico.objects.filter(categoria=categoria['categoria']).count()
-            completados = Respuesta.objects.filter(
-                tipo_ejercicio=categoria['categoria'],
-                es_correcta=True
-            ).values('user', 'item_id').distinct().count()
-            
-            progreso_general.append({
-                'categoria': categoria['categoria'],
-                'total': total,
-                'completados': completados,
-                'porcentaje': int((completados / (total * total_estudiantes)) * 100) if total_estudiantes > 0 else 0
-            })
-    
-    context = {
-        'total_ejercicios': total_ejercicios,
-        'total_tecnicas': total_tecnicas,
-        'total_contenidos': total_contenidos,
-        'total_estudiantes': total_estudiantes,
-        'total_evaluaciones': total_evaluaciones,
-        'total_logros': total_logros,
-        'estudiantes_activos': estudiantes_activos,
-        'promedio_puntos': int(promedio_puntos),
-        'ejercicios_populares': ejercicios_populares,
-        'top_estudiantes': top_estudiantes,
-        'evaluaciones_recientes': evaluaciones_recientes,
-        'progreso_general': progreso_general[:8],
-        'ejercicios_recientes': EjercicioLinguistico.objects.all().order_by('-creado_en')[:10],
-        'contenidos_recientes': ContenidoJSON.objects.all().order_by('-creado_en')[:10],
-        'fecha_actual': timezone.now(),
-    }
-    return render(request, 'core/dashboard_profesor.html', context)
-
-# ==================== GESTIÓN DE EJERCICIOS (PROFESOR) ====================
-
-@staff_member_required
-def gestion_ejercicios(request):
-    """Lista de ejercicios para gestionar"""
-    ejercicios = EjercicioLinguistico.objects.all().order_by('-creado_en')
-    categorias = EjercicioLinguistico.objects.values_list('categoria', flat=True).distinct()
-    
-    context = {
-        'ejercicios': ejercicios,
-        'categorias': categorias,
-        'total': ejercicios.count(),
-    }
-    return render(request, 'core/profesor/gestion_ejercicios.html', context)
-
-@staff_member_required
-def crear_ejercicio(request):
-    """Crear un nuevo ejercicio"""
-    if request.method == 'POST':
-        titulo = request.POST.get('titulo')
-        categoria = request.POST.get('categoria')
-        tipo = request.POST.get('tipo')
-        nivel = int(request.POST.get('nivel', 1))
-        puntos = int(request.POST.get('puntos', 10))
-        contenido_json = request.POST.get('contenido_json', '{}')
-        
-        try:
-            contenido = json.loads(contenido_json)
-        except:
-            contenido = {}
-        
-        ejercicio = EjercicioLinguistico.objects.create(
-            titulo=titulo,
-            categoria=categoria,
-            tipo=tipo,
-            nivel=nivel,
-            puntos=puntos,
-            contenido=contenido
-        )
-        
-        messages.success(request, f'Ejercicio "{ejercicio.titulo}" creado exitosamente.')
-        return redirect('core:gestion_ejercicios')
-    
-    context = {
-        'categorias': EjercicioLinguistico.objects.values_list('categoria', flat=True).distinct(),
-        'tipos': ['Gramática', 'Retórica', 'Sintaxis', 'Semántica', 'Fonética', 'Ortografía', 'Literatura', 'General'],
-    }
-    return render(request, 'core/profesor/crear_ejercicio.html', context)
-
-@staff_member_required
-def editar_ejercicio(request, ejercicio_id):
-    """Editar un ejercicio existente"""
-    ejercicio = get_object_or_404(EjercicioLinguistico, id=ejercicio_id)
-    
-    if request.method == 'POST':
-        ejercicio.titulo = request.POST.get('titulo')
-        ejercicio.categoria = request.POST.get('categoria')
-        ejercicio.tipo = request.POST.get('tipo')
-        ejercicio.nivel = int(request.POST.get('nivel', 1))
-        ejercicio.puntos = int(request.POST.get('puntos', 10))
-        
-        contenido_json = request.POST.get('contenido_json', '{}')
-        try:
-            ejercicio.contenido = json.loads(contenido_json)
-        except:
-            ejercicio.contenido = {}
-        
-        ejercicio.save()
-        messages.success(request, f'Ejercicio "{ejercicio.titulo}" actualizado exitosamente.')
-        return redirect('core:gestion_ejercicios')
-    
-    context = {
-        'ejercicio': ejercicio,
-        'categorias': EjercicioLinguistico.objects.values_list('categoria', flat=True).distinct(),
-        'tipos': ['Gramática', 'Retórica', 'Sintaxis', 'Semántica', 'Fonética', 'Ortografía', 'Literatura', 'General'],
-        'contenido_json': json.dumps(ejercicio.contenido, ensure_ascii=False, indent=2)
-    }
-    return render(request, 'core/profesor/editar_ejercicio.html', context)
-
-@staff_member_required
-def eliminar_ejercicio(request, ejercicio_id):
-    """Eliminar un ejercicio"""
-    ejercicio = get_object_or_404(EjercicioLinguistico, id=ejercicio_id)
-    
-    if request.method == 'POST':
-        titulo = ejercicio.titulo
-        ejercicio.delete()
-        messages.success(request, f'Ejercicio "{titulo}" eliminado exitosamente.')
-        return redirect('core:gestion_ejercicios')
-    
-    context = {'ejercicio': ejercicio}
-    return render(request, 'core/profesor/eliminar_ejercicio.html', context)
-
-# ==================== GESTIÓN DE TÉCNICAS (PROFESOR) ====================
-
-@staff_member_required
-def gestion_tecnicas(request):
-    """Lista de técnicas para gestionar"""
-    tecnicas = TecnicaLinguistica.objects.all().order_by('-creado_en')
-    categorias = TecnicaLinguistica.objects.values_list('categoria', flat=True).distinct()
-    
-    context = {
-        'tecnicas': tecnicas,
-        'categorias': categorias,
-        'total': tecnicas.count(),
-    }
-    return render(request, 'core/profesor/gestion_tecnicas.html', context)
-
-@staff_member_required
-def crear_tecnica(request):
-    """Crear una nueva técnica"""
-    if request.method == 'POST':
-        nombre = request.POST.get('nombre')
-        descripcion = request.POST.get('descripcion')
-        categoria = request.POST.get('categoria')
-        nivel = int(request.POST.get('nivel', 1))
-        
-        tecnica = TecnicaLinguistica.objects.create(
-            nombre=nombre,
-            descripcion=descripcion,
-            categoria=categoria,
-            nivel=nivel
-        )
-        
-        messages.success(request, f'Técnica "{tecnica.nombre}" creada exitosamente.')
-        return redirect('core:gestion_tecnicas')
-    
-    context = {
-        'categorias': TecnicaLinguistica.objects.values_list('categoria', flat=True).distinct(),
-    }
-    return render(request, 'core/profesor/crear_tecnica.html', context)
-
-@staff_member_required
-def editar_tecnica(request, tecnica_id):
-    """Editar una técnica existente"""
-    tecnica = get_object_or_404(TecnicaLinguistica, id=tecnica_id)
-    
-    if request.method == 'POST':
-        tecnica.nombre = request.POST.get('nombre')
-        tecnica.descripcion = request.POST.get('descripcion')
-        tecnica.categoria = request.POST.get('categoria')
-        tecnica.nivel = int(request.POST.get('nivel', 1))
-        tecnica.save()
-        
-        messages.success(request, f'Técnica "{tecnica.nombre}" actualizada exitosamente.')
-        return redirect('core:gestion_tecnicas')
-    
-    context = {
-        'tecnica': tecnica,
-        'categorias': TecnicaLinguistica.objects.values_list('categoria', flat=True).distinct(),
-    }
-    return render(request, 'core/profesor/editar_tecnica.html', context)
-
-@staff_member_required
-def eliminar_tecnica(request, tecnica_id):
-    """Eliminar una técnica"""
-    tecnica = get_object_or_404(TecnicaLinguistica, id=tecnica_id)
-    
-    if request.method == 'POST':
-        nombre = tecnica.nombre
-        tecnica.delete()
-        messages.success(request, f'Técnica "{nombre}" eliminada exitosamente.')
-        return redirect('core:gestion_tecnicas')
-    
-    context = {'tecnica': tecnica}
-    return render(request, 'core/profesor/eliminar_tecnica.html', context)
-
-# ==================== GESTIÓN DE CONTENIDOS JSON (PROFESOR) ====================
-
-@staff_member_required
-def gestion_contenidos(request):
-    """Lista de contenidos JSON para gestionar"""
-    contenidos = ContenidoJSON.objects.all().order_by('-creado_en')
-    categorias = ContenidoJSON.objects.values_list('categoria', flat=True).distinct()
-    
-    context = {
-        'contenidos': contenidos,
-        'categorias': categorias,
-        'total': contenidos.count(),
-    }
-    return render(request, 'core/profesor/gestion_contenidos.html', context)
-
-@staff_member_required
-def crear_contenido(request):
-    """Crear un nuevo contenido JSON"""
-    if request.method == 'POST':
-        nombre = request.POST.get('nombre')
-        archivo = request.POST.get('archivo')
-        categoria = request.POST.get('categoria')
-        datos_json = request.POST.get('datos_json', '{}')
-        
-        try:
-            datos = json.loads(datos_json)
-        except:
-            datos = {}
-        
-        contenido = ContenidoJSON.objects.create(
-            nombre=nombre,
-            archivo=archivo,
-            categoria=categoria,
-            datos=datos
-        )
-        
-        messages.success(request, f'Contenido "{contenido.nombre}" creado exitosamente.')
-        return redirect('core:gestion_contenidos')
-    
-    context = {
-        'categorias': ContenidoJSON.objects.values_list('categoria', flat=True).distinct(),
-    }
-    return render(request, 'core/profesor/crear_contenido.html', context)
-
-@staff_member_required
-def editar_contenido(request, contenido_id):
-    """Editar un contenido JSON existente"""
-    contenido = get_object_or_404(ContenidoJSON, id=contenido_id)
-    
-    if request.method == 'POST':
-        contenido.nombre = request.POST.get('nombre')
-        contenido.archivo = request.POST.get('archivo')
-        contenido.categoria = request.POST.get('categoria')
-        
-        datos_json = request.POST.get('datos_json', '{}')
-        try:
-            contenido.datos = json.loads(datos_json)
-        except:
-            contenido.datos = {}
-        
-        contenido.save()
-        messages.success(request, f'Contenido "{contenido.nombre}" actualizado exitosamente.')
-        return redirect('core:gestion_contenidos')
-    
-    context = {
-        'contenido': contenido,
-        'categorias': ContenidoJSON.objects.values_list('categoria', flat=True).distinct(),
-        'datos_json': json.dumps(contenido.datos, ensure_ascii=False, indent=2)
-    }
-    return render(request, 'core/profesor/editar_contenido.html', context)
-
-@staff_member_required
-def eliminar_contenido(request, contenido_id):
-    """Eliminar un contenido JSON"""
-    contenido = get_object_or_404(ContenidoJSON, id=contenido_id)
-    
-    if request.method == 'POST':
-        nombre = contenido.nombre
-        contenido.delete()
-        messages.success(request, f'Contenido "{nombre}" eliminado exitosamente.')
-        return redirect('core:gestion_contenidos')
-    
-    context = {'contenido': contenido}
-    return render(request, 'core/profesor/eliminar_contenido.html', context)
-
-# ==================== GESTIÓN DE ESTUDIANTES (PROFESOR) ====================
-
-@staff_member_required
-def gestion_estudiantes(request):
-    """Lista de estudiantes con estadísticas"""
-    estudiantes = User.objects.filter(is_staff=False).annotate(
-        total_respuestas=Count('respuestas'),
-        respuestas_correctas=Count('respuestas', filter=Q(respuestas__es_correcta=True))
-    ).order_by('-points')
-    
-    context = {
-        'estudiantes': estudiantes,
-        'total': estudiantes.count(),
-    }
-    return render(request, 'core/profesor/gestion_estudiantes.html', context)
-
-@staff_member_required
-def detalle_estudiante(request, estudiante_id):
-    """Ver detalles de un estudiante específico"""
-    estudiante = get_object_or_404(User, id=estudiante_id, is_staff=False)
-    
-    respuestas = Respuesta.objects.filter(user=estudiante)
-    total_respuestas = respuestas.count()
-    respuestas_correctas = respuestas.filter(es_correcta=True).count()
-    tasa_aciertos = int((respuestas_correctas / total_respuestas) * 100) if total_respuestas > 0 else 0
-    
-    progreso_categorias = ProgresoCategoria.objects.filter(user=estudiante)
-    logros = LogroObtenido.objects.filter(user=estudiante).select_related('logro')
-    evaluaciones = ResultadoEvaluacion.objects.filter(
-        user=estudiante,
-        completada=True
-    ).select_related('evaluacion').order_by('-fecha_completada')
-    actividad_reciente = respuestas.order_by('-fecha')[:20]
-    
-    context = {
-        'estudiante': estudiante,
-        'total_respuestas': total_respuestas,
-        'respuestas_correctas': respuestas_correctas,
-        'tasa_aciertos': tasa_aciertos,
-        'progreso_categorias': progreso_categorias,
-        'logros': logros,
-        'evaluaciones': evaluaciones,
-        'actividad_reciente': actividad_reciente,
-    }
-    return render(request, 'core/profesor/detalle_estudiante.html', context)
-
-# ==================== AUTENTICACIÓN Y REGISTRO ====================
-
-from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 def registro(request):
     """Vista de registro de nuevos usuarios"""
@@ -1504,67 +1164,45 @@ def enviar_evaluacion(request, evaluacion_id):
 
 @login_required
 def certificaciones_lista(request):
-    """Lista de certificaciones disponibles y obtenidas"""
-    user = request.user
+    """Lista de certificaciones del usuario"""
+    from django.shortcuts import render, redirect
+    from django.contrib.auth.decorators import login_required
+    from .models import Certificacion, CertificacionObtenida
+    from .models import User as CoreUser
     
-    certificaciones_disponibles = Certificacion.objects.filter(activa=True)
-    certificaciones_obtenidas = CertificacionObtenida.objects.filter(user=user).select_related('certificacion')
-    certificaciones_obtenidas_ids = list(certificaciones_obtenidas.values_list('certificacion_id', flat=True))
+    if not request.user.is_authenticated:
+        return redirect('login')
     
-    # Verificar si el usuario cumple con los requisitos para certificaciones no obtenidas
-    certificaciones_disponibles_con_estado = []
-    for cert in certificaciones_disponibles:
-        ya_obtenida = cert.id in certificaciones_obtenidas_ids
-        cumple_requisitos = verificar_requisitos_certificacion(user, cert)
-        
-        certificaciones_disponibles_con_estado.append({
-            'certificacion': cert,
-            'ya_obtenida': ya_obtenida,
-            'cumple_requisitos': cumple_requisitos,
-        })
+    # ✅ Obtener usuario de core.User
+    try:
+        usuario = CoreUser.objects.get(username=request.user.username)
+    except CoreUser.DoesNotExist:
+        return render(request, 'core/certificaciones_lista.html', {'certificaciones': []})
+    
+    # ✅ Usar user_id para filtrar
+    user_id = usuario.id
+    
+    # Obtener certificaciones obtenidas
+    certificaciones_obtenidas = CertificacionObtenida.objects.filter(user_id=user_id)
+    
+    # Preparar datos para el template
+    certificaciones = []
+    for cert in certificaciones_obtenidas:
+        if hasattr(cert, 'certificacion') and cert.certificacion:
+            certificaciones.append({
+                'nombre': cert.certificacion.nombre,
+                'descripcion': getattr(cert.certificacion, 'descripcion', ''),
+                'fecha': getattr(cert, 'fecha_obtenida', None),
+                'codigo_verificacion': getattr(cert, 'codigo_verificacion', ''),
+                'id': cert.id,
+            })
     
     context = {
-        'certificaciones': certificaciones_disponibles_con_estado,
-        'certificaciones_obtenidas': certificaciones_obtenidas,
-        'total_obtenidas': certificaciones_obtenidas.count(),
+        'certificaciones': certificaciones,
+        'certificaciones_count': len(certificaciones),
     }
+    
     return render(request, 'core/certificaciones_lista.html', context)
-
-@login_required
-def obtener_certificacion(request, certificacion_id):
-    """Obtener una certificación si se cumplen los requisitos"""
-    certificacion = get_object_or_404(Certificacion, id=certificacion_id, activa=True)
-    user = request.user
-    
-    # Verificar si ya la tiene
-    if CertificacionObtenida.objects.filter(user=user, certificacion=certificacion).exists():
-        messages.warning(request, 'Ya tienes esta certificación.')
-        return redirect('core:certificaciones_lista')
-    
-    # Verificar requisitos
-    if not verificar_requisitos_certificacion(user, certificacion):
-        messages.error(request, 'No cumples con los requisitos para obtener esta certificación.')
-        return redirect('core:certificaciones_lista')
-    
-    # Crear certificación
-    import uuid
-    codigo = f"{certificacion.nombre[:3].upper()}-{uuid.uuid4().hex[:8].upper()}"
-    
-    certificacion_obtenida = CertificacionObtenida.objects.create(
-        user=user,
-        certificacion=certificacion,
-        codigo_verificacion=codigo,
-        url_verificacion=f"/verificar-certificacion/{codigo}"
-    )
-    
-    # Agregar a la lista del usuario
-    if not user.certificaciones:
-        user.certificaciones = []
-    user.certificaciones.append(certificacion.nombre)
-    user.save()
-    
-    messages.success(request, f'¡Felicidades! Has obtenido la certificación "{certificacion.nombre}"')
-    return redirect('core:certificaciones_lista')
 
 def verificar_certificacion(request, codigo):
     """Verificar una certificación por código"""
@@ -1603,74 +1241,87 @@ def verificar_requisitos_certificacion(user, certificacion):
 
 @login_required
 def dashboard_gamificacion(request):
-    """Dashboard de gamificación con logros, medallas y certificaciones"""
-    user = request.user
+    """Dashboard de gamificación del usuario"""
+    from django.shortcuts import render, redirect
+    from django.contrib import messages
+    from django.contrib.auth.decorators import login_required
+    from .models import Logro, LogroObtenido, CertificacionObtenida, ProgresoCategoria
     
-    # Logros
-    logros_disponibles = Logro.objects.all()
-    logros_obtenidos = LogroObtenido.objects.filter(user=user)
-    logros_obtenidos_ids = list(logros_obtenidos.values_list('logro_id', flat=True))
+    # ✅ Importar el modelo User correcto (el de core.models)
+    from .models import User as CoreUser
     
-    # Estadísticas
-    total_ejercicios = EjercicioLinguistico.objects.count()
-    total_completados = Respuesta.objects.filter(user=user).values('item_id').distinct().count()
+    if not request.user.is_authenticated:
+        messages.warning(request, '⚠️ Debes iniciar sesión para ver tu gamificación')
+        return redirect('login')
     
-    respuestas_correctas = Respuesta.objects.filter(user=user, es_correcta=True).count()
-    respuestas_totales = Respuesta.objects.filter(user=user).count()
-    tasa_aciertos = int((respuestas_correctas / respuestas_totales) * 100) if respuestas_totales > 0 else 0
+    # ✅ Obtener el usuario del modelo core.models.User
+    try:
+        usuario = CoreUser.objects.get(username=request.user.username)
+        print(f"✅ Usuario core: {usuario.username} (ID: {usuario.id})")
+    except CoreUser.DoesNotExist:
+        messages.error(request, '❌ Usuario no encontrado en core')
+        return redirect('login')
     
-    # Evaluaciones disponibles
-    evaluaciones_disponibles = Evaluacion.objects.filter(
-        activa=True,
-        nivel_requerido__lte=user.nivel_experiencia
-    )[:5]
+    # ✅ Filtrar con el objeto usuario de core.models
+    logros_obtenidos = LogroObtenido.objects.filter(user=usuario)
+    certificaciones_obtenidas = CertificacionObtenida.objects.filter(user=usuario)
+    progreso = ProgresoCategoria.objects.filter(user=usuario)
     
-    # Actividades recomendadas
-    ejercicios_completados_ids = Respuesta.objects.filter(
-        user=user
-    ).values_list('item_id', flat=True)
+    # Calcular puntos totales
+    puntos_totales = 0
+    for lo in logros_obtenidos:
+        if hasattr(lo, 'logro') and lo.logro:
+            puntos_totales += getattr(lo.logro, 'puntos_requeridos', 10)
     
-    actividades_recomendadas = EjercicioLinguistico.objects.exclude(
-        id__in=ejercicios_completados_ids
-    ).order_by('?')[:5]
+    # Lista de logros obtenidos
+    logros_lista = []
+    for lo in logros_obtenidos:
+        if hasattr(lo, 'logro') and lo.logro:
+            logros_lista.append({
+                'nombre': lo.logro.nombre,
+                'descripcion': getattr(lo.logro, 'descripcion', ''),
+                'icono': getattr(lo.logro, 'icono', '🏆'),
+                'fecha': getattr(lo, 'fecha_obtenida', None)
+            })
     
-    # Ranking
-    ranking_estudiantes = User.objects.filter(
-        is_staff=False
-    ).order_by('-points')[:10]
+    # Lista de certificaciones
+    certificaciones_lista = []
+    for co in certificaciones_obtenidas:
+        if hasattr(co, 'certificacion') and co.certificacion:
+            certificaciones_lista.append({
+                'nombre': co.certificacion.nombre,
+                'fecha': getattr(co, 'fecha_obtenida', None)
+            })
     
-    # Medallas y certificaciones del usuario
-    user_medallas = user.medallas if user.medallas else []
-    user_certificaciones = user.certificaciones if user.certificaciones else []
+    # Total de logros disponibles
+    total_logros = Logro.objects.count()
+    logros_count = logros_obtenidos.count()
     
-    # Certificaciones obtenidas
-    certificaciones_obtenidas = CertificacionObtenida.objects.filter(user=user).select_related('certificacion')
+    # Progreso
+    siguiente_nivel = (puntos_totales // 100 + 1) * 100 if puntos_totales > 0 else 100
+    progreso_porcentaje = int((puntos_totales % 100) / 100 * 100) if puntos_totales > 0 else 0
     
-    # Siguiente nivel
-    siguiente_nivel = user.nivel_experiencia + 1
-    puntos_para_siguiente = siguiente_nivel * 100
+    # Actividad reciente
+    if logros_count > 0:
+        actividad = [f'🎯 Logro desbloqueado: {l["nombre"]}' for l in logros_lista[:3]]
+    else:
+        actividad = ['📝 Completa tu primer ejercicio para comenzar']
     
     context = {
-        'user': user,
-        'logros_disponibles': logros_disponibles,
+        'usuario': usuario,
         'logros_obtenidos': logros_obtenidos,
-        'logros_obtenidos_ids': logros_obtenidos_ids,
-        'total_ejercicios': total_ejercicios,
-        'total_completados': total_completados,
-        'tasa_aciertos': tasa_aciertos,
-        'evaluaciones_disponibles': evaluaciones_disponibles,
-        'actividades_recomendadas': actividades_recomendadas,
-        'ranking_estudiantes': ranking_estudiantes,
-        'user_medallas': user_medallas,
-        'user_certificaciones': user_certificaciones,
-        'certificaciones_obtenidas': certificaciones_obtenidas,
-        'puntos_para_siguiente': puntos_para_siguiente,
+        'logros': logros_lista,
+        'certificaciones': certificaciones_lista,
+        'puntos_total': puntos_totales,
+        'logros_count': logros_count,
+        'total_logros': total_logros,
+        'progreso': progreso_porcentaje,
         'siguiente_nivel': siguiente_nivel,
+        'actividad': actividad,
+        'progreso_categorias': progreso,
     }
     
     return render(request, 'core/dashboard_gamificacion.html', context)
-
-# ==================== FUNCIONES AUXILIARES ====================
 
 def verificar_logros(user):
     """Verifica y otorga logros automáticamente"""
@@ -1919,3 +1570,86 @@ def enviar_respuesta(request, ejercicio_id):
         messages.warning(request, '⚠️ Por favor, escribe una respuesta')
     
     return redirect('practicar_ejercicio', ejercicio_id=ejercicio_id)
+
+def dashboard_gamificacion(request):
+    """Dashboard de gamificación del usuario"""
+    from django.shortcuts import render, redirect
+    from django.contrib import messages
+    from django.contrib.auth.decorators import login_required
+    from .models import Logro, LogroObtenido, CertificacionObtenida, ProgresoCategoria
+    
+    # ✅ Importar el modelo User correcto (el de core.models)
+    from .models import User as CoreUser
+    
+    if not request.user.is_authenticated:
+        messages.warning(request, '⚠️ Debes iniciar sesión para ver tu gamificación')
+        return redirect('login')
+    
+    # ✅ Obtener el usuario del modelo core.models.User
+    try:
+        usuario = CoreUser.objects.get(username=request.user.username)
+        print(f"✅ Usuario core: {usuario.username} (ID: {usuario.id})")
+    except CoreUser.DoesNotExist:
+        messages.error(request, '❌ Usuario no encontrado en core')
+        return redirect('login')
+    
+    # ✅ Filtrar con el objeto usuario de core.models
+    logros_obtenidos = LogroObtenido.objects.filter(user=usuario)
+    certificaciones_obtenidas = CertificacionObtenida.objects.filter(user=usuario)
+    progreso = ProgresoCategoria.objects.filter(user=usuario)
+    
+    # Calcular puntos totales
+    puntos_totales = 0
+    for lo in logros_obtenidos:
+        if hasattr(lo, 'logro') and lo.logro:
+            puntos_totales += getattr(lo.logro, 'puntos_requeridos', 10)
+    
+    # Lista de logros obtenidos
+    logros_lista = []
+    for lo in logros_obtenidos:
+        if hasattr(lo, 'logro') and lo.logro:
+            logros_lista.append({
+                'nombre': lo.logro.nombre,
+                'descripcion': getattr(lo.logro, 'descripcion', ''),
+                'icono': getattr(lo.logro, 'icono', '🏆'),
+                'fecha': getattr(lo, 'fecha_obtenida', None)
+            })
+    
+    # Lista de certificaciones
+    certificaciones_lista = []
+    for co in certificaciones_obtenidas:
+        if hasattr(co, 'certificacion') and co.certificacion:
+            certificaciones_lista.append({
+                'nombre': co.certificacion.nombre,
+                'fecha': getattr(co, 'fecha_obtenida', None)
+            })
+    
+    # Total de logros disponibles
+    total_logros = Logro.objects.count()
+    logros_count = logros_obtenidos.count()
+    
+    # Progreso
+    siguiente_nivel = (puntos_totales // 100 + 1) * 100 if puntos_totales > 0 else 100
+    progreso_porcentaje = int((puntos_totales % 100) / 100 * 100) if puntos_totales > 0 else 0
+    
+    # Actividad reciente
+    if logros_count > 0:
+        actividad = [f'🎯 Logro desbloqueado: {l["nombre"]}' for l in logros_lista[:3]]
+    else:
+        actividad = ['📝 Completa tu primer ejercicio para comenzar']
+    
+    context = {
+        'usuario': usuario,
+        'logros_obtenidos': logros_obtenidos,
+        'logros': logros_lista,
+        'certificaciones': certificaciones_lista,
+        'puntos_total': puntos_totales,
+        'logros_count': logros_count,
+        'total_logros': total_logros,
+        'progreso': progreso_porcentaje,
+        'siguiente_nivel': siguiente_nivel,
+        'actividad': actividad,
+        'progreso_categorias': progreso,
+    }
+    
+    return render(request, 'core/dashboard_gamificacion.html', context)

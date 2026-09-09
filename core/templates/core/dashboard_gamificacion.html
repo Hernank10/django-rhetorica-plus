@@ -1,758 +1,177 @@
-{% extends 'core/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
-{% block title %}🏆 Gamificación - Rhetorica Plus{% endblock %}
-
-{% block extra_css %}
-<style>
-    .badge-gold {
-        background: linear-gradient(135deg, #f7971e, #ffd200);
-        color: #1e2a3a;
-    }
-    .badge-silver {
-        background: linear-gradient(135deg, #bdc3c7, #95a5a6);
-        color: #1e2a3a;
-    }
-    .badge-bronze {
-        background: linear-gradient(135deg, #cd7f32, #b8860b);
-        color: #fff;
-    }
-    .card-gamificacion {
-        border: 2px solid transparent;
-        transition: all 0.3s;
-        background: linear-gradient(135deg, #fff, #f8f5f0);
-    }
-    .card-gamificacion:hover {
-        border-color: var(--gold);
-        transform: translateY(-10px);
-        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-    }
-    .estrella {
-        color: #ffd700;
-        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    }
-    .medalla {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 30px;
-        margin: 0 auto;
-    }
-    .medalla-oro {
-        background: linear-gradient(135deg, #f7971e, #ffd200);
-        color: #fff;
-        box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
-    }
-    .medalla-plata {
-        background: linear-gradient(135deg, #bdc3c7, #95a5a6);
-        color: #fff;
-        box-shadow: 0 0 30px rgba(192, 192, 192, 0.5);
-    }
-    .medalla-bronce {
-        background: linear-gradient(135deg, #cd7f32, #b8860b);
-        color: #fff;
-        box-shadow: 0 0 30px rgba(205, 127, 50, 0.5);
-    }
-    .progress-gamificacion {
-        height: 25px;
-        border-radius: 25px;
-        background: #e9ecef;
-        overflow: hidden;
-    }
-    .progress-gamificacion .progress-bar {
-        transition: width 1s ease-in-out;
-        font-weight: bold;
-        font-size: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .insignia-item {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 35px;
-        margin: 5px auto;
-        background: #f8f5f0;
-        border: 3px solid #ddd;
-        transition: all 0.3s;
-    }
-    .insignia-item.obtenida {
-        border-color: var(--gold);
-        background: linear-gradient(135deg, #fff, #fef9e7);
-        box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-    }
-    .insignia-item.no-obtenida {
-        filter: grayscale(100%);
-        opacity: 0.5;
-    }
-    .certificacion-card {
-        background: linear-gradient(135deg, #1e2a3a, #2c3e50);
-        color: #fff;
-        padding: 20px;
-        border-radius: 15px;
-        border-left: 5px solid var(--gold);
-    }
-    .certificacion-card .gold-text {
-        color: var(--gold);
-    }
-    @keyframes pulse-gold {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
-    }
-    .pulse-gold {
-        animation: pulse-gold 2s infinite;
-    }
-</style>
-{% endblock %}
-
 {% block content %}
-<div class="row">
-    <div class="col-12 text-center mb-4">
-        <h1 class="display-4">
-            <i class="fas fa-trophy" style="color: var(--gold);"></i>
-            <span style="color: var(--gold);">Sistema de Gamificación</span>
-        </h1>
-        <p class="lead text-muted">Desbloquea logros, gana medallas y conviértete en un maestro de la retórica</p>
-        <hr class="w-50 mx-auto" style="border-color: var(--gold);">
-    </div>
-</div>
-
-<!-- Perfil del Usuario -->
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="card p-4 card-gamificacion">
-            <div class="row align-items-center">
-                <div class="col-md-4 text-center">
-                    <div class="position-relative d-inline-block">
-                        <i class="fas fa-user-circle" style="font-size: 100px; color: var(--gold);"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge bg-warning rounded-pill">
-                            Nv. {{ user.nivel_experiencia }}
-                        </span>
-                    </div>
-                    <h3 class="mt-2">{{ user.username }}</h3>
-                    <span class="badge badge-gold fs-5 p-2">
-                        <i class="fas fa-star me-1"></i> {{ user.nivel }}
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-4 text-center">
-                            <h2 class="display-6" style="color: var(--gold);">{{ user.points }}</h2>
-                            <p class="text-muted"><i class="fas fa-star me-1"></i> Puntos</p>
-                            <div class="progress-gamificacion">
-                                {% if user.points < 100 %}
-                                    <div class="progress-bar bg-success" style="width: {{ user.points }}%;">
-                                        {{ user.points }}%
-                                    </div>
-                                {% elif user.points < 300 %}
-                                    <div class="progress-bar bg-info" style="width: {{ user.points|divisibleby:3 }}%;">
-                                        {{ user.points|divisibleby:3 }}%
-                                    </div>
-                                {% elif user.points < 600 %}
-                                    <div class="progress-bar bg-warning" style="width: {{ user.points|divisibleby:6 }}%;">
-                                        {{ user.points|divisibleby:6 }}%
-                                    </div>
-                                {% elif user.points < 1000 %}
-                                    <div class="progress-bar bg-primary" style="width: {{ user.points|divisibleby:10 }}%;">
-                                        {{ user.points|divisibleby:10 }}%
-                                    </div>
-                                {% else %}
-                                    <div class="progress-bar bg-danger" style="width: 100%;">
-                                        ¡MAX!
-                                    </div>
-                                {% endif %}
-                            </div>
-                            <small class="text-muted">
-                                {% if user.points < 100 %}
-                                    Siguiente nivel: 100 pts
-                                {% elif user.points < 300 %}
-                                    Siguiente nivel: 300 pts
-                                {% elif user.points < 600 %}
-                                    Siguiente nivel: 600 pts
-                                {% elif user.points < 1000 %}
-                                    Siguiente nivel: 1000 pts
-                                {% else %}
-                                    ¡Campeón! Sigue así
-                                {% endif %}
-                            </small>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card bg-gradient-primary text-white shadow">
+                <div class="card-body py-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1 class="display-4 mb-2">
+                                <i class="fas fa-gamepad"></i> Gamificación
+                            </h1>
+                            <p class="lead mb-0">
+                                <span class="badge bg-light text-dark">{{ puntos_total|default:"0" }}</span> puntos totales
+                            </p>
                         </div>
-                        <div class="col-md-4 text-center">
-                            <h2 class="display-6" style="color: var(--gold);">{{ user.estrellas }}</h2>
-                            <p class="text-muted"><i class="fas fa-star estrella me-1"></i> Estrellas</p>
-                            <div>
-                                {% for i in "12345"|make_list %}
-                                    {% if forloop.counter <= user.estrellas %}
-                                        <i class="fas fa-star estrella fa-2x"></i>
-                                    {% else %}
-                                        <i class="fas fa-star text-muted fa-2x"></i>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <h2 class="display-6" style="color: var(--gold);">{{ user.racha }}</h2>
-                            <p class="text-muted"><i class="fas fa-fire text-danger me-1"></i> Racha</p>
-                            <div class="d-flex justify-content-center gap-1">
-                                {% for i in "1234567"|make_list %}
-                                    <div class="border p-1 rounded" style="width: 30px; height: 30px; {% if forloop.counter <= user.racha %}background: #28a745; color: white;{% else %}background: #e9ecef;{% endif %} text-align: center; font-size: 12px;">
-                                        {{ forloop.counter }}
-                                    </div>
-                                {% endfor %}
-                            </div>
+                        <div>
+                            <a href="{% url 'dashboard_estudiante' %}" class="btn btn-light btn-lg">
+                                <i class="fas fa-arrow-left"></i> Volver
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Estadísticas de Gamificación -->
-<div class="row g-4 mb-4">
-    <div class="col-md-3">
-        <div class="card text-center p-3 card-gamificacion">
-            <h3 class="display-6" style="color: var(--gold);">{{ total_ejercicios }}</h3>
-            <p class="text-muted"><i class="fas fa-book me-1"></i> Ejercicios</p>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card text-center p-3 card-gamificacion">
-            <h3 class="display-6" style="color: var(--gold);">{{ total_completados }}</h3>
-            <p class="text-muted"><i class="fas fa-check-circle text-success me-1"></i> Completados</p>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card text-center p-3 card-gamificacion">
-            <h3 class="display-6" style="color: var(--gold);">{{ tasa_aciertos }}%</h3>
-            <p class="text-muted"><i class="fas fa-percentage me-1"></i> Tasa de Aciertos</p>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card text-center p-3 card-gamificacion">
-            <h3 class="display-6" style="color: var(--gold);">{{ logros_obtenidos|length }}</h3>
-            <p class="text-muted"><i class="fas fa-award me-1"></i> Logros Obtenidos</p>
-        </div>
-    </div>
-</div>
-
-<!-- Logros Disponibles -->
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="card p-4">
-            <h4>
-                <i class="fas fa-award me-2" style="color: var(--gold);"></i>
-                Tus Logros
-                <span class="badge bg-success ms-2">{{ logros_obtenidos|length }}/{{ logros_disponibles|length }}</span>
-            </h4>
-            <div class="d-flex flex-wrap gap-3 mt-3">
-                {% for logro in logros_disponibles %}
-                    <div class="text-center" style="flex: 0 0 100px;">
-                        {% with obtenido=logro.id|in_list:logros_obtenidos_ids %}
-                            <div class="insignia-item {% if obtenido %}obtenida{% else %}no-obtenida{% endif %}">
-                                <span style="font-size: 40px;">{{ logro.icono|safe }}</span>
-                            </div>
-                            <small class="d-block mt-1 {% if obtenido %}text-success{% else %}text-muted{% endif %}">
-                                {{ logro.nombre }}
-                            </small>
-                            {% if not obtenido %}
-                                <small class="text-muted d-block" style="font-size: 10px;">
-                                    {{ logro.puntos_requeridos }} pts
-                                </small>
-                            {% else %}
-                                <i class="fas fa-check-circle text-success"></i>
-                            {% endif %}
-                        {% endwith %}
+    <!-- Tarjetas de estadísticas -->
+    <div class="row mt-4">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h1 class="display-4 text-warning">{{ puntos_total|default:"0" }}</h1>
+                    <p>Puntos totales</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" style="width: {{ progreso|default:0 }}%"></div>
                     </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Medallas y Certificaciones -->
-<div class="row g-4 mb-4">
-    <div class="col-md-6">
-        <div class="card p-4">
-            <h4>
-                <i class="fas fa-medal me-2" style="color: var(--gold);"></i>
-                Medallas
-            </h4>
-            <div class="d-flex gap-3 flex-wrap mt-3">
-                {% for medalla in user.medallas %}
-                    <div class="text-center">
-                        <div class="medalla medalla-oro">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <small>{{ medalla }}</small>
-                    </div>
-                {% empty %}
-                    <p class="text-muted">Aún no tienes medallas. ¡Sigue practicando!</p>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="card p-4">
-            <h4>
-                <i class="fas fa-certificate me-2" style="color: var(--gold);"></i>
-                Certificaciones
-            </h4>
-            <div class="mt-3">
-                {% for cert in user.certificaciones %}
-                    <div class="certificacion-card mb-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="gold-text">{{ cert }}</h6>
-                                <small><i class="fas fa-check-circle text-success me-1"></i> Verificada</small>
-                            </div>
-                            <i class="fas fa-certificate fa-2x gold-text"></i>
-                        </div>
-                    </div>
-                {% empty %}
-                    <p class="text-muted">Aún no tienes certificaciones. ¡Alcanza el siguiente nivel!</p>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Evaluaciones y Actividades -->
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="card p-4">
-            <h4>
-                <i class="fas fa-clipboard-list me-2" style="color: var(--gold);"></i>
-                Evaluaciones y Actividades
-            </h4>
-            
-            <div class="row mt-3">
-                <!-- Evaluaciones Disponibles -->
-                <div class="col-md-6">
-                    <h6><i class="fas fa-play-circle text-success me-1"></i> Evaluaciones Disponibles</h6>
-                    <div class="list-group mt-2">
-                        {% for evaluacion in evaluaciones_disponibles %}
-                            <div class="list-group-item">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-1">{{ evaluacion.titulo }}</h6>
-                                    <span class="badge bg-info">{{ evaluacion.tipo }}</span>
-                                </div>
-                                <p class="mb-1 small">{{ evaluacion.descripcion|truncatechars:100 }}</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">
-                                        <i class="fas fa-star me-1"></i> {{ evaluacion.puntos_base }} pts
-                                        <i class="fas fa-clock ms-2 me-1"></i> {{ evaluacion.duracion_minutos }} min
-                                    </small>
-                                    <a href="#" class="btn btn-gold btn-sm" onclick="iniciarEvaluacion({{ evaluacion.id }})">
-                                        <i class="fas fa-play me-1"></i> Iniciar
-                                    </a>
-                                </div>
-                            </div>
-                        {% empty %}
-                            <p class="text-muted">No hay evaluaciones disponibles en este momento.</p>
-                        {% endfor %}
-                    </div>
+                    <small>Siguiente nivel: {{ siguiente_nivel|default:100 }} puntos</small>
                 </div>
+            </div>
+        </div>
 
-                <!-- Actividades Recomendadas -->
-                <div class="col-md-6">
-                    <h6><i class="fas fa-star text-warning me-1"></i> Actividades Recomendadas</h6>
-                    <div class="list-group mt-2">
-                        {% for actividad in actividades_recomendadas %}
-                            <div class="list-group-item">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-1">{{ actividad.titulo }}</h6>
-                                    <span class="badge badge-gold">
-                                        <i class="fas fa-star me-1"></i> {{ actividad.puntos }} pts
-                                    </span>
-                                </div>
-                                <p class="mb-1 small">{{ actividad.categoria }}</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted">
-                                        <i class="fas fa-level-up-alt me-1"></i> Nivel {{ actividad.nivel }}
-                                    </small>
-                                    <a href="#" class="btn btn-gold btn-sm" onclick="iniciarActividad({{ actividad.id }})">
-                                        <i class="fas fa-play me-1"></i> Practicar
-                                    </a>
-                                </div>
-                            </div>
-                        {% empty %}
-                            <p class="text-muted">No hay actividades recomendadas.</p>
-                        {% endfor %}
-                    </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h1 class="display-4 text-success">{{ logros_count|default:"0" }}</h1>
+                    <p>Logros obtenidos</p>
+                    <p class="text-muted small">de {{ total_logros|default:0 }} totales</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h1 class="display-4 text-info">{{ certificaciones|length|default:"0" }}</h1>
+                    <p>Certificaciones</p>
+                    <p class="text-muted small">Completa cursos para obtener más</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Ranking y Comparación -->
-<div class="row">
-    <div class="col-md-6">
-        <div class="card p-4">
-            <h4>
-                <i class="fas fa-ranking-star me-2" style="color: var(--gold);"></i>
-                Ranking de Estudiantes
-            </h4>
-            <div class="list-group mt-3">
-                {% for estudiante in ranking_estudiantes %}
-                    <div class="list-group-item">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <span class="badge {% if forloop.counter == 1 %}badge-gold{% elif forloop.counter == 2 %}badge-silver{% elif forloop.counter == 3 %}badge-bronze{% else %}bg-secondary{% endif %} me-2">
-                                    #{{ forloop.counter }}
-                                </span>
-                                <strong>{{ estudiante.username }}</strong>
-                                <span class="badge bg-info ms-2">{{ estudiante.nivel }}</span>
+    <!-- Logros -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="fas fa-trophy"></i> Logros</h5>
+                </div>
+                <div class="card-body">
+                    {% if logros %}
+                        <div class="row">
+                            {% for logro in logros %}
+                            <div class="col-md-4 col-lg-3 mb-3">
+                                <div class="card bg-light">
+                                    <div class="card-body text-center">
+                                        <div class="display-4">{{ logro.icono|default:"🏆" }}</div>
+                                        <h6>{{ logro.nombre }}</h6>
+                                        <p class="small text-muted">{{ logro.descripcion|truncatechars:50 }}</p>
+                                        {% if logro.fecha %}
+                                            <span class="badge bg-secondary">
+                                                <i class="fas fa-calendar-alt"></i> {{ logro.fecha|date:"d/m/Y" }}
+                                            </span>
+                                        {% endif %}
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <span class="text-warning">
-                                    <i class="fas fa-star me-1"></i> {{ estudiante.points }}
-                                </span>
-                                <span class="ms-2 text-muted">
-                                    <i class="fas fa-check-circle me-1"></i> {{ estudiante.total_ejercicios_completados }}
-                                </span>
-                            </div>
-                        </div>
-                        <div class="progress mt-1" style="height: 5px;">
-                            <div class="progress-bar bg-warning" style="width: {{ estudiante.points|divisibleby:10 }}%;"></div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="card p-4">
-            <h4>
-                <i class="fas fa-chart-bar me-2" style="color: var(--gold);"></i>
-                Próximos Objetivos
-            </h4>
-            <div class="mt-3">
-                <div class="alert alert-info">
-                    <i class="fas fa-bullseye me-2"></i>
-                    <strong>Próximo nivel:</strong> 
-                    {% if user.points < 100 %}
-                        Alcanza 100 puntos para ser "Conocedor"
-                        <div class="progress mt-2">
-                            <div class="progress-bar bg-success" style="width: {{ user.points }}%;">
-                                {{ user.points }}/100
-                            </div>
-                        </div>
-                    {% elif user.points < 300 %}
-                        Alcanza 300 puntos para ser "Experto"
-                        <div class="progress mt-2">
-                            <div class="progress-bar bg-info" style="width: {{ user.points|divisibleby:3 }}%;">
-                                {{ user.points|divisibleby:3 }}/100
-                            </div>
-                        </div>
-                    {% elif user.points < 600 %}
-                        Alcanza 600 puntos para ser "Maestro Retórico"
-                        <div class="progress mt-2">
-                            <div class="progress-bar bg-warning" style="width: {{ user.points|divisibleby:6 }}%;">
-                                {{ user.points|divisibleby:6 }}/100
-                            </div>
+                            {% endfor %}
                         </div>
                     {% else %}
-                        ¡Ya eres un Maestro! Sigue practicando para mantener tu nivel.
-                        <div class="progress mt-2">
-                            <div class="progress-bar bg-danger" style="width: 100%;">
-                                ¡Completo!
-                            </div>
+                        <p class="text-muted text-center">Aún no tienes logros. ¡Completa ejercicios para obtenerlos!</p>
+                        <div class="text-center">
+                            <a href="{% url 'ejercicios_biblioteca' %}" class="btn btn-primary">
+                                <i class="fas fa-book-open"></i> Ir a ejercicios
+                            </a>
                         </div>
                     {% endif %}
                 </div>
-                
-                <div class="alert alert-success">
-                    <i class="fas fa-gem me-2"></i>
-                    <strong>Logro siguiente:</strong>
-                    {% if logros_disponibles %}
-                        {% for logro in logros_disponibles %}
-                            {% if logro.id not in logros_obtenidos_ids %}
-                                <div class="d-flex justify-content-between align-items-center mt-1">
-                                    <span>{{ logro.nombre }}</span>
-                                    <span class="badge bg-secondary">
-                                        {{ logro.puntos_requeridos }} pts requeridos
-                                    </span>
-                                </div>
-                                {% break %}
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificaciones -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="fas fa-certificate"></i> Certificaciones</h5>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal para Evaluación -->
-<div class="modal fade" id="evaluacionModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">
-                    <i class="fas fa-clipboard-list me-2" style="color: var(--gold);"></i>
-                    <span id="evaluacionTitulo"></span>
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body" id="evaluacionContenido">
-                <div id="evaluacionPreguntas"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-gold" onclick="enviarEvaluacion()">
-                    <i class="fas fa-check me-1"></i> Enviar Evaluación
-                </button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal para Actividad -->
-<div class="modal fade" id="actividadModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">
-                    <i class="fas fa-play-circle me-2" style="color: var(--gold);"></i>
-                    <span id="actividadTitulo"></span>
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body" id="actividadContenido">
-                <div id="actividadPreguntas"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-gold" onclick="enviarActividad()">
-                    <i class="fas fa-check me-1"></i> Enviar Respuesta
-                </button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal de Logro Desbloqueado -->
-<div class="modal fade" id="logroModal" tabindex="-1" data-bs-backdrop="static">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header bg-success text-white">
-                <h5 class="modal-title">
-                    <i class="fas fa-trophy me-2"></i> ¡Logro Desbloqueado!
-                </h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body text-center">
-                <i class="fas fa-award" style="font-size: 80px; color: var(--gold);"></i>
-                <h4 id="logroNombre" class="mt-3"></h4>
-                <p id="logroDescripcion" class="text-muted"></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-gold" data-bs-dismiss="modal">¡Increíble!</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-{% endblock %}
-
-{% block extra_js %}
-<script>
-let evaluacionActual = null;
-let actividadActual = null;
-
-function iniciarEvaluacion(id) {
-    fetch('/api/evaluaciones/')
-        .then(response => response.json())
-        .then(data => {
-            const evaluacion = data.find(item => item.id === id);
-            if (evaluacion) {
-                document.getElementById('evaluacionTitulo').textContent = evaluacion.titulo;
-                let html = `<p class="text-muted">${evaluacion.descripcion}</p>`;
-                html += `<hr>`;
-                
-                evaluacion.preguntas.forEach((pregunta, index) => {
-                    html += `
-                        <div class="mb-3">
-                            <h6>Pregunta ${index + 1}: ${pregunta.texto}</h6>
-                            <div class="ms-3">
-                                ${pregunta.opciones.map((opcion, i) => `
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="pregunta_${index}" id="preg_${index}_op_${i}" value="${opcion}">
-                                        <label class="form-check-label" for="preg_${index}_op_${i}">
-                                            ${opcion}
-                                        </label>
+                <div class="card-body">
+                    {% if certificaciones %}
+                        <div class="row">
+                            {% for cert in certificaciones %}
+                            <div class="col-md-6 mb-3">
+                                <div class="card border-success">
+                                    <div class="card-body">
+                                        <h6><i class="fas fa-certificate text-success"></i> {{ cert.nombre }}</h6>
+                                        <p class="small text-muted">
+                                            <i class="fas fa-calendar-alt"></i> Obtenida: {{ cert.fecha|date:"d/m/Y" }}
+                                        </p>
                                     </div>
-                                `).join('')}
+                                </div>
                             </div>
+                            {% endfor %}
                         </div>
-                    `;
-                });
-                
-                document.getElementById('evaluacionPreguntas').innerHTML = html;
-                evaluacionActual = evaluacion;
-                new bootstrap.Modal(document.getElementById('evaluacionModal')).show();
-            }
-        })
-        .catch(error => {
-            alert('Error al cargar la evaluación: ' + error);
-        });
-}
+                    {% else %}
+                        <p class="text-muted text-center">No tienes certificaciones. Completa cursos para obtenerlas.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 
-function enviarEvaluacion() {
-    if (!evaluacionActual) return;
-    
-    const respuestas = [];
-    let todasRespondidas = true;
-    
-    evaluacionActual.preguntas.forEach((pregunta, index) => {
-        const opciones = document.getElementsByName(`pregunta_${index}`);
-        let seleccionada = null;
-        for (const opcion of opciones) {
-            if (opcion.checked) {
-                seleccionada = opcion.value;
-                break;
-            }
-        }
-        if (seleccionada) {
-            respuestas.push({
-                pregunta: pregunta.texto,
-                respuesta: seleccionada
-            });
-        } else {
-            todasRespondidas = false;
-        }
-    });
-    
-    if (!todasRespondidas) {
-        alert('Por favor, responde todas las preguntas antes de enviar.');
-        return;
+    <!-- Actividad reciente -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-header bg-warning">
+                    <h5 class="mb-0"><i class="fas fa-history"></i> Actividad Reciente</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        {% for item in actividad %}
+                        <li class="list-group-item">
+                            <i class="fas fa-check-circle text-success"></i> {{ item }}
+                        </li>
+                        {% empty %}
+                        <li class="list-group-item text-muted text-center">
+                            No hay actividad reciente
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
-    
-    // Simular envío
-    const btn = document.querySelector('#evaluacionModal .btn-gold');
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i> Enviando...';
-    
-    setTimeout(() => {
-        // Simular puntaje
-        const puntaje = Math.floor(Math.random() * 40) + 60;
-        const estrellasGanadas = Math.floor(puntaje / 20);
-        const puntosGanados = puntaje;
-        
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-check me-1"></i> Enviar Evaluación';
-        
-        bootstrap.Modal.getInstance(document.getElementById('evaluacionModal')).hide();
-        
-        // Mostrar resultado
-        if (puntaje >= 80) {
-            mostrarLogro('🎉', '¡Evaluación Superada!', `Has obtenido ${puntaje}% y ganado ${estrellasGanadas} estrellas.`);
-        } else {
-            alert(`Resultado: ${puntaje}%. ¡Sigue practicando!`);
-        }
-        
-        // Actualizar puntos
-        actualizarPuntos(puntosGanados);
-    }, 2000);
-}
-
-function iniciarActividad(id) {
-    fetch('/api/ejercicios/')
-        .then(response => response.json())
-        .then(data => {
-            const actividad = data.find(item => item.id === id);
-            if (actividad) {
-                document.getElementById('actividadTitulo').textContent = actividad.titulo;
-                let html = `
-                    <div class="alert alert-info">
-                        <i class="fas fa-info-circle me-2"></i>
-                        <strong>Instrucciones:</strong> Lee el contenido y responde la pregunta.
-                    </div>
-                    <div class="bg-light p-3 rounded">
-                        <pre style="white-space: pre-wrap; word-wrap: break-word;">${JSON.stringify(actividad.contenido, null, 2)}</pre>
-                    </div>
-                    <div class="mt-3">
-                        <label for="respuestaActividad" class="form-label"><strong>Tu respuesta:</strong></label>
-                        <textarea class="form-control" id="respuestaActividad" rows="4" placeholder="Escribe tu respuesta aquí..."></textarea>
-                    </div>
-                `;
-                
-                document.getElementById('actividadPreguntas').innerHTML = html;
-                actividadActual = actividad;
-                new bootstrap.Modal(document.getElementById('actividadModal')).show();
-            }
-        })
-        .catch(error => {
-            alert('Error al cargar la actividad: ' + error);
-        });
-}
-
-function enviarActividad() {
-    const respuesta = document.getElementById('respuestaActividad').value.trim();
-    if (!respuesta) {
-        alert('Por favor, escribe una respuesta antes de enviar.');
-        return;
+    .progress {
+        height: 10px;
     }
-    
-    const btn = document.querySelector('#actividadModal .btn-gold');
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i> Enviando...';
-    
-    setTimeout(() => {
-        const puntosGanados = Math.floor(Math.random() * 15) + 5;
-        const esCorrecta = Math.random() > 0.3;
-        
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-check me-1"></i> Enviar Respuesta';
-        
-        bootstrap.Modal.getInstance(document.getElementById('actividadModal')).hide();
-        
-        if (esCorrecta) {
-            mostrarLogro('⭐', '¡Excelente Respuesta!', `Has ganado ${puntosGanados} puntos por tu respuesta.`);
-            actualizarPuntos(puntosGanados);
-        } else {
-            alert('Respuesta incorrecta. ¡Sigue practicando!');
-        }
-    }, 1500);
-}
-
-function mostrarLogro(icono, titulo, descripcion) {
-    document.getElementById('logroNombre').textContent = titulo;
-    document.getElementById('logroDescripcion').textContent = descripcion;
-    document.querySelector('#logroModal .modal-title').innerHTML = `<i class="fas fa-trophy me-2"></i> ${icono} ¡Logro Desbloqueado!`;
-    new bootstrap.Modal(document.getElementById('logroModal')).show();
-}
-
-function actualizarPuntos(puntos) {
-    const puntosActuales = parseInt(document.querySelector('.display-6').textContent);
-    const nuevosPuntos = puntosActuales + puntos;
-    document.querySelector('.display-6').textContent = nuevosPuntos;
-    
-    // Actualizar barra de progreso
-    const progressBar = document.querySelector('.progress-gamificacion .progress-bar');
-    if (progressBar) {
-        let porcentaje = 0;
-        if (nuevosPuntos < 100) {
-            porcentaje = nuevosPuntos;
-        } else if (nuevosPuntos < 300) {
-            porcentaje = Math.floor(nuevosPuntos / 3);
-        } else if (nuevosPuntos < 600) {
-            porcentaje = Math.floor(nuevosPuntos / 6);
-        } else {
-            porcentaje = 100;
-        }
-        progressBar.style.width = `${Math.min(porcentaje, 100)}%`;
-        progressBar.textContent = `${Math.min(porcentaje, 100)}%`;
+    .card {
+        transition: all 0.3s ease;
     }
-}
-</script>
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    }
+</style>
 {% endblock %}
