@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- Navegación -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'lista_cursos' %}">Cursos</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'detalle_curso' curso.slug %}">{{ curso.titulo|truncatechars:30 }}</a></li>
+                    {% if modulo %}
+                    <li class="breadcrumb-item"><a href="{% url 'ver_leccion' curso.slug modulo.id leccion.id %}">{{ modulo.titulo|truncatechars:30 }}</a></li>
+                    {% endif %}
+                    <li class="breadcrumb-item active">Evaluación</li>
+                </ol>
+            </nav>
+
+            <!-- Encabezado de la evaluación -->
+            <div class="card shadow mb-4">
+                <div class="card-header bg-success text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">
+                            <i class="fas fa-clipboard-check"></i> {{ evaluacion.titulo }}
+                        </h4>
+                        <div>
+                            <span class="badge bg-light text-dark">
+                                <i class="fas fa-clock"></i> {{ evaluacion.tiempo_limite }} min
+                            </span>
+                            <span class="badge bg-warning text-dark">
+                                <i class="fas fa-star"></i> {{ evaluacion.puntaje_maximo }} pts
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">{{ evaluacion.descripcion }}</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-question-circle text-primary"></i> {{ preguntas.count }} preguntas</li>
+                                <li><i class="fas fa-redo text-info"></i> {{ evaluacion.intentos_permitidos }} intentos permitidos</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            {% if evaluacion.disponible_desde and evaluacion.disponible_hasta %}
+                            <small class="text-muted">
+                                <i class="fas fa-calendar-alt"></i> 
+                                Disponible: {{ evaluacion.disponible_desde|date:"d/m/Y" }} - {{ evaluacion.disponible_hasta|date:"d/m/Y" }}
+                            </small>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="text-center mt-3">
+                        <button onclick="iniciarEvaluacion()" class="btn btn-success btn-lg">
+                            <i class="fas fa-play"></i> Iniciar Evaluación
+                        </button>
+                        <a href="{% url 'detalle_curso' curso.slug %}" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-arrow-left"></i> Volver al Curso
+                        </a>
+                        {% if modulo %}
+                        <a href="{% url 'ver_leccion' curso.slug modulo.id leccion.id %}" class="btn btn-outline-secondary btn-lg">
+                            <i class="fas fa-book"></i> Volver a la Lección
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor de la evaluación (oculto inicialmente) -->
+            <div id="evaluacionContainer" style="display: none;">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-pencil-alt"></i> Respondiendo evaluación
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Timer -->
+                        <div class="alert alert-warning">
+                            <i class="fas fa-clock"></i> 
+                            Tiempo restante: <span id="timer">30:00</span>
+                            <span class="float-end">
+                                <span class="badge bg-success">Intento {{ intento_actual|default:1 }}</span>
+                            </span>
+                        </div>
+
+                        <!-- Formulario -->
+                        <form method="post" action="{% url 'enviar_evaluacion' evaluacion.id %}" id="evaluacionForm">
+                            {% csrf_token %}
+                            
+                            {% for pregunta in preguntas %}
+                            <div class="card mb-3">
+                                <div class="card-header bg-light">
+                                    <strong>Pregunta {{ forloop.counter }}</strong>
+                                    <span class="badge bg-info float-end">{{ pregunta.puntaje|default:10 }} pts</span>
+                                </div>
+                                <div class="card-body">
+                                    <p>{{ pregunta.enunciado|default:"Sin enunciado" }}</p>
+                                    
+                                    {% if pregunta.tipo == 'multiple' %}
+                                        {% for opcion in pregunta.opciones|default:"" %}
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" 
+                                                   name="pregunta_{{ pregunta.id }}" 
+                                                   id="opcion_{{ pregunta.id }}_{{ forloop.counter }}" 
+                                                   value="{{ opcion }}">
+                                            <label class="form-check-label" for="opcion_{{ pregunta.id }}_{{ forloop.counter }}">
+                                                {{ opcion }}
+                                            </label>
+                                        </div>
+                                        {% endfor %}
+                                    {% elif pregunta.tipo == 'verdadero_falso' %}
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" 
+                                                   name="pregunta_{{ pregunta.id }}" 
+                                                   id="vf_{{ pregunta.id }}_v" value="Verdadero">
+                                            <label class="form-check-label" for="vf_{{ pregunta.id }}_v">Verdadero</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" 
+                                                   name="pregunta_{{ pregunta.id }}" 
+                                                   id="vf_{{ pregunta.id }}_f" value="Falso">
+                                            <label class="form-check-label" for="vf_{{ pregunta.id }}_f">Falso</label>
+                                        </div>
+                                    {% else %}
+                                        <textarea class="form-control" 
+                                                  name="pregunta_{{ pregunta.id }}" 
+                                                  rows="3" 
+                                                  placeholder="Escribe tu respuesta aquí..."></textarea>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% empty %}
+                            <div class="alert alert-warning">
+                                No hay preguntas para esta evaluación.
+                            </div>
+                            {% endfor %}
+                            
+                            <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-success btn-lg">
+                                    <i class="fas fa-paper-plane"></i> Enviar evaluación
+                                </button>
+                                <button type="button" onclick="cancelarEvaluacion()" class="btn btn-danger btn-lg">
+                                    <i class="fas fa-times"></i> Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let timerInterval;
+    let tiempoRestante = {{ evaluacion.tiempo_limite|default:30 }} * 60;
+
+    function iniciarEvaluacion() {
+        document.getElementById('evaluacionContainer').style.display = 'block';
+        document.querySelector('.text-center.mt-3 .btn-success').style.display = 'none';
+        iniciarTimer();
+        window.scrollTo({ top: document.getElementById('evaluacionContainer').offsetTop, behavior: 'smooth' });
+    }
+
+    function cancelarEvaluacion() {
+        if (confirm('¿Estás seguro de que quieres cancelar la evaluación?')) {
+            document.getElementById('evaluacionContainer').style.display = 'none';
+            document.querySelector('.text-center.mt-3 .btn-success').style.display = 'inline-block';
+            clearInterval(timerInterval);
+            document.getElementById('timer').textContent = '30:00';
+        }
+    }
+
+    function iniciarTimer() {
+        timerInterval = setInterval(function() {
+            tiempoRestante--;
+            let minutos = Math.floor(tiempoRestante / 60);
+            let segundos = tiempoRestante % 60;
+            document.getElementById('timer').textContent = 
+                String(minutos).padStart(2, '0') + ':' + String(segundos).padStart(2, '0');
+            
+            if (tiempoRestante <= 0) {
+                clearInterval(timerInterval);
+                alert('⏰ Tiempo agotado. La evaluación se enviará automáticamente.');
+                document.getElementById('evaluacionForm').submit();
+            }
+        }, 1000);
+    }
+</script>
+
+<style>
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+    }
+    .breadcrumb-item a {
+        color: #667eea;
+        text-decoration: none;
+    }
+    .breadcrumb-item a:hover {
+        text-decoration: underline;
+    }
+    .form-check {
+        padding: 5px 0;
+    }
+    .form-check-input:checked {
+        background-color: #667eea;
+        border-color: #667eea;
+    }
+    .card {
+        transition: all 0.3s ease;
+    }
+    .card:hover {
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+    #timer {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+</style>
+{% endblock %}

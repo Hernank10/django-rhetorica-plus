@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- Navegación -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'lista_cursos' %}">Cursos</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'detalle_curso' curso.slug %}">{{ curso.titulo|truncatechars:30 }}</a></li>
+                    <li class="breadcrumb-item">{{ modulo.titulo|truncatechars:30 }}</li>
+                    <li class="breadcrumb-item active">{{ leccion.titulo|truncatechars:30 }}</li>
+                </ol>
+            </nav>
+
+            <!-- Contenido de la lección -->
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">
+                            <i class="fas fa-book-open"></i> {{ leccion.titulo }}
+                        </h4>
+                        <div>
+                            <span class="badge bg-light text-dark">{{ leccion.get_tipo_display|default:"Práctica" }}</span>
+                            <span class="badge bg-warning text-dark">
+                                <i class="fas fa-star"></i> {{ leccion.puntos|default:10 }} pts
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Contenido -->
+                    <div class="leccion-contenido mb-4">
+                        <h5><i class="fas fa-info-circle text-primary"></i> Contenido</h5>
+                        <div class="p-3 bg-light rounded">
+                            {{ leccion.contenido|linebreaks|default:"Contenido en preparación" }}
+                        </div>
+                    </div>
+
+                    <!-- Ejercicios relacionados -->
+                    {% if ejercicios %}
+                    <div class="mt-4">
+                        <h5><i class="fas fa-pencil-alt text-success"></i> Ejercicios relacionados</h5>
+                        <div class="row">
+                            {% for ejercicio in ejercicios %}
+                            <div class="col-md-6 mb-2">
+                                <div class="card bg-light border">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="fas fa-check-circle text-success"></i>
+                                                <small>{{ ejercicio.titulo|truncatechars:30 }}</small>
+                                            </div>
+                                            <a href="{% url 'practicar_ejercicio' ejercicio.id %}" 
+                                               class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-play"></i> Practicar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Evaluaciones de la lección -->
+                    {% if evaluaciones %}
+                    <div class="mt-4">
+                        <h5><i class="fas fa-clipboard-check text-warning"></i> Evaluaciones de esta lección</h5>
+                        <div class="row">
+                            {% for evaluacion in evaluaciones %}
+                            <div class="col-md-12 mb-2">
+                                <div class="card border-success">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="fas fa-certificate text-success"></i>
+                                                <strong>{{ evaluacion.titulo }}</strong>
+                                                <small class="text-muted d-block">{{ evaluacion.descripcion|truncatechars:60 }}</small>
+                                            </div>
+                                            <a href="{% url 'ver_evaluacion' evaluacion.id %}" 
+                                               class="btn btn-success">
+                                                <i class="fas fa-play"></i> Ver Evaluación
+                                            </a>
+                                        </div>
+                                        <div class="mt-2">
+                                            <span class="badge bg-info">{{ evaluacion.preguntas_por_evaluacion }} preguntas</span>
+                                            <span class="badge bg-warning text-dark">{{ evaluacion.puntaje_maximo }} pts</span>
+                                            <span class="badge bg-secondary">{{ evaluacion.tiempo_limite }} min</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Navegación entre lecciones -->
+                    <div class="mt-4 d-flex justify-content-between">
+                        <div>
+                            {% if leccion_anterior %}
+                            <a href="{% url 'ver_leccion' curso.slug modulo.id leccion_anterior.id %}" 
+                               class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Lección Anterior
+                            </a>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <a href="{% url 'detalle_curso' curso.slug %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-up"></i> Volver al Curso
+                            </a>
+                            {% if leccion_siguiente %}
+                            <a href="{% url 'ver_leccion' curso.slug modulo.id leccion_siguiente.id %}" 
+                               class="btn btn-primary">
+                                Siguiente Lección <i class="fas fa-arrow-right"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .leccion-contenido {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 15px;
+    }
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+    }
+    .breadcrumb-item a {
+        color: #667eea;
+        text-decoration: none;
+    }
+    .breadcrumb-item a:hover {
+        text-decoration: underline;
+    }
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+</style>
+{% endblock %}

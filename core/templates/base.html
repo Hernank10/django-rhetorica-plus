@@ -10,8 +10,6 @@
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    {% block extra_css %}{% endblock %}
-    
     <style>
         body {
             background-color: #f8f9fa;
@@ -23,45 +21,8 @@
             flex: 1;
             padding: 2rem 0;
         }
-        .footer {
-            background: #2d3436;
-            color: white;
-            padding: 1.5rem 0;
-            margin-top: auto;
-        }
-        .footer a {
-            color: #a8a8a8;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            color: white;
-        }
         
-        /* Animaciones */
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Scrollbar personalizada */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #667eea;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #764ba2;
-        }
-
-        /* Estilos del navbar */
+        /* Navbar */
         .bg-gradient-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
@@ -114,6 +75,48 @@
             margin-right: 8px;
         }
         
+        /* Footer */
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 3rem 0 1.5rem 0;
+            margin-top: auto;
+        }
+        .footer h5, .footer h6 {
+            color: white;
+            font-weight: 600;
+        }
+        .footer a {
+            color: #a8a8a8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .footer .text-muted {
+            color: #a8a8a8 !important;
+        }
+        .footer hr {
+            border-color: rgba(255,255,255,0.1);
+        }
+        .footer .social-links a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            margin-right: 8px;
+            transition: all 0.3s ease;
+        }
+        .footer .social-links a:hover {
+            background: #667eea;
+            transform: translateY(-3px);
+        }
+        
         @media (max-width: 992px) {
             .navbar-nav {
                 padding: 1rem 0;
@@ -140,18 +143,12 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary shadow">
         <div class="container">
-            <!-- Logo/Brand -->
             <a class="navbar-brand" href="{% url 'index' %}">
-                <i class="fas fa-feather-alt"></i> 
-                <span class="fw-bold">Rhetorica+</span>
+                <i class="fas fa-feather-alt"></i> Rhetorica+
             </a>
-            
-            <!-- Botón hamburguesa para móvil -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
-            <!-- Menú -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     {% if user.is_authenticated %}
@@ -180,6 +177,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {% if 'cursos' in request.path %}active{% endif %}" 
+                           href="{% url 'lista_cursos' %}">
+                            <i class="fas fa-graduation-cap"></i> Cursos
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {% if 'tecnicas' in request.path %}active{% endif %}" 
                            href="{% url 'ver_tecnicas' %}">
                             <i class="fas fa-lightbulb"></i> Técnicas
@@ -188,7 +191,6 @@
                     {% endif %}
                 </ul>
                 
-                <!-- Menú de usuario -->
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
@@ -240,7 +242,7 @@
     {% if messages %}
     <div class="container mt-3">
         {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible fade show fade-in" role="alert">
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
             {{ message }}
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
@@ -258,41 +260,74 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <!-- Columna 1: Información -->
+                <div class="col-md-4 mb-4">
                     <h5><i class="fas fa-feather-alt"></i> Rhetorica+</h5>
-                    <p class="text-muted small">
-                        Plataforma de aprendizaje retórico basada en IA
+                    <p class="text-muted">
+                        Plataforma de aprendizaje retórico basada en IA. 
+                        Mejora tus habilidades comunicativas con ejercicios interactivos y cursos especializados.
                     </p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
-                <div class="col-md-3">
+                
+                <!-- Columna 2: Enlaces -->
+                <div class="col-md-2 mb-4">
                     <h6>Enlaces</h6>
-                    <ul class="list-unstyled small">
+                    <ul class="list-unstyled">
                         <li><a href="{% url 'index' %}">Inicio</a></li>
                         <li><a href="{% url 'ejercicios_biblioteca' %}">Ejercicios</a></li>
+                        <li><a href="{% url 'lista_cursos' %}">Cursos</a></li>
                         <li><a href="{% url 'certificaciones_lista' %}">Certificaciones</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
+                
+                <!-- Columna 3: Ayuda -->
+                <div class="col-md-3 mb-4">
                     <h6>Ayuda</h6>
-                    <ul class="list-unstyled small">
+                    <ul class="list-unstyled">
                         <li><a href="#">Preguntas frecuentes</a></li>
                         <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Términos de uso</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 4: Contacto -->
+                <div class="col-md-3 mb-4">
+                    <h6>Contacto</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="mailto:info@rhetorica.com">
+                            <i class="fas fa-envelope"></i> info@rhetorica.com
+                        </a></li>
+                        <li><a href="#">
+                            <i class="fas fa-phone"></i> +57 300 123 4567
+                        </a></li>
+                        <li><a href="#">
+                            <i class="fas fa-map-marker-alt"></i> Bogotá, Colombia
+                        </a></li>
                     </ul>
                 </div>
             </div>
-            <hr class="bg-secondary">
-            <p class="text-center text-muted small mb-0">
-                &copy; 2024 Rhetorica+ - Todos los derechos reservados
-            </p>
+            
+            <hr>
+            <div class="text-center">
+                <p class="text-muted small mb-0">
+                    &copy; 2024 Rhetorica+ - Todos los derechos reservados
+                </p>
+                <p class="text-muted small">
+                    <i class="fas fa-code"></i> Desarrollado con <i class="fas fa-heart text-danger"></i> y Django
+                </p>
+            </div>
         </div>
     </footer>
     
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <!-- Scripts personalizados -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Marcar elemento activo en el menú

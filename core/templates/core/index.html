@@ -3,42 +3,75 @@
 {% block content %}
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-            <h1 class="display-3 mb-4">
-                <i class="fas fa-feather-alt text-primary"></i>
-                Rhetorica+
-            </h1>
-            <p class="lead mb-4">
-                Aprende y practica retórica con ejercicios interactivos y cursos diseñados para mejorar tus habilidades comunicativas.
-            </p>
-            
+        <div class="col-lg-10 text-center">
+            <!-- Hero Section -->
+            <div class="mb-5">
+                <h1 class="display-3 fw-bold text-primary">
+                    <i class="fas fa-feather-alt"></i> Rhetorica+
+                </h1>
+                <p class="lead text-muted mb-4">
+                    Aprende y practica retórica con ejercicios interactivos y cursos diseñados para mejorar tus habilidades comunicativas.
+                </p>
+                <p class="text-muted">
+                    <i class="fas fa-robot"></i> Plataforma de aprendizaje retórico basada en IA
+                </p>
+            </div>
+
             {% if user.is_authenticated %}
-                <div class="row mt-4">
-                    <div class="col-md-4 mb-3">
-                        <a href="{% url 'dashboard_estudiante' %}" class="btn btn-primary btn-lg w-100">
-                            <i class="fas fa-tachometer-alt"></i> Dashboard
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <a href="{% url 'ejercicios_biblioteca' %}" class="btn btn-success btn-lg w-100">
-                            <i class="fas fa-book-open"></i> Ejercicios
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <a href="{% url 'lista_cursos' %}" class="btn btn-warning btn-lg w-100">
-                            <i class="fas fa-graduation-cap"></i> Cursos
-                        </a>
+            <!-- Accesos rápidos para usuarios autenticados -->
+            <div class="row mt-4 g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tachometer-alt fa-3x text-primary"></i>
+                            <h5 class="card-title mt-3">Dashboard</h5>
+                            <p class="card-text">Visualiza tu progreso y estadísticas</p>
+                            <a href="{% url 'dashboard_estudiante' %}" class="btn btn-primary">
+                                <i class="fas fa-arrow-right"></i> Ir al dashboard
+                            </a>
+                        </div>
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-graduation-cap fa-3x text-success"></i>
+                            <h5 class="card-title mt-3">Cursos</h5>
+                            <p class="card-text">Explora y aprende con nuestros cursos</p>
+                            <a href="{% url 'lista_cursos' %}" class="btn btn-success">
+                                <i class="fas fa-arrow-right"></i> Ver cursos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-book-open fa-3x text-warning"></i>
+                            <h5 class="card-title mt-3">Ejercicios</h5>
+                            <p class="card-text">Practica con ejercicios interactivos</p>
+                            <a href="{% url 'ejercicios_biblioteca' %}" class="btn btn-warning">
+                                <i class="fas fa-arrow-right"></i> Ver ejercicios
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {% else %}
-                <div class="mt-4">
-                    <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-2">
-                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
-                    </a>
-                    <a href="{% url 'registro' %}" class="btn btn-success btn-lg">
-                        <i class="fas fa-user-plus"></i> Registrarse
-                    </a>
-                </div>
+            <!-- Botones de acceso para usuarios no autenticados -->
+            <div class="mt-5">
+                <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-3">
+                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                </a>
+                <a href="{% url 'registro' %}" class="btn btn-success btn-lg">
+                    <i class="fas fa-user-plus"></i> Registrarse
+                </a>
+            </div>
+            <div class="mt-4">
+                <p class="text-muted">
+                    <i class="fas fa-lock"></i> Accede a todos los cursos y ejercicios
+                </p>
+            </div>
             {% endif %}
         </div>
     </div>

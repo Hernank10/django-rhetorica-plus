@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">
+                            <i class="fas fa-clipboard-check"></i> {{ evaluacion.titulo }}
+                        </h4>
+                        <div>
+                            <span class="badge bg-light text-dark">
+                                <i class="fas fa-clock"></i> {{ evaluacion.tiempo_limite }} min
+                            </span>
+                            <span class="badge bg-warning text-dark">
+                                <i class="fas fa-star"></i> {{ evaluacion.puntaje_maximo }} pts
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">{{ evaluacion.descripcion }}</p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i> 
+                        Responde todas las preguntas. Cada pregunta tiene un puntaje asignado.
+                    </div>
+
+                    <form method="post" action="{% url 'enviar_evaluacion' evaluacion.id %}">
+                        {% csrf_token %}
+                        
+                        {% for pregunta in preguntas %}
+                        <div class="card mb-3">
+                            <div class="card-header bg-light">
+                                <strong>Pregunta {{ forloop.counter }}</strong>
+                                <span class="badge bg-info float-end">{{ pregunta.puntaje|default:10 }} pts</span>
+                            </div>
+                            <div class="card-body">
+                                <p>{{ pregunta.enunciado|default:"Sin enunciado" }}</p>
+                                
+                                {% if pregunta.tipo == 'multiple' %}
+                                    {% for opcion in pregunta.opciones|default:"" %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" 
+                                               name="pregunta_{{ pregunta.id }}" 
+                                               id="opcion_{{ pregunta.id }}_{{ forloop.counter }}" 
+                                               value="{{ opcion }}">
+                                        <label class="form-check-label" for="opcion_{{ pregunta.id }}_{{ forloop.counter }}">
+                                            {{ opcion }}
+                                        </label>
+                                    </div>
+                                    {% endfor %}
+                                {% elif pregunta.tipo == 'verdadero_falso' %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" 
+                                               name="pregunta_{{ pregunta.id }}" 
+                                               id="vf_{{ pregunta.id }}_v" value="Verdadero">
+                                        <label class="form-check-label" for="vf_{{ pregunta.id }}_v">Verdadero</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" 
+                                               name="pregunta_{{ pregunta.id }}" 
+                                               id="vf_{{ pregunta.id }}_f" value="Falso">
+                                        <label class="form-check-label" for="vf_{{ pregunta.id }}_f">Falso</label>
+                                    </div>
+                                {% else %}
+                                    <textarea class="form-control" 
+                                              name="pregunta_{{ pregunta.id }}" 
+                                              rows="3" 
+                                              placeholder="Escribe tu respuesta aquí..."></textarea>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% empty %}
+                        <div class="alert alert-warning">
+                            No hay preguntas para esta evaluación.
+                        </div>
+                        {% endfor %}
+                        
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="fas fa-paper-plane"></i> Enviar evaluación
+                            </button>
+                            <a href="{% url 'detalle_curso' evaluacion.curso.slug %}" class="btn btn-secondary btn-lg">
+                                <i class="fas fa-arrow-left"></i> Volver
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-check {
+        padding: 5px 0;
+    }
+    .form-check-input:checked {
+        background-color: #667eea;
+        border-color: #667eea;
+    }
+    .card {
+        transition: all 0.3s ease;
+    }
+    .card:hover {
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}
